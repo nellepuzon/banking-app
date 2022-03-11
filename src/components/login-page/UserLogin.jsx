@@ -13,7 +13,7 @@ function UserLogin() {
   return (
     <div className='user-page'>
       <div className='login'>
-        <input type='text' placeholder='Username' />
+        <input type='text' placeholder='Username' spellCheck="false"/>
         <input type='password' placeholder='Password' />
         <button className='login-button'>LOG IN</button>
         <div className='forgot-password'>Forgot Password</div>
