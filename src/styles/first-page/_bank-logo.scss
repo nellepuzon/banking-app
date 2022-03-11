@@ -1,0 +1,24 @@
+.first-icon {
+  font-size: 50px;
+  color: #61dbfb;
+  padding-right: 3px;
+}
+
+.bank-name {
+  font-size: 50px;
+  font-weight: 700;
+  color: #61dbfb;
+}
+
+.bank-name > span {
+  color: #282c34;
+  background-color: #61dbfb;
+  border-radius: 0 10px 10px 0;
+  margin: 3px;
+  padding: 0 5px 0 5px;
+}
+
+.bank {
+  display: flex;
+  flex-direction: row;
+}
