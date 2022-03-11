@@ -1,6 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function AdminLogin() {
+function AdminLogin({adminPassword, loggedIn, setLoggedIn}) {
+  const [errorMessage, setErrorMessage] = useState({})
+  const [passwordInput, setPasswordInput] = useState("")
+  
+  function handleChange(e) {
+    setPasswordInput(e.target.value)
+  }
+
+  function handleClick(e) {
+    e.preventDefault()
+    if (passwordInput !== adminPassword) {
+      setErrorMessage({message: 'invalid password'})
+    } else {
+      setLoggedIn(true)
+    }
+    setPasswordInput("")
+  }
+
+  function renderError() {
+    if(errorMessage && !loggedIn) {
+      return <div className='error-message'>{errorMessage.message}</div>
+    }
+  }
+
   const goBack = () => {
     return (
       document.querySelector('.admin-page').classList.remove('show-login'),
@@ -12,8 +35,9 @@ function AdminLogin() {
   return (
     <div className='admin-page'>
       <div className='login'>
-        <input type='password' placeholder='Password' />
-        <button className='login-button'>LOG IN</button>
+        <input type='password' value={passwordInput} placeholder='Password' name="adminPass" required onChange={handleChange} />
+        {renderError()}
+        <button className='login-button' onClick={handleClick}>LOG IN</button>
         <div onClick={goBack} className='back-button'>
           Back
         </div>
