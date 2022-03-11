@@ -22,22 +22,24 @@
   width: 200%;
   background-color: rgba(97, 219, 251, 0.3);
   outline: none;
+  text-indent: 20px;
 }
 
 .login > input::placeholder {
-  padding: 10px;
+  // padding: 10px;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .login-button {
   border: none;
-  background-color: rgba(97, 219, 251, 0.3);
+  background-color: rgba(146, 150, 151, 0.3);
   border-radius: 20px;
   font-size: 15px;
   margin: 20px 0 10px 0;
   padding: 10px 20px;
   color: white;
+  cursor: pointer;
 }
 
 .create-account,
@@ -47,6 +49,7 @@
   font-size: 15px;
   margin-top: 15px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .forgot-password {
@@ -55,4 +58,8 @@
 
 .show-login {
   display: flex;
+}
+
+.error-message {
+  color: red;
 }
