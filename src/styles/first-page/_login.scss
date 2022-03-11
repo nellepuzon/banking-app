@@ -1,52 +1,58 @@
-.user-page, .admin-page {
-    display: none;
+.user-page,
+.admin-page {
+  display: none;
+  margin-top: 100%;
+  width: 100%;
+}
+.user-page {
+  margin-top: 170%;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 
-}.login {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    align-items: center;
-    width: 100%;
-  }
+.login > input {
+  border: none;
+  margin: 5px;
+  border-radius: 10px;
+  height: 50px;
+  width: 200%;
+  background-color: rgba(97, 219, 251, 0.3);
+  outline: none;
+}
 
-  .login > input {
-    border: none;
-    margin: 5px;
-    border-radius: 10px;
-    height: 40px;
-    width: 100%;
-    max-width: 60%;
-    background-color: rgba(97, 219, 251, 0.3);
-    outline: none;
-  }
+.login > input::placeholder {
+  padding: 10px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
 
-  .login > input::placeholder {
-    padding: 10px;
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.8);
-  }
+.login-button {
+  border: none;
+  background-color: rgba(97, 219, 251, 0.3);
+  border-radius: 20px;
+  font-size: 15px;
+  margin: 20px 0 10px 0;
+  padding: 10px 20px;
+  color: white;
+}
 
-  .login-button {
-    border: none;
-    background-color: rgba(97, 219, 251, 0.3);
-    border-radius: 20px;
-    font-size: 15px;
-    margin-top: 20px;
-    padding: 10px 20px;
-    color: white;
-  }
+.create-account,
+.forgot-password,
+.back-button {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  margin-top: 15px;
+  font-weight: 600;
+}
 
-  .create-account, .forgot-password {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 15px;
-    margin-top: 30px;
-  }
+.forgot-password {
+  margin-top: 30px;
+}
 
-  .back-button {
-    color: rgba(255, 255, 255, 0.8);
-      margin-top: 20px;
-    }
-
-  .show-login {
-      display: flex;
-  }
+.show-login {
+  display: flex;
+}
