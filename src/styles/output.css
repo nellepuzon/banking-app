@@ -55,6 +55,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .dropdown-container {
@@ -129,8 +134,15 @@ body {
   display: none;
 }
 
-.user-page, .admin-page {
+.user-page,
+.admin-page {
   display: none;
+  margin-top: 100%;
+  width: 100%;
+}
+
+.user-page {
+  margin-top: 170%;
 }
 
 .login {
@@ -141,7 +153,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -152,9 +163,8 @@ body {
   border: none;
   margin: 5px;
   border-radius: 10px;
-  height: 40px;
-  width: 100%;
-  max-width: 60%;
+  height: 50px;
+  width: 200%;
   background-color: rgba(97, 219, 251, 0.3);
   outline: none;
 }
@@ -188,20 +198,22 @@ body {
   background-color: rgba(97, 219, 251, 0.3);
   border-radius: 20px;
   font-size: 15px;
-  margin-top: 20px;
+  margin: 20px 0 10px 0;
   padding: 10px 20px;
   color: white;
 }
 
-.create-account, .forgot-password {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 15px;
-  margin-top: 30px;
-}
-
+.create-account,
+.forgot-password,
 .back-button {
   color: rgba(255, 255, 255, 0.8);
-  margin-top: 20px;
+  font-size: 15px;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.forgot-password {
+  margin-top: 30px;
 }
 
 .show-login {

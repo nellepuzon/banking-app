@@ -1,9 +1,9 @@
-.dropdown-container{
+.dropdown-container {
   display: flex;
   justify-content: center;
   width: 100%;
-  
-}.dropdown-button {
+}
+.dropdown-button {
   border: none;
   border-bottom: 1px solid #282c34;
   background-color: rgba(97, 219, 251, 0.3);
@@ -58,5 +58,5 @@
 }
 
 .hide {
-  display: none
+  display: none;
 }
