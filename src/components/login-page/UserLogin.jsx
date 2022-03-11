@@ -50,11 +50,17 @@ function UserLogin({accounts, loggedIn, setLoggedIn}) {
   return (
     <div className='user-page'>
       <div className='login'>
+
+        <input type='text' placeholder='Username' spellCheck="false"/>
+        <input type='password' placeholder='Password' />
+        <button className='login-button'>LOG IN</button>
+
         <input type='text' placeholder='Username' required onChange={userChangeHandler} value={userInput}/>
         {renderError('Username')}
         <input type='password' placeholder='Password' required onChange={passChangeHandler} value={passInput}/>
         {renderError('Password')}
         <button className='login-button' onClick={handleSubmit}>LOG IN</button>
+
         <div className='forgot-password'>Forgot Password</div>
         <div className='create-account'>Create Account</div>
         <div onClick={goBack} className='back-button'>

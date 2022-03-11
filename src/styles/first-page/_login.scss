@@ -19,17 +19,37 @@
   margin: 5px;
   border-radius: 10px;
   height: 50px;
-  width: 200%;
+  width: 150%;
   background-color: rgba(97, 219, 251, 0.3);
   outline: none;
+
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.login > input::placeholder {
+
   text-indent: 20px;
 }
 
 .login > input::placeholder {
   // padding: 10px;
+
   font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
+  position: relative;
 }
+
+.login > input:focus {
+    color:white;
+    padding: 10px;
+}
+
+.login > input:focus::placeholder {
+    color: transparent
+}
+
 
 .login-button {
   border: none;
