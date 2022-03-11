@@ -1,0 +1,43 @@
+.dropdown-button {
+  border: none;
+  background-color: rgba(97, 219, 251, 0.3);
+  padding: 15px 20px;
+  font-size: 18px;
+  color: white;
+  margin-top: 50px;
+  outline: none;
+}
+
+.dropdown {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(97, 219, 251, 0.3);
+  z-index: 1;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  color: #282c34;
+}
+
+.fa-caret-down {
+  margin-left: 10px;
+  font-size: 20px;
+}
