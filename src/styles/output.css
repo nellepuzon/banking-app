@@ -113,12 +113,12 @@ body {
 .user-page,
 .admin-page {
   display: none;
-  margin-top: 100%;
+  margin-top: 70%;
   width: 100%;
 }
 
 .user-page {
-  margin-top: 170%;
+  margin-top: 130%;
 }
 
 .login {
