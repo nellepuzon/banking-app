@@ -17,6 +17,7 @@ function App() {
     if (isAdmin === true) {
       return <AdminPage 
       accounts={accounts}
+      setAccounts={setAccounts}
       />
     } else if(isAdmin === false) {
       return  <LoginPage
