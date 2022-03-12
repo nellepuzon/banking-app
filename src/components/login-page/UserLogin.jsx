@@ -26,12 +26,10 @@ function UserLogin({accounts, loggedIn, setLoggedIn, isAdmin, setIsAdmin}) {
         setLoggedIn(true)
         setUserInput("")
         setPassInput("")
-        console.log(user.type)
       } else if(user.type ==="user") {
         setLoggedIn(true)
         setUserInput("")
         setPassInput("")
-        console.log(user.type)
       }
     } else {
       setErrorMessage({placeholder:'Username',message: 'invalid username'})

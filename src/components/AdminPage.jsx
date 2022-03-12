@@ -2,11 +2,11 @@ import React from "react";
 import NavBar from './admin-page/NavBar'
 import Table from './admin-page/Table'
 
-function AdminPage() {
+function AdminPage(props) {
     return (
         <div className="admin-page">
             <NavBar/>
-            <Table/>
+            <Table accounts={props.accounts}/>
         </div>
     )
 }
