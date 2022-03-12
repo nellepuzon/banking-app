@@ -4,7 +4,7 @@ import Table from './admin-page/Table'
 
 function AdminPage() {
     return (
-        <div class="admin-page">
+        <div className="admin-page">
             <NavBar/>
             <Table/>
         </div>

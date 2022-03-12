@@ -9,6 +9,8 @@ table {
     border-radius: 20px;
     font-weight: 500;
     color: #282c34;
+    position: relative;
+    bottom: 35%
   }
   
   td {
@@ -38,4 +40,8 @@ table {
   .fa-peso-sign {
     font-size: 16px;
   }
-  
+
+  a {
+      text-decoration: none;
+      color: #282c34;
+  }

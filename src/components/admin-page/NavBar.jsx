@@ -3,18 +3,18 @@ import React from 'react';
 
 function NavBar() {
   return (
-    <div class='admin-dashboard'>
-      <div class='nav-bar'>
-        <div class='accounts'>Accounts</div>
-        <div class='sort-up'>
-          <i class='fa-solid fa-arrow-up-a-z'></i>
+    <div className='admin-dashboard'>
+      <div className='nav-bar'>
+        <div className='accounts'>Accounts</div>
+        <div className='sort-up'>
+          <i className='fa-solid fa-arrow-up-a-z'></i>
         </div>
-        <div class='sort-down'>
-          <i class='fa-solid fa-arrow-down-a-z'></i>
+        <div className='sort-down'>
+          <i className='fa-solid fa-arrow-down-a-z'></i>
         </div>
       </div>
-      <i class='fa-solid fa-magnifying-glass'></i>
-      <input class='search'></input>
+      <i className='fa-solid fa-magnifying-glass'></i>
+      <input className='search'></input>
     </div>
   );
 }
