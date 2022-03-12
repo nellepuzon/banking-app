@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+.npm
+.landscape
+.config
+.asdf
 
 # testing
 /coverage
