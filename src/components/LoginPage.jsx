@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import BankLogo from './login-page/BankLogo';
 import Dropdown from './login-page/Dropdown';
 import UserLogin from './login-page/UserLogin';
@@ -10,14 +10,14 @@ function LoginPage(props) {
       <BankLogo />
       <Dropdown />
       <UserLogin
-      accounts={props.accounts}
-      loggedIn={props.loggedIn}
-      setLoggedIn={props.setLoggedIn}
+        accounts={props.accounts}
+        loggedIn={props.loggedIn}
+        setLoggedIn={props.setLoggedIn}
       />
-      <AdminLogin 
-      loggedIn={props.loggedIn}
-      setLoggedIn={props.setLoggedIn}
-      adminPassword={props.adminPassword}
+      <AdminLogin
+        loggedIn={props.loggedIn}
+        setLoggedIn={props.setLoggedIn}
+        adminPassword={props.adminPassword}
       />
     </div>
   );
