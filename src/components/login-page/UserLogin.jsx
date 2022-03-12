@@ -51,11 +51,11 @@ function UserLogin({accounts, loggedIn, setLoggedIn}) {
     <div className='user-page'>
       <div className='login'>
 
-        <input type='text' placeholder='Username' spellCheck="false"/>
+        {/* <input type='text' placeholder='Username' spellCheck="false"/>
         <input type='password' placeholder='Password' />
-        <button className='login-button'>LOG IN</button>
+        <button className='login-button'>LOG IN</button> */}
 
-        <input type='text' placeholder='Username' required onChange={userChangeHandler} value={userInput}/>
+        <input type='text' placeholder='Username' required onChange={userChangeHandler} value={userInput} spellCheck="false"/>
         {renderError('Username')}
         <input type='password' placeholder='Password' required onChange={passChangeHandler} value={passInput}/>
         {renderError('Password')}
