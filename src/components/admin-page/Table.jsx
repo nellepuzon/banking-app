@@ -9,12 +9,12 @@ function Table() {
       </tr>
       <tr>
         <td>
-          <a class='eg' href='#'>
+          <a className='eg' href='#'>
             Malunes, Eglecerio
           </a>
         </td>
         <td>
-          <i class='fa-solid fa-peso-sign'></i> 11,297
+          <i className='fa-solid fa-peso-sign'></i> 11,297
         </td>
       </tr>
       <tr>
@@ -22,7 +22,7 @@ function Table() {
           <a href='#'>Puzon, Junelle</a>
         </td>
         <td>
-          <i class='fa-solid fa-peso-sign'></i> 53,928
+          <i className='fa-solid fa-peso-sign'></i> 53,928
         </td>
       </tr>
       <tr>
@@ -30,7 +30,7 @@ function Table() {
           <a href='#'>Go, Francis</a>
         </td>
         <td>
-          <i class='fa-solid fa-peso-sign'></i> 53,928
+          <i className='fa-solid fa-peso-sign'></i> 53,928
         </td>
       </tr>
       <tr>
@@ -38,7 +38,7 @@ function Table() {
           <a href='#'>Turingan, Joshua</a>
         </td>
         <td>
-          <i class='fa-solid fa-peso-sign'></i> 90,287
+          <i className='fa-solid fa-peso-sign'></i> 90,287
         </td>
       </tr>
       <tr>
@@ -46,7 +46,7 @@ function Table() {
           <a href='#'>Reza Jhay Lacanlale</a>
         </td>
         <td>
-          <i class='fa-solid fa-peso-sign'></i> 34,387
+          <i className='fa-solid fa-peso-sign'></i> 34,387
         </td>
       </tr>
       <tr>
@@ -54,7 +54,7 @@ function Table() {
           <a href='#'>Alphonzo Escolar</a>
         </td>
         <td>
-          <i class='fa-solid fa-peso-sign'></i> 23,989
+          <i className='fa-solid fa-peso-sign'></i> 23,989
         </td>
       </tr>
       <tr>
@@ -62,7 +62,7 @@ function Table() {
           <a href='#'>Spike Vinz Cruz</a>
         </td>
         <td>
-          <i class='fa-solid fa-peso-sign'></i> 43,237
+          <i className='fa-solid fa-peso-sign'></i> 43,237
         </td>
       </tr>
     </table>
