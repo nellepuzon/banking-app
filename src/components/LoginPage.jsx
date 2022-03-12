@@ -9,6 +9,8 @@ function LoginPage(props) {
     <div className='first-page'>
       <BankLogo />
       <UserLogin
+        isAdmin={props.isAdmin}
+        setIsAdmin={props.setIsAdmin}
         accounts={props.accounts}
         loggedIn={props.loggedIn}
         setLoggedIn={props.setLoggedIn}

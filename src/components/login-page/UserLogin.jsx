@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-function UserLogin({accounts, loggedIn, setLoggedIn}) {
+function UserLogin({accounts, loggedIn, setLoggedIn, isAdmin, setIsAdmin}) {
   const [errorMessage, setErrorMessage] = useState({})
   const [userInput, setUserInput] = useState("")
   const [passInput, setPassInput] = useState("")
@@ -21,10 +21,17 @@ function UserLogin({accounts, loggedIn, setLoggedIn}) {
     if(user) {
       if (user.password !== passInput) {
         setErrorMessage({placeholder:'Password', message: 'invalid password'})
-      } else {
+      } else if(user.type === "admin") {
+        setIsAdmin(true)
         setLoggedIn(true)
         setUserInput("")
         setPassInput("")
+        console.log(user.type)
+      } else if(user.type ==="user") {
+        setLoggedIn(true)
+        setUserInput("")
+        setPassInput("")
+        console.log(user.type)
       }
     } else {
       setErrorMessage({placeholder:'Username',message: 'invalid username'})

@@ -4,20 +4,22 @@ import {useState} from 'react';
 
 function App() {
   const [accounts, setAccounts] = useState([
-    {userName:"user1", password:"user1"},
-    {userName:"user2", password:"user2"},
-    {userName:"user3", password:"user3"}
+    {userName:"admin", password:"admin123", type:"admin"},
+    {userName:"user1", password:"user1", type:"user"},
+    {userName:"user2", password:"user2", type:"user"},
+    {userName:"user3", password:"user3", type:"user"}
   ])
-const [adminPassword, setAdminPassword] = useState("admin123")
-const [loggedIn, setLoggedIn] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(false)
 
   return (
     <div className="App">
       <LoginPage
+      isAdmin={isAdmin}
+      setIsAdmin={setIsAdmin}
       accounts={accounts}
       loggedIn={loggedIn}
       setLoggedIn={setLoggedIn}
-      adminPassword={adminPassword}
       />
     </div>
   );
