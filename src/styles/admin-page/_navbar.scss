@@ -1,10 +1,12 @@
 .admin-page {
   display: flex;
   width: 100%;
+  max-width: 95%;
   justify-content: flex-start;  
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  margin: 0 auto;
 }
 
 .admin-dashboard {
@@ -40,17 +42,21 @@
   height: 40px;
   width: 100%;
   margin-bottom: 20px;
+  color: white;
+  padding-left: 20px;
+  font-size: 16px;
 }
 
 .accounts {
   text-transform: uppercase;
   font-weight: 700;
   color: white;
+  margin-left: 5px;
 }
 
 .sort-up {
 
-  margin-left: 200px;
+  margin-left: 220px;
 }
 
 .sort-up, .sort-down {

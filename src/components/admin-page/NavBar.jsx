@@ -14,7 +14,7 @@ function NavBar() {
         </div>
       </div>
       <i className='fa-solid fa-magnifying-glass'></i>
-      <input className='search'></input>
+      <input className='search' type="text"></input>
     </div>
   );
 }
