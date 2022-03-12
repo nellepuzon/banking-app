@@ -17,3 +17,11 @@
     overflow-x: hidden;
     overflow-y: scroll;
   }
+
+  .first-page {
+    display: flex
+  }
+
+  .hide-first-page {
+    display: none;
+  }
