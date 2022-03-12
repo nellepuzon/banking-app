@@ -5,18 +5,19 @@ import AdminPage from './components/AdminPage';
 
 function App() {
   const [accounts, setAccounts] = useState([
-    { userName: 'admin', password: 'admin123', type: 'admin' },
-    { userName: 'user1', password: 'user1', type: 'user' },
-    { userName: 'user2', password: 'user2', type: 'user' },
-    { userName: 'user3', password: 'user3', type: 'user' },
+    { userName: 'admin', password: 'admin123', type: 'admin', fullName:'Puzon, Junelle Master', money:'1' },
+    { userName: 'user1', password: 'user1', type: 'user', fullName:'Alipin', money:'654,231' },
+    { userName: 'user2', password: 'user2', type: 'user', fullName:'Go, Francis',money:'35,121' },
+    { userName: 'user3', password: 'user3', type: 'user', fullName:'Turingan, Jao',money:'35,132' },
   ]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const test = document.querySelector('.first-page')
-console.log(test)
   const showPage = () => {
     if (isAdmin === true) {
-      return <AdminPage />
+      return <AdminPage 
+      accounts={accounts}
+      />
     } else if(isAdmin === false) {
       return  <LoginPage
       isAdmin={isAdmin}
