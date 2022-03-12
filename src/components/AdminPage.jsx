@@ -8,7 +8,9 @@ function AdminPage(props) {
         <div className="admin-page">
             <NavBar/>
             <Table accounts={props.accounts}/>
-            <AddAccount />
+            <AddAccount 
+            setAccounts={props.setAccounts}
+            accounts={props.accounts}/>
         </div>
     )
 }
