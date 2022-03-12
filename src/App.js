@@ -12,24 +12,25 @@ function App() {
   ]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-
-  const showAdminPage = () => {
-    if (isAdmin == true) {
-      return (<AdminPage />,
-      document.querySelector('first-page').classList.add("hide-first-page"))
+  const test = document.querySelector('.first-page')
+console.log(test)
+  const showPage = () => {
+    if (isAdmin === true) {
+      return <AdminPage />
+    } else if(isAdmin === false) {
+      return  <LoginPage
+      isAdmin={isAdmin}
+      setIsAdmin={setIsAdmin}
+      accounts={accounts}
+      loggedIn={loggedIn}
+      setLoggedIn={setLoggedIn}
+    />
     }
   };
 
   return (
     <div className='App'>
-      <LoginPage
-        isAdmin={isAdmin}
-        setIsAdmin={setIsAdmin}
-        accounts={accounts}
-        loggedIn={loggedIn}
-        setLoggedIn={setLoggedIn}
-      />
-      {showAdminPage()};
+      {showPage()};
     </div>
   );
 }
