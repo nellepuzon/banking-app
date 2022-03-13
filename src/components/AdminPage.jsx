@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from './admin-page/NavBar'
 import Table from './admin-page/Table'
 import AddAccount from './admin-page/AddAccount'
+import Transactions from "./admin-page/Transactions";
 
 function AdminPage(props) {
     return (
@@ -11,6 +12,7 @@ function AdminPage(props) {
             <AddAccount 
             setAccounts={props.setAccounts}
             accounts={props.accounts}/>
+            <Transactions/>
         </div>
     )
 }

@@ -1,0 +1,53 @@
+.table-box {
+  overflow: auto;
+  height: 180px;
+  margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    background-color: rgba(97, 219, 251, 0.4);
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #282c34;
+    // position: relative;
+    // top: -30%
+  }
+  
+  td {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 50px;
+  }
+  
+  th,
+  td {
+    padding: 10px 20px;
+  }
+  
+  th {
+    color: white;
+  }
+  
+  .table-options {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #61dbfb;
+    font-size: 18px;
+  }
+
+  .fa-peso-sign {
+    font-size: 16px;
+  }
+
+  a {
+      text-decoration: none;
+      color: #282c34;
+  }
+
+  
