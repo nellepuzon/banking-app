@@ -3,6 +3,7 @@ import TableRow from './TableRow';
 
 function Table({accounts}) {
   return (
+      <div className="table-box">
     <table>
       <tr>
         <th>Name</th>
@@ -12,6 +13,7 @@ function Table({accounts}) {
         return <TableRow account={account}/>
       })}
     </table>
+    </div>
   );
 }
 
