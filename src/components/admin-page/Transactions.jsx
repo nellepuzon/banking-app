@@ -1,18 +1,30 @@
 import React from 'react';
 import Transfer from '../transaction-page/Transfer';
 
-const clickTransfer = () => {
+const blurPage = () => {
   document.querySelector('.admin-dashboard').classList.add('blur');
   document.querySelector('.add-account-container').classList.add('blur');
   document.querySelector('.table-box').classList.add('blur');
   document.querySelector('.transactions').classList.add('blur');
-  document.querySelector('.transfer-page').classList.add('show-transfer');
-  console.log(document.querySelector('.transfer-page'))
 };
+
+const clickDeposit = () => {
+  blurPage();
+  document.querySelector('.deposit-page').classList.add("show-deposit")
+}
+
+const clickWithdraw = () => {
+  blurPage();
+  document.querySelector('.withdraw-page').classList.add('show-withdraw')
+}
+const clickTransfer = () => {
+  blurPage();
+  document.querySelector('.transfer-page').classList.add('show-transfer');
+}
 
 function Transactions() {
   return (
-    <div class='transactions'>
+    <div onClick={clickDeposit} class='transactions'>
       <div class='deposit trans'>
         <div class='deposit-icon icon'>
           <i class='fa-solid fa-money-bill-1-wave'></i>
@@ -20,7 +32,7 @@ function Transactions() {
         <div class='deposit-text text'>Deposit</div>
       </div>
 
-      <div class='withdraw trans'>
+      <div onClick={clickWithdraw} class='withdraw trans'>
         <div class='withdraw-icon icon'>
           <i class='fa-solid fa-hand-holding-dollar'></i>{' '}
         </div>

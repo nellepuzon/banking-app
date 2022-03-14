@@ -591,6 +591,282 @@ a {
           filter: blur(4px);
 }
 
+.deposit-page {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 25%;
+  max-width: 95%;
+  border-radius: 20px;
+}
+
+.deposit-page .deposit-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #61dbfb;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 340px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+}
+
+.deposit-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+}
+
+.deposit-amount,
+.deposit-from-input,
+.input-receipt {
+  width: 100%;
+  height: 30%;
+  outline: none;
+  border: none;
+  background-color: #282c34;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  color: white;
+  padding-left: 10px;
+}
+
+.deposit-amount::-webkit-input-placeholder,
+.input-receipt::-webkit-input-placeholder,
+.deposit-from-input::-webkit-input-placeholder {
+  color: white;
+}
+
+.deposit-amount:-ms-input-placeholder,
+.input-receipt:-ms-input-placeholder,
+.deposit-from-input:-ms-input-placeholder {
+  color: white;
+}
+
+.deposit-amount::-ms-input-placeholder,
+.input-receipt::-ms-input-placeholder,
+.deposit-from-input::-ms-input-placeholder {
+  color: white;
+}
+
+.deposit-amount::placeholder,
+.input-receipt::placeholder,
+.deposit-from-input::placeholder {
+  color: white;
+}
+
+.show-deposit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.deposit-name-text,
+.send-receipt {
+  margin-bottom: 5px;
+  padding-left: 5px;
+  color: #282c34;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.deposit-button {
+  width: 100%;
+  max-width: 25%;
+  margin: 10px auto 0 auto;
+  background-color: #282c34;
+  border-radius: 20px;
+  color: white;
+  height: 25%;
+  border: none;
+  text-align: center;
+}
+
+.deposit-button:active {
+  background-color: white;
+  color: #282c34;
+}
+
+.deposit-amount:focus::-webkit-input-placeholder,
+.input-receipt:focus::-webkit-input-placeholder,
+.deposit-from-input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.deposit-amount:focus:-ms-input-placeholder,
+.input-receipt:focus:-ms-input-placeholder,
+.deposit-from-input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.deposit-amount:focus::-ms-input-placeholder,
+.input-receipt:focus::-ms-input-placeholder,
+.deposit-from-input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.deposit-amount:focus::placeholder,
+.input-receipt:focus::placeholder,
+.deposit-from-input:focus::placeholder {
+  color: transparent;
+}
+
+.withdraw-page {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 25%;
+  max-width: 95%;
+  border-radius: 20px;
+}
+
+.withdraw-page .withdraw-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #61dbfb;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 340px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+}
+
+.withdraw-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+}
+
+.withdraw-amount,
+.withdraw-from-input,
+.input-receipt {
+  width: 100%;
+  height: 30%;
+  outline: none;
+  border: none;
+  background-color: #282c34;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  color: white;
+  padding-left: 10px;
+}
+
+.withdraw-amount::-webkit-input-placeholder,
+.input-receipt::-webkit-input-placeholder,
+.withdraw-from-input::-webkit-input-placeholder {
+  color: white;
+}
+
+.withdraw-amount:-ms-input-placeholder,
+.input-receipt:-ms-input-placeholder,
+.withdraw-from-input:-ms-input-placeholder {
+  color: white;
+}
+
+.withdraw-amount::-ms-input-placeholder,
+.input-receipt::-ms-input-placeholder,
+.withdraw-from-input::-ms-input-placeholder {
+  color: white;
+}
+
+.withdraw-amount::placeholder,
+.input-receipt::placeholder,
+.withdraw-from-input::placeholder {
+  color: white;
+}
+
+.show-withdraw {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.withdraw-name-text,
+.send-receipt {
+  margin-bottom: 5px;
+  padding-left: 5px;
+  color: #282c34;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.withdraw-button {
+  width: 100%;
+  max-width: 25%;
+  margin: 10px auto 0 auto;
+  background-color: #282c34;
+  border-radius: 20px;
+  color: white;
+  height: 25%;
+  border: none;
+  text-align: center;
+}
+
+.withdraw-button:active {
+  background-color: white;
+  color: #282c34;
+}
+
+.withdraw-amount:focus::-webkit-input-placeholder,
+.input-receipt:focus::-webkit-input-placeholder,
+.withdraw-from-input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.withdraw-amount:focus:-ms-input-placeholder,
+.input-receipt:focus:-ms-input-placeholder,
+.withdraw-from-input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.withdraw-amount:focus::-ms-input-placeholder,
+.input-receipt:focus::-ms-input-placeholder,
+.withdraw-from-input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.withdraw-amount:focus::placeholder,
+.input-receipt:focus::placeholder,
+.withdraw-from-input:focus::placeholder {
+  color: transparent;
+}
+
 .transfer-page {
   display: none;
   width: 100%;
@@ -611,7 +887,7 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  height: 400px;
+  height: 420px;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
