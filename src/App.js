@@ -2,6 +2,7 @@ import '../src/styles/output.css';
 import LoginPage from './components/LoginPage';
 import { useState } from 'react';
 import AdminPage from './components/AdminPage';
+import Transfer from './components/transaction-page/Transfer';
 
 function App() {
   const [accounts, setAccounts] = useState([
@@ -27,13 +28,16 @@ function App() {
       loggedIn={loggedIn}
       setLoggedIn={setLoggedIn}
     />
+
     }
+
   };
 
   return (
     <div className='App'>
       {showPage()};
     </div>
+    
   );
 }
 

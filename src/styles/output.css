@@ -1,23 +1,35 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
   background-color: #282c34;
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 .first-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -46,17 +58,27 @@ body {
 }
 
 .bank {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   position: absolute;
   left: 50%;
   top: 40%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .dropdown-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 
@@ -81,7 +103,10 @@ body {
   position: absolute;
   background-color: rgba(97, 219, 251, 0.3);
   z-index: 1;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   width: 100%;
   font-size: 18px;
@@ -101,6 +126,8 @@ body {
 }
 
 .show {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -119,6 +146,8 @@ body {
 }
 
 .user-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 70%;
   width: 100%;
@@ -129,9 +158,16 @@ body {
 }
 
 .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
@@ -148,6 +184,24 @@ body {
   font-size: 18px;
 }
 
+.login > input::-webkit-input-placeholder {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.login > input:-ms-input-placeholder {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.login > input::-ms-input-placeholder {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
 .login > input::placeholder {
   font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
@@ -156,6 +210,18 @@ body {
 
 .login > input:focus {
   color: white;
+}
+
+.login > input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.login > input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.login > input:focus::-ms-input-placeholder {
+  color: transparent;
 }
 
 .login > input:focus::placeholder {
@@ -188,6 +254,8 @@ body {
 }
 
 .show-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -196,12 +264,21 @@ body {
 }
 
 .admin-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   max-width: 95%;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
@@ -209,16 +286,28 @@ body {
 
 .admin-dashboard {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 50px 30px 0 30px;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   max-width: 95%;
 }
 
@@ -258,6 +347,15 @@ body {
   color: white;
 }
 
+.hide {
+  display: none;
+}
+
+.blur {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
 .table-box {
   overflow: auto;
   height: 2000px;
@@ -292,10 +390,17 @@ th {
 
 .table-options {
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 20px;
   color: #61dbfb;
   font-size: 18px;
@@ -310,21 +415,37 @@ a {
   color: #282c34;
 }
 
+.blur {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
 .add-account-container {
   width: 100%;
   height: 100%;
   max-height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: rgba(97, 219, 251, 0.4);
   padding: 70px 0 50px 0;
   margin-top: 50px;
   border-radius: 10px;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .add-account-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   max-width: 94%;
@@ -372,24 +493,65 @@ a {
   background-color: white;
 }
 
+.add-account-inputs > input::-webkit-input-placeholder {
+  color: #545760;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.add-account-inputs > input:-ms-input-placeholder {
+  color: #545760;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.add-account-inputs > input::-ms-input-placeholder {
+  color: #545760;
+  font-size: 15px;
+  font-weight: 500;
+}
+
 .add-account-inputs > input::placeholder {
   color: #545760;
   font-size: 15px;
   font-weight: 500;
 }
 
+.add-account-inputs > input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.add-account-inputs > input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.add-account-inputs > input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
 .add-account-inputs > input:focus::placeholder {
   color: transparent;
 }
 
+.blur {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
 .transactions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   height: 100%;
   max-height: 40%;
   margin-top: 40px;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   color: #61dbfb;
 }
 
@@ -399,12 +561,21 @@ a {
 }
 
 .trans {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   max-width: 10%;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .text {
@@ -415,4 +586,156 @@ a {
   letter-spacing: 1px;
 }
 
+.blur {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
+.transfer-page {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 25%;
+  max-width: 95%;
+  border-radius: 20px;
+}
+
+.transfer-page .transfer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #61dbfb;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 400px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+}
+
+.transfer-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+}
+
+.transfer-amount,
+.transfer-to-input,
+.transfer-from-input,
+.input-receipt {
+  width: 100%;
+  height: 30%;
+  outline: none;
+  border: none;
+  background-color: #282c34;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  color: white;
+  padding-left: 10px;
+}
+
+.transfer-amount::-webkit-input-placeholder,
+.input-receipt::-webkit-input-placeholder,
+.transfer-to-input::-webkit-input-placeholder,
+.transfer-from-input::-webkit-input-placeholder {
+  color: white;
+}
+
+.transfer-amount:-ms-input-placeholder,
+.input-receipt:-ms-input-placeholder,
+.transfer-to-input:-ms-input-placeholder,
+.transfer-from-input:-ms-input-placeholder {
+  color: white;
+}
+
+.transfer-amount::-ms-input-placeholder,
+.input-receipt::-ms-input-placeholder,
+.transfer-to-input::-ms-input-placeholder,
+.transfer-from-input::-ms-input-placeholder {
+  color: white;
+}
+
+.transfer-amount::placeholder,
+.input-receipt::placeholder,
+.transfer-to-input::placeholder,
+.transfer-from-input::placeholder {
+  color: white;
+}
+
+.show-transfer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.transfer-to-text,
+.transfer-from-text,
+.send-receipt {
+  margin-bottom: 5px;
+  padding-left: 5px;
+  color: #282c34;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.transfer-button {
+  width: 100%;
+  max-width: 25%;
+  margin: 10px auto 0 auto;
+  background-color: #282c34;
+  border-radius: 20px;
+  color: white;
+  height: 25%;
+  border: none;
+  text-align: center;
+}
+
+.transfer-button:active {
+  background-color: white;
+  color: #282c34;
+}
+
+.transfer-amount:focus::-webkit-input-placeholder,
+.input-receipt:focus::-webkit-input-placeholder,
+.transfer-to-input:focus::-webkit-input-placeholder,
+.transfer-from-input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.transfer-amount:focus:-ms-input-placeholder,
+.input-receipt:focus:-ms-input-placeholder,
+.transfer-to-input:focus:-ms-input-placeholder,
+.transfer-from-input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.transfer-amount:focus::-ms-input-placeholder,
+.input-receipt:focus::-ms-input-placeholder,
+.transfer-to-input:focus::-ms-input-placeholder,
+.transfer-from-input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.transfer-amount:focus::placeholder,
+.input-receipt:focus::placeholder,
+.transfer-to-input:focus::placeholder,
+.transfer-from-input:focus::placeholder {
+  color: transparent;
+}
 /*# sourceMappingURL=output.css.map */
