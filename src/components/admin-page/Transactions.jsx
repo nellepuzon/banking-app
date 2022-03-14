@@ -1,4 +1,14 @@
 import React from 'react';
+import Transfer from '../transaction-page/Transfer';
+
+const clickTransfer = () => {
+  document.querySelector('.admin-dashboard').classList.add('blur');
+  document.querySelector('.add-account-container').classList.add('blur');
+  document.querySelector('.table-box').classList.add('blur');
+  document.querySelector('.transactions').classList.add('blur');
+  document.querySelector('.transfer-page').classList.add('show-transfer');
+  console.log(document.querySelector('.transfer-page'))
+};
 
 function Transactions() {
   return (
@@ -12,14 +22,15 @@ function Transactions() {
 
       <div class='withdraw trans'>
         <div class='withdraw-icon icon'>
-          <i class='fa-solid fa-money-from-bracket'></i>
+          <i class='fa-solid fa-hand-holding-dollar'></i>{' '}
         </div>
         <div class='withdraw-text text'>Withdraw</div>
       </div>
 
-      <div class='transfer trans'>
+      <div onClick={clickTransfer} class='transfer trans'>
         <div class='transfer-icon icon'>
-        <i class="fa-solid fa-money-from-bracket"></i>        </div>
+          <i class='fa-solid fa-paper-plane'></i>{' '}
+        </div>
         <div class='transfer-text text'>Transfer</div>
       </div>
     </div>

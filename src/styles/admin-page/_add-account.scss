@@ -69,3 +69,7 @@
 .add-account-inputs > input:focus::placeholder {
   color: transparent;
 }
+
+.blur {
+  filter: blur(4px)
+}

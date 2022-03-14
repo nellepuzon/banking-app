@@ -3,6 +3,7 @@ import NavBar from './admin-page/NavBar'
 import Table from './admin-page/Table'
 import AddAccount from './admin-page/AddAccount'
 import Transactions from "./admin-page/Transactions";
+import Transfer from "./transaction-page/Transfer"
 
 function AdminPage(props) {
     return (
@@ -13,6 +14,7 @@ function AdminPage(props) {
             setAccounts={props.setAccounts}
             accounts={props.accounts}/>
             <Transactions/>
+            <Transfer/>
         </div>
     )
 }
