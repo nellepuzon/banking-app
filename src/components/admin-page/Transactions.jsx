@@ -24,26 +24,26 @@ const clickTransfer = () => {
 
 function Transactions() {
   return (
-    <div onClick={clickDeposit} class='transactions'>
-      <div class='deposit trans'>
-        <div class='deposit-icon icon'>
-          <i class='fa-solid fa-money-bill-1-wave'></i>
+    <div onClick={clickDeposit} className='transactions'>
+      <div className='deposit trans'>
+        <div className='deposit-icon icon'>
+          <i className='fa-solid fa-money-bill-1-wave'></i>
         </div>
-        <div class='deposit-text text'>Deposit</div>
+        <div className='deposit-text text'>Deposit</div>
       </div>
 
-      <div onClick={clickWithdraw} class='withdraw trans'>
-        <div class='withdraw-icon icon'>
-          <i class='fa-solid fa-hand-holding-dollar'></i>{' '}
+      <div onClick={clickWithdraw} className='withdraw trans'>
+        <div className='withdraw-icon icon'>
+          <i className='fa-solid fa-hand-holding-dollar'></i>{' '}
         </div>
-        <div class='withdraw-text text'>Withdraw</div>
+        <div className='withdraw-text text'>Withdraw</div>
       </div>
 
-      <div onClick={clickTransfer} class='transfer trans'>
-        <div class='transfer-icon icon'>
-          <i class='fa-solid fa-paper-plane'></i>{' '}
+      <div onClick={clickTransfer} className='transfer trans'>
+        <div className='transfer-icon icon'>
+          <i className='fa-solid fa-paper-plane'></i>{' '}
         </div>
-        <div class='transfer-text text'>Transfer</div>
+        <div className='transfer-text text'>Transfer</div>
       </div>
     </div>
   );
