@@ -1,10 +1,16 @@
 import React from 'react';
 
+const undoBlur = () => {
+    document.querySelector('.admin-dashboard').classList.remove('blur');
+    document.querySelector('.add-account-container').classList.remove('blur');
+    document.querySelector('.table-box').classList.remove('blur');
+    document.querySelector('.transactions').classList.remove('blur');
+}
+
 const transferMoney = () => {
-  document.querySelector('.admin-dashboard').classList.remove('blur');
-  document.querySelector('.add-account-container').classList.remove('blur');
-  document.querySelector('.table-box').classList.remove('blur');
-  document.querySelector('.transactions').classList.remove('blur');
+  undoBlur();
+  document.querySelector('.deposit-page').classList.remove('show-deposit');
+  document.querySelector('.withdraw-page').classList.remove('show-withdraw');
   document.querySelector('.transfer-page').classList.remove('show-transfer');
 };
 

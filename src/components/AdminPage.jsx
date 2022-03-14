@@ -4,6 +4,8 @@ import Table from './admin-page/Table'
 import AddAccount from './admin-page/AddAccount'
 import Transactions from "./admin-page/Transactions";
 import Transfer from "./transaction-page/Transfer"
+import Deposit from "./transaction-page/Deposit";
+import Withdraw from "./transaction-page/Withdraw";
 
 function AdminPage(props) {
     return (
@@ -14,6 +16,8 @@ function AdminPage(props) {
             setAccounts={props.setAccounts}
             accounts={props.accounts}/>
             <Transactions/>
+            <Deposit/>
+            <Withdraw/>
             <Transfer/>
         </div>
     )
