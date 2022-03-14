@@ -18,7 +18,7 @@ function AdminPage(props) {
             <Transactions/>
             <Deposit/>
             <Withdraw/>
-            <Transfer/>
+            <Transfer accounts={props.accounts} setAccounts={props.setAccounts}/>
         </div>
     )
 }
