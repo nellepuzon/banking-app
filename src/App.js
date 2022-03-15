@@ -28,9 +28,7 @@ function App() {
       loggedIn={loggedIn}
       setLoggedIn={setLoggedIn}
       />
-      
     }
-    
   };
   
   useEffect(()=>{

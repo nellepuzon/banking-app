@@ -1,7 +1,7 @@
 import React from 'react';
 import TableRow from './TableRow';
 
-function Table({accounts, searchInput, setAccounts}) {
+function Table({accounts, searchInput, setAccounts, setFullName, setBalance, setUserName, setPassword, setEditingID, setIsEditing}) {
   return (
       <div className="table-box">
     <table>
@@ -21,7 +21,18 @@ function Table({accounts, searchInput, setAccounts}) {
         }
       }).map(account => {
         if (account.type !== "admin") {
-          return <TableRow key={account.accountNumber} account={account} setAccounts={setAccounts} accounts={accounts}/>
+          return <TableRow 
+          key={account.accountNumber} 
+          account={account} 
+          setAccounts={setAccounts} 
+          accounts={accounts}
+          setFullName={setFullName}
+          setBalance={setBalance}
+          setUserName={setUserName}
+          setPassword={setPassword}
+          setEditingID={setEditingID}
+          setIsEditing={setIsEditing}
+          />
         }
       })}
       </tbody>

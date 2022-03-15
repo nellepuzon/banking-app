@@ -1,21 +1,21 @@
 import React, {useState} from "react";
 
-function AddAccount({setAccounts, accounts}) {
+function AddAccount({setAccounts, accounts, fullName, setFullName, balance, setBalance, userName, setUserName, password, setPassword, isEditing, setIsEditing, editingID}) {
 
-    const [fullName, setFullName] = useState('')
-    const [balance, setBalance] = useState('')
-    const [userName, setUserName] = useState('')
-    const [password, setPassword] = useState('')
+    // const [fullName, setFullName] = useState('')
+    // const [balance, setBalance] = useState('')
+    // const [userName, setUserName] = useState('')
+    // const [password, setPassword] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
-
+    
     const handleFullName = (e) => {
         setFullName(e.target.value)
     }
-
+    
     const handleBalance = (e) => {
         setBalance(e.target.value)
     }
-
+    
     const handleUsername = (e) => {
         setUserName(e.target.value)
     }
@@ -24,10 +24,33 @@ function AddAccount({setAccounts, accounts}) {
         setPassword(e.target.value)
     }
 
+    const editUser = (id) => {
+        const selectedUser = accounts.find((user) => user.accountNumber === id)
+        selectedUser.userName = userName
+        selectedUser.fullName = fullName
+        selectedUser.password = password
+        selectedUser.money = balance
+        const updatedUsers = accounts.map((user) =>
+          user.id === id ? { ...selectedUser } : user
+        )
+        setAccounts(updatedUsers)
+        localStorage.setItem("accounts", JSON.stringify([...updatedUsers]))
+        setFullName("")
+        setUserName("")
+        setPassword("")
+        setBalance("")
+      }
+
     const handleAddAccount = (e) => {
         e.preventDefault();
         const userNameMatch = accounts.find(element => element.userName === userName)
         const fullNameMatch = accounts.find(element => element.fullName === fullName)
+
+        if(isEditing) {
+            editUser(editingID)
+            setIsEditing(false)
+            return
+        }
 
         if (userNameMatch && !fullNameMatch && fullName !== '' && userName !== '' && password !== '' && balance !== '') {
             setErrorMessage({message:"username already exists"})
