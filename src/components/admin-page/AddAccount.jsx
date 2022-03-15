@@ -66,6 +66,7 @@ function AddAccount({setAccounts, accounts, fullName, setFullName, balance, setB
             setBalance('');
             setUserName('');
             setPassword('');
+            setErrorMessage('');
         } else {
             setErrorMessage({message:"fill out necessary information"})
         }

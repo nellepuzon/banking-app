@@ -1,11 +1,10 @@
 import React from "react";
 
 
-function TableRow({account, setAccounts, accounts, fullName, setFullName, balance, setBalance, userName, setUserName, password, setPassword, setEditingID, setIsEditing}) {
+function TableRow({account, setAccounts, accounts, setFullName, setBalance, setUserName, setPassword, setEditingID, setIsEditing}) {
 
   const handleDelete = (id) => {
     const newUsers = accounts.filter((user) => user.accountNumber !== id)
-    console.log(newUsers)
     setAccounts(newUsers)
     localStorage.setItem("accounts", JSON.stringify([...newUsers]))
   }
