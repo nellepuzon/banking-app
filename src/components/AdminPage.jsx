@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from './admin-page/NavBar'
 import Table from './admin-page/Table'
 import AddAccount from './admin-page/AddAccount'
@@ -8,10 +8,11 @@ import Deposit from "./transaction-page/Deposit";
 import Withdraw from "./transaction-page/Withdraw";
 
 function AdminPage(props) {
+    const [searchInput, setSearchInput] = useState("")
     return (
         <div className="admin-page">
-            <NavBar/>
-            <Table accounts={props.accounts}/>
+            <NavBar searchInput={searchInput} setSearchInput={setSearchInput}/>
+            <Table accounts={props.accounts} searchInput={searchInput}/>
             <AddAccount 
             setAccounts={props.setAccounts}
             accounts={props.accounts}/>

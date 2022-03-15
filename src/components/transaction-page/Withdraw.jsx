@@ -64,7 +64,7 @@ function Withdraw({accounts, setAccounts}) {
         <div className='withdraw-nav'>
         <div className='withdraw-name-text'>Account Number:</div>
         <div onClick={undoBlur} className='close-button'>
-            <i class='fa-solid fa-circle-xmark'></i>
+            <i className='fa-solid fa-circle-xmark'></i>
           </div>
         </div>
         <div className='withdraw-input'>
