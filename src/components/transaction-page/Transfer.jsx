@@ -5,6 +5,9 @@ const undoBlur = () => {
     document.querySelector('.add-account-container').classList.remove('blur');
     document.querySelector('.table-box').classList.remove('blur');
     document.querySelector('.transactions').classList.remove('blur');
+    document.querySelector('.deposit-page').classList.remove('show-deposit');
+    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+    document.querySelector('.transfer-page').classList.remove('show-transfer');
 }
 
 
@@ -37,9 +40,6 @@ function Transfer({accounts, setAccounts}) {
 
     if(senderMatch && recipientMatch && parseInt(senderMatch.money) > parseInt(amountInput) && parseInt(amountInput) > 0) {
       undoBlur();
-      document.querySelector('.deposit-page').classList.remove('show-deposit');
-      document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-      document.querySelector('.transfer-page').classList.remove('show-transfer');
         let mainCopy = [...accounts]
         let senderCopy = {...mainCopy[mainCopy.indexOf(senderMatch)]}
         let recipientCopy = {...mainCopy[mainCopy.indexOf(recipientMatch)]}
@@ -76,9 +76,12 @@ function Transfer({accounts, setAccounts}) {
   return (
     <div className='transfer-page'>
       <div className='transfer-container'>
+        <div className='transfer-nav'><div className='transfer-from-text'>From:</div>
+        <div onClick={undoBlur} className='close-button'>
+            <i class='fa-solid fa-circle-xmark'></i>
+          </div></div>
         <div className='transfer-input'>
           {renderError()}
-          <div className='transfer-from-text'>From:</div>
           <input className='transfer-from-input' placeholder='Sender' onChange={handleSenderChange} value={senderInput}></input>
           <input
             className='transfer-amount'

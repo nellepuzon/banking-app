@@ -2,6 +2,7 @@
   overflow: auto;
   height: 2000px;
   margin-top: 20px;
+  width: 100%;
 }
 
 table {
@@ -19,6 +20,7 @@ table {
     // top: -30%
   }
   
+
   td {
     background-color: rgba(255, 255, 255, 0.7);
   }
@@ -54,4 +56,34 @@ table {
 
   .blur {
     filter: blur(4px)
+  }
+  
+  #account-number {
+    display: none;
+  }
+
+  .hide-name {
+    display: none;
+  }
+
+  .show-account-number {
+    display: flex
+  }
+
+  .edit-button, 
+  .delete-button {
+    color: white;
+    position: relative;
+    left: 15px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  .delete-button {
+    left: 25px;
+  }
+
+  .edit-button:hover, 
+  .delete-button:hover {
+    color: #282c34
   }

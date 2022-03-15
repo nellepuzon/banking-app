@@ -1,66 +1,89 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-const undoBlur = () => {
-  document.querySelector('.admin-dashboard').classList.remove('blur');
-  document.querySelector('.add-account-container').classList.remove('blur');
-  document.querySelector('.table-box').classList.remove('blur');
-  document.querySelector('.transactions').classList.remove('blur');
-};
+function Deposit({ accounts, setAccounts }) {
+  const [depositInput, setDepositInput] = useState('');
+  const [amountInput, setAmountInput] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-function Deposit({accounts, setAccounts}) {
-  const [depositInput, setDepositInput] = useState("")
-  const [amountInput, setAmountInput] = useState("")
-  const [emailInput, setEmailInput] = useState("")
-  const [errorMessage, setErrorMessage] = useState("")
-  
   const handleDepositChange = (e) => {
-    setDepositInput(e.target.value)
-  }
-  
-  const handleAmountChange = (e) => {
-    setAmountInput(e.target.value)
-  }
-  
-  const handleEmailChange = (e) => {
-    setEmailInput(e.target.value)
-  }
-  
-  const depositMoney = () => {
-    const accountMatch = accounts.find((element) => element.accountNumber === parseInt(depositInput))
-      if (accountMatch && parseInt(amountInput) > 0) {
-        undoBlur();
-        document.querySelector('.deposit-page').classList.remove('show-deposit');
-        document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-        document.querySelector('.transfer-page').classList.remove('show-transfer');
-        let mainCopy = [...accounts]
-        let accountCopy = {...mainCopy[mainCopy.indexOf(accountMatch)]}
-        accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput)
-        mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy
-        setAccounts([...mainCopy])
-        localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
-        setEmailInput("")
-        setAmountInput("")
-        setDepositInput("")
-        setErrorMessage("")
-      } else if (!accountMatch) {
-        setErrorMessage({placeholder: 'xxxxxxxxx', message: "account not found"})
-      } else if (parseInt(amountInput) <= 0 || amountInput === "") {
-        setErrorMessage({placeholder: "Amount",message: "invalid amount input"})
-      }
+    setDepositInput(e.target.value);
   };
-  
+
+  const handleAmountChange = (e) => {
+    setAmountInput(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmailInput(e.target.value);
+  };
+
+  const depositMoney = () => {
+    const accountMatch = accounts.find(
+      (element) => element.accountNumber === parseInt(depositInput)
+    );
+    if (accountMatch && parseInt(amountInput) > 0) {
+      undoBlur();
+      let mainCopy = [...accounts];
+      let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
+      accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput);
+      mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy;
+      setAccounts([...mainCopy]);
+      localStorage.setItem('accounts', JSON.stringify([...mainCopy]));
+      setEmailInput('');
+      setAmountInput('');
+      setDepositInput('');
+      setErrorMessage('');
+    } else if (!accountMatch) {
+      setErrorMessage({
+        placeholder: 'xxxxxxxxx',
+        message: 'account not found',
+      });
+    } else if (parseInt(amountInput) <= 0 || amountInput === '') {
+      setErrorMessage({
+        placeholder: 'Amount',
+        message: 'invalid amount input',
+      });
+    }
+  };
+
   function renderError(placeholder) {
-    if(errorMessage.placeholder === placeholder) {
-      return <div className='error-message'>{errorMessage.message}</div>
+    if (errorMessage.placeholder === placeholder) {
+      return <div className='error-message'>{errorMessage.message}</div>;
     }
   }
+
+  const undoBlur = () => {
+    document.querySelector('.admin-dashboard').classList.remove('blur');
+    document.querySelector('.add-account-container').classList.remove('blur');
+    document.querySelector('.table-box').classList.remove('blur');
+    document.querySelector('.transactions').classList.remove('blur');
+    document.querySelector('.deposit-page').classList.remove('show-deposit');
+    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+    document.querySelector('.transfer-page').classList.remove('show-transfer');
+    setErrorMessage('');
+    setEmailInput('');
+    setAmountInput('');
+    setDepositInput('');
+  };
 
   return (
     <div className='deposit-page'>
       <div className='deposit-container'>
-        <div className='deposit-input'>
+        <div className='deposit-nav'>
           <div className='deposit-name-text'>Account Number:</div>
-          <input className='deposit-from-input' type="number" placeholder='xxxxxxxxx' onChange={handleDepositChange} value={depositInput}></input>
+          <div onClick={undoBlur} className='close-button'>
+            <i className='fa-solid fa-circle-xmark'></i>
+          </div>
+        </div>
+        <div className='deposit-input'>
+          <input
+            className='deposit-from-input'
+            type='number'
+            placeholder='xxxxxxxxx'
+            onChange={handleDepositChange}
+            value={depositInput}
+          ></input>
           {renderError('xxxxxxxxx')}
           <input
             className='deposit-amount'

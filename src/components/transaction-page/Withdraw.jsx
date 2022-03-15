@@ -5,6 +5,9 @@ const undoBlur = () => {
   document.querySelector('.add-account-container').classList.remove('blur');
   document.querySelector('.table-box').classList.remove('blur');
   document.querySelector('.transactions').classList.remove('blur');
+  document.querySelector('.deposit-page').classList.remove('show-deposit');
+  document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+  document.querySelector('.transfer-page').classList.remove('show-transfer');
 };
 
 
@@ -31,9 +34,6 @@ function Withdraw({accounts, setAccounts}) {
     
     if (accountMatch && parseInt(amountInput) > 0 && parseInt(accountMatch.money) > parseInt(amountInput)) {
       undoBlur();
-      document.querySelector('.deposit-page').classList.remove('show-deposit');
-      document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-      document.querySelector('.transfer-page').classList.remove('show-transfer');
       let mainCopy = [...accounts]
       let accountCopy = {...mainCopy[mainCopy.indexOf(accountMatch)]}
       accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput)
@@ -61,8 +61,13 @@ function Withdraw({accounts, setAccounts}) {
   return (
     <div className='withdraw-page'>
       <div className='withdraw-container'>
+        <div className='withdraw-nav'>
+        <div className='withdraw-name-text'>Account Number:</div>
+        <div onClick={undoBlur} className='close-button'>
+            <i class='fa-solid fa-circle-xmark'></i>
+          </div>
+        </div>
         <div className='withdraw-input'>
-          <div className='withdraw-name-text'>Account Number:</div>
           <input className='withdraw-from-input' type="number" placeholder='xxxxxxxxx' onChange={handleWithdrawChange} value={withdrawInput}></input>
           {renderError('xxxxxxxxx')}
           <input
