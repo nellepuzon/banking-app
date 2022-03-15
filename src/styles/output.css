@@ -1,341 +1,3 @@
-@media all and (min-width: 1024px) {
-  * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  body {
-    background-color: #282c34;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .first-page {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .bank {
-    display: none;
-  }
-  .desktop-bank-logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .first-icon {
-    color: #61dbfb;
-    font-size: 30px;
-  }
-  .bank-name {
-    font-weight: 700;
-    color: #61dbfb;
-    font-size: 30px;
-  }
-  .bank-name > span {
-    color: #282c34;
-    background-color: #61dbfb;
-    border-radius: 0 10px 10px 0;
-    margin: 3px;
-    padding: 0 5px 0 5px;
-  }
-  .desktop-navbar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 100%;
-    height: 10%;
-    padding: 20px 30px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .desktop-navbar ul {
-    list-style-type: none;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    font-size: 18px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .desktop-navbar ul li {
-    margin: 15px 35px;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  .desktop-navbar ul li:hover {
-    color: #61dbfb;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-  }
-  .register {
-    background-color: #61dbfb;
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-weight: 600;
-    color: #282c34;
-  }
-  .register:hover {
-    -webkit-transform: scale(1, 2);
-            transform: scale(1, 2);
-    background-color: white;
-  }
-  .user-page {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    padding: 30px;
-    background-color: rgba(97, 220, 251, 0.872);
-    width: 100%;
-    max-width: 30%;
-    border-radius: 20px;
-    background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#44b1cd), to(#75d5ec));
-    background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #44b1cd, #75d5ec);
-    position: absolute;
-    top: 30%;
-    left: 65%;
-    height: 420px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .slogan {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    line-height: 1;
-    margin-top: 10px;
-  }
-  .slogan-container {
-    padding: 50px;
-    font-size: 100px;
-    width: 100%;
-    max-width: 50%;
-    color: white;
-    font-weight: 700;
-    margin: 100px 0 0 0;
-  }
-  .differently {
-    font-style: italic;
-    color: #61dbfb;
-    font-weight: 700;
-    letter-spacing: 3px;
-  }
-  .desktop-text {
-    color: white;
-    font-size: 25px;
-    letter-spacing: 2px;
-    width: 100%;
-    max-width: 40%;
-    margin: 0 50px;
-    line-height: 1.8;
-    font-weight: 500;
-  }
-  .react-text {
-    color: #61dbfb;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-  .bank-text {
-    border-radius: 0 10px 10px 0;
-    padding: 3px;
-  }
-  .desktop-options {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    width: 100%;
-    max-width: 40%;
-    margin: 40px 20px;
-  }
-  .get-started {
-    background-color: #61dbfb;
-    color: #282c34;
-    width: 220px;
-    height: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-weight: 600;
-    font-size: 25px;
-    cursor: pointer;
-  }
-  .get-started:hover {
-    background-color: white;
-  }
-  .download-app {
-    color: #61dbfb;
-    font-weight: 600;
-    font-size: 25px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    letter-spacing: 1px;
-  }
-  .download-app:hover {
-    color: white;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-    cursor: pointer;
-  }
-  .fa-download {
-    margin-left: 10px;
-  }
-  .fa-arrow-right {
-    margin-left: 10px;
-  }
-  .login {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-  }
-  .login-options {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    max-width: 60%;
-  }
-  .login > input {
-    border: none;
-    margin: 5px;
-    border-radius: 10px;
-    height: 50px;
-    width: 100%;
-    max-width: 80%;
-    background-color: white;
-    outline: none;
-    padding: 10px;
-    color: #282c34;
-    font-size: 18px;
-  }
-  .login > input::-webkit-input-placeholder {
-    font-size: 18px;
-    color: #282c34;
-    position: relative;
-  }
-  .login > input:-ms-input-placeholder {
-    font-size: 18px;
-    color: #282c34;
-    position: relative;
-  }
-  .login > input::-ms-input-placeholder {
-    font-size: 18px;
-    color: #282c34;
-    position: relative;
-  }
-  .login > input::placeholder {
-    font-size: 18px;
-    color: #282c34;
-    position: relative;
-  }
-  .login > input:focus {
-    color: #282c34;
-  }
-  .login > input:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
-  .login > input:focus:-ms-input-placeholder {
-    color: transparent;
-  }
-  .login > input:focus::-ms-input-placeholder {
-    color: transparent;
-  }
-  .login > input:focus::placeholder {
-    color: transparent;
-  }
-  .login-button {
-    border: none;
-    background-color: #282c34;
-    border-radius: 20px;
-    font-size: 15px;
-    margin: 20px 0 10px 0;
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    font-weight: 500;
-  }
-  .login-button:hover {
-    background-color: white;
-    color: #282c34;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-  }
-  .create-account,
-  .forgot-password {
-    color: #282c34;
-    font-size: 15px;
-    margin-top: 15px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .create-account:hover,
-  .forgot-password:hover {
-    color: white;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-  }
-  .show-login {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .error-message {
-    color: red;
-  }
-}
-
 @media all and (max-width: 480px) {
   * {
     margin: 0;
@@ -684,6 +346,7 @@
   overflow: auto;
   height: 2000px;
   margin-top: 20px;
+  width: 100%;
 }
 
 table {
@@ -744,10 +407,42 @@ a {
           filter: blur(4px);
 }
 
+#account-number {
+  display: none;
+}
+
+.hide-name {
+  display: none;
+}
+
+.show-account-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.edit-button,
+.delete-button {
+  color: white;
+  position: relative;
+  left: 15px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.delete-button {
+  left: 25px;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  color: #282c34;
+}
+
 .add-account-container {
   width: 100%;
   height: 100%;
-  max-height: 20%;
+  max-height: 22%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -765,6 +460,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  max-width: 90%;
 }
 
 .add-account-inputs {
@@ -1337,5 +1033,550 @@ a {
 .transfer-to-input:focus::placeholder,
 .transfer-from-input:focus::placeholder {
   color: transparent;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  body {
+    background-color: #282c34;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .first-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .bank {
+    display: none;
+  }
+  .desktop-bank-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .first-icon {
+    color: #61dbfb;
+    font-size: 30px;
+  }
+  .bank-name {
+    font-weight: 700;
+    color: #61dbfb;
+    font-size: 30px;
+  }
+  .bank-name > span {
+    color: #282c34;
+    background-color: #61dbfb;
+    border-radius: 0 10px 10px 0;
+    margin: 3px;
+    padding: 0 5px 0 5px;
+  }
+  .desktop-navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    padding: 20px 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .desktop-navbar ul {
+    list-style-type: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 18px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .desktop-navbar ul li {
+    margin: 15px 35px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .desktop-navbar ul li:hover {
+    color: #61dbfb;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .register {
+    background-color: #61dbfb;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #282c34;
+  }
+  .register:hover {
+    -webkit-transform: scale(1, 2);
+            transform: scale(1, 2);
+    background-color: white;
+  }
+  .user-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 30px;
+    background-color: rgba(97, 220, 251, 0.872);
+    width: 100%;
+    max-width: 30%;
+    border-radius: 20px;
+    background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#44b1cd), to(#75d5ec));
+    background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #44b1cd, #75d5ec);
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    height: 420px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .slogan {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    line-height: 1;
+    margin-top: 10px;
+  }
+  .slogan-container {
+    padding: 50px;
+    font-size: 100px;
+    width: 100%;
+    max-width: 60%;
+    color: white;
+    font-weight: 700;
+    margin: 100px 0 0 0;
+  }
+  .differently {
+    font-style: italic;
+    color: #61dbfb;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+  .desktop-text {
+    color: white;
+    font-size: 25px;
+    letter-spacing: 2px;
+    width: 100%;
+    max-width: 50%;
+    margin: 0 50px;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  .react-text {
+    color: #61dbfb;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .bank-text {
+    border-radius: 0 10px 10px 0;
+    padding: 3px;
+  }
+  .desktop-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100%;
+    max-width: 40%;
+    margin: 40px 20px;
+  }
+  .get-started {
+    background-color: #61dbfb;
+    color: #282c34;
+    width: 220px;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-weight: 600;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .get-started:hover {
+    background-color: white;
+  }
+  .download-app {
+    color: #61dbfb;
+    font-weight: 600;
+    font-size: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    letter-spacing: 1px;
+  }
+  .download-app:hover {
+    color: white;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  .fa-download {
+    margin-left: 10px;
+  }
+  .fa-arrow-right {
+    margin-left: 10px;
+  }
+  .login {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .login-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 70%;
+  }
+  .login > input {
+    border: none;
+    margin: 5px;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    max-width: 80%;
+    background-color: white;
+    outline: none;
+    padding: 10px;
+    color: #282c34;
+    font-size: 18px;
+  }
+  .login > input::-webkit-input-placeholder {
+    font-size: 18px;
+    color: #282c34;
+    position: relative;
+  }
+  .login > input:-ms-input-placeholder {
+    font-size: 18px;
+    color: #282c34;
+    position: relative;
+  }
+  .login > input::-ms-input-placeholder {
+    font-size: 18px;
+    color: #282c34;
+    position: relative;
+  }
+  .login > input::placeholder {
+    font-size: 18px;
+    color: #282c34;
+    position: relative;
+  }
+  .login > input:focus {
+    color: #282c34;
+  }
+  .login > input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .login > input:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+  .login > input:focus::-ms-input-placeholder {
+    color: transparent;
+  }
+  .login > input:focus::placeholder {
+    color: transparent;
+  }
+  .login-button {
+    border: none;
+    background-color: #282c34;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 20px 0 10px 0;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .login-button:hover {
+    background-color: white;
+    color: #282c34;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .create-account,
+  .forgot-password {
+    color: #282c34;
+    font-size: 15px;
+    margin-top: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .create-account:hover,
+  .forgot-password:hover {
+    color: white;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .show-login {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .error-message {
+    color: red;
+  }
+  .admin-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .admin-dashboard {
+    width: 100%;
+    height: 100%;
+    max-height: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 95%;
+    margin: 0 auto;
+    height: 40px;
+    font-size: 25px;
+  }
+  .dashboard-icon {
+    color: white;
+    margin: 0 20px;
+  }
+  .fa-magnifying-glass {
+    display: none;
+  }
+  .search {
+    display: none;
+  }
+  .table-box {
+    width: 100%;
+    overflow: auto;
+    height: 3000px;
+    margin-top: 20px;
+  }
+  table {
+    width: 100%;
+    max-width: 90%;
+    height: 100%;
+    max-height: 20%;
+    background-color: rgba(97, 219, 251, 0.4);
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #282c34;
+    margin: 0 auto;
+  }
+  .add-account-button {
+    width: 100%;
+    max-width: 15%;
+  }
+  th {
+    font-size: 25px;
+  }
+  tr {
+    font-size: 25px;
+  }
+  .deposit-page,
+  .withdraw-page,
+  .transfer-page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    max-width: 95%;
+    border-radius: 20px;
+  }
+  .deposit-page .deposit-container,
+  .deposit-page .withdraw-container,
+  .deposit-page .transfer-container,
+  .withdraw-page .deposit-container,
+  .withdraw-page .withdraw-container,
+  .withdraw-page .transfer-container,
+  .transfer-page .deposit-container,
+  .transfer-page .withdraw-container,
+  .transfer-page .transfer-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #61dbfb;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+    height: 400px;
+    background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#44b1cd), to(#75d5ec));
+    background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #44b1cd, #75d5ec);
+  }
+  .deposit-nav,
+  .withdraw-nav,
+  .transfer-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 20px 30px 0 30px;
+  }
+  .deposit-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+  }
+  .deposit-amount,
+  .deposit-from-input,
+  .withdraw-amount,
+  .withdraw-from-input,
+  .transfer-from-input,
+  .transfer-to-input,
+  .transfer-amount,
+  .input-receipt {
+    width: 100%;
+    height: 40%;
+    outline: none;
+    border: none;
+    background-color: #282c34;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+  .show-deposit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .deposit-name-text,
+  .withdraw-name-text,
+  .transfer-from-text,
+  .transfer-to-text,
+  .send-receipt {
+    padding-left: 5px;
+    color: #282c34;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  .send-receipt {
+    margin-top: 15px;
+  }
+  .deposit-button,
+  .withdraw-button,
+  .transfer-button {
+    width: 100%;
+    max-width: 20%;
+    margin: 10px auto 0 auto;
+    color: white;
+    height: 35%;
+    font-size: 18px;
+  }
+  .error-message {
+    position: relative;
+    bottom: 2%;
+    left: 1%;
+    font-weight: 500;
+  }
+  .deposit-page,
+  .withdraw-page,
+  .transfer-page {
+    display: none;
+  }
+  .show-deposit,
+  .show-withdraw,
+  .show-transfer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .hide-transaction {
+    display: none;
+  }
 }
 /*# sourceMappingURL=output.css.map */

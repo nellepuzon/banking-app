@@ -48,6 +48,8 @@ function AddAccount({setAccounts, accounts}) {
             setErrorMessage({message:"fill out necessary information"})
         }
     }
+
+
     const renderError = () => {
         if(errorMessage) {
             return <div className='error-message'>{errorMessage.message}</div>

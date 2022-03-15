@@ -10,16 +10,29 @@ const blurPage = () => {
 
 const clickDeposit = () => {
   blurPage();
-  document.querySelector('.deposit-page').classList.add("show-deposit")
+  document.querySelector('.deposit-page').classList.toggle("show-deposit")
+  // document.querySelector('.withdraw-page').classList.add('hide-transaction');
+  //   document.querySelector('.transfer-page').classList.add('hide-transaction');
+  //   document.querySelector('.withdraw-page').classList.remove('hide-transaction');
+  //   document.querySelector('.transfer-page').classList.remove('hide-transaction');
 }
 
 const clickWithdraw = () => {
   blurPage();
-  document.querySelector('.withdraw-page').classList.add('show-withdraw')
+  document.querySelector('.withdraw-page').classList.toggle('show-withdraw')
+  // document.querySelector('.deposit-page').classList.add('hide-transaction');
+  // document.querySelector('.transfer-page').classList.add('hide-transaction');
+  // document.querySelector('.deposit-page').classList.remove('hide-transaction');
+  // document.querySelector('.transfer-page').classList.remove('hide-transaction');
 }
+
 const clickTransfer = () => {
   blurPage();
-  document.querySelector('.transfer-page').classList.add('show-transfer');
+  document.querySelector('.transfer-page').classList.toggle('show-transfer');
+  // document.querySelector('.deposit-page').classList.add('hide-transaction');
+  // document.querySelector('.withdraw-page').classList.add('hide-transaction');
+  // document.querySelector('.deposit-page').classList.remove('hide-transaction');
+  // document.querySelector('.withdraw-page').classList.remove('hide-transaction');
 }
 
 function Transactions() {

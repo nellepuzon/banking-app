@@ -6,6 +6,7 @@ function Table({accounts}) {
       <div className="table-box">
     <table>
       <tr>
+        <th>Account Number</th>
         <th>Name</th>
         <th>Balance</th>
       </tr>
