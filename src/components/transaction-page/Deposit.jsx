@@ -26,9 +26,8 @@ function Deposit({accounts, setAccounts}) {
   }
   
   const depositMoney = () => {
-    const accountMatch = accounts.find(element => element.accountNumber === depositInput)
-    
-      if (accountMatch && amountInput > 0) {
+    const accountMatch = accounts.find((element) => element.accountNumber === parseInt(depositInput))
+      if (accountMatch && parseInt(amountInput) > 0) {
         undoBlur();
         document.querySelector('.deposit-page').classList.remove('show-deposit');
         document.querySelector('.withdraw-page').classList.remove('show-withdraw');
@@ -38,13 +37,14 @@ function Deposit({accounts, setAccounts}) {
         accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput)
         mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy
         setAccounts([...mainCopy])
+        localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
         setEmailInput("")
         setAmountInput("")
         setDepositInput("")
         setErrorMessage("")
       } else if (!accountMatch) {
         setErrorMessage({placeholder: 'xxxxxxxxx', message: "account not found"})
-      } else if (amountInput <= 0 || amountInput === "") {
+      } else if (parseInt(amountInput) <= 0 || amountInput === "") {
         setErrorMessage({placeholder: "Amount",message: "invalid amount input"})
       }
   };

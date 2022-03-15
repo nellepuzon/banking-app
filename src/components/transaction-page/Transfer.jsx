@@ -32,14 +32,10 @@ function Transfer({accounts, setAccounts}) {
   }
 
   const transferMoney = () => {
-    // undoBlur();
-    // document.querySelector('.deposit-page').classList.remove('show-deposit');
-    // document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-    // document.querySelector('.transfer-page').classList.remove('show-transfer');
     const senderMatch = accounts.find((element) => element.fullName === senderInput)
     const recipientMatch = accounts.find((element) => element.fullName === recipientInput)
 
-    if(senderMatch && recipientMatch && senderMatch.money > amountInput && amountInput > 0) {
+    if(senderMatch && recipientMatch && parseInt(senderMatch.money) > parseInt(amountInput) && parseInt(amountInput) > 0) {
       undoBlur();
       document.querySelector('.deposit-page').classList.remove('show-deposit');
       document.querySelector('.withdraw-page').classList.remove('show-withdraw');
@@ -47,11 +43,12 @@ function Transfer({accounts, setAccounts}) {
         let mainCopy = [...accounts]
         let senderCopy = {...mainCopy[mainCopy.indexOf(senderMatch)]}
         let recipientCopy = {...mainCopy[mainCopy.indexOf(recipientMatch)]}
-        senderCopy.money -= amountInput
+        senderCopy.money = parseInt(senderCopy.money) - parseInt(amountInput)
         recipientCopy.money = parseInt(recipientCopy.money) + parseInt(amountInput)
         mainCopy[mainCopy.indexOf(senderMatch)] = senderCopy
         mainCopy[mainCopy.indexOf(recipientMatch)] = recipientCopy
         setAccounts([...mainCopy])
+        localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
         setErrorMessage("")
         setSenderInput("")
         setRecipientInput("")
@@ -61,9 +58,9 @@ function Transfer({accounts, setAccounts}) {
         setErrorMessage({message: 'sender account not found'})
     } else if (!recipientInput && senderMatch && amountInput !== "") {
       setErrorMessage({message: 'recipient account not found'})
-    } else if (amountInput <= 0) {
+    } else if (parseInt(amountInput) <= 0) {
       setErrorMessage({message: 'invalid amount input'})
-    } else if (senderMatch.money < amountInput && recipientMatch) {
+    } else if (parseInt(senderMatch.money) < parseInt(amountInput) && recipientMatch) {
       setErrorMessage({message: 'not enough balance'})
     } else if (!senderMatch && !recipientMatch && amountInput === ""){
       setErrorMessage({message: 'fill out all necessary information'})
