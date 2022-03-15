@@ -1,3 +1,5 @@
+@media all and (max-width: 480px) {
+
 * {
     margin: 0;
     padding: 0;
@@ -25,3 +27,8 @@
   .hide-first-page {
     display: none;
   }
+
+  .desktop-login {
+    display: none;
+  }
+}
