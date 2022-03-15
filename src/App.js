@@ -3,6 +3,7 @@ import LoginPage from './components/LoginPage';
 import { useEffect, useState } from 'react';
 import AdminPage from './components/AdminPage';
 import AddAccount from './components/admin-page/AddAccount';
+import Table from './components/admin-page/Table';
 
 
 function App() {
@@ -12,12 +13,14 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const test = document.querySelector('.first-page')
   const showPage = () => {
-    if (isAdmin === true) {
+    if (isAdmin === true && loggedIn === true) {
       return <AdminPage 
       accounts={accounts}
       setAccounts={setAccounts}
+      setIsAdmin={setIsAdmin}
+      setLoggedIn={setLoggedIn}
       />
-    } else if(isAdmin === false) {
+    } else if(isAdmin === false && loggedIn === false) {
       return  <LoginPage
       isAdmin={isAdmin}
       setIsAdmin={setIsAdmin}
@@ -39,7 +42,7 @@ function App() {
         const test = JSON.parse(localStorage.getItem("accounts"))
         setAccounts(test)
       }
-  },[App, AddAccount]);
+  },[App]);
   
   return (
     <div className='App'>

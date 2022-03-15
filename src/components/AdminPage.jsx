@@ -11,8 +11,8 @@ function AdminPage(props) {
     const [searchInput, setSearchInput] = useState("")
     return (
         <div className="admin-page">
-            <NavBar searchInput={searchInput} setSearchInput={setSearchInput}/>
-            <Table accounts={props.accounts} searchInput={searchInput}/>
+            <NavBar searchInput={searchInput} setSearchInput={setSearchInput} setIsAdmin={props.setIsAdmin} setLoggedIn={props.setLoggedIn}/>
+            <Table accounts={props.accounts} searchInput={searchInput} setAccounts={props.setAccounts}/>
             <AddAccount 
             setAccounts={props.setAccounts}
             accounts={props.accounts}/>

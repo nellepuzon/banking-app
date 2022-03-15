@@ -1,11 +1,17 @@
 import React from 'react';
 
 
-function NavBar({searchInput, setSearchInput}) {
+function NavBar({searchInput, setSearchInput, setIsAdmin, setLoggedIn}) {
 
   const handleChange = (e) => {
     setSearchInput(e.target.value)
   }
+
+  const logOut = () => {
+    setIsAdmin(false)
+    setLoggedIn(false)
+  }
+
   return (
     <div className='admin-dashboard'>
       <div className='nav-bar'>
@@ -13,7 +19,7 @@ function NavBar({searchInput, setSearchInput}) {
         <div className='sort-icon'>
           <i className='fa-solid fa-arrow-up-a-z dashboard-icon'></i>
           <i className='fa-solid fa-arrow-down-a-z dashboard-icon'></i>
-          <i className='fa-solid fa-right-from-bracket dashboard-icon'></i>
+          <i className='fa-solid fa-right-from-bracket dashboard-icon' onClick={logOut}></i>
         </div>
       </div>
       <i className='fa-solid fa-magnifying-glass'></i>
