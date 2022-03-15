@@ -27,26 +27,27 @@ function Withdraw({accounts, setAccounts}) {
   }
   
   const withdrawMoney = () => {
-    const accountMatch = accounts.find(element => element.accountNumber === withdrawInput)
+    const accountMatch = accounts.find(element => element.accountNumber === parseInt(withdrawInput))
     
-    if (accountMatch && amountInput > 0 && accountMatch.money > amountInput) {
+    if (accountMatch && parseInt(amountInput) > 0 && parseInt(accountMatch.money) > parseInt(amountInput)) {
       undoBlur();
       document.querySelector('.deposit-page').classList.remove('show-deposit');
       document.querySelector('.withdraw-page').classList.remove('show-withdraw');
       document.querySelector('.transfer-page').classList.remove('show-transfer');
       let mainCopy = [...accounts]
       let accountCopy = {...mainCopy[mainCopy.indexOf(accountMatch)]}
-      accountCopy.money -= amountInput
+      accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput)
       mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy
       setAccounts([...mainCopy])
+      localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
       setEmailInput("")
       setAmountInput("")
       setWithdrawInput("")
     } else if (!accountMatch) {
       setErrorMessage({placeholder: 'xxxxxxxxx', message: "account not found"})
-    } else if (amountInput <= 0 || amountInput === "") {
+    } else if (parseInt(amountInput) <= 0 || amountInput === "") {
       setErrorMessage({placeholder: "Amount",message: "invalid amount input"})
-    } else if ( amountInput > accountMatch.money) {
+    } else if ( parseInt(amountInput) > parseInt(accountMatch.money)) {
       setErrorMessage({placeholder: "Amount", message: "not enough balance"})
     }
   }

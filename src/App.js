@@ -1,18 +1,13 @@
 import '../src/styles/output.css';
 import LoginPage from './components/LoginPage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AdminPage from './components/AdminPage';
-import Transfer from './components/transaction-page/Transfer';
+import AddAccount from './components/admin-page/AddAccount';
 
 
 function App() {
-  const [accounts, setAccounts] = useState([
-    { userName: 'admin', password: 'admin123', type: 'admin' },
-    { userName: 'user', password: 'user', type: 'user', fullName:'Puzon, Junelle', money: 15620, accountNumber: "111111111" },
-    { userName: 'user1', password: 'user1', type: 'user', fullName:'Malunes, Eglecerio III', money: 6231, accountNumber: "012345678" },
-    { userName: 'user2', password: 'user2', type: 'user', fullName:'Go, Francis',money: 9121, accountNumber: "123456789"},
-    { userName: 'user3', password: 'user3', type: 'user', fullName:'Turingan, Jao',money: 35132, accountNumber: "000000000"},
-  ]);
+  const [adminLogIn, setAdminLogIn] = useState({ userName: 'admin', password: 'admin123', type: 'admin' })
+  const [accounts, setAccounts] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const test = document.querySelector('.first-page')
@@ -29,18 +24,30 @@ function App() {
       accounts={accounts}
       loggedIn={loggedIn}
       setLoggedIn={setLoggedIn}
-    />
-
+      />
+      
     }
-
+    
   };
-
+  
+  useEffect(()=>{
+    if (localStorage.getItem("accounts") === null) {
+        localStorage.setItem("accounts", JSON.stringify([adminLogIn]))
+        const test = JSON.parse(localStorage.getItem("accounts"))
+        setAccounts(test)
+      } else {
+        const test = JSON.parse(localStorage.getItem("accounts"))
+        setAccounts(test)
+      }
+  },[App, AddAccount]);
+  
   return (
     <div className='App'>
       {showPage()};
     </div>
     
-  );
-}
+    );
+  }
 
-export default App;
+  export default App;
+  
