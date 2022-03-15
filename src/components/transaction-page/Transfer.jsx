@@ -57,15 +57,15 @@ function Transfer({accounts, setAccounts}) {
         setRecipientInput("")
         setAmountInput("")
         setEmailInput("")
-    } else if (!senderMatch) {
+    } else if (!senderMatch && recipientMatch && amountInput !== "") {
         setErrorMessage({message: 'sender account not found'})
-    } else if (!recipientInput) {
+    } else if (!recipientInput && senderMatch && amountInput !== "") {
       setErrorMessage({message: 'recipient account not found'})
     } else if (amountInput <= 0) {
       setErrorMessage({message: 'invalid amount input'})
-    } else if (senderMatch.money < amountInput) {
+    } else if (senderMatch.money < amountInput && recipientMatch) {
       setErrorMessage({message: 'not enough balance'})
-    } else {
+    } else if (!senderMatch && !recipientMatch && amountInput === ""){
       setErrorMessage({message: 'fill out all necessary information'})
     }
   }
