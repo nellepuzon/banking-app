@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import AdminPage from './components/AdminPage';
 import AddAccount from './components/admin-page/AddAccount';
 import Table from './components/admin-page/Table';
+import UserPage from './components/UserPage';
 
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
       loggedIn={loggedIn}
       setLoggedIn={setLoggedIn}
       />
+    } else if (isAdmin === false && loggedIn === true) {
+      return <UserPage
+      setIsAdmin={setIsAdmin}
+      setLoggedIn={setLoggedIn}/>
     }
   };
   
@@ -42,6 +47,9 @@ function App() {
       }
   },[App]);
   
+
+
+
   return (
     <div className='App'>
       {showPage()};

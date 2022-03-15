@@ -38,8 +38,4 @@ function DesktopLogin() {
   );
 }
 
-function Slogan() {
-    
-}
-
 export default DesktopLogin;

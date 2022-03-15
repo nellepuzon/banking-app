@@ -1,4 +1,4 @@
-@media all and (min-width: 1024px) and (max-width: 1440px) {
+@media all and (min-width: 1024px){
   * {
     margin: 0;
     padding: 0;
@@ -325,8 +325,12 @@
   .fa-magnifying-glass {
     display: none;
   }
+
   .search {
     display: flex;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 90%;
   }
 
   // table
@@ -345,7 +349,7 @@
     max-height: 20%;
     background-color: rgba(97, 219, 251, 0.4);
     font-size: 18px;
-    padding: 10px;
+    padding: 60px 10px 10px 10px;
     border-radius: 10px;
     font-weight: 500;
     color: #282c34;
@@ -357,12 +361,33 @@
     max-width: 15%;
   }
 
-  th {
+  .table-header-container {
+    display: flex;
+    width: 100%;
+    max-width: 75%;
+    position: absolute;
+    left: 12%;
+    color:  white;
+    top: 27%;
+    font-weight: 600;
+  }
+
+  .table-header {
     font-size: 25px;
+  }
+
+  .table-header:first-child {
+    margin-right: 400px;
+  }
+
+  .table-header:nth-child(2) {
+    margin-right: 380px;
   }
 
   tr {
     font-size: 25px;
+    width: 100%;
+    height: 10px;
   }
 
   //transactions
