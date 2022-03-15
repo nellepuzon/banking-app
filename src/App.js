@@ -7,10 +7,11 @@ import Transfer from './components/transaction-page/Transfer';
 
 function App() {
   const [accounts, setAccounts] = useState([
-    { userName: 'admin', password: 'admin123', type: 'admin', fullName:'Puzon, Junelle Master', money:1 },
-    { userName: 'user1', password: 'user1', type: 'user', fullName:'Alipin', money: 654231 },
-    { userName: 'user2', password: 'user2', type: 'user', fullName:'Go, Francis',money: 35121 },
-    { userName: 'user3', password: 'user3', type: 'user', fullName:'Turingan, Jao',money: 35132 },
+    { userName: 'admin', password: 'admin123', type: 'admin' },
+    { userName: 'user', password: 'user', type: 'user', fullName:'Puzon, Junelle', money: 15620, accountNumber: "111111111" },
+    { userName: 'user1', password: 'user1', type: 'user', fullName:'Malunes, Eglecerio III', money: 6231, accountNumber: "012345678" },
+    { userName: 'user2', password: 'user2', type: 'user', fullName:'Go, Francis',money: 9121, accountNumber: "123456789"},
+    { userName: 'user3', password: 'user3', type: 'user', fullName:'Turingan, Jao',money: 35132, accountNumber: "000000000"},
   ]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);

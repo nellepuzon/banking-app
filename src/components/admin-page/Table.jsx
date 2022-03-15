@@ -10,7 +10,9 @@ function Table({accounts}) {
         <th>Balance</th>
       </tr>
       {accounts.map(account => {
-        return <TableRow account={account}/>
+        if (account.type !== "admin") {
+          return <TableRow account={account}/>
+        }
       })}
     </table>
     </div>
