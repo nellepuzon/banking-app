@@ -37,7 +37,6 @@ function AddAccount({setAccounts, accounts}) {
             setErrorMessage({message:"account already exists"})
         } else if (fullName !== '' && balance !== '' && !userNameMatch && !fullNameMatch) {
             let test = Math.floor(Math.random()*100000000)
-            console.log(test)
             setAccounts([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance, accountNumber: test }])
             localStorage.setItem("accounts", JSON.stringify([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance, accountNumber: test }]))
             setFullName('');

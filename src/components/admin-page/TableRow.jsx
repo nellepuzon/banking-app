@@ -1,7 +1,13 @@
 import React from "react";
 
 
-function TableRow({account}) {
+function TableRow({account, setAccounts, accounts}) {
+  const handleDelete = (id) => {
+    const newUsers = accounts.filter((user) => user.accountNumber !== id)
+    console.log(newUsers)
+    setAccounts(newUsers)
+    localStorage.setItem("accounts", JSON.stringify([...newUsers]))
+  }
     return (
     <tr>
       <td>
@@ -15,8 +21,8 @@ function TableRow({account}) {
         </td>
         <div className='edit-delete'>
         <i className="fa-solid fa-pen-to-square edit-button"></i>
-        <i className="fa-solid fa-trash-can delete-button"></i></div>
- </tr>
+        <i className="fa-solid fa-trash-can delete-button" onClick={() =>{handleDelete(account.accountNumber)}}></i></div>
+    </tr>
     )
 }
 

@@ -1,15 +1,18 @@
 import React from 'react';
 import TableRow from './TableRow';
 
-function Table({accounts, searchInput}) {
+function Table({accounts, searchInput, setAccounts}) {
   return (
       <div className="table-box">
     <table>
-      <tr>
-        <th>Account Number</th>
-        <th>Name</th>
-        <th>Balance</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>Account Number</th>
+          <th>Name</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
       {accounts.filter((item) => {
         if (searchInput === "") {
           return item
@@ -18,9 +21,10 @@ function Table({accounts, searchInput}) {
         }
       }).map(account => {
         if (account.type !== "admin") {
-          return <TableRow account={account}/>
+          return <TableRow key={account.accountNumber} account={account} setAccounts={setAccounts} accounts={accounts}/>
         }
       })}
+      </tbody>
     </table>
     </div>
   );

@@ -2,54 +2,47 @@
   * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
+
   body {
     background-color: #282c34;
     width: 100%;
     height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     overflow-x: hidden;
     overflow-y: scroll;
   }
+
   .first-page {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
+
   .hide-first-page {
     display: none;
   }
+
   .desktop-login {
     display: none;
   }
 }
-
 @media all and (max-width: 480px) {
   .first-icon {
     font-size: 50px;
     color: #61dbfb;
     padding-right: 3px;
   }
+
   .bank-name {
     font-size: 50px;
     font-weight: 700;
     color: #61dbfb;
   }
+
   .bank-name > span {
     color: #282c34;
     background-color: #61dbfb;
@@ -57,29 +50,19 @@
     margin: 3px;
     padding: 0 5px 0 5px;
   }
+
   .bank {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     position: absolute;
     left: 50%;
     top: 40%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 }
-
 .dropdown-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 100%;
 }
 
@@ -104,10 +87,7 @@
   position: absolute;
   background-color: rgba(97, 219, 251, 0.3);
   z-index: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   text-align: center;
   width: 100%;
   font-size: 18px;
@@ -127,8 +107,6 @@
 }
 
 .show {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -148,28 +126,22 @@
 
 @media all and (max-width: 480px) {
   .user-page {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-top: 70%;
     width: 100%;
   }
+
   .user-page {
     margin-top: 130%;
   }
+
   .login {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
   }
+
   .login > input {
     border: none;
     margin: 5px;
@@ -182,41 +154,21 @@
     color: white;
     font-size: 18px;
   }
-  .login > input::-webkit-input-placeholder {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.8);
-    position: relative;
-  }
-  .login > input:-ms-input-placeholder {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.8);
-    position: relative;
-  }
-  .login > input::-ms-input-placeholder {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.8);
-    position: relative;
-  }
+
   .login > input::placeholder {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.8);
     position: relative;
   }
+
   .login > input:focus {
     color: white;
   }
-  .login > input:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
-  .login > input:focus:-ms-input-placeholder {
-    color: transparent;
-  }
-  .login > input:focus::-ms-input-placeholder {
-    color: transparent;
-  }
+
   .login > input:focus::placeholder {
     color: transparent;
   }
+
   .login-button {
     border: none;
     background-color: rgba(146, 150, 151, 0.3);
@@ -227,44 +179,36 @@
     color: white;
     cursor: pointer;
   }
+
   .create-account,
-  .forgot-password,
-  .back-button {
+.forgot-password,
+.back-button {
     color: rgba(255, 255, 255, 0.8);
     font-size: 15px;
     margin-top: 15px;
     font-weight: 600;
     cursor: pointer;
   }
+
   .forgot-password {
     margin-top: 30px;
   }
+
   .show-login {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
+
   .error-message {
     color: red;
   }
 }
-
 .admin-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   max-width: 95%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
@@ -272,28 +216,16 @@
 
 .admin-dashboard {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 50px 30px 0 30px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .nav-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   max-width: 95%;
 }
 
@@ -338,8 +270,7 @@
 }
 
 .blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  filter: blur(4px);
 }
 
 .table-box {
@@ -377,17 +308,10 @@ th {
 
 .table-options {
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 20px;
   color: #61dbfb;
   font-size: 18px;
@@ -403,8 +327,7 @@ a {
 }
 
 .blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  filter: blur(4px);
 }
 
 #account-number {
@@ -416,8 +339,6 @@ a {
 }
 
 .show-account-number {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -443,29 +364,18 @@ a {
   width: 100%;
   height: 100%;
   max-height: 22%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background-color: rgba(97, 219, 251, 0.4);
   padding: 70px 0 50px 0;
   margin-top: 50px;
   border-radius: 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   max-width: 90%;
 }
 
 .add-account-inputs {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   max-width: 94%;
@@ -513,40 +423,10 @@ a {
   background-color: white;
 }
 
-.add-account-inputs > input::-webkit-input-placeholder {
-  color: #545760;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.add-account-inputs > input:-ms-input-placeholder {
-  color: #545760;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.add-account-inputs > input::-ms-input-placeholder {
-  color: #545760;
-  font-size: 15px;
-  font-weight: 500;
-}
-
 .add-account-inputs > input::placeholder {
   color: #545760;
   font-size: 15px;
   font-weight: 500;
-}
-
-.add-account-inputs > input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.add-account-inputs > input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.add-account-inputs > input:focus::-ms-input-placeholder {
-  color: transparent;
 }
 
 .add-account-inputs > input:focus::placeholder {
@@ -554,24 +434,17 @@ a {
 }
 
 .blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  filter: blur(4px);
 }
 
 .transactions {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   width: 100%;
   height: 100%;
   max-height: 40%;
   margin-top: 40px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   color: #61dbfb;
 }
 
@@ -581,21 +454,12 @@ a {
 }
 
 .trans {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   max-width: 10%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .text {
@@ -607,8 +471,7 @@ a {
 }
 
 .blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  filter: blur(4px);
 }
 
 .deposit-page {
@@ -620,16 +483,10 @@ a {
   max-width: 95%;
   border-radius: 20px;
 }
-
 .deposit-page .deposit-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: #61dbfb;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   height: 340px;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -639,16 +496,9 @@ a {
 }
 
 .deposit-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   padding: 25px;
@@ -668,24 +518,6 @@ a {
   padding-left: 10px;
 }
 
-.deposit-amount::-webkit-input-placeholder,
-.input-receipt::-webkit-input-placeholder,
-.deposit-from-input::-webkit-input-placeholder {
-  color: white;
-}
-
-.deposit-amount:-ms-input-placeholder,
-.input-receipt:-ms-input-placeholder,
-.deposit-from-input:-ms-input-placeholder {
-  color: white;
-}
-
-.deposit-amount::-ms-input-placeholder,
-.input-receipt::-ms-input-placeholder,
-.deposit-from-input::-ms-input-placeholder {
-  color: white;
-}
-
 .deposit-amount::placeholder,
 .input-receipt::placeholder,
 .deposit-from-input::placeholder {
@@ -693,8 +525,6 @@ a {
 }
 
 .show-deposit {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -725,24 +555,6 @@ a {
   color: #282c34;
 }
 
-.deposit-amount:focus::-webkit-input-placeholder,
-.input-receipt:focus::-webkit-input-placeholder,
-.deposit-from-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.deposit-amount:focus:-ms-input-placeholder,
-.input-receipt:focus:-ms-input-placeholder,
-.deposit-from-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.deposit-amount:focus::-ms-input-placeholder,
-.input-receipt:focus::-ms-input-placeholder,
-.deposit-from-input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
 .deposit-amount:focus::placeholder,
 .input-receipt:focus::placeholder,
 .deposit-from-input:focus::placeholder {
@@ -758,16 +570,10 @@ a {
   max-width: 95%;
   border-radius: 20px;
 }
-
 .withdraw-page .withdraw-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: #61dbfb;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   height: 340px;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -777,16 +583,9 @@ a {
 }
 
 .withdraw-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   padding: 25px;
@@ -806,24 +605,6 @@ a {
   padding-left: 10px;
 }
 
-.withdraw-amount::-webkit-input-placeholder,
-.input-receipt::-webkit-input-placeholder,
-.withdraw-from-input::-webkit-input-placeholder {
-  color: white;
-}
-
-.withdraw-amount:-ms-input-placeholder,
-.input-receipt:-ms-input-placeholder,
-.withdraw-from-input:-ms-input-placeholder {
-  color: white;
-}
-
-.withdraw-amount::-ms-input-placeholder,
-.input-receipt::-ms-input-placeholder,
-.withdraw-from-input::-ms-input-placeholder {
-  color: white;
-}
-
 .withdraw-amount::placeholder,
 .input-receipt::placeholder,
 .withdraw-from-input::placeholder {
@@ -831,8 +612,6 @@ a {
 }
 
 .show-withdraw {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -863,24 +642,6 @@ a {
   color: #282c34;
 }
 
-.withdraw-amount:focus::-webkit-input-placeholder,
-.input-receipt:focus::-webkit-input-placeholder,
-.withdraw-from-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.withdraw-amount:focus:-ms-input-placeholder,
-.input-receipt:focus:-ms-input-placeholder,
-.withdraw-from-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.withdraw-amount:focus::-ms-input-placeholder,
-.input-receipt:focus::-ms-input-placeholder,
-.withdraw-from-input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
 .withdraw-amount:focus::placeholder,
 .input-receipt:focus::placeholder,
 .withdraw-from-input:focus::placeholder {
@@ -896,16 +657,10 @@ a {
   max-width: 95%;
   border-radius: 20px;
 }
-
 .transfer-page .transfer-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: #61dbfb;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   height: 420px;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -915,16 +670,9 @@ a {
 }
 
 .transfer-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   padding: 25px;
@@ -945,27 +693,6 @@ a {
   padding-left: 10px;
 }
 
-.transfer-amount::-webkit-input-placeholder,
-.input-receipt::-webkit-input-placeholder,
-.transfer-to-input::-webkit-input-placeholder,
-.transfer-from-input::-webkit-input-placeholder {
-  color: white;
-}
-
-.transfer-amount:-ms-input-placeholder,
-.input-receipt:-ms-input-placeholder,
-.transfer-to-input:-ms-input-placeholder,
-.transfer-from-input:-ms-input-placeholder {
-  color: white;
-}
-
-.transfer-amount::-ms-input-placeholder,
-.input-receipt::-ms-input-placeholder,
-.transfer-to-input::-ms-input-placeholder,
-.transfer-from-input::-ms-input-placeholder {
-  color: white;
-}
-
 .transfer-amount::placeholder,
 .input-receipt::placeholder,
 .transfer-to-input::placeholder,
@@ -974,8 +701,6 @@ a {
 }
 
 .show-transfer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1007,27 +732,6 @@ a {
   color: #282c34;
 }
 
-.transfer-amount:focus::-webkit-input-placeholder,
-.input-receipt:focus::-webkit-input-placeholder,
-.transfer-to-input:focus::-webkit-input-placeholder,
-.transfer-from-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.transfer-amount:focus:-ms-input-placeholder,
-.input-receipt:focus:-ms-input-placeholder,
-.transfer-to-input:focus:-ms-input-placeholder,
-.transfer-from-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.transfer-amount:focus::-ms-input-placeholder,
-.input-receipt:focus::-ms-input-placeholder,
-.transfer-to-input:focus::-ms-input-placeholder,
-.transfer-from-input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
 .transfer-amount:focus::placeholder,
 .input-receipt:focus::placeholder,
 .transfer-to-input:focus::placeholder,
@@ -1039,49 +743,43 @@ a {
   * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
+
   body {
     background-color: #282c34;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
+
   .first-page {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
+
   .bank {
     display: none;
   }
+
   .desktop-bank-logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
+
   .first-icon {
     color: #61dbfb;
     font-size: 30px;
   }
+
   .bank-name {
     font-weight: 700;
     color: #61dbfb;
     font-size: 30px;
   }
+
   .bank-name > span {
     color: #282c34;
     background-color: #61dbfb;
@@ -1089,41 +787,35 @@ a {
     margin: 3px;
     padding: 0 5px 0 5px;
   }
+
   .desktop-navbar {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     width: 100%;
     height: 10%;
     padding: 20px 30px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
+
   .desktop-navbar ul {
     list-style-type: none;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     font-size: 18px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
+
   .desktop-navbar ul li {
     margin: 15px 35px;
     color: white;
     font-weight: 500;
     cursor: pointer;
   }
+
   .desktop-navbar ul li:hover {
     color: #61dbfb;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
   }
+
   .register {
     background-color: #61dbfb;
     padding: 10px 15px;
@@ -1131,44 +823,35 @@ a {
     font-weight: 600;
     color: #282c34;
   }
+
   .register:hover {
-    -webkit-transform: scale(1, 2);
-            transform: scale(1, 2);
+    transform: scale(1, 2);
     background-color: white;
   }
+
   .user-page {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
     padding: 30px;
     background-color: rgba(97, 220, 251, 0.872);
     width: 100%;
     max-width: 30%;
     border-radius: 20px;
-    background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#44b1cd), to(#75d5ec));
     background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #44b1cd, #75d5ec);
     position: absolute;
     top: 30%;
     left: 65%;
     height: 420px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
+
   .slogan {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     line-height: 1;
     margin-top: 10px;
   }
+
   .slogan-container {
     padding: 50px;
     font-size: 100px;
@@ -1178,12 +861,14 @@ a {
     font-weight: 700;
     margin: 100px 0 0 0;
   }
+
   .differently {
     font-style: italic;
     color: #61dbfb;
     font-weight: 700;
     letter-spacing: 3px;
   }
+
   .desktop-text {
     color: white;
     font-size: 25px;
@@ -1194,96 +879,81 @@ a {
     line-height: 1.8;
     font-weight: 500;
   }
+
   .react-text {
     color: #61dbfb;
     font-weight: 600;
     letter-spacing: 1px;
   }
+
   .bank-text {
     border-radius: 0 10px 10px 0;
     padding: 3px;
   }
+
   .desktop-options {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     width: 100%;
     max-width: 40%;
     margin: 40px 20px;
   }
+
   .get-started {
     background-color: #61dbfb;
     color: #282c34;
     width: 220px;
     height: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     font-weight: 600;
     font-size: 25px;
     cursor: pointer;
   }
+
   .get-started:hover {
     background-color: white;
   }
+
   .download-app {
     color: #61dbfb;
     font-weight: 600;
     font-size: 25px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     letter-spacing: 1px;
   }
+
   .download-app:hover {
     color: white;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
     cursor: pointer;
   }
+
   .fa-download {
     margin-left: 10px;
   }
+
   .fa-arrow-right {
     margin-left: 10px;
   }
+
   .login {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
   }
+
   .login-options {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     max-width: 70%;
   }
+
   .login > input {
     border: none;
     margin: 5px;
@@ -1297,41 +967,21 @@ a {
     color: #282c34;
     font-size: 18px;
   }
-  .login > input::-webkit-input-placeholder {
-    font-size: 18px;
-    color: #282c34;
-    position: relative;
-  }
-  .login > input:-ms-input-placeholder {
-    font-size: 18px;
-    color: #282c34;
-    position: relative;
-  }
-  .login > input::-ms-input-placeholder {
-    font-size: 18px;
-    color: #282c34;
-    position: relative;
-  }
+
   .login > input::placeholder {
     font-size: 18px;
     color: #282c34;
     position: relative;
   }
+
   .login > input:focus {
     color: #282c34;
   }
-  .login > input:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
-  .login > input:focus:-ms-input-placeholder {
-    color: transparent;
-  }
-  .login > input:focus::-ms-input-placeholder {
-    color: transparent;
-  }
+
   .login > input:focus::placeholder {
     color: transparent;
   }
+
   .login-button {
     border: none;
     background-color: #282c34;
@@ -1343,87 +993,82 @@ a {
     cursor: pointer;
     font-weight: 500;
   }
+
   .login-button:hover {
     background-color: white;
     color: #282c34;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
   }
+
   .create-account,
-  .forgot-password {
+.forgot-password {
     color: #282c34;
     font-size: 15px;
     margin-top: 15px;
     font-weight: 600;
     cursor: pointer;
   }
+
   .create-account:hover,
-  .forgot-password:hover {
+.forgot-password:hover {
     color: white;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
   }
+
   .show-login {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
+
   .error-message {
     color: red;
   }
+
   .admin-page {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
     height: 100vh;
     overflow: hidden;
   }
+
   .admin-dashboard {
     width: 100%;
     height: 100%;
     max-height: 20%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
+
   .nav-bar {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     max-width: 95%;
     margin: 0 auto;
     height: 40px;
     font-size: 25px;
   }
+
   .dashboard-icon {
     color: white;
     margin: 0 20px;
   }
+
   .fa-magnifying-glass {
     display: none;
   }
+
   .search {
-    display: none;
+    display: flex;
   }
+
   .table-box {
     width: 100%;
     overflow: auto;
     height: 3000px;
     margin-top: 20px;
   }
+
   table {
     width: 100%;
     max-width: 90%;
@@ -1437,19 +1082,23 @@ a {
     color: #282c34;
     margin: 0 auto;
   }
+
   .add-account-button {
     width: 100%;
     max-width: 15%;
   }
+
   th {
     font-size: 25px;
   }
+
   tr {
     font-size: 25px;
   }
+
   .deposit-page,
-  .withdraw-page,
-  .transfer-page {
+.withdraw-page,
+.transfer-page {
     display: none;
     width: 100%;
     height: 100%;
@@ -1459,63 +1108,49 @@ a {
     border-radius: 20px;
   }
   .deposit-page .deposit-container,
-  .deposit-page .withdraw-container,
-  .deposit-page .transfer-container,
-  .withdraw-page .deposit-container,
-  .withdraw-page .withdraw-container,
-  .withdraw-page .transfer-container,
-  .transfer-page .deposit-container,
-  .transfer-page .withdraw-container,
-  .transfer-page .transfer-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.deposit-page .withdraw-container,
+.deposit-page .transfer-container,
+.withdraw-page .deposit-container,
+.withdraw-page .withdraw-container,
+.withdraw-page .transfer-container,
+.transfer-page .deposit-container,
+.transfer-page .withdraw-container,
+.transfer-page .transfer-container {
     display: flex;
     background-color: #61dbfb;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 100%;
     max-width: 50%;
     margin: 0 auto;
     height: 400px;
-    background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#44b1cd), to(#75d5ec));
     background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #44b1cd, #75d5ec);
   }
+
   .deposit-nav,
-  .withdraw-nav,
-  .transfer-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.withdraw-nav,
+.transfer-nav {
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     margin: 20px 30px 0 30px;
   }
+
   .deposit-input {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    justify-content: center;
+    flex-direction: column;
     height: 100%;
     width: 100%;
     padding: 25px;
   }
+
   .deposit-amount,
-  .deposit-from-input,
-  .withdraw-amount,
-  .withdraw-from-input,
-  .transfer-from-input,
-  .transfer-to-input,
-  .transfer-amount,
-  .input-receipt {
+.deposit-from-input,
+.withdraw-amount,
+.withdraw-from-input,
+.transfer-from-input,
+.transfer-to-input,
+.transfer-amount,
+.input-receipt {
     width: 100%;
     height: 40%;
     outline: none;
@@ -1527,16 +1162,16 @@ a {
     padding-left: 10px;
     font-size: 18px;
   }
+
   .show-deposit {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
+
   .deposit-name-text,
-  .withdraw-name-text,
-  .transfer-from-text,
-  .transfer-to-text,
-  .send-receipt {
+.withdraw-name-text,
+.transfer-from-text,
+.transfer-to-text,
+.send-receipt {
     padding-left: 5px;
     color: #282c34;
     font-size: 16px;
@@ -1544,12 +1179,14 @@ a {
     margin-bottom: 10px;
     font-size: 20px;
   }
+
   .send-receipt {
     margin-top: 15px;
   }
+
   .deposit-button,
-  .withdraw-button,
-  .transfer-button {
+.withdraw-button,
+.transfer-button {
     width: 100%;
     max-width: 20%;
     margin: 10px auto 0 auto;
@@ -1557,26 +1194,29 @@ a {
     height: 35%;
     font-size: 18px;
   }
+
   .error-message {
     position: relative;
     bottom: 2%;
     left: 1%;
     font-weight: 500;
   }
+
   .deposit-page,
-  .withdraw-page,
-  .transfer-page {
+.withdraw-page,
+.transfer-page {
     display: none;
   }
+
   .show-deposit,
-  .show-withdraw,
-  .show-transfer {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.show-withdraw,
+.show-transfer {
     display: flex;
   }
+
   .hide-transaction {
     display: none;
   }
 }
+
 /*# sourceMappingURL=output.css.map */
