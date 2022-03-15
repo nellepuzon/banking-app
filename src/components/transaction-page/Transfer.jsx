@@ -78,7 +78,7 @@ function Transfer({accounts, setAccounts}) {
       <div className='transfer-container'>
         <div className='transfer-nav'><div className='transfer-from-text'>From:</div>
         <div onClick={undoBlur} className='close-button'>
-            <i class='fa-solid fa-circle-xmark'></i>
+            <i className='fa-solid fa-circle-xmark'></i>
           </div></div>
         <div className='transfer-input'>
           {renderError()}

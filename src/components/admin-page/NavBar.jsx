@@ -1,6 +1,11 @@
 import React from 'react';
 
-function NavBar() {
+
+function NavBar({searchInput, setSearchInput}) {
+
+  const handleChange = (e) => {
+    setSearchInput(e.target.value)
+  }
   return (
     <div className='admin-dashboard'>
       <div className='nav-bar'>
@@ -12,7 +17,7 @@ function NavBar() {
         </div>
       </div>
       <i className='fa-solid fa-magnifying-glass'></i>
-      <input className='search' type='text'></input>
+      <input className='search' type='text' onChange={handleChange}></input>
     </div>
   );
 }
