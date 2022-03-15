@@ -28,10 +28,10 @@ function DesktopLogin() {
       <div className='slogan-container'>
         It's time to bank <span className='differently'>differently</span>.
       </div>
-      <div className="desktop-text">Make your daily routine easier by managing money and transactions with the <span className="react-text"><i class="fa-brands fa-react"></i>React<span className="bank-text">Bank</span></span> App.</div>
+      <div className="desktop-text">Make your daily routine easier by managing money and transactions with the <span className="react-text"><i className="fa-brands fa-react"></i>React<span className="bank-text">Bank</span></span> App.</div>
       <div className="desktop-options">
-          <div className="get-started">Get Started <i class="fa-solid fa-arrow-right"></i></div>
-          <div className="download-app">Download App <i class="fa-solid fa-download"></i></div>
+          <div className="get-started">Get Started <i className="fa-solid fa-arrow-right"></i></div>
+          <div className="download-app">Download App <i className="fa-solid fa-download"></i></div>
       </div>
     </div>
     </div>
