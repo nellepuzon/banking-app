@@ -39,6 +39,9 @@ function Withdraw({accounts, setAccounts}) {
       accountCopy.money -= amountInput
       mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy
       setAccounts([...mainCopy])
+      setEmailInput("")
+      setAmountInput("")
+      setWithdrawInput("")
     } else if (!accountMatch) {
       setErrorMessage({placeholder: 'xxxxxxxxx', message: "account not found"})
     } else if (amountInput <= 0 || amountInput === "") {
