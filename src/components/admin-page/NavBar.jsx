@@ -2,6 +2,9 @@ import React from 'react';
 import App from '../../App';
 import LoginPage from '../LoginPage';
 
+function logOut() {
+  return (<LoginPage />), console.log(logOut);
+}
 
 function NavBar({ searchInput, setSearchInput, setIsAdmin, setLoggedIn }) {
   const handleChange = (e) => {
