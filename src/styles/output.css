@@ -249,793 +249,766 @@
   }
 }
 
-.admin-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 95%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100vh;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.admin-dashboard {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 50px 30px 0 30px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.nav-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-width: 95%;
-}
-
-.fa-magnifying-glass {
-  position: relative;
-  left: 90%;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 16px;
-  top: 28%;
-}
-
-.search {
-  outline: none;
-  background-color: rgba(97, 219, 251, 0.4);
-  border: none;
-  border-radius: 20px;
-  height: 40px;
-  width: 100%;
-  margin-bottom: 20px;
-  color: white;
-  padding-left: 20px;
-  font-size: 16px;
-}
-
-.accounts {
-  text-transform: uppercase;
-  font-weight: 700;
-  color: white;
-  margin-left: 5px;
-}
-
-.sort-up {
-  margin-left: 220px;
-}
-
-.sort-up, .sort-down {
-  color: white;
-}
-
-.hide {
-  display: none;
-}
-
-.blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
-}
-
-.table-box {
-  overflow: auto;
-  height: 2000px;
-  margin-top: 20px;
-  width: 100%;
-}
-
-table {
-  width: 100%;
-  height: 100%;
-  max-height: 10%;
-  background-color: rgba(97, 219, 251, 0.4);
-  font-size: 18px;
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: 500;
-  color: #282c34;
-}
-
-td {
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-th,
-td {
-  padding: 10px 20px;
-}
-
-th {
-  position: relative;
-  color: white;
-}
-
-.table-options {
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 20px;
-  color: #61dbfb;
-  font-size: 18px;
-}
-
-.fa-peso-sign {
-  font-size: 16px;
-}
-
-a {
-  text-decoration: none;
-  color: #282c34;
-}
-
-.blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
-}
-
-#account-number {
-  display: none;
-}
-
-.hide-name {
-  display: none;
-}
-
-.show-account-number {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.edit-button,
-.delete-button {
-  color: white;
-  position: relative;
-  left: 15px;
-  top: 10px;
-  cursor: pointer;
-}
-
-.delete-button {
-  left: 25px;
-}
-
-.edit-button:hover,
-.delete-button:hover {
-  color: #282c34;
-}
-
-.add-account-container {
-  width: 100%;
-  height: 100%;
-  max-height: 22%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: rgba(97, 219, 251, 0.4);
-  padding: 70px 0 50px 0;
-  margin-top: 50px;
-  border-radius: 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  max-width: 90%;
-}
-
-.add-account-inputs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 94%;
-  margin-bottom: 2px;
-}
-
-.add-account-inputs > input {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #282c34;
-  padding: 10px;
-  border: none;
-}
-
-.input-fullname,
-.input-username {
-  width: 100%;
-  max-width: 64%;
-  margin-right: 2px;
-  color: #282c34;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.input-balance,
-.input-password {
-  width: 100%;
-  max-width: 35%;
-  color: #282c34;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.add-account-button {
-  width: 100%;
-  max-width: 30%;
-  background-color: #282c34;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 10px;
-}
-
-.add-account-button:hover {
-  color: #282c34;
-  background-color: white;
-}
-
-.add-account-inputs > input::-webkit-input-placeholder {
-  color: #545760;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.add-account-inputs > input:-ms-input-placeholder {
-  color: #545760;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.add-account-inputs > input::-ms-input-placeholder {
-  color: #545760;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.add-account-inputs > input::placeholder {
-  color: #545760;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.add-account-inputs > input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.add-account-inputs > input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.add-account-inputs > input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
-.add-account-inputs > input:focus::placeholder {
-  color: transparent;
-}
-
-.blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
-}
-
-.transactions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  height: 100%;
-  max-height: 40%;
-  margin-top: 40px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  color: #61dbfb;
-}
-
-.icon {
-  font-size: 40px;
-  margin-bottom: 5px;
-}
-
-.trans {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  max-width: 10%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.text {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 12px;
-  line-height: 1.3;
-  letter-spacing: 1px;
-}
-
-.blur {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
-}
-
-.deposit-page {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 25%;
-  max-width: 95%;
-  border-radius: 20px;
-}
-
-.deposit-page .deposit-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #61dbfb;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  height: 340px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
-}
-
-.deposit-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
-  width: 100%;
-  padding: 25px;
-}
-
-.deposit-amount,
-.deposit-from-input,
-.input-receipt {
-  width: 100%;
-  height: 30%;
-  outline: none;
-  border: none;
-  background-color: #282c34;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  color: white;
-  padding-left: 10px;
-}
-
-.deposit-amount::-webkit-input-placeholder,
-.input-receipt::-webkit-input-placeholder,
-.deposit-from-input::-webkit-input-placeholder {
-  color: white;
-}
-
-.deposit-amount:-ms-input-placeholder,
-.input-receipt:-ms-input-placeholder,
-.deposit-from-input:-ms-input-placeholder {
-  color: white;
-}
-
-.deposit-amount::-ms-input-placeholder,
-.input-receipt::-ms-input-placeholder,
-.deposit-from-input::-ms-input-placeholder {
-  color: white;
-}
-
-.deposit-amount::placeholder,
-.input-receipt::placeholder,
-.deposit-from-input::placeholder {
-  color: white;
-}
-
-.show-deposit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.deposit-name-text,
-.send-receipt {
-  margin-bottom: 5px;
-  padding-left: 5px;
-  color: #282c34;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.deposit-button {
-  width: 100%;
-  max-width: 25%;
-  margin: 10px auto 0 auto;
-  background-color: #282c34;
-  border-radius: 20px;
-  color: white;
-  height: 25%;
-  border: none;
-  text-align: center;
-}
-
-.deposit-button:active {
-  background-color: white;
-  color: #282c34;
-}
-
-.deposit-amount:focus::-webkit-input-placeholder,
-.input-receipt:focus::-webkit-input-placeholder,
-.deposit-from-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.deposit-amount:focus:-ms-input-placeholder,
-.input-receipt:focus:-ms-input-placeholder,
-.deposit-from-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.deposit-amount:focus::-ms-input-placeholder,
-.input-receipt:focus::-ms-input-placeholder,
-.deposit-from-input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
-.deposit-amount:focus::placeholder,
-.input-receipt:focus::placeholder,
-.deposit-from-input:focus::placeholder {
-  color: transparent;
-}
-
-.withdraw-page {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 25%;
-  max-width: 95%;
-  border-radius: 20px;
-}
-
-.withdraw-page .withdraw-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #61dbfb;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  height: 340px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
-}
-
-.withdraw-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
-  width: 100%;
-  padding: 25px;
-}
-
-.withdraw-amount,
-.withdraw-from-input,
-.input-receipt {
-  width: 100%;
-  height: 30%;
-  outline: none;
-  border: none;
-  background-color: #282c34;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  color: white;
-  padding-left: 10px;
-}
-
-.withdraw-amount::-webkit-input-placeholder,
-.input-receipt::-webkit-input-placeholder,
-.withdraw-from-input::-webkit-input-placeholder {
-  color: white;
-}
-
-.withdraw-amount:-ms-input-placeholder,
-.input-receipt:-ms-input-placeholder,
-.withdraw-from-input:-ms-input-placeholder {
-  color: white;
-}
-
-.withdraw-amount::-ms-input-placeholder,
-.input-receipt::-ms-input-placeholder,
-.withdraw-from-input::-ms-input-placeholder {
-  color: white;
-}
-
-.withdraw-amount::placeholder,
-.input-receipt::placeholder,
-.withdraw-from-input::placeholder {
-  color: white;
-}
-
-.show-withdraw {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.withdraw-name-text,
-.send-receipt {
-  margin-bottom: 5px;
-  padding-left: 5px;
-  color: #282c34;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.withdraw-button {
-  width: 100%;
-  max-width: 25%;
-  margin: 10px auto 0 auto;
-  background-color: #282c34;
-  border-radius: 20px;
-  color: white;
-  height: 25%;
-  border: none;
-  text-align: center;
-}
-
-.withdraw-button:active {
-  background-color: white;
-  color: #282c34;
-}
-
-.withdraw-amount:focus::-webkit-input-placeholder,
-.input-receipt:focus::-webkit-input-placeholder,
-.withdraw-from-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.withdraw-amount:focus:-ms-input-placeholder,
-.input-receipt:focus:-ms-input-placeholder,
-.withdraw-from-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.withdraw-amount:focus::-ms-input-placeholder,
-.input-receipt:focus::-ms-input-placeholder,
-.withdraw-from-input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
-.withdraw-amount:focus::placeholder,
-.input-receipt:focus::placeholder,
-.withdraw-from-input:focus::placeholder {
-  color: transparent;
-}
-
-.transfer-page {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 25%;
-  max-width: 95%;
-  border-radius: 20px;
-}
-
-.transfer-page .transfer-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #61dbfb;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  height: 420px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
-}
-
-.transfer-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
-  width: 100%;
-  padding: 25px;
-}
-
-.transfer-amount,
-.transfer-to-input,
-.transfer-from-input,
-.input-receipt {
-  width: 100%;
-  height: 30%;
-  outline: none;
-  border: none;
-  background-color: #282c34;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  color: white;
-  padding-left: 10px;
-}
-
-.transfer-amount::-webkit-input-placeholder,
-.input-receipt::-webkit-input-placeholder,
-.transfer-to-input::-webkit-input-placeholder,
-.transfer-from-input::-webkit-input-placeholder {
-  color: white;
-}
-
-.transfer-amount:-ms-input-placeholder,
-.input-receipt:-ms-input-placeholder,
-.transfer-to-input:-ms-input-placeholder,
-.transfer-from-input:-ms-input-placeholder {
-  color: white;
-}
-
-.transfer-amount::-ms-input-placeholder,
-.input-receipt::-ms-input-placeholder,
-.transfer-to-input::-ms-input-placeholder,
-.transfer-from-input::-ms-input-placeholder {
-  color: white;
-}
-
-.transfer-amount::placeholder,
-.input-receipt::placeholder,
-.transfer-to-input::placeholder,
-.transfer-from-input::placeholder {
-  color: white;
-}
-
-.show-transfer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.transfer-to-text,
-.transfer-from-text,
-.send-receipt {
-  margin-bottom: 5px;
-  padding-left: 5px;
-  color: #282c34;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.transfer-button {
-  width: 100%;
-  max-width: 25%;
-  margin: 10px auto 0 auto;
-  background-color: #282c34;
-  border-radius: 20px;
-  color: white;
-  height: 25%;
-  border: none;
-  text-align: center;
-}
-
-.transfer-button:active {
-  background-color: white;
-  color: #282c34;
-}
-
-.transfer-amount:focus::-webkit-input-placeholder,
-.input-receipt:focus::-webkit-input-placeholder,
-.transfer-to-input:focus::-webkit-input-placeholder,
-.transfer-from-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.transfer-amount:focus:-ms-input-placeholder,
-.input-receipt:focus:-ms-input-placeholder,
-.transfer-to-input:focus:-ms-input-placeholder,
-.transfer-from-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-.transfer-amount:focus::-ms-input-placeholder,
-.input-receipt:focus::-ms-input-placeholder,
-.transfer-to-input:focus::-ms-input-placeholder,
-.transfer-from-input:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
-.transfer-amount:focus::placeholder,
-.input-receipt:focus::placeholder,
-.transfer-to-input:focus::placeholder,
-.transfer-from-input:focus::placeholder {
-  color: transparent;
+@media all and (max-width: 480px) {
+  .admin-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    max-width: 95%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .admin-dashboard {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 50px 30px 0 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 95%;
+  }
+  .fa-magnifying-glass {
+    position: relative;
+    left: 90%;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    top: 28%;
+  }
+  .search {
+    outline: none;
+    background-color: rgba(97, 219, 251, 0.4);
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+    padding-left: 20px;
+    font-size: 16px;
+  }
+  .accounts {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    margin-left: 5px;
+  }
+  .sort-up {
+    margin-left: 220px;
+  }
+  .sort-up,
+  .sort-down {
+    color: white;
+  }
+  .hide {
+    display: none;
+  }
+  .blur {
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  .fa-right-from-bracket {
+    color: white;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .table-box {
+    overflow: auto;
+    height: 2000px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    max-height: 10%;
+    background-color: rgba(97, 219, 251, 0.4);
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #282c34;
+  }
+  td {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  th,
+  td {
+    padding: 10px;
+    font-size: 13px;
+  }
+  th {
+    position: relative;
+    color: white;
+  }
+  .table-options {
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 20px;
+    color: #61dbfb;
+    font-size: 18px;
+  }
+  .fa-peso-sign {
+    font-size: 13px;
+  }
+  a {
+    text-decoration: none;
+    color: #282c34;
+  }
+  .blur {
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  #account-number {
+    display: none;
+  }
+  .hide-name {
+    display: none;
+  }
+  .show-account-number {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .edit-button,
+  .delete-button {
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .delete-button {
+    left: 25px;
+  }
+  .edit-button:hover,
+  .delete-button:hover {
+    color: #282c34;
+  }
+  .edit-delete {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    left: 5px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+  }
+  .edit-button {
+    margin-bottom: 10px;
+  }
+  td:first-child,
+  th:first-child {
+    width: 10px;
+  }
+  td:nth-child(2) {
+    width: 100px;
+  }
+  td:nth-child(3) {
+    width: 50px;
+  }
+  th:first-child {
+    padding-left: 20px;
+  }
+  th:nth-child(2) {
+    width: 170px;
+  }
+  th:nth-child(3) {
+    width: 80px;
+  }
+  tr {
+    height: 50px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .add-account-container {
+    width: 100%;
+    height: 100%;
+    max-height: 22%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: rgba(97, 219, 251, 0.4);
+    padding: 30px 0 10px 0;
+    margin-top: 50px;
+    border-radius: 10px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .add-account-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    max-width: 94%;
+    margin-bottom: 2px;
+  }
+  .add-account-inputs > input {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #282c34;
+    padding: 10px;
+    border: none;
+  }
+  .input-fullname,
+  .input-username {
+    width: 100%;
+    max-width: 64%;
+    margin-right: 2px;
+    color: #282c34;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .input-balance,
+  .input-password {
+    width: 100%;
+    max-width: 35%;
+    color: #282c34;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .add-account-button {
+    width: 100%;
+    max-width: 28%;
+    background-color: #282c34;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 15px 0 0 0;
+    font-size: 13px;
+  }
+  .add-account-button:hover {
+    color: #282c34;
+    background-color: white;
+  }
+  .add-account-inputs > input::-webkit-input-placeholder {
+    color: #545760;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .add-account-inputs > input:-ms-input-placeholder {
+    color: #545760;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .add-account-inputs > input::-ms-input-placeholder {
+    color: #545760;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .add-account-inputs > input::placeholder {
+    color: #545760;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .add-account-inputs > input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .add-account-inputs > input:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+  .add-account-inputs > input:focus::-ms-input-placeholder {
+    color: transparent;
+  }
+  .add-account-inputs > input:focus::placeholder {
+    color: transparent;
+  }
+  .blur {
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+}
+
+@media all and (max-width: 480px) {
+  .transactions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    height: 100%;
+    max-height: 40%;
+    margin-top: 40px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    color: rgba(97, 219, 251, 0.4);
+  }
+  .icon {
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+  .trans {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    max-width: 10%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .text {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+  }
+  .blur {
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+}
+
+@media all and (max-width: 480px) {
+  .deposit-page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    max-width: 95%;
+    border-radius: 20px;
+  }
+  .deposit-page .deposit-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #61dbfb;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 340px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+  }
+  .deposit-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+  }
+  .deposit-amount,
+  .deposit-from-input,
+  .input-receipt {
+    width: 100%;
+    height: 30%;
+    outline: none;
+    border: none;
+    background-color: #282c34;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+  }
+  .deposit-amount::-webkit-input-placeholder,
+  .input-receipt::-webkit-input-placeholder,
+  .deposit-from-input::-webkit-input-placeholder {
+    color: white;
+  }
+  .deposit-amount:-ms-input-placeholder,
+  .input-receipt:-ms-input-placeholder,
+  .deposit-from-input:-ms-input-placeholder {
+    color: white;
+  }
+  .deposit-amount::-ms-input-placeholder,
+  .input-receipt::-ms-input-placeholder,
+  .deposit-from-input::-ms-input-placeholder {
+    color: white;
+  }
+  .deposit-amount::placeholder,
+  .input-receipt::placeholder,
+  .deposit-from-input::placeholder {
+    color: white;
+  }
+  .show-deposit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .deposit-name-text,
+  .send-receipt {
+    margin-bottom: 5px;
+    padding-left: 5px;
+    color: #282c34;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .deposit-button {
+    width: 100%;
+    max-width: 25%;
+    margin: 10px auto 0 auto;
+    background-color: #282c34;
+    border-radius: 20px;
+    color: white;
+    height: 25%;
+    border: none;
+    text-align: center;
+  }
+  .deposit-button:active {
+    background-color: white;
+    color: #282c34;
+  }
+  .deposit-amount:focus::-webkit-input-placeholder,
+  .input-receipt:focus::-webkit-input-placeholder,
+  .deposit-from-input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .deposit-amount:focus:-ms-input-placeholder,
+  .input-receipt:focus:-ms-input-placeholder,
+  .deposit-from-input:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+  .deposit-amount:focus::-ms-input-placeholder,
+  .input-receipt:focus::-ms-input-placeholder,
+  .deposit-from-input:focus::-ms-input-placeholder {
+    color: transparent;
+  }
+  .deposit-amount:focus::placeholder,
+  .input-receipt:focus::placeholder,
+  .deposit-from-input:focus::placeholder {
+    color: transparent;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .withdraw-page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    max-width: 95%;
+    border-radius: 20px;
+  }
+  .withdraw-page .withdraw-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #61dbfb;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 340px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+  }
+  .withdraw-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+  }
+  .withdraw-amount,
+  .withdraw-from-input,
+  .input-receipt {
+    width: 100%;
+    height: 30%;
+    outline: none;
+    border: none;
+    background-color: #282c34;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+  }
+  .withdraw-amount::-webkit-input-placeholder,
+  .input-receipt::-webkit-input-placeholder,
+  .withdraw-from-input::-webkit-input-placeholder {
+    color: white;
+  }
+  .withdraw-amount:-ms-input-placeholder,
+  .input-receipt:-ms-input-placeholder,
+  .withdraw-from-input:-ms-input-placeholder {
+    color: white;
+  }
+  .withdraw-amount::-ms-input-placeholder,
+  .input-receipt::-ms-input-placeholder,
+  .withdraw-from-input::-ms-input-placeholder {
+    color: white;
+  }
+  .withdraw-amount::placeholder,
+  .input-receipt::placeholder,
+  .withdraw-from-input::placeholder {
+    color: white;
+  }
+  .show-withdraw {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .withdraw-name-text,
+  .send-receipt {
+    margin-bottom: 5px;
+    padding-left: 5px;
+    color: #282c34;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .withdraw-button {
+    width: 100%;
+    max-width: 25%;
+    margin: 10px auto 0 auto;
+    background-color: #282c34;
+    border-radius: 20px;
+    color: white;
+    height: 25%;
+    border: none;
+    text-align: center;
+  }
+  .withdraw-button:active {
+    background-color: white;
+    color: #282c34;
+  }
+  .withdraw-amount:focus::-webkit-input-placeholder,
+  .input-receipt:focus::-webkit-input-placeholder,
+  .withdraw-from-input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .withdraw-amount:focus:-ms-input-placeholder,
+  .input-receipt:focus:-ms-input-placeholder,
+  .withdraw-from-input:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+  .withdraw-amount:focus::-ms-input-placeholder,
+  .input-receipt:focus::-ms-input-placeholder,
+  .withdraw-from-input:focus::-ms-input-placeholder {
+    color: transparent;
+  }
+  .withdraw-amount:focus::placeholder,
+  .input-receipt:focus::placeholder,
+  .withdraw-from-input:focus::placeholder {
+    color: transparent;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .transfer-page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    max-width: 95%;
+    border-radius: 20px;
+  }
+  .transfer-page .transfer-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #61dbfb;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 420px;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+  }
+  .transfer-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+  }
+  .transfer-amount,
+  .transfer-to-input,
+  .transfer-from-input,
+  .input-receipt {
+    width: 100%;
+    height: 30%;
+    outline: none;
+    border: none;
+    background-color: #282c34;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+  }
+  .transfer-amount::-webkit-input-placeholder,
+  .input-receipt::-webkit-input-placeholder,
+  .transfer-to-input::-webkit-input-placeholder,
+  .transfer-from-input::-webkit-input-placeholder {
+    color: white;
+  }
+  .transfer-amount:-ms-input-placeholder,
+  .input-receipt:-ms-input-placeholder,
+  .transfer-to-input:-ms-input-placeholder,
+  .transfer-from-input:-ms-input-placeholder {
+    color: white;
+  }
+  .transfer-amount::-ms-input-placeholder,
+  .input-receipt::-ms-input-placeholder,
+  .transfer-to-input::-ms-input-placeholder,
+  .transfer-from-input::-ms-input-placeholder {
+    color: white;
+  }
+  .transfer-amount::placeholder,
+  .input-receipt::placeholder,
+  .transfer-to-input::placeholder,
+  .transfer-from-input::placeholder {
+    color: white;
+  }
+  .show-transfer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .transfer-to-text,
+  .transfer-from-text,
+  .send-receipt {
+    margin-bottom: 5px;
+    padding-left: 5px;
+    color: #282c34;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .transfer-button {
+    width: 100%;
+    max-width: 25%;
+    margin: 10px auto 0 auto;
+    background-color: #282c34;
+    border-radius: 20px;
+    color: white;
+    height: 25%;
+    border: none;
+    text-align: center;
+  }
+  .transfer-button:active {
+    background-color: white;
+    color: #282c34;
+  }
+  .transfer-amount:focus::-webkit-input-placeholder,
+  .input-receipt:focus::-webkit-input-placeholder,
+  .transfer-to-input:focus::-webkit-input-placeholder,
+  .transfer-from-input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .transfer-amount:focus:-ms-input-placeholder,
+  .input-receipt:focus:-ms-input-placeholder,
+  .transfer-to-input:focus:-ms-input-placeholder,
+  .transfer-from-input:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+  .transfer-amount:focus::-ms-input-placeholder,
+  .input-receipt:focus::-ms-input-placeholder,
+  .transfer-to-input:focus::-ms-input-placeholder,
+  .transfer-from-input:focus::-ms-input-placeholder {
+    color: transparent;
+  }
+  .transfer-amount:focus::placeholder,
+  .input-receipt:focus::placeholder,
+  .transfer-to-input:focus::placeholder,
+  .transfer-from-input:focus::placeholder {
+    color: transparent;
+  }
 }
 
 @media all and (min-width: 1024px) {
@@ -1606,9 +1579,21 @@ a {
   .hide-transaction {
     display: none;
   }
-}
-
-@media all and (min-width: 1024px) {
+  .edit-button,
+  .delete-button {
+    color: white;
+    position: relative;
+    left: 15px;
+    top: 10px;
+    cursor: pointer;
+  }
+  .delete-button {
+    left: 25px;
+  }
+  .edit-button:hover,
+  .delete-button:hover {
+    color: #282c34;
+  }
   .third-page {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1897,6 +1882,299 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .text {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+}
+
+@media all and (max-width: 480px) {
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .third-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    width: 350px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+    padding-top: 50px;
+  }
+  .dashboard {
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 1px solid #61dbfb;
+    padding-bottom: 15px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .fa-arrow-right-from-bracket {
+    cursor: pointer;
+  }
+  .top-bar {
+    height: 5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 20px;
+  }
+  .greeting {
+    font-size: 25px;
+    color: white;
+  }
+  .greeting > span {
+    font-weight: 700;
+    color: #61dbfb;
+  }
+  .avatar {
+    background-image: url("https://ca.slack-edge.com/T010DU0GZE0-U02TZTA9WKA-f995f60684ef-512");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding-right: 10px;
+  }
+  .card-container {
+    background-color: #61dbfb;
+    height: 30%;
+    width: 100%;
+    margin: 40px auto;
+    border-radius: 30px;
+    padding: 10px 10px 0 10px;
+  }
+  .second-icon {
+    display: block;
+    padding-right: 3px;
+    font-size: 25px;
+  }
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 30px;
+  }
+  .card-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-bottom: 10px;
+  }
+  .logo-name {
+    color: #282c34;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .logo-name > span {
+    background-color: #282c34;
+    color: #61dbfb;
+    border-radius: 0 10px 10px 0;
+    margin: 3px;
+    padding: 2px 5px;
+    font-weight: 400;
+  }
+  .card-name,
+  .card-number {
+    font-weight: 600;
+    color: #282c34;
+    margin-top: 3px;
+  }
+  .card-name {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .card-number {
+    font-size: 15px;
+  }
+  .chip {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    background-color: #282c34;
+    width: 100%;
+    max-width: 25%;
+    height: 100%;
+    max-height: 80%;
+    border-radius: 10px;
+  }
+  .chip-cell-1 {
+    border-bottom: 1px solid #61dbfb;
+  }
+  .chip-cell-2 {
+    /* border-right: 1px solid #61dbfb;
+    border-left: 1px solid #61dbfb; */
+    border-bottom: 1px solid #61dbfb;
+  }
+  .chip-cell-3 {
+    border-bottom: 1px solid #61dbfb;
+  }
+  /* .chip-cell-4 {
+    border-top: 1px solid #61dbfb;
+  }
+
+  .chip-cell-5 {
+    border-top: 1px solid #61dbfb;
+    transform: rotate(30deg);
+    transform-origin: top left;
+  } */
+  /* .chip-cell-6 {
+    border-top: 1px solid #61dbfb;
+    transform: rotate(145deg);
+    transform-origin: top left;
+  } */
+  .chip-cell-7 {
+    border-top: 1px solid #61dbfb;
+    /* border-right: 1px solid #61dbfb; */
+  }
+  .chip-cell-8 {
+    border-top: 1px solid #61dbfb;
+  }
+  .chip-cell-9 {
+    border-top: 1px solid #61dbfb;
+    /* border-left: 1px solid #61dbfb; */
+  }
+  .chip::after {
+    content: '';
+    width: 15px;
+    border: 1px solid #61dbfb;
+    position: absolute;
+    height: 25px;
+    top: 33.8%;
+    left: 24%;
+    background-color: #282c34;
+    border-radius: 5px;
+  }
+  .card-design {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin-top: 12px;
+  }
+  .wifi {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    margin: 0;
+    font-size: 23px;
+    margin: 0 0 10px 5px;
+  }
+  .hide {
+    display: none !important;
+  }
+  .show {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .bottom-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 20px;
+    background-color: rgba(97, 219, 251, 0.3);
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    color: white;
+    height: 60px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 16px;
+  }
+  .balance {
+    font-weight: 600;
+  }
+  .transaction {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    height: 100%;
+    max-height: 40%;
+    margin-top: 40px;
+    color: #61dbfb;
+  }
+  .icon {
+    font-size: 30px;
+    margin-bottom: 5px;
+    color: #61dbfb;
+    cursor: pointer;
+  }
+  .trans {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .text {
     text-align: center;

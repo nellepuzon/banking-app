@@ -1,4 +1,5 @@
-.withdraw-page {
+@media all and (max-width: 480px) {
+  .withdraw-page {
     display: none;
     width: 100%;
     height: 100%;
@@ -6,7 +7,7 @@
     top: 25%;
     max-width: 95%;
     border-radius: 20px;
-  
+
     .withdraw-container {
       display: flex;
       background-color: #61dbfb;
@@ -19,7 +20,7 @@
       border-radius: 20px;
     }
   }
-  
+
   .withdraw-input {
     display: flex;
     justify-content: center;
@@ -28,7 +29,7 @@
     width: 100%;
     padding: 25px;
   }
-  
+
   .withdraw-amount,
   .withdraw-from-input,
   .input-receipt {
@@ -42,17 +43,17 @@
     color: white;
     padding-left: 10px;
   }
-  
+
   .withdraw-amount::placeholder,
   .input-receipt::placeholder,
   .withdraw-from-input::placeholder {
     color: white;
   }
-  
+
   .show-withdraw {
     display: flex;
   }
-  
+
   .withdraw-name-text,
   .send-receipt {
     margin-bottom: 5px;
@@ -62,7 +63,7 @@
     font-weight: 600;
     margin-bottom: 10px;
   }
-  
+
   .withdraw-button {
     width: 100%;
     max-width: 25%;
@@ -74,15 +75,15 @@
     border: none;
     text-align: center;
   }
-  
+
   .withdraw-button:active {
     background-color: white;
     color: #282c34;
   }
-  
+
   .withdraw-amount:focus::placeholder,
   .input-receipt:focus::placeholder,
   .withdraw-from-input:focus::placeholder {
     color: transparent;
   }
-  
+}

@@ -1,91 +1,93 @@
-.transfer-page {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 25%;
-  max-width: 95%;
-  border-radius: 20px;
-
-  .transfer-container {
-    display: flex;
-    background-color: #61dbfb;
-    flex-direction: column;
+@media all and (max-width: 480px) {
+  .transfer-page {
+    display: none;
     width: 100%;
-    height: 420px;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    height: 100%;
+    position: absolute;
+    top: 25%;
+    max-width: 95%;
     border-radius: 20px;
+
+    .transfer-container {
+      display: flex;
+      background-color: #61dbfb;
+      flex-direction: column;
+      width: 100%;
+      height: 420px;
+      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+      border-radius: 20px;
+    }
   }
-}
 
-.transfer-input {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  padding: 25px;
-}
+  .transfer-input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+  }
 
-.transfer-amount,
-.transfer-to-input,
-.transfer-from-input,
-.input-receipt {
-  width: 100%;
-  height: 30%;
-  outline: none;
-  border: none;
-  background-color: #282c34;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  color: white;
-  padding-left: 10px;
-}
+  .transfer-amount,
+  .transfer-to-input,
+  .transfer-from-input,
+  .input-receipt {
+    width: 100%;
+    height: 30%;
+    outline: none;
+    border: none;
+    background-color: #282c34;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+  }
 
-.transfer-amount::placeholder,
-.input-receipt::placeholder,
-.transfer-to-input::placeholder,
-.transfer-from-input::placeholder {
-  color: white;
-}
+  .transfer-amount::placeholder,
+  .input-receipt::placeholder,
+  .transfer-to-input::placeholder,
+  .transfer-from-input::placeholder {
+    color: white;
+  }
 
-.show-transfer {
-  display: flex;
-}
+  .show-transfer {
+    display: flex;
+  }
 
-.transfer-to-text,
-.transfer-from-text,
-.send-receipt {
-  margin-bottom: 5px;
-  padding-left: 5px;
-  color: #282c34;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+  .transfer-to-text,
+  .transfer-from-text,
+  .send-receipt {
+    margin-bottom: 5px;
+    padding-left: 5px;
+    color: #282c34;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
 
-.transfer-button {
-  width: 100%;
-  max-width: 25%;
-  margin: 10px auto 0 auto;
-  background-color: #282c34;
-  border-radius: 20px;
-  color: white;
-  height: 25%;
-  border: none;
-  text-align: center;
-}
+  .transfer-button {
+    width: 100%;
+    max-width: 25%;
+    margin: 10px auto 0 auto;
+    background-color: #282c34;
+    border-radius: 20px;
+    color: white;
+    height: 25%;
+    border: none;
+    text-align: center;
+  }
 
-.transfer-button:active {
-  background-color: white;
-  color: #282c34;
-}
+  .transfer-button:active {
+    background-color: white;
+    color: #282c34;
+  }
 
-.transfer-amount:focus::placeholder,
-.input-receipt:focus::placeholder,
-.transfer-to-input:focus::placeholder,
-.transfer-from-input:focus::placeholder {
-  color: transparent;
+  .transfer-amount:focus::placeholder,
+  .input-receipt:focus::placeholder,
+  .transfer-to-input:focus::placeholder,
+  .transfer-from-input:focus::placeholder {
+    color: transparent;
+  }
 }
