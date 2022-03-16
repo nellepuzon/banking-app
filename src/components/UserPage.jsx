@@ -1,5 +1,5 @@
 import React from 'react';
-import Transactions from './admin-page/Transactions';
+import Transactions from './Transactions';
 import LoginPage from './LoginPage';
 import Deposit from './transaction-page/Deposit';
 import Withdraw from './transaction-page/Withdraw';
@@ -32,7 +32,7 @@ function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, a
         <div className='greeting'>
           Welcome back, <span>{name[1]}</span>!
         </div>
-        <div className='avatar'></div>
+        <div className='avatar'><i class="fa-solid fa-user-tie"></i></div>
       </div>
 
       <div className='card-container'>

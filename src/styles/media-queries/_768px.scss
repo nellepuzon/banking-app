@@ -1,4 +1,4 @@
-@media all and (min-width: 1024px){
+@media all and (min-width: 769px) and (max-width: 1023px) {
   * {
     margin: 0;
     padding: 0;
@@ -30,13 +30,13 @@
   }
   .first-icon {
     color: #61dbfb;
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .bank-name {
     font-weight: 700;
     color: #61dbfb;
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .bank-name > span {
@@ -54,39 +54,18 @@
     height: 10%;
     padding: 20px 30px;
     align-items: center;
+    margin: 0 auto;
   }
 
   .desktop-navbar ul {
-    list-style-type: none;
-    display: inline-flex;
-    font-size: 18px;
-    align-items: center;
+    display: none;
   }
 
-  .desktop-navbar ul li {
-    margin: 15px 35px;
+.fa-bars {
     color: white;
-    font-weight: 500;
-    cursor: pointer;
-  }
-
-  .desktop-navbar ul li:hover {
-    color: #61dbfb;
-    transition: 0.2s;
-  }
-
-  .register {
-    background-color: #61dbfb;
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-weight: 600;
-    color: #282c34;
-  }
-
-  .register:hover {
-    transform: scale(1, 2);
-    background-color: white;
-  }
+    margin-right: 10px;
+    font-size: 20px;
+}
 
   .user-page {
     display: flex;
@@ -94,7 +73,7 @@
     padding: 30px;
     background-color: rgba(97, 220, 251, 0.872);
     width: 100%;
-    max-width: 30%;
+    max-width: 70%;
     border-radius: 20px;
     background-image: linear-gradient(
       to top left,
@@ -104,9 +83,9 @@
       #75d5ec
     );
     position: absolute;
-    top: 30%;
-    left: 65%;
-    height: 420px;
+    bottom: 8%;
+    left: 15%;
+    height: 220px;
     align-items: center;
   }
 
@@ -114,17 +93,18 @@
     display: flex;
     flex-direction: column;
     line-height: 1;
-    margin-top: 10px;
+    margin-top: 10px
   }
 
   .slogan-container {
     padding: 50px;
-    font-size: 100px;
+    font-size: 80px;
     width: 100%;
-    max-width: 70%;
+    max-width: 90%;
     color: white;
     font-weight: 700;
-    margin: 100px 0 0 0;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .differently {
@@ -136,13 +116,14 @@
 
   .desktop-text {
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: 2px;
     width: 100%;
-    max-width: 50%;
-    margin: 0 50px;
+    max-width: 80%;
+    margin: 0 auto;
     line-height: 1.8;
     font-weight: 500;
+    text-align: center;
   }
 
   .react-text {
@@ -160,20 +141,20 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    max-width: 40%;
-    margin: 40px 20px;
+    max-width: 80%;
+    margin: 40px auto;
   }
 
   .get-started {
     background-color: #61dbfb;
     color: #282c34;
-    width: 220px;
-    height: 70px;
+    width: 150px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 15px;
     cursor: pointer;
   }
 
@@ -184,7 +165,7 @@
   .download-app {
     color: #61dbfb;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,7 +204,7 @@
     border: none;
     margin: 5px;
     border-radius: 10px;
-    height: 50px;
+    height: 40px;
     width: 100%;
     max-width: 80%;
     background-color: white;
@@ -235,7 +216,7 @@
 
   .login > input::placeholder {
     // padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
     color: #282c34;
     position: relative;
   }
@@ -252,7 +233,7 @@
     border: none;
     background-color: #282c34;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 12px;
     margin: 20px 0 10px 0;
     padding: 10px 20px;
     color: white;
@@ -269,7 +250,7 @@
   .create-account,
   .forgot-password {
     color: #282c34;
-    font-size: 15px;
+    font-size: 12px;
     margin-top: 15px;
     font-weight: 600;
     cursor: pointer;
@@ -286,9 +267,7 @@
   }
 
   .error-message {
-    color: rgb(198, 40, 40);
-    font-weight: 500;
-    margin-bottom: 5px;
+    color: red;
   }
 
   // admin-page
@@ -344,7 +323,7 @@
 
   .add-account-button {
     width: 100%;
-    max-width: 10%;
+    max-width: 20%;
     background-color: #282c34;
     color: white;
     border: none;
@@ -603,13 +582,13 @@
   .delete-button {
     color: white;
     position: relative;
-    left: 15px;
+    left: 5px;
     top: 10px;
     cursor: pointer;
   }
 
   .delete-button {
-    left: 25px;
+    left: 15px;
   }
 
   .edit-button:hover, 
@@ -664,7 +643,7 @@
     width: 100%;
     flex-direction: column;
     overflow: hidden;
-    padding: 3%
+    padding: 3%;
   }
 
   .dashboard {
@@ -680,7 +659,7 @@
   }
 
   .fa-arrow-right-from-bracket {
-      cursor: pointer;
+    cursor: pointer;
   }
 
   .top-bar {
@@ -688,8 +667,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;    margin-top: 20px;
- 
+    align-items: center;
+    margin-top: 20px;
   }
 
   .greeting {
@@ -713,13 +692,12 @@
     font-size: 20px;
     color: #282c34
   }
-
   .card-container {
     background-color: rgb(97, 219, 251);
     height: 45%;
     width: 100%;
-    max-width: 35%;
-    margin: 40px 0;
+    max-width: 85%;
+    margin: 40px auto;
     border-radius: 30px;
     padding: 10px 10px 0 10px;
   }
@@ -727,10 +705,10 @@
   .second-icon {
     display: block;
     /* -webkit-filter: saturate(1);
-    filter: contrast(1);
-    filter: brightness(1);
-    filter: grayscale();
-    filter: hue-rotate(200deg); */
+          filter: contrast(1);
+          filter: brightness(1);
+          filter: grayscale();
+          filter: hue-rotate(200deg); */
     /* filter: invert(0.3); */
     padding-right: 3px;
     font-size: 35px;
@@ -778,7 +756,7 @@
   }
 
   .card-number {
-      font-size: 20px
+    font-size: 20px;
   }
 
   .chip {
@@ -800,7 +778,7 @@
 
   .chip-cell-2 {
     /* border-right: 1px solid #61dbfb;
-    border-left: 1px solid #61dbfb; */
+          border-left: 1px solid #61dbfb; */
     border-bottom: 1px solid #61dbfb;
   }
 
@@ -809,20 +787,20 @@
   }
 
   /* .chip-cell-4 {
-    border-top: 1px solid #61dbfb;
-  }
-
-  .chip-cell-5 {
-    border-top: 1px solid #61dbfb;
-    transform: rotate(30deg);
-    transform-origin: top left;
-  } */
+          border-top: 1px solid #61dbfb;
+        }
+      
+        .chip-cell-5 {
+          border-top: 1px solid #61dbfb;
+          transform: rotate(30deg);
+          transform-origin: top left;
+        } */
 
   /* .chip-cell-6 {
-    border-top: 1px solid #61dbfb;
-    transform: rotate(145deg);
-    transform-origin: top left;
-  } */
+          border-top: 1px solid #61dbfb;
+          transform: rotate(145deg);
+          transform-origin: top left;
+        } */
 
   .chip-cell-7 {
     border-top: 1px solid #61dbfb;
@@ -844,8 +822,8 @@
     border: 1px solid #61dbfb;
     position: absolute;
     height: 40px;
-    top: 45%;
-    left: 8.3%;
+    top: 43.5%;
+    left: 23%;
     background-color: #282c34;
     border-radius: 5px;
   }
@@ -905,9 +883,9 @@
   }
 
   .icon {
-    font-size: 50px;
+    font-size: 0px;
     margin-bottom: 5px;
-    color:rgb(97, 219, 251);
+    color: rgb(97, 219, 251);
     cursor: pointer;
   }
 
@@ -929,8 +907,276 @@
     cursor: pointer;
   }
 
-  .fa-bars {
-    display: none;
+  // user page 
+
+  @media all and (max-width: 480px) {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .third-page {
+      display: flex;
+      height: 100vh;
+      width: 350px;
+      flex-direction: column;
+      overflow: hidden;
+      padding-top: 50px;
+    }
+  
+    .dashboard {
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: 600;
+      font-size: 20px;
+      border-bottom: 1px solid #61dbfb;
+      padding-bottom: 15px;
+      align-items: center;
+    }
+  
+    .fa-arrow-right-from-bracket {
+      cursor: pointer;
+    }
+  
+    .top-bar {
+      height: 5%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .greeting {
+      font-size: 25px;
+      color: rgb(255, 255, 255);
+    }
+  
+    .greeting > span {
+      font-weight: 700;
+      color: #61dbfb;
+    }
+  
+    .avatar {
+      background-image: url('https://ca.slack-edge.com/T010DU0GZE0-U02TZTA9WKA-f995f60684ef-512');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      padding-right: 10px;
+    }
+  
+    .card-container {
+      background-color: rgb(97, 219, 251);
+      height: 30%;
+      width: 100%;
+      margin: 40px auto;
+      border-radius: 30px;
+      padding: 10px 10px 0 10px;
+    }
+  
+    .second-icon {
+      display: block;
+      padding-right: 3px;
+      font-size: 25px;
+    }
+  
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      padding: 30px;
+    }
+  
+    .card-logo {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+  
+    .logo-name {
+      color: #282c34;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  
+    .logo-name > span {
+      background-color: #282c34;
+      color: #61dbfb;
+      border-radius: 0 10px 10px 0;
+      margin: 3px;
+      padding: 2px 5px;
+      font-weight: 400;
+    }
+  
+    .card-name,
+    .card-number {
+      font-weight: 600;
+      color: #282c34;
+      margin-top: 3px;
+    }
+  
+    .card-name {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  
+    .card-number {
+      font-size: 15px;
+    }
+  
+    .chip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      background-color: #282c34;
+      width: 100%;
+      max-width: 25%;
+      height: 100%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+  
+    .chip-cell-1 {
+      border-bottom: 1px solid #61dbfb;
+    }
+  
+    .chip-cell-2 {
+      /* border-right: 1px solid #61dbfb;
+      border-left: 1px solid #61dbfb; */
+      border-bottom: 1px solid #61dbfb;
+    }
+  
+    .chip-cell-3 {
+      border-bottom: 1px solid #61dbfb;
+    }
+  
+    /* .chip-cell-4 {
+      border-top: 1px solid #61dbfb;
+    }
+  
+    .chip-cell-5 {
+      border-top: 1px solid #61dbfb;
+      transform: rotate(30deg);
+      transform-origin: top left;
+    } */
+  
+    /* .chip-cell-6 {
+      border-top: 1px solid #61dbfb;
+      transform: rotate(145deg);
+      transform-origin: top left;
+    } */
+  
+    .chip-cell-7 {
+      border-top: 1px solid #61dbfb;
+      /* border-right: 1px solid #61dbfb; */
+    }
+  
+    .chip-cell-8 {
+      border-top: 1px solid #61dbfb;
+    }
+  
+    .chip-cell-9 {
+      border-top: 1px solid #61dbfb;
+      /* border-left: 1px solid #61dbfb; */
+    }
+  
+    .chip::after {
+      content: '';
+      width: 15px;
+      border: 1px solid #61dbfb;
+      position: absolute;
+      height: 25px;
+      top: 33.8%;
+      left: 24%;
+      background-color: #282c34;
+      border-radius: 5px;
+    }
+  
+    .card-design {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      margin-top: 12px;
+    }
+  
+    .wifi {
+      transform: rotate(90deg);
+      margin: 0;
+      font-size: 23px;
+      margin: 0 0 10px 5px;
+    }
+  
+    .hide {
+      display: none !important;
+    }
+  
+    .show {
+      display: flex !important;
+    }
+  
+    .bottom-nav {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      background-color: rgba(97, 219, 251, 0.3);
+      left: 0;
+      width: 100%;
+      padding: 15px 30px;
+      color: white;
+      height: 60px;
+      align-items: center;
+      font-size: 16px;
+    }
+  
+    .balance {
+      font-weight: 600;
+    }
+  
+    .transaction {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      max-height: 40%;
+      margin-top: 40px;
+      color: #61dbfb;
+    }
+  
+    .icon {
+      font-size: 30px;
+      margin-bottom: 5px;
+      color: rgb(97, 219, 251);
+      cursor: pointer;
+    }
+  
+    .trans {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .text {
+      text-align: center;
+      color: rgb(255, 255, 255);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
   }
+  
+
 
 }

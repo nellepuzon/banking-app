@@ -23,6 +23,7 @@ function DesktopLogin() {
           <li> <span className="register">Register </span></li>
 
         </ul>
+        <i className="fa-solid fa-bars"></i>
       </nav>
       <div className="slogan">
       <div className='slogan-container'>

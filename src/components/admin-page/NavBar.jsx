@@ -30,8 +30,8 @@ function NavBar({ setSearchInput, setIsAdmin, setLoggedIn, setUserInput, setPass
           ></i>
         </div>
       </div>
-      <i className='fa-solid fa-magnifying-glass'></i>
-      <input className='search' type='text' onChange={handleChange}></input>
+      {/* <i className='fa-solid fa-magnifying-glass'></i> */}
+      <input className='search' type='text' placeholder='Search' onChange={handleChange}></input>
     </div>
   );
 }
