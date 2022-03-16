@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 
 const undoBlur = () => {
-  document.querySelector('.admin-dashboard').classList.remove('blur');
-  document.querySelector('.add-account-container').classList.remove('blur');
-  document.querySelector('.table-box').classList.remove('blur');
-  document.querySelector('.transactions').classList.remove('blur');
+  // document.querySelector('.admin-dashboard').classList.remove('blur');
+  // document.querySelector('.add-account-container').classList.remove('blur');
+  // document.querySelector('.table-box').classList.remove('blur');
+  // document.querySelector('.transactions').classList.remove('blur');
+  document.querySelector('.deposit-page').classList.remove('show-deposit');
+  document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+  document.querySelector('.transfer-page').classList.remove('show-transfer');
 };
 
 
-function Withdraw({accounts, setAccounts}) {
+function Withdraw({accounts, setAccounts, accountNumber}) {
   const [withdrawInput, setWithdrawInput] = useState("")
   const [amountInput, setAmountInput] = useState("")
   const [emailInput, setEmailInput] = useState("")
@@ -20,6 +23,9 @@ function Withdraw({accounts, setAccounts}) {
   
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value)
+    if(accountNumber) {
+      setWithdrawInput(accountNumber)
+    }
   }
   
   const handleEmailChange = (e) => {
@@ -27,23 +33,24 @@ function Withdraw({accounts, setAccounts}) {
   }
   
   const withdrawMoney = () => {
-    const accountMatch = accounts.find(element => element.accountNumber === withdrawInput)
+    const accountMatch = accounts.find(element => element.accountNumber === parseInt(withdrawInput))
     
-    if (accountMatch && amountInput > 0 && accountMatch.money > amountInput) {
+    if (accountMatch && parseInt(amountInput) > 0 && parseInt(accountMatch.money) > parseInt(amountInput)) {
       undoBlur();
-      document.querySelector('.deposit-page').classList.remove('show-deposit');
-      document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-      document.querySelector('.transfer-page').classList.remove('show-transfer');
       let mainCopy = [...accounts]
       let accountCopy = {...mainCopy[mainCopy.indexOf(accountMatch)]}
-      accountCopy.money -= amountInput
+      accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput)
       mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy
       setAccounts([...mainCopy])
+      localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
+      setEmailInput("")
+      setAmountInput("")
+      setWithdrawInput("")
     } else if (!accountMatch) {
       setErrorMessage({placeholder: 'xxxxxxxxx', message: "account not found"})
-    } else if (amountInput <= 0 || amountInput === "") {
+    } else if (parseInt(amountInput) <= 0 || amountInput === "") {
       setErrorMessage({placeholder: "Amount",message: "invalid amount input"})
-    } else if ( amountInput > accountMatch.money) {
+    } else if ( parseInt(amountInput) > parseInt(accountMatch.money)) {
       setErrorMessage({placeholder: "Amount", message: "not enough balance"})
     }
   }
@@ -57,9 +64,14 @@ function Withdraw({accounts, setAccounts}) {
   return (
     <div className='withdraw-page'>
       <div className='withdraw-container'>
+        <div className='withdraw-nav'>
+        <div className='withdraw-name-text'>Account Number:</div>
+        <div onClick={undoBlur} className='close-button'>
+            <i className='fa-solid fa-circle-xmark'></i>
+          </div>
+        </div>
         <div className='withdraw-input'>
-          <div className='withdraw-name-text'>Account Number:</div>
-          <input className='withdraw-from-input' type="number" placeholder='xxxxxxxxx' onChange={handleWithdrawChange} value={withdrawInput}></input>
+          <input className='withdraw-from-input' type="number" placeholder='xxxxxxxxx' onChange={handleWithdrawChange} value={accountNumber?accountNumber:withdrawInput}></input>
           {renderError('xxxxxxxxx')}
           <input
             className='withdraw-amount'

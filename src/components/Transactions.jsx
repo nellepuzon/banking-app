@@ -1,25 +1,25 @@
 import React from 'react';
-import Transfer from '../transaction-page/Transfer';
 
-const blurPage = () => {
-  document.querySelector('.admin-dashboard').classList.add('blur');
-  document.querySelector('.add-account-container').classList.add('blur');
-  document.querySelector('.table-box').classList.add('blur');
-  document.querySelector('.transactions').classList.add('blur');
-};
+// const blurPage = () => {
+//   document.querySelector('.admin-dashboard').classList.add('blur');
+//   document.querySelector('.add-account-container').classList.add('blur');
+//   document.querySelector('.table-box').classList.add('blur');
+//   document.querySelector('.transactions').classList.add('blur');
+// };
 
 const clickDeposit = () => {
-  blurPage();
-  document.querySelector('.deposit-page').classList.add("show-deposit")
+  // blurPage();
+  document.querySelector('.deposit-page').classList.toggle("show-deposit")
 }
 
 const clickWithdraw = () => {
-  blurPage();
-  document.querySelector('.withdraw-page').classList.add('show-withdraw')
+  // blurPage();
+  document.querySelector('.withdraw-page').classList.toggle('show-withdraw')
 }
+
 const clickTransfer = () => {
-  blurPage();
-  document.querySelector('.transfer-page').classList.add('show-transfer');
+  // blurPage();
+  document.querySelector('.transfer-page').classList.toggle('show-transfer');
 }
 
 function Transactions() {

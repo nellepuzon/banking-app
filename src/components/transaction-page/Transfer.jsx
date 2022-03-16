@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 
 const undoBlur = () => {
-    document.querySelector('.admin-dashboard').classList.remove('blur');
-    document.querySelector('.add-account-container').classList.remove('blur');
-    document.querySelector('.table-box').classList.remove('blur');
-    document.querySelector('.transactions').classList.remove('blur');
+    // document.querySelector('.admin-dashboard').classList.remove('blur');
+    // document.querySelector('.add-account-container').classList.remove('blur');
+    // document.querySelector('.table-box').classList.remove('blur');
+    // document.querySelector('.transactions').classList.remove('blur');
+    document.querySelector('.deposit-page').classList.remove('show-deposit');
+    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+    document.querySelector('.transfer-page').classList.remove('show-transfer');
 }
 
 
-function Transfer({accounts, setAccounts}) {
+function Transfer({accounts, setAccounts, fullName}) {
   const [senderInput, setSenderInput] = useState("")
   const [amountInput, setAmountInput] = useState("")
   const [recipientInput, setRecipientInput] = useState("")
@@ -21,6 +24,9 @@ function Transfer({accounts, setAccounts}) {
   
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value)
+    if(fullName) {
+      setSenderInput(fullName)
+    }
   }
   
   const handleRecipientChange = (e) => {
@@ -32,26 +38,20 @@ function Transfer({accounts, setAccounts}) {
   }
 
   const transferMoney = () => {
-    // undoBlur();
-    // document.querySelector('.deposit-page').classList.remove('show-deposit');
-    // document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-    // document.querySelector('.transfer-page').classList.remove('show-transfer');
     const senderMatch = accounts.find((element) => element.fullName === senderInput)
     const recipientMatch = accounts.find((element) => element.fullName === recipientInput)
 
-    if(senderMatch && recipientMatch && senderMatch.money > amountInput && amountInput > 0) {
+    if(senderMatch && recipientMatch && parseInt(senderMatch.money) > parseInt(amountInput) && parseInt(amountInput) > 0) {
       undoBlur();
-      document.querySelector('.deposit-page').classList.remove('show-deposit');
-      document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-      document.querySelector('.transfer-page').classList.remove('show-transfer');
         let mainCopy = [...accounts]
         let senderCopy = {...mainCopy[mainCopy.indexOf(senderMatch)]}
         let recipientCopy = {...mainCopy[mainCopy.indexOf(recipientMatch)]}
-        senderCopy.money -= amountInput
+        senderCopy.money = parseInt(senderCopy.money) - parseInt(amountInput)
         recipientCopy.money = parseInt(recipientCopy.money) + parseInt(amountInput)
         mainCopy[mainCopy.indexOf(senderMatch)] = senderCopy
         mainCopy[mainCopy.indexOf(recipientMatch)] = recipientCopy
         setAccounts([...mainCopy])
+        localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
         setErrorMessage("")
         setSenderInput("")
         setRecipientInput("")
@@ -61,9 +61,9 @@ function Transfer({accounts, setAccounts}) {
         setErrorMessage({message: 'sender account not found'})
     } else if (!recipientInput && senderMatch && amountInput !== "") {
       setErrorMessage({message: 'recipient account not found'})
-    } else if (amountInput <= 0) {
+    } else if (parseInt(amountInput) <= 0) {
       setErrorMessage({message: 'invalid amount input'})
-    } else if (senderMatch.money < amountInput && recipientMatch) {
+    } else if (parseInt(senderMatch.money) < parseInt(amountInput) && recipientMatch) {
       setErrorMessage({message: 'not enough balance'})
     } else if (!senderMatch && !recipientMatch && amountInput === ""){
       setErrorMessage({message: 'fill out all necessary information'})
@@ -79,10 +79,13 @@ function Transfer({accounts, setAccounts}) {
   return (
     <div className='transfer-page'>
       <div className='transfer-container'>
+        <div className='transfer-nav'><div className='transfer-from-text'>From:</div>
+        <div onClick={undoBlur} className='close-button'>
+            <i className='fa-solid fa-circle-xmark'></i>
+          </div></div>
         <div className='transfer-input'>
           {renderError()}
-          <div className='transfer-from-text'>From:</div>
-          <input className='transfer-from-input' placeholder='Sender' onChange={handleSenderChange} value={senderInput}></input>
+          <input className='transfer-from-input' placeholder='Sender' onChange={handleSenderChange} value={fullName?fullName:senderInput}></input>
           <input
             className='transfer-amount'
             type='number'

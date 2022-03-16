@@ -1,4 +1,3 @@
-@import 'media-queries';
 @import 'first-page/base';
 @import 'first-page/bank-logo';
 @import 'first-page/dropdown';
@@ -10,3 +9,7 @@
 @import 'transaction-page/deposit';
 @import 'transaction-page/withdraw';
 @import 'transaction-page/transfer';
+@import 'media-queries/1024px';
+@import 'media-queries/768px';
+@import 'media-queries/481px';
+@import 'user-page/userpage'

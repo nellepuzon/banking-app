@@ -1,22 +1,21 @@
-import userEvent from "@testing-library/user-event";
 import React, {useState} from "react";
 
-function AddAccount({setAccounts, accounts}) {
+function AddAccount({setAccounts, accounts, fullName, setFullName, balance, setBalance, userName, setUserName, password, setPassword, isEditing, setIsEditing, editingID}) {
 
-    const [fullName, setFullName] = useState('')
-    const [balance, setBalance] = useState('')
-    const [userName, setUserName] = useState('')
-    const [password, setPassword] = useState('')
+    // const [fullName, setFullName] = useState('')
+    // const [balance, setBalance] = useState('')
+    // const [userName, setUserName] = useState('')
+    // const [password, setPassword] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
-
+    
     const handleFullName = (e) => {
         setFullName(e.target.value)
     }
-
+    
     const handleBalance = (e) => {
         setBalance(e.target.value)
     }
-
+    
     const handleUsername = (e) => {
         setUserName(e.target.value)
     }
@@ -42,15 +41,23 @@ function AddAccount({setAccounts, accounts}) {
         setBalance("")
       }
 
+
       const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
           handleAddAccount();
         }
       }
+
     const handleAddAccount = (e) => {
         // e.preventDefault();
         const userNameMatch = accounts.find(element => element.userName === userName)
         const fullNameMatch = accounts.find(element => element.fullName === fullName)
+
+        if(isEditing) {
+            editUser(editingID)
+            setIsEditing(false)
+            return
+        }
 
         if (userNameMatch && !fullNameMatch && fullName !== '' && userName !== '' && password !== '' && balance !== '') {
             setErrorMessage({message:"username already exists"})
@@ -59,15 +66,20 @@ function AddAccount({setAccounts, accounts}) {
         } else if (userNameMatch && fullNameMatch && fullName !== '' && userName !== '' && password !== '' && balance !== '') {
             setErrorMessage({message:"account already exists"})
         } else if (fullName !== '' && balance !== '' && !userNameMatch && !fullNameMatch) {
-            setAccounts([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance }])
+            let test = Math.floor(Math.random()*100000000)
+            setAccounts([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance, accountNumber: test }])
+            localStorage.setItem("accounts", JSON.stringify([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance, accountNumber: test }]))
             setFullName('');
             setBalance('');
             setUserName('');
             setPassword('');
+            setErrorMessage('');
         } else {
             setErrorMessage({message:"fill out necessary information"})
         }
     }
+
+
     const renderError = () => {
         if(errorMessage) {
             return <div className='error-message'>{errorMessage.message}</div>
