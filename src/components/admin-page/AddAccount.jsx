@@ -25,8 +25,30 @@ function AddAccount({setAccounts, accounts}) {
         setPassword(e.target.value)
     }
 
+    const editUser = (id) => {
+        const selectedUser = accounts.find((user) => user.accountNumber === id)
+        selectedUser.userName = userName
+        selectedUser.fullName = fullName
+        selectedUser.password = password
+        selectedUser.money = balance
+        const updatedUsers = accounts.map((user) =>
+          user.id === id ? { ...selectedUser } : user
+        )
+        setAccounts(updatedUsers)
+        localStorage.setItem("accounts", JSON.stringify([...updatedUsers]))
+        setFullName("")
+        setUserName("")
+        setPassword("")
+        setBalance("")
+      }
+
+      const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+          handleAddAccount();
+        }
+      }
     const handleAddAccount = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const userNameMatch = accounts.find(element => element.userName === userName)
         const fullNameMatch = accounts.find(element => element.fullName === fullName)
 
@@ -55,12 +77,12 @@ function AddAccount({setAccounts, accounts}) {
         <div className="add-account-container">
             {renderError()}
             <div className="add-account-inputs">
-                <input className="input-username" type="text" placeholder="Username" value={userName} onChange={handleUsername}></input>
-                <input className="input-password" type="password" placeholder="Password" value={password} onChange={handlePassword}></input>
+                <input className="input-username" type="text" placeholder="Username" value={userName} onChange={handleUsername} onKeyPress={handleKeyPress}></input>
+                <input className="input-password" type="password" placeholder="Password" value={password} onChange={handlePassword} onKeyPress={handleKeyPress}></input>
             </div>
             <div className="add-account-inputs">
-            <input className="input-fullname" type="text" placeholder="Full Name" spellCheck="false" value={fullName} onChange={handleFullName}></input>
-            <input className="input-balance" type="number" placeholder="Initial Balance" value={balance} onChange={handleBalance}></input>
+            <input className="input-fullname" type="text" placeholder="Full Name" spellCheck="false" value={fullName} onChange={handleFullName} onKeyPress={handleKeyPress}></input>
+            <input className="input-balance" type="number" placeholder="Initial Balance" value={balance} onChange={handleBalance} onKeyPress={handleKeyPress}></input>
             </div>
             <button onClick={handleAddAccount} className="add-account-button">Add Account</button>
         </div>
