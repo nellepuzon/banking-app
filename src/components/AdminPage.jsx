@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from './admin-page/NavBar'
 import Table from './admin-page/Table'
 import AddAccount from './admin-page/AddAccount'
-import Transactions from "./admin-page/Transactions";
+import Transactions from "./Transactions";
 import Transfer from "./transaction-page/Transfer"
 import Deposit from "./transaction-page/Deposit";
 import Withdraw from "./transaction-page/Withdraw";
