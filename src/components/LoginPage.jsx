@@ -9,14 +9,18 @@ import DesktopLogin from './login-page/DesktopLogin';
 function LoginPage(props) {
   return (
     <div className='first-page'>
-        <DesktopLogin/>
-        <BankLogo />
+      <DesktopLogin/>
+      <BankLogo />
       <UserLogin
         isAdmin={props.isAdmin}
         setIsAdmin={props.setIsAdmin}
         accounts={props.accounts}
         loggedIn={props.loggedIn}
         setLoggedIn={props.setLoggedIn}
+        userInput={props.userInput}
+        setUserInput={props.setUserInput}
+        passInput={props.passInput}
+        setPassInput={props.setPassInput}
       />
         </div>
 

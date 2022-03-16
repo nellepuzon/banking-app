@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Deposit({ accounts, setAccounts }) {
+function Deposit({ accounts, setAccounts, accountNumber}) {
   const [depositInput, setDepositInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -12,6 +12,9 @@ function Deposit({ accounts, setAccounts }) {
 
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
+    if(accountNumber) {
+      setDepositInput(accountNumber)
+    }
   };
 
   const handleEmailChange = (e) => {
@@ -54,10 +57,10 @@ function Deposit({ accounts, setAccounts }) {
   }
 
   const undoBlur = () => {
-    document.querySelector('.admin-dashboard').classList.remove('blur');
-    document.querySelector('.add-account-container').classList.remove('blur');
-    document.querySelector('.table-box').classList.remove('blur');
-    document.querySelector('.transactions').classList.remove('blur');
+    // document.querySelector('.admin-dashboard').classList.remove('blur');
+    // document.querySelector('.add-account-container').classList.remove('blur');
+    // document.querySelector('.table-box').classList.remove('blur');
+    // document.querySelector('.transactions').classList.remove('blur');
     document.querySelector('.deposit-page').classList.remove('show-deposit');
     document.querySelector('.withdraw-page').classList.remove('show-withdraw');
     document.querySelector('.transfer-page').classList.remove('show-transfer');
@@ -82,7 +85,7 @@ function Deposit({ accounts, setAccounts }) {
             type='number'
             placeholder='xxxxxxxxx'
             onChange={handleDepositChange}
-            value={depositInput}
+            value={accountNumber? accountNumber : depositInput}
           ></input>
           {renderError('xxxxxxxxx')}
           <input

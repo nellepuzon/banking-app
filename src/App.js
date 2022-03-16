@@ -12,7 +12,11 @@ function App() {
   const [accounts, setAccounts] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const test = document.querySelector('.first-page')
+  const [userInput, setUserInput] = useState('');
+  const [passInput, setPassInput] = useState('');
+  // const test = document.querySelector('.first-page')
+  
+  
   const showPage = () => {
     if (isAdmin === true && loggedIn === true) {
       return <AdminPage 
@@ -20,6 +24,8 @@ function App() {
       setAccounts={setAccounts}
       setIsAdmin={setIsAdmin}
       setLoggedIn={setLoggedIn}
+      setUserInput={setUserInput}
+      setPassInput={setPassInput}
       />
     } else if(isAdmin === false && loggedIn === false) {
       return  <LoginPage
@@ -28,11 +34,24 @@ function App() {
       accounts={accounts}
       loggedIn={loggedIn}
       setLoggedIn={setLoggedIn}
+      userInput={userInput}
+      setUserInput={setUserInput}
+      passInput={passInput}
+      setPassInput={setPassInput}
       />
     } else if (isAdmin === false && loggedIn === true) {
+      const user = accounts.find((item)=>item.userName == userInput)
       return <UserPage
+      accounts={accounts}
+      setAccounts={setAccounts}
       setIsAdmin={setIsAdmin}
-      setLoggedIn={setLoggedIn}/>
+      setLoggedIn={setLoggedIn}
+      fullName={user.fullName}
+      balance={user.money}
+      accountNumber={user.accountNumber}
+      setUserInput={setUserInput}
+      setPassInput={setPassInput}
+      />
     }
   };
   

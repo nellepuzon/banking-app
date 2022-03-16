@@ -2,11 +2,18 @@ import React from 'react';
 import Transactions from './admin-page/Transactions';
 import LoginPage from './LoginPage';
 import Deposit from './transaction-page/Deposit';
+import Withdraw from './transaction-page/Withdraw';
+import Transfer from './transaction-page/Transfer';
 
-function UserPage({ setIsAdmin, setLoggedIn }) {
-    const logOut = () => {
+function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, accounts, setAccounts, setUserInput, setPassInput }) {
+    
+  const name = fullName.split(",")
+
+  const logOut = () => {
       setIsAdmin(false);
       setLoggedIn(false);
+      setUserInput("")
+      setPassInput("")
     };
 
   return (
@@ -23,7 +30,7 @@ function UserPage({ setIsAdmin, setLoggedIn }) {
       </header>
       <div className='top-bar'>
         <div className='greeting'>
-          Welcome back, <span>Eg!</span>
+          Welcome back, <span>{name[1]}</span>!
         </div>
         <div className='avatar'></div>
       </div>
@@ -54,19 +61,19 @@ function UserPage({ setIsAdmin, setLoggedIn }) {
               <i className='fa-solid fa-wifi'></i>
             </div>
           </div>
-          <div className='card-name'>Eglecerio Malunes III</div>
-          <div className='card-number'>1234 5678 9123 4567</div>
+          <div className='card-name'>{`${name[1]}  ${name[0]}`}</div>
+          <div className='card-number'>{accountNumber}</div>
         </div>
 
         <Transactions/>
-            {/* <Deposit accounts={props.accounts} setAccounts={props.setAccounts}/>
-            <Withdraw accounts={props.accounts} setAccounts={props.setAccounts}/>
-            <Transfer accounts={props.accounts} setAccounts={props.setAccounts}/> */}
+        <Deposit accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber}/>
+        <Withdraw accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber}/>
+        <Transfer accounts={accounts} setAccounts={setAccounts} fullName={fullName}/>
 
 
         <div className='bottom-nav'>
           <div className='nav-text'>Available Balance</div>
-          <div className='balance'>PHP 345,388.00</div>
+          <div className='balance'>PHP {balance}</div>
         </div>
       </div>
     </div>
