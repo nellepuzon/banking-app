@@ -21,8 +21,6 @@ function NavBar({ searchInput, setSearchInput, setIsAdmin, setLoggedIn }) {
       <div className='nav-bar'>
         <div className='accounts'>Accounts</div>
         <div className='sort-icon'>
-          <i className='fa-solid fa-arrow-up-a-z dashboard-icon'></i>
-          <i className='fa-solid fa-arrow-down-a-z dashboard-icon'></i>
 
           <i
             className='fa-solid fa-right-from-bracket dashboard-icon'

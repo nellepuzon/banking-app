@@ -1,5 +1,7 @@
 import React from 'react';
+import Transactions from './admin-page/Transactions';
 import LoginPage from './LoginPage';
+import Deposit from './transaction-page/Deposit';
 
 function UserPage({ setIsAdmin, setLoggedIn }) {
     const logOut = () => {
@@ -56,35 +58,11 @@ function UserPage({ setIsAdmin, setLoggedIn }) {
           <div className='card-number'>1234 5678 9123 4567</div>
         </div>
 
-        <div className='transaction'>
-          <div className='send-money trans'>
-            <div className='send-money-icon icon'>
-              <i className='fa-solid fa-money-bill-1-wave'></i>
-            </div>
-            <div className='send-money-text text'>Send Money</div>
-          </div>
+        <Transactions/>
+            {/* <Deposit accounts={props.accounts} setAccounts={props.setAccounts}/>
+            <Withdraw accounts={props.accounts} setAccounts={props.setAccounts}/>
+            <Transfer accounts={props.accounts} setAccounts={props.setAccounts}/> */}
 
-          <div className='receive-money trans'>
-            <div className='receive-money-icon icon'>
-              <i className='fa-solid fa-wallet'></i>
-            </div>
-            <div className='receive-money-text text'>Receive Money</div>
-          </div>
-
-          <div className='pay-bills trans'>
-            <div className='pay-bills-icon icon'>
-              <i className='fa-solid fa-file-invoice-dollar'></i>
-            </div>
-            <div className='pay-bills-text text'>Pay Bills</div>
-          </div>
-
-          <div className='buy-load trans'>
-            <div className='buy-load-icon icon'>
-              <i className='fa-solid fa-mobile-screen-button'></i>
-            </div>
-            <div className='buy-load-text text'>Buy Load</div>
-          </div>
-        </div>
 
         <div className='bottom-nav'>
           <div className='nav-text'>Available Balance</div>
