@@ -17,7 +17,14 @@ function AdminPage(props) {
     const [editingID, setEditingID] = useState(0)
     return (
         <div className="admin-page">
-            <NavBar searchInput={searchInput} setSearchInput={setSearchInput} setIsAdmin={props.setIsAdmin} setLoggedIn={props.setLoggedIn}/>
+            <NavBar 
+            searchInput={searchInput} 
+            setSearchInput={setSearchInput} 
+            setIsAdmin={props.setIsAdmin} 
+            setLoggedIn={props.setLoggedIn}
+            setUserInput={props.setUserInput}
+            setPassInput={props.setPassInput}
+            />
             <Table 
             accounts={props.accounts} 
             searchInput={searchInput} 

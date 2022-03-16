@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-function UserLogin({ accounts, loggedIn, setLoggedIn, isAdmin, setIsAdmin }) {
+function UserLogin({ accounts, loggedIn, setLoggedIn, isAdmin, setIsAdmin, userInput, setUserInput, passInput, setPassInput }) {
   const [errorMessage, setErrorMessage] = useState({});
-  const [userInput, setUserInput] = useState('');
-  const [passInput, setPassInput] = useState('');
+  // const [userInput, setUserInput] = useState('');
+  // const [passInput, setPassInput] = useState('');
 
   function userChangeHandler(e) {
     setUserInput(e.target.value);
@@ -27,12 +27,8 @@ function UserLogin({ accounts, loggedIn, setLoggedIn, isAdmin, setIsAdmin }) {
       } else if (user.type === 'admin') {
         setIsAdmin(true);
         setLoggedIn(true);
-        setUserInput('');
-        setPassInput('');
       } else if (user.type === 'user') {
         setLoggedIn(true);
-        setUserInput('');
-        setPassInput('');
       }
     } else {
       setErrorMessage({ placeholder: 'Username', message: 'invalid username' });

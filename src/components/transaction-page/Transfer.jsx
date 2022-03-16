@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
 const undoBlur = () => {
-    document.querySelector('.admin-dashboard').classList.remove('blur');
-    document.querySelector('.add-account-container').classList.remove('blur');
-    document.querySelector('.table-box').classList.remove('blur');
-    document.querySelector('.transactions').classList.remove('blur');
+    // document.querySelector('.admin-dashboard').classList.remove('blur');
+    // document.querySelector('.add-account-container').classList.remove('blur');
+    // document.querySelector('.table-box').classList.remove('blur');
+    // document.querySelector('.transactions').classList.remove('blur');
     document.querySelector('.deposit-page').classList.remove('show-deposit');
     document.querySelector('.withdraw-page').classList.remove('show-withdraw');
     document.querySelector('.transfer-page').classList.remove('show-transfer');
 }
 
 
-function Transfer({accounts, setAccounts}) {
+function Transfer({accounts, setAccounts, fullName}) {
   const [senderInput, setSenderInput] = useState("")
   const [amountInput, setAmountInput] = useState("")
   const [recipientInput, setRecipientInput] = useState("")
@@ -24,6 +24,9 @@ function Transfer({accounts, setAccounts}) {
   
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value)
+    if(fullName) {
+      setSenderInput(fullName)
+    }
   }
   
   const handleRecipientChange = (e) => {
@@ -82,7 +85,7 @@ function Transfer({accounts, setAccounts}) {
           </div></div>
         <div className='transfer-input'>
           {renderError()}
-          <input className='transfer-from-input' placeholder='Sender' onChange={handleSenderChange} value={senderInput}></input>
+          <input className='transfer-from-input' placeholder='Sender' onChange={handleSenderChange} value={fullName?fullName:senderInput}></input>
           <input
             className='transfer-amount'
             type='number'

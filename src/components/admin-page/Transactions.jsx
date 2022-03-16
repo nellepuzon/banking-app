@@ -1,38 +1,25 @@
 import React from 'react';
-import Transfer from '../transaction-page/Transfer';
 
-const blurPage = () => {
-  document.querySelector('.admin-dashboard').classList.add('blur');
-  document.querySelector('.add-account-container').classList.add('blur');
-  document.querySelector('.table-box').classList.add('blur');
-  document.querySelector('.transactions').classList.add('blur');
-};
+// const blurPage = () => {
+//   document.querySelector('.admin-dashboard').classList.add('blur');
+//   document.querySelector('.add-account-container').classList.add('blur');
+//   document.querySelector('.table-box').classList.add('blur');
+//   document.querySelector('.transactions').classList.add('blur');
+// };
 
 const clickDeposit = () => {
-  blurPage();
+  // blurPage();
   document.querySelector('.deposit-page').classList.toggle("show-deposit")
-  // document.querySelector('.withdraw-page').classList.add('hide-transaction');
-  //   document.querySelector('.transfer-page').classList.add('hide-transaction');
-  //   document.querySelector('.withdraw-page').classList.remove('hide-transaction');
-  //   document.querySelector('.transfer-page').classList.remove('hide-transaction');
 }
 
 const clickWithdraw = () => {
-  blurPage();
+  // blurPage();
   document.querySelector('.withdraw-page').classList.toggle('show-withdraw')
-  // document.querySelector('.deposit-page').classList.add('hide-transaction');
-  // document.querySelector('.transfer-page').classList.add('hide-transaction');
-  // document.querySelector('.deposit-page').classList.remove('hide-transaction');
-  // document.querySelector('.transfer-page').classList.remove('hide-transaction');
 }
 
 const clickTransfer = () => {
-  blurPage();
+  // blurPage();
   document.querySelector('.transfer-page').classList.toggle('show-transfer');
-  // document.querySelector('.deposit-page').classList.add('hide-transaction');
-  // document.querySelector('.withdraw-page').classList.add('hide-transaction');
-  // document.querySelector('.deposit-page').classList.remove('hide-transaction');
-  // document.querySelector('.withdraw-page').classList.remove('hide-transaction');
 }
 
 function Transactions() {

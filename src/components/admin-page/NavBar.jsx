@@ -6,7 +6,7 @@ function logOut() {
   return (<LoginPage />), console.log(logOut);
 }
 
-function NavBar({ searchInput, setSearchInput, setIsAdmin, setLoggedIn }) {
+function NavBar({ setSearchInput, setIsAdmin, setLoggedIn, setUserInput, setPassInput }) {
   const handleChange = (e) => {
     setSearchInput(e.target.value);
   };
@@ -14,6 +14,8 @@ function NavBar({ searchInput, setSearchInput, setIsAdmin, setLoggedIn }) {
   const logOut = () => {
     setIsAdmin(false);
     setLoggedIn(false);
+    setUserInput("")
+    setPassInput("")
   };
 
   return (

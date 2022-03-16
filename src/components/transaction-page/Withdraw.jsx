@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
 const undoBlur = () => {
-  document.querySelector('.admin-dashboard').classList.remove('blur');
-  document.querySelector('.add-account-container').classList.remove('blur');
-  document.querySelector('.table-box').classList.remove('blur');
-  document.querySelector('.transactions').classList.remove('blur');
+  // document.querySelector('.admin-dashboard').classList.remove('blur');
+  // document.querySelector('.add-account-container').classList.remove('blur');
+  // document.querySelector('.table-box').classList.remove('blur');
+  // document.querySelector('.transactions').classList.remove('blur');
   document.querySelector('.deposit-page').classList.remove('show-deposit');
   document.querySelector('.withdraw-page').classList.remove('show-withdraw');
   document.querySelector('.transfer-page').classList.remove('show-transfer');
 };
 
 
-function Withdraw({accounts, setAccounts}) {
+function Withdraw({accounts, setAccounts, accountNumber}) {
   const [withdrawInput, setWithdrawInput] = useState("")
   const [amountInput, setAmountInput] = useState("")
   const [emailInput, setEmailInput] = useState("")
@@ -23,6 +23,9 @@ function Withdraw({accounts, setAccounts}) {
   
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value)
+    if(accountNumber) {
+      setWithdrawInput(accountNumber)
+    }
   }
   
   const handleEmailChange = (e) => {
@@ -68,7 +71,7 @@ function Withdraw({accounts, setAccounts}) {
           </div>
         </div>
         <div className='withdraw-input'>
-          <input className='withdraw-from-input' type="number" placeholder='xxxxxxxxx' onChange={handleWithdrawChange} value={withdrawInput}></input>
+          <input className='withdraw-from-input' type="number" placeholder='xxxxxxxxx' onChange={handleWithdrawChange} value={accountNumber?accountNumber:withdrawInput}></input>
           {renderError('xxxxxxxxx')}
           <input
             className='withdraw-amount'
