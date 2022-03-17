@@ -51,10 +51,10 @@ function AdminPage(props) {
             setIsEditing={setIsEditing}
             editingID={editingID}
             />
-            <Transactions/>
-            <Deposit accounts={props.accounts} setAccounts={props.setAccounts}/>
-            <Withdraw accounts={props.accounts} setAccounts={props.setAccounts}/>
-            <Transfer accounts={props.accounts} setAccounts={props.setAccounts}/>
+            <Transactions isAdmin={props.isAdmin}/>
+            <Deposit accounts={props.accounts} setAccounts={props.setAccounts} isAdmin={props.isAdmin}/>
+            <Withdraw accounts={props.accounts} setAccounts={props.setAccounts} isAdmin={props.isAdmin}/>
+            <Transfer accounts={props.accounts} setAccounts={props.setAccounts} isAdmin={props.isAdmin}/>
         </div>
     )
 }

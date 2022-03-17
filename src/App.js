@@ -26,6 +26,7 @@ function App() {
       setLoggedIn={setLoggedIn}
       setUserInput={setUserInput}
       setPassInput={setPassInput}
+      isAdmin={isAdmin}
       />
     } else if (isAdmin === false && loggedIn === true) {
       const user = accounts.find((item)=>item.userName == userInput)
@@ -39,6 +40,7 @@ function App() {
       accountNumber={user.accountNumber}
       setUserInput={setUserInput}
       setPassInput={setPassInput}
+      isAdmin={isAdmin}
       />
     }
     else {

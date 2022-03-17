@@ -1,10 +1,27 @@
 import React, { useState } from 'react';
 
-function Deposit({ accounts, setAccounts, accountNumber}) {
+function Deposit({ accounts, setAccounts, accountNumber, isAdmin}) {
   const [depositInput, setDepositInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const undoBlur = () => {
+    if(isAdmin) {
+      document.querySelector('.admin-dashboard').classList.remove('blur');
+      document.querySelector('.add-account-container').classList.remove('blur');
+      document.querySelector('.table-box').classList.remove('blur');
+      document.querySelector('.transactions').classList.remove('blur');
+    }
+  
+    document.querySelector('.deposit-page').classList.remove('show-deposit');
+    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+    document.querySelector('.transfer-page').classList.remove('show-transfer');
+    setErrorMessage('');
+    setEmailInput('');
+    setAmountInput('');
+    setDepositInput('');
+  };
 
   const handleDepositChange = (e) => {
     setDepositInput(e.target.value);
@@ -56,19 +73,6 @@ function Deposit({ accounts, setAccounts, accountNumber}) {
     }
   }
 
-  const undoBlur = () => {
-    // document.querySelector('.admin-dashboard').classList.remove('blur');
-    // document.querySelector('.add-account-container').classList.remove('blur');
-    // document.querySelector('.table-box').classList.remove('blur');
-    // document.querySelector('.transactions').classList.remove('blur');
-    document.querySelector('.deposit-page').classList.remove('show-deposit');
-    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-    document.querySelector('.transfer-page').classList.remove('show-transfer');
-    setErrorMessage('');
-    setEmailInput('');
-    setAmountInput('');
-    setDepositInput('');
-  };
 
   return (
     <div className='deposit-page'>
