@@ -11,7 +11,7 @@ const undoBlur = () => {
 }
 
 
-function Transfer({accounts, setAccounts, fullName}) {
+function Transfer({accounts, setAccounts, accountNumber}) {
   const [senderInput, setSenderInput] = useState("")
   const [amountInput, setAmountInput] = useState("")
   const [recipientInput, setRecipientInput] = useState("")
@@ -24,8 +24,8 @@ function Transfer({accounts, setAccounts, fullName}) {
   
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value)
-    if(fullName) {
-      setSenderInput(fullName)
+    if(accountNumber) {
+      setSenderInput(accountNumber)
     }
   }
   
@@ -38,8 +38,8 @@ function Transfer({accounts, setAccounts, fullName}) {
   }
 
   const transferMoney = () => {
-    const senderMatch = accounts.find((element) => element.fullName === senderInput)
-    const recipientMatch = accounts.find((element) => element.fullName === recipientInput)
+    const senderMatch = accounts.find((element) => element.accountNumber == senderInput)
+    const recipientMatch = accounts.find((element) => element.accountNumber == recipientInput)
 
     if(senderMatch && recipientMatch && parseInt(senderMatch.money) > parseInt(amountInput) && parseInt(amountInput) > 0) {
       undoBlur();
@@ -51,12 +51,15 @@ function Transfer({accounts, setAccounts, fullName}) {
         mainCopy[mainCopy.indexOf(senderMatch)] = senderCopy
         mainCopy[mainCopy.indexOf(recipientMatch)] = recipientCopy
         setAccounts([...mainCopy])
-        localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
+        // localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
         setErrorMessage("")
         setSenderInput("")
         setRecipientInput("")
         setAmountInput("")
         setEmailInput("")
+    } else if (!senderMatch && !recipientMatch && amountInput === "" || senderMatch && !recipientMatch && amountInput === "" || 
+    !senderMatch && recipientMatch && amountInput === "" || !senderMatch && !recipientMatch && amountInput !== ""){
+      setErrorMessage({message: 'fill out all necessary information'})
     } else if (!senderMatch && recipientMatch && amountInput !== "") {
         setErrorMessage({message: 'sender account not found'})
     } else if (!recipientInput && senderMatch && amountInput !== "") {
@@ -65,8 +68,10 @@ function Transfer({accounts, setAccounts, fullName}) {
       setErrorMessage({message: 'invalid amount input'})
     } else if (parseInt(senderMatch.money) < parseInt(amountInput) && recipientMatch) {
       setErrorMessage({message: 'not enough balance'})
-    } else if (!senderMatch && !recipientMatch && amountInput === ""){
-      setErrorMessage({message: 'fill out all necessary information'})
+    }  else if (senderMatch === recipientMatch) {
+      setErrorMessage({message: 'cannot transfer money to the same account'})
+    } else if(senderMatch && recipientMatch && amountInput === "") {
+      setErrorMessage({message: 'no amount input'})
     }
   }
 
@@ -85,7 +90,14 @@ function Transfer({accounts, setAccounts, fullName}) {
           </div></div>
         <div className='transfer-input'>
           {renderError()}
-          <input className='transfer-from-input' placeholder='Sender' onChange={handleSenderChange} value={fullName?fullName:senderInput}></input>
+          <input className='transfer-from-input' list='accounts' placeholder='Sender' onChange={handleSenderChange} value={accountNumber?accountNumber:senderInput}></input>
+          <datalist id='accounts'>
+            {accounts.map((account)=>{
+              if (account.accountNumber !== recipientInput){
+                return <option value={account.accountNumber} />
+              }
+            })}
+          </datalist>
           <input
             className='transfer-amount'
             type='number'
@@ -94,7 +106,14 @@ function Transfer({accounts, setAccounts, fullName}) {
             value={amountInput}
           ></input>
           <div className='transfer-to-text'>To:</div>
-          <input className='transfer-to-input' placeholder='Recipient' onChange={handleRecipientChange} value={recipientInput}></input>
+          <input className='transfer-to-input' list='accounts' placeholder='Recipient' onChange={handleRecipientChange} value={recipientInput}></input>
+          <datalist id='accounts'>
+            {accounts.map((account)=>{
+              if (account.accountNumber !== senderInput) {
+                return <option value={account.accountNumber} /> 
+              }
+            })}
+          </datalist>
           <div className='send-receipt'>Send receipt to:</div>
           <input
             className='input-receipt'

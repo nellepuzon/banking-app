@@ -8,8 +8,8 @@ import UserPage from './components/UserPage';
 
 
 function App() {
-  const [adminLogIn, setAdminLogIn] = useState({ userName: 'admin', password: 'admin123', type: 'admin' })
-  const [accounts, setAccounts] = useState("");
+  // const [adminLogIn, setAdminLogIn] = useState({ userName: 'admin', password: 'admin123', type: 'admin' })
+  const [accounts, setAccounts] = useState([{ userName: 'admin', password: 'admin123', type: 'admin' }]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [userInput, setUserInput] = useState('');
@@ -27,18 +27,6 @@ function App() {
       setUserInput={setUserInput}
       setPassInput={setPassInput}
       />
-    } else if(isAdmin === false && loggedIn === false) {
-      return  <LoginPage
-      isAdmin={isAdmin}
-      setIsAdmin={setIsAdmin}
-      accounts={accounts}
-      loggedIn={loggedIn}
-      setLoggedIn={setLoggedIn}
-      userInput={userInput}
-      setUserInput={setUserInput}
-      passInput={passInput}
-      setPassInput={setPassInput}
-      />
     } else if (isAdmin === false && loggedIn === true) {
       const user = accounts.find((item)=>item.userName == userInput)
       return <UserPage
@@ -53,18 +41,44 @@ function App() {
       setPassInput={setPassInput}
       />
     }
+    else {
+      return  <LoginPage
+      isAdmin={isAdmin}
+      setIsAdmin={setIsAdmin}
+      accounts={accounts}
+      loggedIn={loggedIn}
+      setLoggedIn={setLoggedIn}
+      userInput={userInput}
+      setUserInput={setUserInput}
+      passInput={passInput}
+      setPassInput={setPassInput}
+      />
+    }
   };
   
+  // useEffect(()=>{
+  //   if (localStorage.getItem("accounts") === null) {
+  //       localStorage.setItem("accounts", JSON.stringify([adminLogIn]))
+  //       const test = JSON.parse(localStorage.getItem("accounts"))
+  //       setAccounts(test)
+  //     } else {
+  //       const test = JSON.parse(localStorage.getItem("accounts"))
+  //       setAccounts(test)
+  //     }
+  // },[App]);
+
   useEffect(()=>{
     if (localStorage.getItem("accounts") === null) {
-        localStorage.setItem("accounts", JSON.stringify([adminLogIn]))
-        const test = JSON.parse(localStorage.getItem("accounts"))
-        setAccounts(test)
-      } else {
-        const test = JSON.parse(localStorage.getItem("accounts"))
-        setAccounts(test)
-      }
-  },[App]);
+      localStorage.setItem("accounts", JSON.stringify(accounts))
+    } else {
+      const accounts = JSON.parse(localStorage.getItem("accounts"))
+      setAccounts(accounts)
+    }
+  },[App])
+
+  useEffect(()=>{
+    localStorage.setItem("accounts", JSON.stringify(accounts))
+  },[accounts])
   
 
 

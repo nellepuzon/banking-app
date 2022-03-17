@@ -32,7 +32,7 @@ function Deposit({ accounts, setAccounts, accountNumber}) {
       accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput);
       mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy;
       setAccounts([...mainCopy]);
-      localStorage.setItem('accounts', JSON.stringify([...mainCopy]));
+      // localStorage.setItem('accounts', JSON.stringify([...mainCopy]));
       setEmailInput('');
       setAmountInput('');
       setDepositInput('');
@@ -83,10 +83,18 @@ function Deposit({ accounts, setAccounts, accountNumber}) {
           <input
             className='deposit-from-input'
             type='number'
+            list='accounts'
             placeholder='xxxxxxxxx'
             onChange={handleDepositChange}
             value={accountNumber? accountNumber : depositInput}
           ></input>
+          <datalist id='accounts'>
+            {accounts.map((item)=>{
+              if (item.accountNumber) {
+                return <option key={item.accountNumber} value={item.accountNumber}/>
+              }
+            })}
+          </datalist>
           {renderError('xxxxxxxxx')}
           <input
             className='deposit-amount'

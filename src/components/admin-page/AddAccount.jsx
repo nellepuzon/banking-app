@@ -68,7 +68,7 @@ function AddAccount({setAccounts, accounts, fullName, setFullName, balance, setB
         } else if (fullName !== '' && balance !== '' && !userNameMatch && !fullNameMatch) {
             let test = Math.floor(Math.random()*100000000)
             setAccounts([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance, accountNumber: test }])
-            localStorage.setItem("accounts", JSON.stringify([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance, accountNumber: test }]))
+            // localStorage.setItem("accounts", JSON.stringify([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance, accountNumber: test }]))
             setFullName('');
             setBalance('');
             setUserName('');

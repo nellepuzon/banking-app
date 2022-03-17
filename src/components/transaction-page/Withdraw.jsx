@@ -42,7 +42,7 @@ function Withdraw({accounts, setAccounts, accountNumber}) {
       accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput)
       mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy
       setAccounts([...mainCopy])
-      localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
+      // localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
       setEmailInput("")
       setAmountInput("")
       setWithdrawInput("")
@@ -71,7 +71,14 @@ function Withdraw({accounts, setAccounts, accountNumber}) {
           </div>
         </div>
         <div className='withdraw-input'>
-          <input className='withdraw-from-input' type="number" placeholder='xxxxxxxxx' onChange={handleWithdrawChange} value={accountNumber?accountNumber:withdrawInput}></input>
+          <input className='withdraw-from-input' list='accounts' type="number" placeholder='xxxxxxxxx' onChange={handleWithdrawChange} value={accountNumber?accountNumber:withdrawInput}></input>
+          <datalist id='accounts'>
+            {accounts.map((account) => {
+              if(account.accountNumber) {
+                return <option key={account.accountNumber} value={account.accountNumber}/>
+              }
+            })}
+          </datalist>
           {renderError('xxxxxxxxx')}
           <input
             className='withdraw-amount'
