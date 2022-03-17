@@ -264,4 +264,8 @@
     letter-spacing: 1px;
     cursor: pointer;
   }
+
+  .blur {
+    filter: blur(5px);
+  }
 }

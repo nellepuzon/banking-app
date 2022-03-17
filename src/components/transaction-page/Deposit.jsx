@@ -11,9 +11,13 @@ function Deposit({ accounts, setAccounts, accountNumber, isAdmin}) {
       document.querySelector('.admin-dashboard').classList.remove('blur');
       document.querySelector('.add-account-container').classList.remove('blur');
       document.querySelector('.table-box').classList.remove('blur');
-      document.querySelector('.transactions').classList.remove('blur');
+    } else if (!isAdmin) {
+      document.querySelector('.dashboard').classList.remove('blur')
+      document.querySelector('.top-bar').classList.remove('blur')
+      document.querySelector('.card-container').classList.remove('blur')
+      document.querySelector('.bottom-nav').classList.remove('blur')
     }
-  
+    document.querySelector('.transactions').classList.remove('blur');
     document.querySelector('.deposit-page').classList.remove('show-deposit');
     document.querySelector('.withdraw-page').classList.remove('show-withdraw');
     document.querySelector('.transfer-page').classList.remove('show-transfer');
@@ -77,18 +81,15 @@ function Deposit({ accounts, setAccounts, accountNumber, isAdmin}) {
   return (
     <div className='deposit-page'>
       <div className='deposit-container'>
-        <div className='deposit-nav'>
-          <div className='deposit-name-text'>Account Number:</div>
           <div onClick={undoBlur} className='close-button'>
             <i className='fa-solid fa-circle-xmark'></i>
-          </div>
         </div>
         <div className='deposit-input'>
           <input
-            className='deposit-from-input'
+            className='account-number-input'
             type='number'
             list='accounts'
-            placeholder='xxxxxxxxx'
+            placeholder='Account Number'
             onChange={handleDepositChange}
             value={accountNumber? accountNumber : depositInput}
           ></input>
