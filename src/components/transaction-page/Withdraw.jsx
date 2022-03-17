@@ -7,21 +7,21 @@ function Withdraw({ accounts, setAccounts, accountNumber, isAdmin }) {
   const [errorMessage, setErrorMessage] = useState('');
 
   const undoBlur = () => {
-    if(isAdmin) {
+    if (isAdmin) {
       document.querySelector('.admin-dashboard').classList.remove('blur');
       document.querySelector('.add-account-container').classList.remove('blur');
       document.querySelector('.table-box').classList.remove('blur');
     } else if (!isAdmin) {
-      document.querySelector('.dashboard').classList.remove('blur')
-      document.querySelector('.top-bar').classList.remove('blur')
-      document.querySelector('.card-container').classList.remove('blur')
-      document.querySelector('.bottom-nav').classList.remove('blur')
+      document.querySelector('.dashboard').classList.remove('blur');
+      document.querySelector('.top-bar').classList.remove('blur');
+      document.querySelector('.card-container').classList.remove('blur');
+      document.querySelector('.bottom-nav').classList.remove('blur');
     }
     document.querySelector('.transactions').classList.remove('blur');
     document.querySelector('.deposit-page').classList.remove('show-deposit');
     document.querySelector('.withdraw-page').classList.remove('show-withdraw');
     document.querySelector('.transfer-page').classList.remove('show-transfer');
-  }
+  };
 
   const handleWithdrawChange = (e) => {
     setWithdrawInput(e.target.value);

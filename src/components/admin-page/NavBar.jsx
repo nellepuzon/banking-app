@@ -6,7 +6,13 @@ function logOut() {
   return (<LoginPage />), console.log(logOut);
 }
 
-function NavBar({ setSearchInput, setIsAdmin, setLoggedIn, setUserInput, setPassInput }) {
+function NavBar({
+  setSearchInput,
+  setIsAdmin,
+  setLoggedIn,
+  setUserInput,
+  setPassInput,
+}) {
   const handleChange = (e) => {
     setSearchInput(e.target.value);
   };
@@ -14,8 +20,8 @@ function NavBar({ setSearchInput, setIsAdmin, setLoggedIn, setUserInput, setPass
   const logOut = () => {
     setIsAdmin(false);
     setLoggedIn(false);
-    setUserInput("")
-    setPassInput("")
+    setUserInput('');
+    setPassInput('');
   };
 
   return (
@@ -23,7 +29,6 @@ function NavBar({ setSearchInput, setIsAdmin, setLoggedIn, setUserInput, setPass
       <div className='nav-bar'>
         <div className='accounts'>Accounts</div>
         <div className='sort-icon'>
-
           <i
             className='fa-solid fa-right-from-bracket dashboard-icon'
             onClick={logOut}
@@ -31,7 +36,12 @@ function NavBar({ setSearchInput, setIsAdmin, setLoggedIn, setUserInput, setPass
         </div>
       </div>
       {/* <i className='fa-solid fa-magnifying-glass'></i> */}
-      <input className='search' type='text' placeholder='Search' onChange={handleChange}></input>
+      <input
+        className='search'
+        type='text'
+        placeholder='Search'
+        onChange={handleChange}
+      ></input>
     </div>
   );
 }

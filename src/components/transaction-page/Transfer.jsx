@@ -8,15 +8,15 @@ function Transfer({ accounts, setAccounts, accountNumber, isAdmin }) {
   const [emailInput, setEmailInput] = useState('');
 
   const undoBlur = () => {
-    if(isAdmin) {
+    if (isAdmin) {
       document.querySelector('.admin-dashboard').classList.remove('blur');
       document.querySelector('.add-account-container').classList.remove('blur');
       document.querySelector('.table-box').classList.remove('blur');
     } else if (!isAdmin) {
-      document.querySelector('.dashboard').classList.remove('blur')
-      document.querySelector('.top-bar').classList.remove('blur')
-      document.querySelector('.card-container').classList.remove('blur')
-      document.querySelector('.bottom-nav').classList.remove('blur')
+      document.querySelector('.dashboard').classList.remove('blur');
+      document.querySelector('.top-bar').classList.remove('blur');
+      document.querySelector('.card-container').classList.remove('blur');
+      document.querySelector('.bottom-nav').classList.remove('blur');
     }
     document.querySelector('.transactions').classList.remove('blur');
     document.querySelector('.deposit-page').classList.remove('show-deposit');

@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 
-function UserLogin({ accounts, loggedIn, setLoggedIn, isAdmin, setIsAdmin, userInput, setUserInput, passInput, setPassInput }) {
+function UserLogin({
+  accounts,
+  loggedIn,
+  setLoggedIn,
+  isAdmin,
+  setIsAdmin,
+  userInput,
+  setUserInput,
+  passInput,
+  setPassInput,
+}) {
   const [errorMessage, setErrorMessage] = useState({});
   // const [userInput, setUserInput] = useState('');
   // const [passInput, setPassInput] = useState('');
@@ -39,7 +49,7 @@ function UserLogin({ accounts, loggedIn, setLoggedIn, isAdmin, setIsAdmin, userI
     if (event.key === 'Enter') {
       handleSubmit();
     }
-  }
+  };
 
   function renderError(placeholder) {
     if (placeholder === errorMessage.placeholder && !loggedIn) {

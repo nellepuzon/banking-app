@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 
-function Deposit({ accounts, setAccounts, accountNumber, isAdmin}) {
+function Deposit({ accounts, setAccounts, accountNumber, isAdmin }) {
   const [depositInput, setDepositInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const undoBlur = () => {
-    if(isAdmin) {
+    if (isAdmin) {
       document.querySelector('.admin-dashboard').classList.remove('blur');
       document.querySelector('.add-account-container').classList.remove('blur');
       document.querySelector('.table-box').classList.remove('blur');
     } else if (!isAdmin) {
-      document.querySelector('.dashboard').classList.remove('blur')
-      document.querySelector('.top-bar').classList.remove('blur')
-      document.querySelector('.card-container').classList.remove('blur')
-      document.querySelector('.bottom-nav').classList.remove('blur')
+      document.querySelector('.dashboard').classList.remove('blur');
+      document.querySelector('.top-bar').classList.remove('blur');
+      document.querySelector('.card-container').classList.remove('blur');
+      document.querySelector('.bottom-nav').classList.remove('blur');
     }
     document.querySelector('.transactions').classList.remove('blur');
     document.querySelector('.deposit-page').classList.remove('show-deposit');
@@ -33,8 +33,8 @@ function Deposit({ accounts, setAccounts, accountNumber, isAdmin}) {
 
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
-    if(accountNumber) {
-      setDepositInput(accountNumber)
+    if (accountNumber) {
+      setDepositInput(accountNumber);
     }
   };
 
@@ -77,12 +77,11 @@ function Deposit({ accounts, setAccounts, accountNumber, isAdmin}) {
     }
   }
 
-
   return (
     <div className='deposit-page'>
       <div className='deposit-container'>
-          <div onClick={undoBlur} className='close-button'>
-            <i className='fa-solid fa-circle-xmark'></i>
+        <div onClick={undoBlur} className='close-button'>
+          <i className='fa-solid fa-circle-xmark'></i>
         </div>
         <div className='deposit-input'>
           <input
@@ -91,12 +90,14 @@ function Deposit({ accounts, setAccounts, accountNumber, isAdmin}) {
             list='accounts'
             placeholder='Account Number'
             onChange={handleDepositChange}
-            value={accountNumber? accountNumber : depositInput}
+            value={accountNumber ? accountNumber : depositInput}
           ></input>
           <datalist id='accounts'>
-            {accounts.map((item)=>{
+            {accounts.map((item) => {
               if (item.accountNumber) {
-                return <option key={item.accountNumber} value={item.accountNumber}/>
+                return (
+                  <option key={item.accountNumber} value={item.accountNumber} />
+                );
               }
             })}
           </datalist>
