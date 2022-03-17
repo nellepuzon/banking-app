@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 
-const undoBlur = () => {
-    // document.querySelector('.admin-dashboard').classList.remove('blur');
-    // document.querySelector('.add-account-container').classList.remove('blur');
-    // document.querySelector('.table-box').classList.remove('blur');
-    // document.querySelector('.transactions').classList.remove('blur');
-    document.querySelector('.deposit-page').classList.remove('show-deposit');
-    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-    document.querySelector('.transfer-page').classList.remove('show-transfer');
-}
 
 
-function Transfer({accounts, setAccounts, accountNumber}) {
+function Transfer({accounts, setAccounts, accountNumber, isAdmin}) {
   const [senderInput, setSenderInput] = useState("")
   const [amountInput, setAmountInput] = useState("")
   const [recipientInput, setRecipientInput] = useState("")
   const [errorMessage, setErrorMessage] = useState("") 
   const [emailInput, setEmailInput] = useState("")
+  
+  const undoBlur = () => {
+    if (isAdmin) {
+      document.querySelector('.admin-dashboard').classList.remove('blur');
+      document.querySelector('.add-account-container').classList.remove('blur');
+      document.querySelector('.table-box').classList.remove('blur');
+      document.querySelector('.transactions').classList.remove('blur');
+    }
+  
+      document.querySelector('.deposit-page').classList.remove('show-deposit');
+      document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+      document.querySelector('.transfer-page').classList.remove('show-transfer');
+  }
 
   const handleSenderChange = (e) => {
     setSenderInput(e.target.value)

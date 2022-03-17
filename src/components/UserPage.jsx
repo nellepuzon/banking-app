@@ -5,7 +5,7 @@ import Deposit from './transaction-page/Deposit';
 import Withdraw from './transaction-page/Withdraw';
 import Transfer from './transaction-page/Transfer';
 
-function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, accounts, setAccounts, setUserInput, setPassInput }) {
+function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, accounts, setAccounts, setUserInput, setPassInput, isAdmin }) {
     
   const name = fullName.split(",")
 
@@ -65,10 +65,10 @@ function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, a
           <div className='card-number'>{accountNumber}</div>
         </div>
 
-        <Transactions/>
-        <Deposit accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber}/>
-        <Withdraw accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber}/>
-        <Transfer accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber}/>
+        <Transactions isAdmin={isAdmin}/>
+        <Deposit accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber} isAdmin={isAdmin}/>
+        <Withdraw accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber} isAdmin={isAdmin}/>
+        <Transfer accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber} isAdmin={isAdmin}/>
 
 
         <div className='bottom-nav'>
