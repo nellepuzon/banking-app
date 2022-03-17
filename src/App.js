@@ -76,7 +76,7 @@ function App() {
       const accounts = JSON.parse(localStorage.getItem("accounts"))
       setAccounts(accounts)
     }
-  },[App])
+  },[])
 
   useEffect(()=>{
     localStorage.setItem("accounts", JSON.stringify(accounts))
