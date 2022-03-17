@@ -4,6 +4,7 @@ import LoginPage from './LoginPage';
 import Deposit from './transaction-page/Deposit';
 import Withdraw from './transaction-page/Withdraw';
 import Transfer from './transaction-page/Transfer';
+import BudgetApp from './budget-app/BudgetApp';
 
 function UserPage({
   setIsAdmin,
@@ -25,6 +26,13 @@ function UserPage({
     setUserInput('');
     setPassInput('');
   };
+
+  function showBudgetApp() {
+    document.querySelector('.top-bar').classList.add('hide');
+    document.querySelector('.card-container').classList.add('hide');
+    document.querySelector('.transactions').classList.add('hide');
+    document.querySelector('.manage-payments').classList.add('hide');
+  }
 
   return (
     <div className='third-page'>
@@ -78,6 +86,10 @@ function UserPage({
         </div>
       </div>
 
+      <div onClick={showBudgetApp} className='manage-payments'>
+        Manage Payments
+      </div>
+
       {/* <div className='user-transactions'> */}
       <Transactions isAdmin={isAdmin} />
       <Deposit
@@ -100,6 +112,8 @@ function UserPage({
       />
       {/* </div> */}
 
+      <BudgetApp />
+      
       <div className='bottom-nav'>
         <div className='nav-text'>Available Balance</div>
         <div className='balance'>PHP {balance}</div>

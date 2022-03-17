@@ -776,4 +776,188 @@
     letter-spacing: 1px;
     cursor: pointer;
   }
+
+  //budget app
+
+  .manage-payments {
+    display: flex;
+    color: #282c34;
+    background-color: #61dbfb;
+    font-size: 20px;
+    font-weight: 700;
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .budget-app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+  }
+
+  .budget-app-title {
+    color: #61dbfb;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-top: 15px;
+  }
+
+  .wallet {
+    background-image: linear-gradient(
+      to top left,
+      #0a5b6f,
+      #2f8ea5,
+      #44b1cd,
+      #75d5ec
+    );
+    height: 100%;
+    max-height: 30%;
+    margin: 25px auto 0 auto;
+    width: 100%;
+    max-width: 90%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wallet-amount {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+
+  .fa-peso-sign {
+    font-size: 33px;
+    padding-right: 5px;
+  }
+
+  .expenses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 95%;
+    margin: 20px auto;
+    height: 100%;
+    max-height: 30%;
+  }
+
+  .expenses-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #61dbfb;
+    padding-bottom: 15px;
+    margin: 10px 0 10px 0;
+  }
+
+  .expenses ul {
+    width: 100%;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .expenses ul:last-child {
+    border-bottom: 1px solid rgb(143, 143, 143);
+  }
+
+  .expenses ul li {
+    display: flex;
+    list-style-type: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+  }
+
+  .expenses li > .pay-button {
+    background-color: white;
+    padding: 5px 10px;
+    color: #282c34 !important;
+    border-radius: 10px 0 0 10px;
+    font-size: 16px !important;
+    display: none;
+    justify-content: center;
+    width: 60px;
+  }
+
+  .show {
+    display: flex;
+  }
+
+  .cost {
+    border-radius: 10px;
+    background-color: #61dbfb;
+    padding: 5px 10px;
+    color: #282c34 !important;
+    font-size: 16px !important;
+    width: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .border-radius {
+    border-radius: 0 10px 10px 0;
+  }
+
+  .fa-trash-can,
+  .fa-pen-to-square {
+    padding-left: 20px;
+    display: none;
+    font-size: 14px;
+  }
+
+  .fa-trash-can {
+    padding-left: 10px;
+  }
+
+  .show {
+    display: flex;
+  }
+
+  .expenses input {
+    outline: none;
+    border: none;
+    height: 30px;
+    background: none;
+    color: white;
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  .expenses input::placeholder {
+    color: rgb(143, 143, 143);
+  }
+
+  .fa-plus {
+    color: rgb(143, 143, 143);
+    font-size: 15px;
+    margin-right: 18px;
+  }
+
+  .small {
+    font-size: 15px;
+  }
+
+  
 }
