@@ -5,16 +5,26 @@ import Deposit from './transaction-page/Deposit';
 import Withdraw from './transaction-page/Withdraw';
 import Transfer from './transaction-page/Transfer';
 
-function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, accounts, setAccounts, setUserInput, setPassInput, isAdmin }) {
-    
-  const name = fullName.split(",")
+function UserPage({
+  setIsAdmin,
+  setLoggedIn,
+  fullName,
+  balance,
+  accountNumber,
+  accounts,
+  setAccounts,
+  setUserInput,
+  setPassInput,
+  isAdmin,
+}) {
+  const name = fullName.split(',');
 
   const logOut = () => {
-      setIsAdmin(false);
-      setLoggedIn(false);
-      setUserInput("")
-      setPassInput("")
-    };
+    setIsAdmin(false);
+    setLoggedIn(false);
+    setUserInput('');
+    setPassInput('');
+  };
 
   return (
     <div className='third-page'>
@@ -32,7 +42,9 @@ function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, a
         <div className='greeting'>
           Welcome back, <span>{name[1]}</span>!
         </div>
-        <div className='avatar'><i className="fa-solid fa-user-tie"></i></div>
+        <div className='avatar'>
+          <i className='fa-solid fa-user-tie'></i>
+        </div>
       </div>
 
       <div className='card-container'>
@@ -64,17 +76,33 @@ function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, a
           <div className='card-name'>{`${name[1]}  ${name[0]}`}</div>
           <div className='card-number'>{accountNumber}</div>
         </div>
+      </div>
 
-        <Transactions isAdmin={isAdmin}/>
-        <Deposit accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber} isAdmin={isAdmin}/>
-        <Withdraw accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber} isAdmin={isAdmin}/>
-        <Transfer accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber} isAdmin={isAdmin}/>
+      {/* <div className='user-transactions'> */}
+        <Transactions isAdmin={isAdmin} />
+        <Deposit
+          accounts={accounts}
+          setAccounts={setAccounts}
+          accountNumber={accountNumber}
+          isAdmin={isAdmin}
+        />
+        <Withdraw
+          accounts={accounts}
+          setAccounts={setAccounts}
+          accountNumber={accountNumber}
+          isAdmin={isAdmin}
+        />
+        <Transfer
+          accounts={accounts}
+          setAccounts={setAccounts}
+          accountNumber={accountNumber}
+          isAdmin={isAdmin}
+        />
+      {/* </div> */}
 
-
-        <div className='bottom-nav'>
-          <div className='nav-text'>Available Balance</div>
-          <div className='balance'>PHP {balance}</div>
-        </div>
+      <div className='bottom-nav'>
+        <div className='nav-text'>Available Balance</div>
+        <div className='balance'>PHP {balance}</div>
       </div>
     </div>
   );
