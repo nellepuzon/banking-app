@@ -1,6 +1,5 @@
 @media all and (max-width: 480px) {
-
-* {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,7 +20,7 @@
   }
 
   .first-page {
-    display: flex
+    display: flex;
   }
 
   .hide-first-page {

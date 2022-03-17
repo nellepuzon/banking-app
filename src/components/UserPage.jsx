@@ -79,25 +79,25 @@ function UserPage({
       </div>
 
       {/* <div className='user-transactions'> */}
-        <Transactions isAdmin={isAdmin} />
-        <Deposit
-          accounts={accounts}
-          setAccounts={setAccounts}
-          accountNumber={accountNumber}
-          isAdmin={isAdmin}
-        />
-        <Withdraw
-          accounts={accounts}
-          setAccounts={setAccounts}
-          accountNumber={accountNumber}
-          isAdmin={isAdmin}
-        />
-        <Transfer
-          accounts={accounts}
-          setAccounts={setAccounts}
-          accountNumber={accountNumber}
-          isAdmin={isAdmin}
-        />
+      <Transactions isAdmin={isAdmin} />
+      <Deposit
+        accounts={accounts}
+        setAccounts={setAccounts}
+        accountNumber={accountNumber}
+        isAdmin={isAdmin}
+      />
+      <Withdraw
+        accounts={accounts}
+        setAccounts={setAccounts}
+        accountNumber={accountNumber}
+        isAdmin={isAdmin}
+      />
+      <Transfer
+        accounts={accounts}
+        setAccounts={setAccounts}
+        accountNumber={accountNumber}
+        isAdmin={isAdmin}
+      />
       {/* </div> */}
 
       <div className='bottom-nav'>

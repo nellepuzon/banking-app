@@ -61,11 +61,11 @@
     display: none;
   }
 
-.fa-bars {
+  .fa-bars {
     color: white;
     margin-right: 10px;
     font-size: 20px;
-}
+  }
 
   .user-page {
     display: flex;
@@ -93,7 +93,7 @@
     display: flex;
     flex-direction: column;
     line-height: 1;
-    margin-top: 10px
+    margin-top: 10px;
   }
 
   .slogan-container {
@@ -406,7 +406,7 @@
   }
 
   .search::placeholder {
-    color: white
+    color: white;
   }
 
   .search:focus::placeholder {
@@ -442,7 +442,7 @@
   }
 
   .fa-bars {
-    display:none
+    display: none;
   }
 
   .table-box {
@@ -578,7 +578,7 @@
   //   height: 50px;
   // }
 
-  .edit-button, 
+  .edit-button,
   .delete-button {
     color: white;
     position: relative;
@@ -591,9 +591,9 @@
     left: 15px;
   }
 
-  .edit-button:hover, 
+  .edit-button:hover,
   .delete-button:hover {
-    color: #282c34
+    color: #282c34;
   }
 
   .transactions {
@@ -690,7 +690,7 @@
     height: 40px;
     border-radius: 50%;
     font-size: 20px;
-    color: #282c34
+    color: #282c34;
   }
   .card-container {
     background-color: rgb(97, 219, 251);
@@ -907,9 +907,7 @@
     cursor: pointer;
   }
 
-  
-
-  // user page 
+  // user page
 
   @media all and (max-width: 480px) {
     * {
@@ -917,7 +915,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     .third-page {
       display: flex;
       height: 100vh;
@@ -926,7 +924,7 @@
       overflow: hidden;
       padding-top: 50px;
     }
-  
+
     .dashboard {
       color: white;
       display: flex;
@@ -938,11 +936,11 @@
       padding-bottom: 15px;
       align-items: center;
     }
-  
+
     .fa-arrow-right-from-bracket {
       cursor: pointer;
     }
-  
+
     .top-bar {
       height: 5%;
       width: 100%;
@@ -951,17 +949,17 @@
       align-items: center;
       margin-top: 20px;
     }
-  
+
     .greeting {
       font-size: 25px;
       color: rgb(255, 255, 255);
     }
-  
+
     .greeting > span {
       font-weight: 700;
       color: #61dbfb;
     }
-  
+
     .avatar {
       background-image: url('https://ca.slack-edge.com/T010DU0GZE0-U02TZTA9WKA-f995f60684ef-512');
       background-repeat: no-repeat;
@@ -971,7 +969,7 @@
       border-radius: 50%;
       padding-right: 10px;
     }
-  
+
     .card-container {
       background-color: rgb(97, 219, 251);
       height: 30%;
@@ -980,13 +978,13 @@
       border-radius: 30px;
       padding: 10px 10px 0 10px;
     }
-  
+
     .second-icon {
       display: block;
       padding-right: 3px;
       font-size: 25px;
     }
-  
+
     .card {
       display: flex;
       flex-direction: column;
@@ -994,19 +992,19 @@
       justify-content: flex-end;
       padding: 30px;
     }
-  
+
     .card-logo {
       display: flex;
       flex-direction: row;
       margin-bottom: 10px;
     }
-  
+
     .logo-name {
       color: #282c34;
       font-size: 25px;
       font-weight: 700;
     }
-  
+
     .logo-name > span {
       background-color: #282c34;
       color: #61dbfb;
@@ -1015,23 +1013,23 @@
       padding: 2px 5px;
       font-weight: 400;
     }
-  
+
     .card-name,
     .card-number {
       font-weight: 600;
       color: #282c34;
       margin-top: 3px;
     }
-  
+
     .card-name {
       font-size: 20px;
       font-weight: 700;
     }
-  
+
     .card-number {
       font-size: 15px;
     }
-  
+
     .chip {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -1043,21 +1041,21 @@
       max-height: 80%;
       border-radius: 10px;
     }
-  
+
     .chip-cell-1 {
       border-bottom: 1px solid #61dbfb;
     }
-  
+
     .chip-cell-2 {
       /* border-right: 1px solid #61dbfb;
       border-left: 1px solid #61dbfb; */
       border-bottom: 1px solid #61dbfb;
     }
-  
+
     .chip-cell-3 {
       border-bottom: 1px solid #61dbfb;
     }
-  
+
     /* .chip-cell-4 {
       border-top: 1px solid #61dbfb;
     }
@@ -1067,27 +1065,27 @@
       transform: rotate(30deg);
       transform-origin: top left;
     } */
-  
+
     /* .chip-cell-6 {
       border-top: 1px solid #61dbfb;
       transform: rotate(145deg);
       transform-origin: top left;
     } */
-  
+
     .chip-cell-7 {
       border-top: 1px solid #61dbfb;
       /* border-right: 1px solid #61dbfb; */
     }
-  
+
     .chip-cell-8 {
       border-top: 1px solid #61dbfb;
     }
-  
+
     .chip-cell-9 {
       border-top: 1px solid #61dbfb;
       /* border-left: 1px solid #61dbfb; */
     }
-  
+
     .chip::after {
       content: '';
       width: 15px;
@@ -1099,7 +1097,7 @@
       background-color: #282c34;
       border-radius: 5px;
     }
-  
+
     .card-design {
       display: flex;
       flex-direction: row;
@@ -1107,22 +1105,22 @@
       height: 100%;
       margin-top: 12px;
     }
-  
+
     .wifi {
       transform: rotate(90deg);
       margin: 0;
       font-size: 23px;
       margin: 0 0 10px 5px;
     }
-  
+
     .hide {
       display: none !important;
     }
-  
+
     .show {
       display: flex !important;
     }
-  
+
     .bottom-nav {
       display: flex;
       position: absolute;
@@ -1139,11 +1137,11 @@
       align-items: center;
       font-size: 16px;
     }
-  
+
     .balance {
       font-weight: 600;
     }
-  
+
     .transaction {
       display: flex;
       flex-direction: row;
@@ -1153,21 +1151,21 @@
       margin-top: 40px;
       color: #61dbfb;
     }
-  
+
     .icon {
       font-size: 30px;
       margin-bottom: 5px;
       color: rgb(97, 219, 251);
       cursor: pointer;
     }
-  
+
     .trans {
       display: flex;
       flex-direction: column;
       width: 100%;
       justify-content: center;
     }
-  
+
     .text {
       text-align: center;
       color: rgb(255, 255, 255);
@@ -1176,9 +1174,5 @@
       letter-spacing: 1px;
       cursor: pointer;
     }
-
   }
-  
-
-
 }

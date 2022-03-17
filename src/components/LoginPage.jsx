@@ -9,7 +9,7 @@ import DesktopLogin from './login-page/DesktopLogin';
 function LoginPage(props) {
   return (
     <div className='first-page'>
-      <DesktopLogin/>
+      <DesktopLogin />
       <BankLogo />
       <UserLogin
         isAdmin={props.isAdmin}
@@ -22,8 +22,7 @@ function LoginPage(props) {
         passInput={props.passInput}
         setPassInput={props.setPassInput}
       />
-        </div>
-
+    </div>
   );
 }
 
