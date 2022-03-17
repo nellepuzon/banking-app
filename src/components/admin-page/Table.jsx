@@ -14,9 +14,7 @@ function Table({accounts, searchInput, setAccounts, setFullName, setBalance, set
       </thead>
       <tbody>
       {accounts.filter((item) => {
-        if (searchInput === "") {
-          return item
-        } else if (item.fullName && item.fullName.toLowerCase().includes(searchInput.toLowerCase())) {
+        if (searchInput === "" || item.fullName && item.fullName.toLowerCase().includes(searchInput.toLowerCase())) {
           return item
         }
       }).map(account => {

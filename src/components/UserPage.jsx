@@ -32,7 +32,7 @@ function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, a
         <div className='greeting'>
           Welcome back, <span>{name[1]}</span>!
         </div>
-        <div className='avatar'><i class="fa-solid fa-user-tie"></i></div>
+        <div className='avatar'><i className="fa-solid fa-user-tie"></i></div>
       </div>
 
       <div className='card-container'>
@@ -68,7 +68,7 @@ function UserPage({ setIsAdmin, setLoggedIn, fullName, balance, accountNumber, a
         <Transactions/>
         <Deposit accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber}/>
         <Withdraw accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber}/>
-        <Transfer accounts={accounts} setAccounts={setAccounts} fullName={fullName}/>
+        <Transfer accounts={accounts} setAccounts={setAccounts} accountNumber={accountNumber}/>
 
 
         <div className='bottom-nav'>
