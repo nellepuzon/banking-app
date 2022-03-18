@@ -4421,9 +4421,6 @@
     text-transform: uppercase;
     padding: 10px;
   }
-  .hide {
-    display: none;
-  }
   .budget-app-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4463,16 +4460,18 @@
             align-items: center;
   }
   .wallet-amount {
-    font-size: 40px;
+    font-size: 45px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-weight: 500;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px black;
   }
-  .fa-peso-sign {
+  .big {
     font-size: 33px;
     padding-right: 5px;
   }
@@ -4536,7 +4535,9 @@
     color: #282c34 !important;
     border-radius: 10px 0 0 10px;
     font-size: 16px !important;
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -4570,7 +4571,9 @@
   .fa-trash-can,
   .fa-pen-to-square {
     padding-left: 20px;
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     font-size: 14px;
   }
   .fa-trash-can {
@@ -4609,6 +4612,12 @@
   }
   .small {
     font-size: 15px;
+  }
+  .hide {
+    display: none;
+  }
+  .input-cost {
+    width: 55px;
   }
 }
 /*# sourceMappingURL=output.css.map */

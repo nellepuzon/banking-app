@@ -17,7 +17,7 @@ function BudgetApp() {
       <div className="budget-app-title">Budget App</div>
       <div className="wallet">
         <div className="wallet-amount">
-          <i className="fa-solid fa-peso-sign"></i>2000
+          <i className="fa-solid fa-peso-sign big"></i>2000
         </div>
       </div>
       <div className="expenses">
@@ -27,10 +27,10 @@ function BudgetApp() {
           <ExpenseItem showDelete={showDelete} showPay={showPay} name={'Internet'} cost={'1299'}/>
           <ul>
             <li>
-              <input className="add-expense-list" placeholder="Add" />
+              <input className="add-expense-list" placeholder="Add Expense" />
             </li>
             <li>
-              <i className="fa-solid fa-plus"></i>
+              <input className="input-cost" placeholder="Cost"/>
             </li>
           </ul>
         </div>
