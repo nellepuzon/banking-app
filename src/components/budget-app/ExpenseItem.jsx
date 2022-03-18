@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useState } from 'react';
 
-function ExpenseItem({showDelete, showPay, name, cost}) {
+function ExpenseItem({ name, cost }) {
+  const [isToggle, setToggle] = useState(false);
+  const [isTogglePay, setTogglePay] = useState(false);
 
-    return(
-        <ul>
-            <li onClick={showDelete}>
-              {name} <i className='fa-solid fa-pen-to-square'></i>{' '}
-              <i className='fa-solid fa-trash-can'></i>
-            </li>
-            <li>
-              <li className='pay-button'>Pay</li>
-              <li onClick={showPay} className='cost'>
-                <i className='fa-solid fa-peso-sign small'></i>{cost}
-              </li>
-            </li>
-        </ul>
-    )
+  const handleToggle = () => {
+    setToggle(!isToggle);
+  };
+
+  const handleTogglePay = () => {
+    setTogglePay(!isTogglePay)
+  }
+
+  return (
+    <ul>
+      <li onClick={handleToggle}>
+        {name}{' '}
+        <i
+          className={`fa-solid fa-pen-to-square ${isToggle ? '' : 'hide'}`}
+        ></i>
+        <i className={`fa-solid fa-trash-can  ${isToggle ? '' : 'hide'}`}></i>
+      </li>
+      <li>
+        <li className={`pay-button ${isTogglePay ? '' : 'hide'}`}>Pay</li>
+        <li onClick={handleTogglePay} className={`cost ${isTogglePay ? 'border-radius' : ''}`}>
+          <i className='fa-solid fa-peso-sign big small'></i>
+          {cost}
+        </li>
+      </li>
+    </ul>
+  );
 }
 
-export default ExpenseItem
+export default ExpenseItem;
