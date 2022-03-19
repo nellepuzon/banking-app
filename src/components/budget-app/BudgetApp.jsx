@@ -1,53 +1,99 @@
-import React, {useState} from 'react';
-import ExpenseItem from './ExpenseItem';
+import React, { useEffect, useState } from "react";
+import ExpenseItem from "./ExpenseItem";
 
-function BudgetApp({balance}) {
-  const [expense, setExpense] = useState([])
-  const [name, setName] = useState('')
-  const [cost, setCost] = useState('')
+function BudgetApp({
+  balance,
+  user,
+  accounts,
+  setAccounts,
+  fullName,
+  userExpenses,
+}) {
+  const [beforeBalance, setBeforeBalance] = useState(balance - userExpenses);
+  const [expense, setExpense] = useState(user.expense);
+  const [totalExpense, setTotalExpense] = useState(userExpenses);
+  const [name, setName] = useState("");
+  const [cost, setCost] = useState("");
 
   const handleAddItem = (e) => {
-    setName(e.target.value)
-  }
+    setName(e.target.value);
+  };
 
   const handleAddCost = (e) => {
-    setCost(e.target.value)
-  }
+    setCost(e.target.value);
+  };
 
   const handleExpense = () => {
-    if (name !== '' && cost !== '') {
-      setExpense([...expense, {name: name, cost: cost}])
-      setName('')
-      setCost('')
+    if (name !== "" && cost !== "") {
+      setExpense([...expense, { name: name, cost: cost }]);
+      setTotalExpense((prev) => Number(prev) + Number(cost));
+      setBeforeBalance((prev) => Number(prev) - Number(cost));
+      setCost("");
+      setName("");
     }
-  }
+  };
 
   const handleEnter = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleExpense();
     }
   };
 
+  useEffect(() => {
+    user.userExpenses = totalExpense;
+    const userCopy = { ...user, expense: [...expense] };
+    const newUsers = accounts.map((account) =>
+      account.fullName === fullName ? { ...userCopy } : account
+    );
+    setAccounts(newUsers);
+  }, [totalExpense]);
+
   return (
-    <div className='budget-app-container'>
-      <div className='budget-app-title'>Budget App</div>
-      <div className='wallet'>
-        <div className='wallet-amount'>
-          <i className='fa-solid fa-peso-sign big'></i>{balance}
+    <div className="budget-app-container">
+      <div className="budget-app-title">Budget App</div>
+      <div className="wallet">
+        <div className="wallet-amount">
+          <i className="fa-solid fa-peso-sign big"/>
+          {beforeBalance}
         </div>
       </div>
-      <div className='expenses'>
-        <div className='expenses-title'>Expenses</div>
-        <div className='expenses-list'>
-          <ExpenseItem name={'Spotify'} cost={'149'} />
-          <ExpenseItem name={'Internet'} cost={'1299'} />
-          {expense.map(expense => {return <ExpenseItem name={expense.name} cost={expense.cost}/>})}
+      <div className="expenses">
+        <div className="expenses-title">Expenses</div>
+        <div className="expenses-list">
+          {user.expense &&
+            user.expense.map((expense) => {
+              return (
+                <ExpenseItem
+                  key={user.accountNumber + cost}
+                  name={expense.name}
+                  cost={expense.cost}
+                  user={user}
+                  accounts={accounts}
+                  setAccounts={setAccounts}
+                  fullName={fullName}
+                  userExpenses={userExpenses}
+                />
+              );
+            })}
           <ul>
             <li>
-              <input className='add-expense-list' placeholder='Add Item' value={name} onKeyPress={handleEnter} onChange={handleAddItem}/>
+              <input
+                className="add-expense-list"
+                placeholder="Add Item"
+                value={name}
+                onKeyPress={handleEnter}
+                onChange={handleAddItem}
+              />
             </li>
             <li>
-              <input className='input-cost' type="number" placeholder='Cost' value={cost} onKeyPress={handleEnter} onChange={handleAddCost}/>
+              <input
+                className="input-cost"
+                type="number"
+                placeholder="Cost"
+                value={cost}
+                onKeyPress={handleEnter}
+                onChange={handleAddCost}
+              />
             </li>
           </ul>
         </div>

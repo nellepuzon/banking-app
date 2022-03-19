@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function AddAccount({
   setAccounts,
@@ -15,7 +15,7 @@ function AddAccount({
   setIsEditing,
   editingID,
 }) {
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleFullName = (e) => {
     setFullName(e.target.value);
@@ -43,15 +43,15 @@ function AddAccount({
       user.accountNumber === id ? { ...selectedUser } : user
     );
     setAccounts(updatedUsers);
-    localStorage.setItem('accounts', JSON.stringify([...updatedUsers]));
-    setFullName('');
-    setUserName('');
-    setPassword('');
-    setBalance('');
+    localStorage.setItem("accounts", JSON.stringify([...updatedUsers]));
+    setFullName("");
+    setUserName("");
+    setPassword("");
+    setBalance("");
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleAddAccount();
     }
   };
@@ -73,33 +73,33 @@ function AddAccount({
     if (
       userNameMatch &&
       !fullNameMatch &&
-      fullName !== '' &&
-      userName !== '' &&
-      password !== '' &&
-      balance !== ''
+      fullName !== "" &&
+      userName !== "" &&
+      password !== "" &&
+      balance !== ""
     ) {
-      setErrorMessage({ message: 'username already exists' });
+      setErrorMessage({ message: "username already exists" });
     } else if (
       fullNameMatch &&
       !userNameMatch &&
-      fullName !== '' &&
-      userName !== '' &&
-      password !== '' &&
-      balance !== ''
+      fullName !== "" &&
+      userName !== "" &&
+      password !== "" &&
+      balance !== ""
     ) {
-      setErrorMessage({ message: 'full name already exists' });
+      setErrorMessage({ message: "full name already exists" });
     } else if (
       userNameMatch &&
       fullNameMatch &&
-      fullName !== '' &&
-      userName !== '' &&
-      password !== '' &&
-      balance !== ''
+      fullName !== "" &&
+      userName !== "" &&
+      password !== "" &&
+      balance !== ""
     ) {
-      setErrorMessage({ message: 'account already exists' });
+      setErrorMessage({ message: "account already exists" });
     } else if (
-      fullName !== '' &&
-      balance !== '' &&
+      fullName !== "" &&
+      balance !== "" &&
       !userNameMatch &&
       !fullNameMatch
     ) {
@@ -109,69 +109,70 @@ function AddAccount({
         {
           userName: userName,
           password: password,
-          type: 'user',
+          type: "user",
           fullName: fullName,
           money: balance,
           accountNumber: test,
+          userExpenses: 0,
+          expense: [],
         },
       ]);
-      // localStorage.setItem("accounts", JSON.stringify([...accounts, { userName: userName, password: password, type: 'user', fullName: fullName, money: balance, accountNumber: test }]))
-      setFullName('');
-      setBalance('');
-      setUserName('');
-      setPassword('');
-      setErrorMessage('');
+      setFullName("");
+      setBalance("");
+      setUserName("");
+      setPassword("");
+      setErrorMessage("");
     } else {
-      setErrorMessage({ message: 'fill out necessary information' });
+      setErrorMessage({ message: "fill out necessary information" });
     }
   };
 
   const renderError = () => {
     if (errorMessage) {
-      return <div className='error-message'>{errorMessage.message}</div>;
+      return <div className="error-message">{errorMessage.message}</div>;
     }
   };
   return (
-    <div className='add-account-container'>
+    <div className="add-account-container">
       {renderError()}
-      <div className='add-account-inputs'>
+      <div className="add-account-inputs">
         <input
-          className='input-username'
-          type='text'
-          placeholder='Username'
+          className="input-username"
+          type="text"
+          placeholder="Username"
           value={userName}
           onChange={handleUsername}
           onKeyPress={handleKeyPress}
         ></input>
         <input
-          className='input-password'
-          type='password'
-          placeholder='Password'
+          className="input-password"
+          type="password"
+          placeholder="Password"
           value={password}
           onChange={handlePassword}
           onKeyPress={handleKeyPress}
         ></input>
       </div>
-      <div className='add-account-inputs'>
+      <div className="add-account-inputs">
         <input
-          className='input-fullname'
-          type='text'
-          placeholder='Full Name'
-          spellCheck='false'
+          className="input-fullname"
+          type="text"
+          placeholder="Full Name"
+          spellCheck="false"
           value={fullName}
           onChange={handleFullName}
           onKeyPress={handleKeyPress}
         ></input>
         <input
-          className='input-balance'
-          type='number'
-          placeholder='Initial Balance'
+          className="input-balance"
+          type="number"
+          placeholder="Initial Balance"
           value={balance}
           onChange={handleBalance}
           onKeyPress={handleKeyPress}
         ></input>
       </div>
-      <button onClick={handleAddAccount} className='add-account-button'>
+      <button onClick={handleAddAccount} className="add-account-button">
         {isEditing ? "Edit" : "Add"} Account
       </button>
     </div>
