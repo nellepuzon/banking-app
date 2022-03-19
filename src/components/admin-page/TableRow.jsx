@@ -14,7 +14,7 @@ function TableRow({
   const handleDelete = (id) => {
     const newUsers = accounts.filter((user) => user.accountNumber !== id);
     setAccounts(newUsers);
-    localStorage.setItem('accounts', JSON.stringify([...newUsers]));
+    // localStorage.setItem('accounts', JSON.stringify([...newUsers]));
   };
 
   const handleEdit = (id) => {

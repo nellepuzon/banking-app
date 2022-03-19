@@ -44,7 +44,7 @@ function Deposit({ accounts, setAccounts, accountNumber, isAdmin }) {
 
   const depositMoney = () => {
     const accountMatch = accounts.find(
-      (element) => element.accountNumber === parseInt(depositInput)
+      (element) => element.accountNumber == depositInput
     );
     if (accountMatch && parseInt(amountInput) > 0) {
       undoBlur();

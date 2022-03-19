@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function ExpenseItem({ name, cost }) {
   const [isToggle, setToggle] = useState(false);
   const [isTogglePay, setTogglePay] = useState(false);
+  
 
   const handleToggle = () => {
     setToggle(!isToggle);
@@ -14,14 +15,14 @@ function ExpenseItem({ name, cost }) {
 
   return (
     <ul>
-      <li onClick={handleToggle}>
+      <li onClick={handleToggle} >
         {name}{' '}
         <i
-          className={`fa-solid fa-pen-to-square ${isToggle ? '' : 'hide'}`}
+          className={`fa-solid fa-pen-to-square edit-expense ${isToggle ? '' : 'hide'}`}
         ></i>
-        <i className={`fa-solid fa-trash-can  ${isToggle ? '' : 'hide'}`}></i>
+        <i className={`fa-solid fa-trash-can delete-expense ${isToggle ? '' : 'hide'}`}></i>
       </li>
-      <li>
+      <li >
         <li className={`pay-button ${isTogglePay ? '' : 'hide'}`}>Pay</li>
         <li onClick={handleTogglePay} className={`cost ${isTogglePay ? 'border-radius' : ''}`}>
           <i className='fa-solid fa-peso-sign big small'></i>

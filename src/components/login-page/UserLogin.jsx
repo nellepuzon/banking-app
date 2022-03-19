@@ -24,7 +24,6 @@ function UserLogin({
   }
 
   function handleSubmit(e) {
-    // e.preventDefault();
 
     const user = accounts.find((account) => userInput === account.userName);
 

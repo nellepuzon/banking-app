@@ -32,6 +32,7 @@ function UserPage({
     document.querySelector('.card-container').classList.add('hide');
     document.querySelector('.transactions').classList.add('hide');
     document.querySelector('.manage-payments').classList.add('hide');
+    document.querySelector('.budget-app-container').classList.add('show')
   }
 
   return (
@@ -87,11 +88,11 @@ function UserPage({
       </div>
 
       <div onClick={showBudgetApp} className='manage-payments'>
-        Manage Payments
+        Manage Expenses
       </div>
 
       {/* <div className='user-transactions'> */}
-      <Transactions isAdmin={isAdmin} />
+      <Transactions isAdmin={isAdmin} className='mobile' />
       <Deposit
         accounts={accounts}
         setAccounts={setAccounts}
@@ -112,7 +113,7 @@ function UserPage({
       />
       {/* </div> */}
 
-      <BudgetApp />
+      <BudgetApp balance={balance} />
       
       <div className='bottom-nav'>
         <div className='nav-text'>Available Balance</div>

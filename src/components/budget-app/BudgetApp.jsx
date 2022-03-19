@@ -1,36 +1,53 @@
-import React from "react";
-import ExpenseItem from "./ExpenseItem";
+import React, {useState} from 'react';
+import ExpenseItem from './ExpenseItem';
 
-function showDelete() {
-  document.querySelector(".fa-trash-can").classList.toggle("show");
-  document.querySelector(".fa-pen-to-square").classList.toggle("show");
-}
+function BudgetApp({balance}) {
+  const [expense, setExpense] = useState([])
+  const [name, setName] = useState('')
+  const [cost, setCost] = useState('')
 
-function showPay() {
-  document.querySelector(".pay-button").classList.toggle("show");
-  document.querySelector(".cost").classList.toggle("border-radius");
-}
+  const handleAddItem = (e) => {
+    setName(e.target.value)
+  }
 
-function BudgetApp() {
+  const handleAddCost = (e) => {
+    setCost(e.target.value)
+  }
+
+  const handleExpense = () => {
+    if (name !== '' && cost !== '') {
+      setExpense([...expense, {name: name, cost: cost}])
+      setName('')
+      setCost('')
+    }
+  }
+
+  const handleEnter = (event) => {
+    if (event.key === 'Enter') {
+      handleExpense();
+    }
+  };
+
   return (
-    <div className="budget-app-container">
-      <div className="budget-app-title">Budget App</div>
-      <div className="wallet">
-        <div className="wallet-amount">
-          <i className="fa-solid fa-peso-sign big"></i>2000
+    <div className='budget-app-container'>
+      <div className='budget-app-title'>Budget App</div>
+      <div className='wallet'>
+        <div className='wallet-amount'>
+          <i className='fa-solid fa-peso-sign big'></i>{balance}
         </div>
       </div>
-      <div className="expenses">
-        <div className="expenses-title">Expenses</div>
-        <div className="expenses-list">
-          <ExpenseItem showDelete={showDelete} showPay={showPay} name={'Spotify'} cost={'149'}/>
-          <ExpenseItem showDelete={showDelete} showPay={showPay} name={'Internet'} cost={'1299'}/>
+      <div className='expenses'>
+        <div className='expenses-title'>Expenses</div>
+        <div className='expenses-list'>
+          <ExpenseItem name={'Spotify'} cost={'149'} />
+          <ExpenseItem name={'Internet'} cost={'1299'} />
+          {expense.map(expense => {return <ExpenseItem name={expense.name} cost={expense.cost}/>})}
           <ul>
             <li>
-              <input className="add-expense-list" placeholder="Add Expense" />
+              <input className='add-expense-list' placeholder='Add Item' value={name} onKeyPress={handleEnter} onChange={handleAddItem}/>
             </li>
             <li>
-              <input className="input-cost" placeholder="Cost"/>
+              <input className='input-cost' type="number" placeholder='Cost' value={cost} onKeyPress={handleEnter} onChange={handleAddCost}/>
             </li>
           </ul>
         </div>

@@ -21,7 +21,6 @@ function DesktopLogin() {
           <li>Support</li>
           <li>Contact</li>
           <li>
-            {' '}
             <span className='register'>Register </span>
           </li>
         </ul>
