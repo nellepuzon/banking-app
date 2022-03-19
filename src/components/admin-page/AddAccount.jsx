@@ -15,10 +15,6 @@ function AddAccount({
   setIsEditing,
   editingID,
 }) {
-  // const [fullName, setFullName] = useState('')
-  // const [balance, setBalance] = useState('')
-  // const [userName, setUserName] = useState('')
-  // const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleFullName = (e) => {
@@ -44,7 +40,7 @@ function AddAccount({
     selectedUser.password = password;
     selectedUser.money = balance;
     const updatedUsers = accounts.map((user) =>
-      user.id === id ? { ...selectedUser } : user
+      user.accountNumber === id ? { ...selectedUser } : user
     );
     setAccounts(updatedUsers);
     localStorage.setItem('accounts', JSON.stringify([...updatedUsers]));
@@ -61,7 +57,6 @@ function AddAccount({
   };
 
   const handleAddAccount = (e) => {
-    // e.preventDefault();
     const userNameMatch = accounts.find(
       (element) => element.userName === userName
     );
@@ -177,7 +172,7 @@ function AddAccount({
         ></input>
       </div>
       <button onClick={handleAddAccount} className='add-account-button'>
-        Add Account
+        {isEditing ? "Edit" : "Add"} Account
       </button>
     </div>
   );

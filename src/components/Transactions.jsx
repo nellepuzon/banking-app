@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Transactions({ isAdmin }) {
+function Transactions({ isAdmin, className = '' }) {
   const blurPage = () => {
     if (isAdmin) {
       document.querySelector('.admin-dashboard').classList.add('blur');
@@ -38,17 +38,16 @@ function Transactions({ isAdmin }) {
         </div>
         <div className='deposit-text text'>Deposit</div>
       </div>
-
       <div onClick={clickWithdraw} className='withdraw trans'>
         <div className='withdraw-icon icon'>
-          <i className='fa-solid fa-hand-holding-dollar'></i>{' '}
+          <i className='fa-solid fa-hand-holding-dollar'></i>
         </div>
         <div className='withdraw-text text'>Withdraw</div>
       </div>
-
       <div onClick={clickTransfer} className='transfer trans'>
-        <div className='transfer-icon icon'>
-          <i className='fa-solid fa-paper-plane'></i>{' '}
+        <div className={`transfer-icon icon ${className}`}>
+          {' '}
+          <i className='fa-solid fa-paper-plane' />{' '}
         </div>
         <div className='transfer-text text'>Transfer</div>
       </div>
