@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 function UserLogin({
   accounts,
   loggedIn,
   setLoggedIn,
-  isAdmin,
   setIsAdmin,
   userInput,
   setUserInput,
@@ -12,19 +12,9 @@ function UserLogin({
   setPassInput,
 }) {
   const [errorMessage, setErrorMessage] = useState({});
-  // const [userInput, setUserInput] = useState('');
-  // const [passInput, setPassInput] = useState('');
+  const navigate = useNavigate();
 
-  function userChangeHandler(e) {
-    setUserInput(e.target.value);
-  }
-
-  function passChangeHandler(e) {
-    setPassInput(e.target.value);
-  }
-
-  function handleSubmit(e) {
-
+  function handleSubmit() {
     const user = accounts.find((account) => userInput === account.userName);
 
     if (user) {
@@ -36,8 +26,10 @@ function UserLogin({
       } else if (user.type === 'admin') {
         setIsAdmin(true);
         setLoggedIn(true);
+        navigate('/admin')
       } else if (user.type === 'user') {
         setLoggedIn(true);
+        navigate('/user')
       }
     } else {
       setErrorMessage({ placeholder: 'Username', message: 'invalid username' });
@@ -59,15 +51,11 @@ function UserLogin({
   return (
     <div className='user-page'>
       <div className='login'>
-        {/* <input type='text' placeholder='Username' spellCheck="false"/>
-        <input type='password' placeholder='Password' />
-        <button className='login-button'>LOG IN</button> */}
-
         <input
           type='text'
           placeholder='Username'
           required
-          onChange={userChangeHandler}
+          onChange={(e)=>{setUserInput(e.target.value)}}
           value={userInput}
           spellCheck='false'
           onKeyPress={handleKeyPress}
@@ -77,7 +65,7 @@ function UserLogin({
           type='password'
           placeholder='Password'
           required
-          onChange={passChangeHandler}
+          onChange={(e)=>{setPassInput(e.target.value)}}
           value={passInput}
           onKeyPress={handleKeyPress}
         />

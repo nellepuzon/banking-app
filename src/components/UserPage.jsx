@@ -8,18 +8,19 @@ import BudgetApp from "./budget-app/BudgetApp";
 function UserPage({
   setIsAdmin,
   setLoggedIn,
-  fullName,
-  balance,
-  accountNumber,
   accounts,
   setAccounts,
   setUserInput,
   setPassInput,
   isAdmin,
-  user,
-  userExpenses,
+  userInput,
 }) {
-  const name = fullName.split(",");
+  const USER = accounts.find((item) => item.userName == userInput);
+  const FULLNAME = USER.fullName
+  const BALANCE=USER.money
+  const ACCOUNTNUMBER=USER.accountNumber
+  const USEREXPENSES=USER.userExpenses
+  const NAME = FULLNAME.split(",");
 
   const logOut = () => {
     setIsAdmin(false);
@@ -50,7 +51,7 @@ function UserPage({
       </header>
       <div className="top-bar">
         <div className="greeting">
-          Welcome back, <span>{name[1]}</span>!
+          Welcome back, <span>{NAME[1]}</span>!
         </div>
         <div className="avatar">
           <i className="fa-solid fa-user-tie"></i>
@@ -83,8 +84,8 @@ function UserPage({
               <i className="fa-solid fa-wifi"></i>
             </div>
           </div>
-          <div className="card-name">{`${name[1]}  ${name[0]}`}</div>
-          <div className="card-number">{accountNumber}</div>
+          <div className="card-name">{`${NAME[1]}  ${NAME[0]}`}</div>
+          <div className="card-number">{ACCOUNTNUMBER}</div>
         </div>
       </div>
 
@@ -97,35 +98,35 @@ function UserPage({
       <Deposit
         accounts={accounts}
         setAccounts={setAccounts}
-        accountNumber={accountNumber}
+        accountNumber={ACCOUNTNUMBER}
         isAdmin={isAdmin}
       />
       <Withdraw
         accounts={accounts}
         setAccounts={setAccounts}
-        accountNumber={accountNumber}
+        accountNumber={ACCOUNTNUMBER}
         isAdmin={isAdmin}
       />
       <Transfer
         accounts={accounts}
         setAccounts={setAccounts}
-        accountNumber={accountNumber}
+        accountNumber={ACCOUNTNUMBER}
         isAdmin={isAdmin}
       />
       {/* </div> */}
 
       <BudgetApp
-        balance={balance}
-        user={user}
+        balance={BALANCE}
+        user={USER}
         accounts={accounts}
         setAccounts={setAccounts}
-        fullName={fullName}
-        userExpenses={userExpenses}
+        fullName={FULLNAME}
+        userExpenses={USEREXPENSES}
       />
 
       <div className="bottom-nav">
         <div className="nav-text">Available Balance</div>
-        <div className="balance">PHP {balance}</div>
+        <div className="balance">PHP {BALANCE}</div>
       </div>
     </div>
   );
