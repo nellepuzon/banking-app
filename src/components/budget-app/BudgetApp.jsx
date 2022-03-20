@@ -64,7 +64,7 @@ function BudgetApp({
             user.expense.map((expense) => {
               return (
                 <ExpenseItem
-                  key={user.accountNumber + cost}
+                  key={Math.floor(Number(user.accountNumber) * Math.random()) }
                   name={expense.name}
                   cost={expense.cost}
                   user={user}

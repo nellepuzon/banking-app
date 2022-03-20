@@ -1,6 +1,5 @@
 import React from 'react';
-import App from '../../App';
-import LoginPage from '../LoginPage';
+import { useNavigate } from 'react-router-dom';
 
 function NavBar({
   setSearchInput,
@@ -9,11 +8,13 @@ function NavBar({
   setUserInput,
   setPassInput,
 }) {
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setSearchInput(e.target.value);
   };
 
   const logOut = () => {
+    navigate("/")
     setIsAdmin(false);
     setLoggedIn(false);
     setUserInput('');
