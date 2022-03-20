@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import TableRow from './TableRow';
+import DataContext from '../../context/DataContext';
 
 function Table({
-  accounts,
   searchInput,
-  setAccounts,
   setFullName,
   setBalance,
   setUserName,
@@ -12,6 +11,7 @@ function Table({
   setEditingID,
   setIsEditing,
 }) {
+  const {accounts} = useContext(DataContext)
   return (
     <div className='table-box'>
       <table>
@@ -41,8 +41,6 @@ function Table({
                   <TableRow
                     key={account.accountNumber}
                     account={account}
-                    setAccounts={setAccounts}
-                    accounts={accounts}
                     setFullName={setFullName}
                     setBalance={setBalance}
                     setUserName={setUserName}

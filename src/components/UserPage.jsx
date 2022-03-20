@@ -1,25 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataContext from "../context/DataContext";
 import Transactions from "./Transactions";
 import Deposit from "./transaction-page/Deposit";
 import Withdraw from "./transaction-page/Withdraw";
 import Transfer from "./transaction-page/Transfer";
 import BudgetApp from "./budget-app/BudgetApp";
 
-function UserPage({
-  setIsAdmin,
-  setLoggedIn,
-  accounts,
-  setAccounts,
-  setUserInput,
-  setPassInput,
-  isAdmin,
-  userInput,
-}) {
+function UserPage() {
+  const { setIsAdmin, setLoggedIn, accounts, setAccounts, setUserInput, setPassInput, isAdmin, userInput } = useContext(DataContext);
   const USER = accounts.find((item) => item.userName == userInput);
-  const FULLNAME = USER.fullName
-  const BALANCE=USER.money
-  const ACCOUNTNUMBER=USER.accountNumber
-  const USEREXPENSES=USER.userExpenses
+  const FULLNAME = USER.fullName;
+  const BALANCE = USER.money;
+  const ACCOUNTNUMBER = USER.accountNumber;
+  const USEREXPENSES = USER.userExpenses;
   const NAME = FULLNAME.split(",");
 
   const logOut = () => {
@@ -42,7 +35,6 @@ function UserPage({
       <header>
         <div className="dashboard">
           Dashboard
-          {/* <div className="notification"><i className="fa-solid fa-bell"></i></div> */}
           <i
             onClick={logOut}
             className="fa-solid fa-arrow-right-from-bracket"
@@ -93,27 +85,10 @@ function UserPage({
         Manage Expenses
       </div>
 
-      {/* <div className='user-transactions'> */}
       <Transactions isAdmin={isAdmin} className="mobile" />
-      <Deposit
-        accounts={accounts}
-        setAccounts={setAccounts}
-        accountNumber={ACCOUNTNUMBER}
-        isAdmin={isAdmin}
-      />
-      <Withdraw
-        accounts={accounts}
-        setAccounts={setAccounts}
-        accountNumber={ACCOUNTNUMBER}
-        isAdmin={isAdmin}
-      />
-      <Transfer
-        accounts={accounts}
-        setAccounts={setAccounts}
-        accountNumber={ACCOUNTNUMBER}
-        isAdmin={isAdmin}
-      />
-      {/* </div> */}
+      <Deposit accountNumber={ACCOUNTNUMBER} />
+      <Withdraw accountNumber={ACCOUNTNUMBER} />
+      <Transfer accountNumber={ACCOUNTNUMBER} />
 
       <BudgetApp
         balance={BALANCE}
