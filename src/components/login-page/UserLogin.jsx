@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {useNavigate} from 'react-router-dom'
+import DataContext from '../../context/DataContext';
 
-function UserLogin({
-  accounts,
-  loggedIn,
-  setLoggedIn,
-  setIsAdmin,
-  userInput,
-  setUserInput,
-  passInput,
-  setPassInput,
-}) {
+function UserLogin() {
+  const {  accounts, loggedIn, setLoggedIn, setIsAdmin, userInput, setUserInput, passInput, setPassInput,} = useContext(DataContext)
   const [errorMessage, setErrorMessage] = useState({});
   const navigate = useNavigate();
 

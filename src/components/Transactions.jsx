@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import DataContext from '../context/DataContext';
 
-function Transactions({ isAdmin, className = '' }) {
+function Transactions({ className = '' }) {
+  const isAdmin = useContext(DataContext)
   const blurPage = () => {
-    if (isAdmin) {
+    if (isAdmin === true) {
       document.querySelector('.admin-dashboard').classList.add('blur');
       document.querySelector('.add-account-container').classList.add('blur');
       document.querySelector('.table-box').classList.add('blur');
-    } else if (!isAdmin) {
+    } else if (isAdmin === false) {
       document.querySelector('.dashboard').classList.add('blur');
       document.querySelector('.top-bar').classList.add('blur');
       document.querySelector('.card-container').classList.add('blur');

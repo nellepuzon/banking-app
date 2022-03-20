@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import DataContext from '../../context/DataContext';
 
-function Withdraw({ accounts, setAccounts, accountNumber, isAdmin }) {
+function Withdraw({ accountNumber }) {
+  const {accounts, setAccounts, isAdmin} = useContext(DataContext)
   const [withdrawInput, setWithdrawInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -23,19 +25,11 @@ function Withdraw({ accounts, setAccounts, accountNumber, isAdmin }) {
     document.querySelector('.transfer-page').classList.remove('show-transfer');
   };
 
-  const handleWithdrawChange = (e) => {
-    setWithdrawInput(e.target.value);
-  };
-
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
     if (accountNumber) {
       setWithdrawInput(accountNumber);
     }
-  };
-
-  const handleEmailChange = (e) => {
-    setEmailInput(e.target.value);
   };
 
   const withdrawMoney = () => {
@@ -54,7 +48,6 @@ function Withdraw({ accounts, setAccounts, accountNumber, isAdmin }) {
       accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput);
       mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy;
       setAccounts([...mainCopy]);
-      // localStorage.setItem("accounts", JSON.stringify([...mainCopy]))
       setEmailInput('');
       setAmountInput('');
       setWithdrawInput('');
@@ -91,7 +84,7 @@ function Withdraw({ accounts, setAccounts, accountNumber, isAdmin }) {
             list='accounts'
             type='number'
             placeholder='Account Number'
-            onChange={handleWithdrawChange}
+            onChange={(e) => {setWithdrawInput(e.target.value)}}
             value={accountNumber ? accountNumber : withdrawInput}
           ></input>
           <datalist id='accounts'>
@@ -120,7 +113,7 @@ function Withdraw({ accounts, setAccounts, accountNumber, isAdmin }) {
             className='input-receipt'
             type='email'
             placeholder='name@example.com'
-            onChange={handleEmailChange}
+            onChange={(e) => {setEmailInput(e.target.value)}}
             value={emailInput}
           ></input>
           <button onClick={withdrawMoney} className='withdraw-button'>

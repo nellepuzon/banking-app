@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import DataContext from "../../context/DataContext";
 
 function AddAccount({
-  setAccounts,
-  accounts,
   fullName,
   setFullName,
   balance,
@@ -15,23 +14,8 @@ function AddAccount({
   setIsEditing,
   editingID,
 }) {
+  const { accounts, setAccounts } = useContext(DataContext);
   const [errorMessage, setErrorMessage] = useState("");
-
-  const handleFullName = (e) => {
-    setFullName(e.target.value);
-  };
-
-  const handleBalance = (e) => {
-    setBalance(e.target.value);
-  };
-
-  const handleUsername = (e) => {
-    setUserName(e.target.value);
-  };
-
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
 
   const editUser = (id) => {
     const selectedUser = accounts.find((user) => user.accountNumber === id);
@@ -141,7 +125,7 @@ function AddAccount({
           type="text"
           placeholder="Username"
           value={userName}
-          onChange={handleUsername}
+          onChange={(e) => {setUserName(e.target.value)}}
           onKeyPress={handleKeyPress}
         ></input>
         <input
@@ -149,7 +133,7 @@ function AddAccount({
           type="password"
           placeholder="Password"
           value={password}
-          onChange={handlePassword}
+          onChange={(e)=>{setPassword(e.target.value)}}
           onKeyPress={handleKeyPress}
         ></input>
       </div>
@@ -160,7 +144,7 @@ function AddAccount({
           placeholder="Full Name"
           spellCheck="false"
           value={fullName}
-          onChange={handleFullName}
+          onChange={(e) => {setFullName(e.target.value)}}
           onKeyPress={handleKeyPress}
         ></input>
         <input
@@ -168,7 +152,7 @@ function AddAccount({
           type="number"
           placeholder="Initial Balance"
           value={balance}
-          onChange={handleBalance}
+          onChange={(e) => {setBalance(e.target.value)}}
           onKeyPress={handleKeyPress}
         ></input>
       </div>

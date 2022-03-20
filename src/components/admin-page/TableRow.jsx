@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import DataContext from '../../context/DataContext';
 
 function TableRow({
   account,
-  setAccounts,
-  accounts,
+  // setAccounts,
+  // accounts,
   setFullName,
   setBalance,
   setUserName,
@@ -11,6 +12,7 @@ function TableRow({
   setEditingID,
   setIsEditing,
 }) {
+  const {accounts, setAccounts} = useContext(DataContext)
   const handleDelete = (id) => {
     const newUsers = accounts.filter((user) => user.accountNumber !== id);
     setAccounts(newUsers);

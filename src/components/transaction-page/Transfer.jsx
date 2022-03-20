@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import DataContext from "../../context/DataContext";
 
-function Transfer({ accounts, setAccounts, accountNumber, isAdmin }) {
+function Transfer({ accountNumber }) {
+  const {accounts, setAccounts, isAdmin} = useContext(DataContext)
   const [senderInput, setSenderInput] = useState("");
   const [amountInput, setAmountInput] = useState("");
   const [recipientInput, setRecipientInput] = useState("");
@@ -24,23 +26,11 @@ function Transfer({ accounts, setAccounts, accountNumber, isAdmin }) {
     document.querySelector(".transfer-page").classList.remove("show-transfer");
   };
 
-  const handleSenderChange = (e) => {
-    setSenderInput(e.target.value);
-  };
-
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
     if (accountNumber) {
       setSenderInput(accountNumber);
     }
-  };
-
-  const handleRecipientChange = (e) => {
-    setRecipientInput(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmailInput(e.target.value);
   };
 
   const transferMoney = () => {
@@ -115,7 +105,7 @@ function Transfer({ accounts, setAccounts, accountNumber, isAdmin }) {
             className="transfer-from-input"
             list="accounts"
             placeholder="Sender"
-            onChange={handleSenderChange}
+            onChange={(e) => {setSenderInput(e.target.value);}}
             value={accountNumber ? accountNumber : senderInput}
           ></input>
           <datalist id="accounts">
@@ -136,7 +126,7 @@ function Transfer({ accounts, setAccounts, accountNumber, isAdmin }) {
             className="transfer-to-input"
             list="accounts"
             placeholder="Recipient"
-            onChange={handleRecipientChange}
+            onChange={(e) => {setRecipientInput(e.target.value)}}
             value={recipientInput}
           />
           <datalist id="accounts">
@@ -151,7 +141,7 @@ function Transfer({ accounts, setAccounts, accountNumber, isAdmin }) {
             className="input-receipt"
             type="email"
             placeholder="name@example.com"
-            onChange={handleEmailChange}
+            onChange={(e)=>{setEmailInput(e.target.value)}}
             value={emailInput}
           ></input>
           <button onClick={transferMoney} className="transfer-button">

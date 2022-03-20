@@ -11,17 +11,7 @@ function LoginPage(props) {
     <div className='first-page'>
       <DesktopLogin />
       <BankLogo />
-      <UserLogin
-        isAdmin={props.isAdmin}
-        setIsAdmin={props.setIsAdmin}
-        accounts={props.accounts}
-        loggedIn={props.loggedIn}
-        setLoggedIn={props.setLoggedIn}
-        userInput={props.userInput}
-        setUserInput={props.setUserInput}
-        passInput={props.passInput}
-        setPassInput={props.setPassInput}
-      />
+      <UserLogin/>
     </div>
   );
 }
