@@ -5,9 +5,10 @@ import Deposit from "./transaction-page/Deposit";
 import Withdraw from "./transaction-page/Withdraw";
 import Transfer from "./transaction-page/Transfer";
 import BudgetApp from "./budget-app/BudgetApp";
-
+import { useParams } from "react-router-dom";
 function UserPage() {
-  const { setIsAdmin, setLoggedIn, accounts, setAccounts, setUserInput, setPassInput, isAdmin, userInput } = useContext(DataContext);
+  const {userInput} = useParams()
+  const { setIsAdmin, setLoggedIn, accounts, setAccounts, isAdmin } = useContext(DataContext);
   const USER = accounts.find((item) => item.userName == userInput);
   const FULLNAME = USER.fullName;
   const BALANCE = USER.money;
@@ -18,8 +19,6 @@ function UserPage() {
   const logOut = () => {
     setIsAdmin(false);
     setLoggedIn(false);
-    setUserInput("");
-    setPassInput("");
   };
 
   function showBudgetApp() {
