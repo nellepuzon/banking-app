@@ -20,9 +20,13 @@ function UserLogin() {
         setIsAdmin(true);
         setLoggedIn(true);
         navigate('/admin')
+        setUserInput("");
+        setPassInput("");
       } else if (user.type === 'user') {
         setLoggedIn(true);
-        navigate('/user')
+        navigate(`/user/${userInput}`)
+        setUserInput("");
+        setPassInput("");
       }
     } else {
       setErrorMessage({ placeholder: 'Username', message: 'invalid username' });

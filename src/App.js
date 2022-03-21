@@ -2,18 +2,20 @@ import "../src/styles/output.css";
 import LoginPage from "./components/LoginPage";
 import AdminPage from "./components/AdminPage";
 import UserPage from "./components/UserPage";
-import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
+import LoginCheck from "./components/login-page/LoginCheck";
+import { useContext } from "react";
 import DataContext from "./context/DataContext";
 
 function App() {
-  const { isAdmin, loggedIn } = useContext(DataContext);
-  
+  const {userInput} = useContext(DataContext)
   return (
     <Routes>
-      {!isAdmin && !loggedIn && <Route path="/*" element={<LoginPage />} />}
-      {isAdmin && loggedIn && <Route path="/admin" element={<AdminPage />} />}
-      {!isAdmin && loggedIn && <Route path="/user" element={<UserPage />} />}
+      <Route path="/login" element={<LoginPage />} />
+      <Route element={<LoginCheck />}>
+      <Route path="/admin" element={<AdminPage />} />
+      <Route path="/user/:userInput" element={<UserPage />} />
+      </Route>
     </Routes>
   );
 }
