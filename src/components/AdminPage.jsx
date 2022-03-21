@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import DataContext from "../context/DataContext";
 import NavBar from "./admin-page/NavBar";
 import Table from "./admin-page/Table";
 import AddAccount from "./admin-page/AddAccount";
@@ -6,45 +7,21 @@ import Transactions from "./Transactions";
 import Transfer from "./transaction-page/Transfer";
 import Deposit from "./transaction-page/Deposit";
 import Withdraw from "./transaction-page/Withdraw";
+import { AdminDataProvider } from "../context/AdminDataContext";
 
-function AdminPage(props) {
-  const [fullName, setFullName] = useState("");
-  const [balance, setBalance] = useState("");
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [searchInput, setSearchInput] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
-  const [editingID, setEditingID] = useState(0);
+function AdminPage() {
   return (
-    <div className="admin-page">
-      <NavBar searchInput={searchInput} setSearchInput={setSearchInput} />
-      <Table
-        searchInput={searchInput}
-        setFullName={setFullName}
-        setBalance={setBalance}
-        setUserName={setUserName}
-        setPassword={setPassword}
-        setEditingID={setEditingID}
-        setIsEditing={setIsEditing}
-      />
-      <AddAccount
-        fullName={fullName}
-        setFullName={setFullName}
-        balance={balance}
-        setBalance={setBalance}
-        userName={userName}
-        setUserName={setUserName}
-        password={password}
-        setPassword={setPassword}
-        isEditing={isEditing}
-        setIsEditing={setIsEditing}
-        editingID={editingID}
-      />
-      <Transactions />
-      <Deposit />
-      <Withdraw />
-      <Transfer />
-    </div>
+    <AdminDataProvider>
+      <div className="admin-page">
+        <NavBar />
+        <Table />
+        <AddAccount />
+        <Transactions />
+        <Deposit />
+        <Withdraw />
+        <Transfer />
+      </div>
+    </AdminDataProvider>
   );
 }
 

@@ -8,18 +8,13 @@ import BudgetApp from "./budget-app/BudgetApp";
 import { useParams } from "react-router-dom";
 function UserPage() {
   const {userInput} = useParams()
-  const { setIsAdmin, setLoggedIn, accounts, setAccounts, isAdmin } = useContext(DataContext);
+  const { userLogin, accounts, setAccounts } = useContext(DataContext);
   const USER = accounts.find((item) => item.userName == userInput);
   const FULLNAME = USER.fullName;
   const BALANCE = USER.money;
   const ACCOUNTNUMBER = USER.accountNumber;
   const USEREXPENSES = USER.userExpenses;
   const NAME = FULLNAME.split(",");
-
-  const logOut = () => {
-    setIsAdmin(false);
-    setLoggedIn(false);
-  };
 
   function showBudgetApp() {
     document.querySelector(".top-bar").classList.add("hide");
@@ -35,7 +30,7 @@ function UserPage() {
         <div className="dashboard">
           Dashboard
           <i
-            onClick={logOut}
+            onClick={() => {userLogin(false)}}
             className="fa-solid fa-arrow-right-from-bracket"
           ></i>
         </div>
@@ -84,10 +79,10 @@ function UserPage() {
         Manage Expenses
       </div>
 
-      <Transactions isAdmin={isAdmin} className="mobile" />
-      <Deposit accountNumber={ACCOUNTNUMBER} />
-      <Withdraw accountNumber={ACCOUNTNUMBER} />
-      <Transfer accountNumber={ACCOUNTNUMBER} />
+      <Transactions className="mobile" />
+      <Deposit ACCOUNTNUMBER={ACCOUNTNUMBER} />
+      <Withdraw ACCOUNTNUMBER={ACCOUNTNUMBER} />
+      <Transfer ACCOUNTNUMBER={ACCOUNTNUMBER} />
 
       <BudgetApp
         balance={BALANCE}

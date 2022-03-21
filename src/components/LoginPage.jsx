@@ -6,12 +6,12 @@ import UserLogin from './login-page/UserLogin';
 import Slogan from './login-page/DesktopLogin';
 import DesktopLogin from './login-page/DesktopLogin';
 
-function LoginPage(props) {
+function LoginPage() {
   return (
     <div className='first-page'>
       <DesktopLogin />
       <BankLogo />
-      <UserLogin/>
+      <UserLogin />
     </div>
   );
 }

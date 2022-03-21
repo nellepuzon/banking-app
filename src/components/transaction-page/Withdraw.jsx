@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import DataContext from '../../context/DataContext';
 
-function Withdraw({ accountNumber }) {
-  const {accounts, setAccounts, isAdmin} = useContext(DataContext)
+function Withdraw({ ACCOUNTNUMBER }) {
+  const {accounts, updateAccounts, isAdmin} = useContext(DataContext)
   const [withdrawInput, setWithdrawInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -27,8 +27,8 @@ function Withdraw({ accountNumber }) {
 
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
-    if (accountNumber) {
-      setWithdrawInput(accountNumber);
+    if (ACCOUNTNUMBER) {
+      setWithdrawInput(ACCOUNTNUMBER);
     }
   };
 
@@ -47,7 +47,7 @@ function Withdraw({ accountNumber }) {
       let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
       accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput);
       mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy;
-      setAccounts([...mainCopy]);
+      updateAccounts([...mainCopy]);
       setEmailInput('');
       setAmountInput('');
       setWithdrawInput('');
@@ -85,7 +85,7 @@ function Withdraw({ accountNumber }) {
             type='number'
             placeholder='Account Number'
             onChange={(e) => {setWithdrawInput(e.target.value)}}
-            value={accountNumber ? accountNumber : withdrawInput}
+            value={ACCOUNTNUMBER ? ACCOUNTNUMBER : withdrawInput}
           ></input>
           <datalist id='accounts'>
             {accounts.map((account) => {

@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
+import AdminContext from "../../context/AdminDataContext";
 import DataContext from "../../context/DataContext";
 
-function NavBar({ setSearchInput }) {
-  const { setIsAdmin, setLoggedIn } = useContext(DataContext);
-
-  const logOut = () => {
-    setIsAdmin(false);
-    setLoggedIn(false);
-  };
+function NavBar() {
+  const { adminLogin } = useContext(DataContext);
+  const { onSearch } = useContext(AdminContext);
 
   return (
     <div className="admin-dashboard">
@@ -16,7 +13,9 @@ function NavBar({ setSearchInput }) {
         <div className="sort-icon">
           <i
             className="fa-solid fa-right-from-bracket dashboard-icon"
-            onClick={logOut}
+            onClick={() => {
+              adminLogin(false);
+            }}
           ></i>
         </div>
       </div>
@@ -24,7 +23,9 @@ function NavBar({ setSearchInput }) {
         className="search"
         type="text"
         placeholder="Search"
-        onChange={(e) => {setSearchInput(e.target.value)}}
+        onChange={(e) => {
+          onSearch(e.target.value);
+        }}
       ></input>
     </div>
   );

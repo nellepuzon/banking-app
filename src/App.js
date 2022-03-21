@@ -8,13 +8,12 @@ import { useContext } from "react";
 import DataContext from "./context/DataContext";
 
 function App() {
-  const {userInput} = useContext(DataContext)
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route element={<LoginCheck />}>
-      <Route path="/admin" element={<AdminPage />} />
-      <Route path="/user/:userInput" element={<UserPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/user/:userInput" element={<UserPage />} />
       </Route>
     </Routes>
   );
