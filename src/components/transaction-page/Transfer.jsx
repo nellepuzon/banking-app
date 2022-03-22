@@ -41,6 +41,17 @@ function Transfer({ ACCOUNTNUMBER }) {
       (element) => element.accountNumber == recipientInput
     );
 
+    function dec2hex (dec) {
+      return dec.toString(16).padStart(2, "0")
+    }
+  
+    function generateId (len) {
+      var arr = new Uint8Array((len || 40) / 2)
+      window.crypto.getRandomValues(arr)
+      return Array.from(arr, dec2hex).join('')
+    }
+  
+
     if (
       senderMatch &&
       recipientMatch &&
@@ -52,10 +63,9 @@ function Transfer({ ACCOUNTNUMBER }) {
       let senderCopy = { ...mainCopy[mainCopy.indexOf(senderMatch)] };
       let recipientCopy = { ...mainCopy[mainCopy.indexOf(recipientMatch)] };
       senderCopy.money = parseInt(senderCopy.money) - parseInt(amountInput);
-      recipientCopy.money =
-        parseInt(recipientCopy.money) + parseInt(amountInput);
-      mainCopy[mainCopy.indexOf(senderMatch)] = senderCopy;
-      mainCopy[mainCopy.indexOf(recipientMatch)] = recipientCopy;
+      recipientCopy.money = parseInt(recipientCopy.money) + parseInt(amountInput);
+      mainCopy[mainCopy.indexOf(senderMatch)] = {...senderCopy, history: [...senderCopy.history, {id: generateId(20), type: 'Transfer'}]};
+      mainCopy[mainCopy.indexOf(recipientMatch)] = {...recipientCopy, history: [...recipientCopy.history, {id: generateId(20), type: 'Receive'}]};
       updateAccounts([...mainCopy]);
       setErrorMessage("");
       setSenderInput("");

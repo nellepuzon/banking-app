@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import DataContext from "../../context/DataContext";
 
 function Deposit({ ACCOUNTNUMBER }) {
-  const { accounts, updateAccounts, isAdmin } = useContext(DataContext);
+  const { accounts, updateAccounts } = useContext(DataContext);
   const [depositInput, setDepositInput] = useState("");
   const [amountInput, setAmountInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
@@ -36,16 +36,27 @@ function Deposit({ ACCOUNTNUMBER }) {
     }
   };
 
+  function dec2hex (dec) {
+    return dec.toString(16).padStart(2, "0")
+  }
+
+  function generateId (len) {
+    var arr = new Uint8Array((len || 40) / 2)
+    window.crypto.getRandomValues(arr)
+    return Array.from(arr, dec2hex).join('')
+  }
+
   const depositMoney = () => {
     const accountMatch = accounts.find(
       (element) => element.accountNumber == depositInput
     );
     if (accountMatch && parseInt(amountInput) > 0) {
       undoBlur();
+      let id = generateId(20)
       let mainCopy = [...accounts];
       let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
       accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput);
-      mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy;
+      mainCopy[mainCopy.indexOf(accountMatch)] = { ...accountCopy, history: [...accountCopy.history, {id: id, type: 'Deposit'}] };
       updateAccounts([...mainCopy]);
       setEmailInput("");
       setAmountInput("");

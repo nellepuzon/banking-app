@@ -99,6 +99,7 @@ function AddAccount() {
           accountNumber: test,
           userExpenses: 0,
           expense: [],
+          history: [],
         },
       ]);
       resetInputs();

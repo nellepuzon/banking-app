@@ -37,16 +37,28 @@ function Withdraw({ ACCOUNTNUMBER }) {
       (element) => element.accountNumber === parseInt(withdrawInput)
     );
 
+    
+  function dec2hex (dec) {
+    return dec.toString(16).padStart(2, "0")
+  }
+
+  function generateId (len) {
+    var arr = new Uint8Array((len || 40) / 2)
+    window.crypto.getRandomValues(arr)
+    return Array.from(arr, dec2hex).join('')
+  }
+
     if (
       accountMatch &&
       parseInt(amountInput) > 0 &&
       parseInt(accountMatch.money) > parseInt(amountInput)
     ) {
       undoBlur();
+      let id = generateId(20)
       let mainCopy = [...accounts];
       let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
       accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput);
-      mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy;
+      mainCopy[mainCopy.indexOf(accountMatch)] = { ...accountCopy, history: [...accountCopy.history, {id: id, type: 'Withdraw'}] };
       updateAccounts([...mainCopy]);
       setEmailInput('');
       setAmountInput('');
