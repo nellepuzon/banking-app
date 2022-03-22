@@ -1,20 +1,23 @@
 import React, { useState, useContext } from "react";
 import DataContext from "../../context/DataContext";
+import AdminContext from "../../context/AdminDataContext";
 
-function AddAccount({
-  fullName,
-  setFullName,
-  balance,
-  setBalance,
-  userName,
-  setUserName,
-  password,
-  setPassword,
-  isEditing,
-  setIsEditing,
-  editingID,
-}) {
-  const { accounts, setAccounts } = useContext(DataContext);
+function AddAccount() {
+  const { accounts, updateAccounts } = useContext(DataContext);
+  const {
+    fullName,
+    balance,
+    userName,
+    password,
+    isEditing,
+    editingID,
+    changeFullNameInput,
+    changeBalanceInput,
+    changeUserNameInput,
+    changePasswordInput,
+    changeEditState,
+    resetInputs,
+  } = useContext(AdminContext);
   const [errorMessage, setErrorMessage] = useState("");
 
   const editUser = (id) => {
@@ -26,12 +29,9 @@ function AddAccount({
     const updatedUsers = accounts.map((user) =>
       user.accountNumber === id ? { ...selectedUser } : user
     );
-    setAccounts(updatedUsers);
+    updateAccounts(updatedUsers);
     localStorage.setItem("accounts", JSON.stringify([...updatedUsers]));
-    setFullName("");
-    setUserName("");
-    setPassword("");
-    setBalance("");
+    resetInputs();
   };
 
   const handleKeyPress = (event) => {
@@ -50,7 +50,7 @@ function AddAccount({
 
     if (isEditing) {
       editUser(editingID);
-      setIsEditing(false);
+      changeEditState(false);
       return;
     }
 
@@ -88,7 +88,7 @@ function AddAccount({
       !fullNameMatch
     ) {
       let test = Math.floor(Math.random() * 100000000);
-      setAccounts([
+      updateAccounts([
         ...accounts,
         {
           userName: userName,
@@ -101,10 +101,7 @@ function AddAccount({
           expense: [],
         },
       ]);
-      setFullName("");
-      setBalance("");
-      setUserName("");
-      setPassword("");
+      resetInputs();
       setErrorMessage("");
     } else {
       setErrorMessage({ message: "fill out necessary information" });
@@ -125,7 +122,9 @@ function AddAccount({
           type="text"
           placeholder="Username"
           value={userName}
-          onChange={(e) => {setUserName(e.target.value)}}
+          onChange={(e) => {
+            changeUserNameInput(e.target.value);
+          }}
           onKeyPress={handleKeyPress}
         ></input>
         <input
@@ -133,7 +132,9 @@ function AddAccount({
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e)=>{setPassword(e.target.value)}}
+          onChange={(e) => {
+            changePasswordInput(e.target.value);
+          }}
           onKeyPress={handleKeyPress}
         ></input>
       </div>
@@ -144,7 +145,9 @@ function AddAccount({
           placeholder="Full Name"
           spellCheck="false"
           value={fullName}
-          onChange={(e) => {setFullName(e.target.value)}}
+          onChange={(e) => {
+            changeFullNameInput(e.target.value);
+          }}
           onKeyPress={handleKeyPress}
         ></input>
         <input
@@ -152,7 +155,9 @@ function AddAccount({
           type="number"
           placeholder="Initial Balance"
           value={balance}
-          onChange={(e) => {setBalance(e.target.value)}}
+          onChange={(e) => {
+            changeBalanceInput(e.target.value);
+          }}
           onKeyPress={handleKeyPress}
         ></input>
       </div>

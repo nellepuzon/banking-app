@@ -1,19 +1,13 @@
-import React, {useContext} from 'react';
-import TableRow from './TableRow';
-import DataContext from '../../context/DataContext';
+import React, { useContext } from "react";
+import TableRow from "./TableRow";
+import DataContext from "../../context/DataContext";
+import AdminContext from "../../context/AdminDataContext";
 
-function Table({
-  searchInput,
-  setFullName,
-  setBalance,
-  setUserName,
-  setPassword,
-  setEditingID,
-  setIsEditing,
-}) {
-  const {accounts} = useContext(DataContext)
+function Table() {
+  const { accounts } = useContext(DataContext);
+  const { searchInput } = useContext(AdminContext);
   return (
-    <div className='table-box'>
+    <div className="table-box">
       <table>
         <thead>
           <tr>
@@ -26,7 +20,7 @@ function Table({
           {accounts
             .filter((item) => {
               if (
-                searchInput === '' ||
+                searchInput === "" ||
                 (item.fullName &&
                   item.fullName
                     .toLowerCase()
@@ -36,18 +30,9 @@ function Table({
               }
             })
             .map((account) => {
-              if (account.type !== 'admin') {
+              if (account.type !== "admin") {
                 return (
-                  <TableRow
-                    key={account.accountNumber}
-                    account={account}
-                    setFullName={setFullName}
-                    setBalance={setBalance}
-                    setUserName={setUserName}
-                    setPassword={setPassword}
-                    setEditingID={setEditingID}
-                    setIsEditing={setIsEditing}
-                  />
+                  <TableRow key={account.accountNumber} account={account} />
                 );
               }
             })}

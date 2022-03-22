@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import DataContext from "../../context/DataContext";
 
-function Transfer({ accountNumber }) {
-  const {accounts, setAccounts, isAdmin} = useContext(DataContext)
+function Transfer({ ACCOUNTNUMBER }) {
+  const {accounts, updateAccounts, isAdmin} = useContext(DataContext)
   const [senderInput, setSenderInput] = useState("");
   const [amountInput, setAmountInput] = useState("");
   const [recipientInput, setRecipientInput] = useState("");
@@ -28,8 +28,8 @@ function Transfer({ accountNumber }) {
 
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
-    if (accountNumber) {
-      setSenderInput(accountNumber);
+    if (ACCOUNTNUMBER) {
+      setSenderInput(ACCOUNTNUMBER);
     }
   };
 
@@ -56,7 +56,7 @@ function Transfer({ accountNumber }) {
         parseInt(recipientCopy.money) + parseInt(amountInput);
       mainCopy[mainCopy.indexOf(senderMatch)] = senderCopy;
       mainCopy[mainCopy.indexOf(recipientMatch)] = recipientCopy;
-      setAccounts([...mainCopy]);
+      updateAccounts([...mainCopy]);
       setErrorMessage("");
       setSenderInput("");
       setRecipientInput("");
@@ -106,7 +106,7 @@ function Transfer({ accountNumber }) {
             list="accounts"
             placeholder="Sender"
             onChange={(e) => {setSenderInput(e.target.value);}}
-            value={accountNumber ? accountNumber : senderInput}
+            value={ACCOUNTNUMBER ? ACCOUNTNUMBER : senderInput}
           ></input>
           <datalist id="accounts">
             {accounts.map((account) => {

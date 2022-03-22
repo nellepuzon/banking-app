@@ -1,9 +1,19 @@
-import React, { useState, useContext } from 'react';
-import {useNavigate} from 'react-router-dom'
-import DataContext from '../../context/DataContext';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import DataContext from "../../context/DataContext";
 
 function UserLogin() {
-  const {  accounts, loggedIn, setLoggedIn, setIsAdmin, userInput, setUserInput, passInput, setPassInput,} = useContext(DataContext)
+  const {
+    accounts,
+    loggedIn,
+    userLogin,
+    adminLogin,
+    userInput,
+    onUserInput,
+    passInput,
+    onPassInput,
+    resetLogin,
+  } = useContext(DataContext);
   const [errorMessage, setErrorMessage] = useState({});
   const navigate = useNavigate();
 
@@ -13,67 +23,68 @@ function UserLogin() {
     if (user) {
       if (user.password !== passInput) {
         setErrorMessage({
-          placeholder: 'Password',
-          message: 'invalid password',
+          placeholder: "Password",
+          message: "invalid password",
         });
-      } else if (user.type === 'admin') {
-        setIsAdmin(true);
-        setLoggedIn(true);
-        navigate('/admin')
-        setUserInput("");
-        setPassInput("");
-      } else if (user.type === 'user') {
-        setLoggedIn(true);
-        navigate(`/user/${userInput}`)
-        setUserInput("");
-        setPassInput("");
+      } else if (user.type === "admin") {
+        adminLogin(true);
+        navigate("/admin");
+        resetLogin();
+      } else if (user.type === "user") {
+        userLogin(true);
+        navigate(`/user/${userInput}`);
+        resetLogin();
       }
     } else {
-      setErrorMessage({ placeholder: 'Username', message: 'invalid username' });
+      setErrorMessage({ placeholder: "Username", message: "invalid username" });
     }
   }
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSubmit();
     }
   };
 
   function renderError(placeholder) {
     if (placeholder === errorMessage.placeholder && !loggedIn) {
-      return <div className='error-message'>{errorMessage.message}</div>;
+      return <div className="error-message">{errorMessage.message}</div>;
     }
   }
 
   return (
-    <div className='user-page'>
-      <div className='login'>
+    <div className="user-page">
+      <div className="login">
         <input
-          type='text'
-          placeholder='Username'
+          type="text"
+          placeholder="Username"
           required
-          onChange={(e)=>{setUserInput(e.target.value)}}
+          onChange={(e) => {
+            onUserInput(e.target.value);
+          }}
           value={userInput}
-          spellCheck='false'
+          spellCheck="false"
           onKeyPress={handleKeyPress}
         />
-        {renderError('Username')}
+        {renderError("Username")}
         <input
-          type='password'
-          placeholder='Password'
+          type="password"
+          placeholder="Password"
           required
-          onChange={(e)=>{setPassInput(e.target.value)}}
+          onChange={(e) => {
+            onPassInput(e.target.value);
+          }}
           value={passInput}
           onKeyPress={handleKeyPress}
         />
-        {renderError('Password')}
-        <button className='login-button' onClick={handleSubmit}>
+        {renderError("Password")}
+        <button className="login-button" onClick={handleSubmit}>
           LOG IN
         </button>
 
-        <div className='login-options'>
-          <div className='forgot-password'>Forgot Password</div>
-          <div className='create-account'>Create Account</div>
+        <div className="login-options">
+          <div className="forgot-password">Forgot Password</div>
+          <div className="create-account">Create Account</div>
         </div>
       </div>
     </div>

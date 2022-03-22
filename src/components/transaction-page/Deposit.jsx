@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import DataContext from "../../context/DataContext";
 
-function Deposit({ accountNumber }) {
-  const { accounts, setAccounts, isAdmin } = useContext(DataContext);
+function Deposit({ ACCOUNTNUMBER }) {
+  const { accounts, updateAccounts, isAdmin } = useContext(DataContext);
   const [depositInput, setDepositInput] = useState("");
   const [amountInput, setAmountInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
@@ -31,8 +31,8 @@ function Deposit({ accountNumber }) {
 
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
-    if (accountNumber) {
-      setDepositInput(accountNumber);
+    if (ACCOUNTNUMBER) {
+      setDepositInput(ACCOUNTNUMBER);
     }
   };
 
@@ -46,7 +46,7 @@ function Deposit({ accountNumber }) {
       let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
       accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput);
       mainCopy[mainCopy.indexOf(accountMatch)] = accountCopy;
-      setAccounts([...mainCopy]);
+      updateAccounts([...mainCopy]);
       setEmailInput("");
       setAmountInput("");
       setDepositInput("");
@@ -83,7 +83,7 @@ function Deposit({ accountNumber }) {
             list="accounts"
             placeholder="Account Number"
             onChange={(e) => {setDepositInput(e.target.value)}}
-            value={accountNumber ? accountNumber : depositInput}
+            value={ACCOUNTNUMBER ? ACCOUNTNUMBER : depositInput}
           ></input>
           <datalist id="accounts">
             {accounts.map((item) => {
