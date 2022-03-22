@@ -56,16 +56,16 @@ function DesktopLogin() {
           <div className='follow'>
             Follow Us
             <div className='social'>
-              <i class='fa-brands fa-facebook-square'></i>
-              <i class='fa-brands fa-instagram-square'></i>
-              <i class='fa-brands fa-twitter-square'></i>
+              <i className='fa-brands fa-facebook-square'></i>
+              <i className='fa-brands fa-instagram-square'></i>
+              <i className='fa-brands fa-twitter-square'></i>
             </div>
           </div>
-          <i class='fa-brands fa-cc-apple-pay'></i>
-          <i class='fa-brands fa-google-pay'></i>
-          <i class='fa-brands fa-cc-visa'></i>
-          <i class='fa-brands fa-cc-mastercard'></i>
-          <i class='fa-brands fa-cc-paypal'></i>
+          <i className='fa-brands fa-cc-apple-pay'></i>
+          <i className='fa-brands fa-google-pay'></i>
+          <i className='fa-brands fa-cc-visa'></i>
+          <i className='fa-brands fa-cc-mastercard'></i>
+          <i className='fa-brands fa-cc-paypal'></i>
         </footer>
       </div>
     </div>

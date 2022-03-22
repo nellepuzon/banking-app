@@ -5,10 +5,10 @@ import DataContext from "../../context/DataContext";
 const LoginCheck = () => {
     const {isAdmin, loggedIn} = useContext(DataContext)
     const location = useLocation()
-    if (isAdmin && loggedIn || !isAdmin && loggedIn) {
+    if ((isAdmin && loggedIn) || (!isAdmin && loggedIn)) {
         return <Outlet />
-    } else{
-        return <Navigate to="/*" state={{from: location}} replace/>
+    } else {
+        return <Navigate to="/login" state={{from: location}} replace/>
     }
 }
 
