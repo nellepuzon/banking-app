@@ -8,6 +8,7 @@ function BudgetApp({
   setAccounts,
   fullName,
   userExpenses,
+  onAddExpense
 }) {
   const [beforeBalance, setBeforeBalance] = useState(balance - userExpenses);
   const [expense, setExpense] = useState(user.expense);
@@ -32,6 +33,10 @@ function BudgetApp({
       setName("");
     }
   };
+  
+  useEffect(()=>{
+    onAddExpense(beforeBalance)
+  },[beforeBalance])
 
   const handleEnter = (event) => {
     if (event.key === "Enter") {
