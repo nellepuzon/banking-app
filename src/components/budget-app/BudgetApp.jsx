@@ -50,13 +50,13 @@ function BudgetApp({
 
   return (
     <div className="budget-app-container">
-      <div className="budget-app-title">Budget App</div>
+      {/* <div className="budget-app-title">Budget App</div>
       <div className="wallet">
         <div className="wallet-amount">
           <i className="fa-solid fa-peso-sign big"/>
           {beforeBalance}
         </div>
-      </div>
+      </div> */}
       <div className="expenses">
         <div className="expenses-title">Expenses</div>
         <div className="expenses-list">
@@ -75,7 +75,7 @@ function BudgetApp({
                 />
               );
             })}
-          <ul>
+          <ul className='add-ul'>
             <li>
               <input
                 className="add-expense-list"
@@ -95,6 +95,8 @@ function BudgetApp({
                 onChange={handleAddCost}
               />
             </li>
+            <li>
+            <i class="fa-solid fa-circle-plus add-icon"></i></li>
           </ul>
         </div>
       </div>

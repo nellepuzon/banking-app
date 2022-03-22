@@ -1,19 +1,24 @@
-import React, { useContext } from "react";
-import TableRow from "./TableRow";
-import DataContext from "../../context/DataContext";
+import React, { useContext } from 'react';
+import TableRow from './TableRow';
+import DataContext from '../../context/DataContext';
+import image from './bank-img'
 import AdminContext from "../../context/AdminDataContext";
 
 function Table() {
   const { accounts } = useContext(DataContext);
   const { searchInput } = useContext(AdminContext);
   return (
-    <div className="table-box">
+    <div className='table-box'>
+      <img src={image} className='image'/>
       <table>
         <thead>
           <tr>
             <th>Account Number</th>
             <th>Name</th>
             <th>Balance</th>
+            <th>
+              Manage
+            </th>
           </tr>
         </thead>
         <tbody>

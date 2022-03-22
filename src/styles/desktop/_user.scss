@@ -1,0 +1,260 @@
+$dark-color: #282c34;
+$light-color: #61dbfb;
+$white: rgba(255, 255, 255, 0.8);
+$gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
+
+.third-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.third-page header {
+  background-color: $dark-color;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+}
+
+.user-nav {
+  display: flex;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.user-logout:hover {
+  cursor: pointer;
+  color: $light-color;
+  transition: all 0.4s;
+}
+
+.welcome {
+  display: flex;
+  width: 100%;
+  max-width: 80%;
+  margin: 100px auto 0 auto;
+  font-size: 40px;
+  justify-content: space-between;
+}
+
+.greeting span {
+  font-weight: 600;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-color;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 80%;
+  margin: 50px auto;
+  display: flex;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 50%;
+  align-items: center;
+}
+
+.card {
+  background-color: $dark-color;
+  background-image: $gradient;
+  box-shadow: 2px 2px 2px $dark-color;
+  height: 300px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 20px;
+}
+
+.manage-expenses {
+  display: none;
+}
+
+.transactions.mobile {
+  width: 100%;
+  max-width: 70%;
+  margin-top: 50px;
+}
+
+.user-footer {
+  background-color: $dark-color;
+  position: relative;
+  bottom: 0;
+  height: 100%;
+  max-height: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  color: white;
+  font-size: 18px;
+}
+
+.right-container {
+  width: 100%;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.expenses {
+  display: flex;
+  flex-direction: column;
+}
+
+.expenses-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.expenses-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.expenses-list ul {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expenses-list ul li {
+  font-size: 20px;
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+}
+
+.small {
+  font-size: 16px;
+}
+
+.cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-color;
+  color: white;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.expenses li > .pay-button {
+  background-color: white;
+  width: 80px;
+  height: 30px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+}
+
+.edit-expense {
+  margin: 0 10px 0 20px;
+}
+
+.edit-expense,
+.delete-expense {
+  color: white;
+  font-size: 14px;
+}
+
+.add-expense-list,
+.input-cost {
+  outline: none;
+  border: none;
+  height: 35px;
+  padding-left: 10px;
+  width: 160px;
+  border-radius: 5px;
+  background-color: $dark-color;
+  color: white;
+}
+
+.add-expense-list::placeholder,
+.input-cost::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.add-icon {
+  color: $dark-color;
+}
+
+.add-icon:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.input-cost {
+  margin-left: 205px;
+  width: 80px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add-ul {
+  margin-top: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex !important;
+}
+
+.transparent {
+  color: transparent;
+}
+
+.border-radius {
+  border-radius: 0 5px 5px 0;
+}

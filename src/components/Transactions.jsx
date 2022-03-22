@@ -33,7 +33,7 @@ function Transactions({ className = '' }) {
   };
 
   return (
-    <div onClick={clickDeposit} className='transactions'>
+    <div onClick={clickDeposit} className={`transactions ${className}`}>
       <div className='deposit trans'>
         <div className='deposit-icon icon'>
           <i className='fa-solid fa-money-bill-1-wave'></i>

@@ -86,6 +86,10 @@ function UserLogin() {
           <div className="forgot-password">Forgot Password</div>
           <div className="create-account">Create Account</div>
         </div>
+
+        <div className='login-footer'>
+          <div className='terms'>Terms and Conditions</div>
+        </div>
       </div>
     </div>
   );

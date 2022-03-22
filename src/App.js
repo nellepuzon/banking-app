@@ -10,7 +10,7 @@ import DataContext from "./context/DataContext";
 function App() {
   return (
     <Routes>
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/*" element={<LoginPage />} />
       <Route element={<LoginCheck />}>
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/user/:userInput" element={<UserPage />} />

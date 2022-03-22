@@ -25,15 +25,15 @@ function ExpenseItem({ name, cost, user, accounts, setAccounts, fullName }) {
     <ul>
       <li onClick={handleToggle} >
         {name}
-        <i className={`fa-solid fa-pen-to-square edit-expense ${isToggle ? '' : 'hide'}`}/>
-        <i className={`fa-solid fa-trash-can delete-expense ${isToggle ? '' : 'hide'}`}/>
       </li>
       <li >
-        <li onClick={handlePay} className={`pay-button ${isTogglePay ? '' : 'hide'}`}>Pay</li>
-        <li onClick={handleTogglePay} className={`cost ${isTogglePay ? 'border-radius' : ''}`}>
+        <li onClick={handlePay} className={`pay-button ${isTogglePay ? '' : 'show'}`}>Pay</li>
+        <li onClick={handleTogglePay} className={`cost ${isTogglePay ? '' : 'border-radius'}`}>
           <i className='fa-solid fa-peso-sign big small'/>
           {cost}
         </li>
+          <i className={`fa-solid fa-pen-to-square edit-expense ${isToggle ? '' : 'transparent'}`}/>
+        <i className={`fa-solid fa-trash-can delete-expense ${isToggle ? '' : 'transparent'}`}/>
       </li>
     </ul>
   );
