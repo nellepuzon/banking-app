@@ -35,7 +35,7 @@ function DesktopLogin() {
         </div>
         <footer className='second-section'>
           <div className='about'>
-            <div className='about-title'>ABOUT REACTBANK</div>
+            {/* <div className='about-title'>ABOUT REACTBANK</div> */}
             <div className='about-us'>
               <ul>
                 <li>Who We Are</li>
