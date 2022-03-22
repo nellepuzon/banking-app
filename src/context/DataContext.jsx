@@ -1,54 +1,54 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from 'react';
 
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
   const [accounts, setAccounts] = useState([
-    { userName: "admin", password: "admin123", type: "admin" },
+    { userName: 'admin', password: 'admin123', type: 'admin' },
   ]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userInput, setUserInput] = useState("");
-  const [passInput, setPassInput] = useState("");
+  const [userInput, setUserInput] = useState('');
+  const [passInput, setPassInput] = useState('');
 
   useEffect(() => {
-    if (localStorage.getItem("accounts") === null) {
-      localStorage.setItem("accounts", JSON.stringify(accounts));
+    if (localStorage.getItem('accounts') === null) {
+      localStorage.setItem('accounts', JSON.stringify(accounts));
     } else {
-      const accounts = JSON.parse(localStorage.getItem("accounts"));
+      const accounts = JSON.parse(localStorage.getItem('accounts'));
       setAccounts(accounts);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("accounts", JSON.stringify(accounts));
+    localStorage.setItem('accounts', JSON.stringify(accounts));
   }, [accounts]);
 
-  const handleAdminLogIn = value => {
-    setIsAdmin(value)
-    setLoggedIn(value)
-  }
+  const handleAdminLogIn = (value) => {
+    setIsAdmin(value);
+    setLoggedIn(value);
+  };
 
-  const handleUserLogin = value => {
-    setLoggedIn(value)
-  }
+  const handleUserLogin = (value) => {
+    setLoggedIn(value);
+  };
 
   const resetLoginInputs = () => {
-    setUserInput("");
-    setPassInput("");
-  }
+    setUserInput('');
+    setPassInput('');
+  };
 
-  const handleUsernameChange = value => {
-    setUserInput(value)
-  }
+  const handleUsernameChange = (value) => {
+    setUserInput(value);
+  };
 
-  const handlePasswordChange = value => {
-    setPassInput(value)
-  }
+  const handlePasswordChange = (value) => {
+    setPassInput(value);
+  };
 
-  const handleAccountsChange = values => {
-    setAccounts(values)
-  }
+  const handleAccountsChange = (values) => {
+    setAccounts(values);
+  };
 
   return (
     <DataContext.Provider

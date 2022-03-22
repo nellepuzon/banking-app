@@ -165,7 +165,7 @@ function AddAccount() {
         </div>
         <div className='add-account-inputs'>
           <button onClick={handleAddAccount} className='add-account-button'>
-            {isEditing ? 'Edit' : 'Add'} Account
+            {isEditing ? 'Update' : 'Add'} Account
           </button>
         </div>
       </div>
