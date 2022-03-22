@@ -127,12 +127,13 @@ td a {
 }
 
 .edit-button {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
-.edit-button:hover, .delete-button:hover {
-    color: #278da7;
-    cursor: pointer;
+.edit-button:hover,
+.delete-button:hover {
+  color: #278da7;
+  cursor: pointer;
 }
 
 .image {
@@ -185,6 +186,92 @@ td a {
   margin-bottom: 10px;
 }
 
+.show-deposit,
+.show-withdraw,
+.show-transfer {
+  display: flex;
+}
+
+.deposit-page,
+.withdraw-page,
+.transfer-page {
+  position: absolute;
+  top: 25%;
+  left: 6%;
+  background-image: $gradient;
+  box-shadow: 2px 2px 2px $dark-color;
+  border-radius: 10px;
+  height: 400px;
+  width: 100%;
+  max-width: 30%;
+}
+
+.deposit-container,
+.withdraw-container,
+.transfer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 80%;
+  height: 100%;
+  max-height: 80%;
+  margin: auto;
+}
+
+.deposit-input,
+.withdraw-input,
+.transfer-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.deposit-input input,
+.withdraw-input input,
+.transfer-input input {
+  background-color: white;
+  outline: none;
+  border: none;
+  height: 50px;
+  margin: 10px 0;
+  color: $dark-color;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
+.deposit-input input::placeholder,
+.withdraw-input input::placeholder,
+.transfer-input input::placeholder {
+  color: $dark-color;
+}
+
+.deposit-button,
+.withdraw-button,
+.transfer-button {
+  background-color: $dark-color;
+  color: white;
+  border: none;
+  height: 50px;
+  width: 100%;
+  max-width: 40%;
+  margin: 10px auto 0 auto;
+  border-radius: 10px;
+}
+
+.deposit-button:hover,
+.withdraw-button:hover,
+.transfer-button:hover {
+    background-color: white;
+    color: $dark-color;
+    cursor: pointer;
+}
+
+.close-button {
+  display: flex;
+  justify-content: flex-end;
+  color: $dark-color;
+  margin-bottom: 10px;
+}
+
 // add account
 
 .add-account-container {
@@ -208,8 +295,6 @@ td a {
   border-radius: 10px;
 }
 
-
-
 .add-account-inputs input {
   outline: none;
   border: none;
@@ -220,57 +305,55 @@ td a {
   margin: 5px auto;
   color: $dark-color;
   border-radius: 10px;
-
 }
 
 .add-account-button {
-    border: none;
-    background: none;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor: pointer;
-
+  border: none;
+  background: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .add-account-inputs:last-child {
-    width: 100%;
-    max-width: 14%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90px;
-    margin: auto 5px;
+  width: 100%;
+  max-width: 14%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  margin: auto 5px;
 }
 
 .add-account-inputs:last-child:hover {
-    background-color: $light-color;
-    cursor: pointer;
-    transition: all 0.3s;
+  background-color: $light-color;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .add-account-inputs input::placeholder {
-    color: grey
+  color: grey;
 }
 
 .add-account-inputs input:focus::placeholder {
-    color: transparent
+  color: transparent;
 }
 
-.add-account-inputs  input::-webkit-outer-spin-button,
-.add-account-inputs  input::-webkit-inner-spin-button {
+.add-account-inputs input::-webkit-outer-spin-button,
+.add-account-inputs input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 .error {
-    margin: 0 5px;
-    color: rgb(255, 60, 60);
-    font-size: 14px;
+  margin: 0 5px;
+  color: rgb(255, 60, 60);
+  font-size: 14px;
 }
 
 .inputs {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }

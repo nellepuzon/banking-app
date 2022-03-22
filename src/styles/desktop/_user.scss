@@ -43,12 +43,13 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   width: 100%;
   max-width: 80%;
   margin: 100px auto 0 auto;
-  font-size: 40px;
+  font-size: 30px;
   justify-content: space-between;
+  font-weight: 500;
 }
 
 .greeting span {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .avatar {
@@ -56,10 +57,10 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   justify-content: center;
   align-items: center;
   background-color: $dark-color;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 15px;
   color: white;
   cursor: pointer;
 }
@@ -67,43 +68,129 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 .container {
   width: 100%;
   max-width: 80%;
-  margin: 50px auto;
+  margin: 30px auto;
   display: flex;
 }
 
-.left-container {
+.left-container,
+.right-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
   max-width: 50%;
-  align-items: center;
 }
 
 .card {
-  background-color: $dark-color;
-  background-image: $gradient;
-  box-shadow: 2px 2px 2px $dark-color;
+  background-image: linear-gradient(
+    to top left,
+    #0a5b6f,
+    #308ea5,
+    #56b9d2,
+    #4ec2df
+  );
   height: 300px;
   border-radius: 20px;
   width: 100%;
-  max-width: 80%;
+  max-width: 70%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   color: white;
   font-size: 20px;
+  box-shadow: 3px 3px 3px $dark-color;
+}
+
+.top-card,
+.card-balance,
+.bottom-card {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: 20px auto;
+  align-items: center;
+}
+
+.bottom-right-card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.balance-name {
+  font-size: 30px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px black;
+}
+
+.card-balance {
+  font-size: 50px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.card-name,
+.card-number {
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px black;
+}
+
+.valid-thru {
+  font-size: 9px;
+  margin-right: 5px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.valid-date {
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px black;
+}
+
+.mastercard {
+  width: 50px;
 }
 
 .manage-expenses {
   display: none;
 }
 
-.transactions.mobile {
+.transaction-history {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 70%;
-  margin-top: 50px;
+  margin: 50px 0;
+}
+
+.history-title,
+.expenses-title,
+.user-transaction-title {
+  background-color: $dark-color;
+  color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.transaction-list ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.transaction-list ul li {
+  border-bottom: 1px solid $dark-color;
+  box-shadow: 2px 2px 2px $dark-color;
+  font-size: 20px;
+  margin: 20px 0;
+  padding: 0 0 10px 20px;
+  font-weight: 500;
 }
 
 .user-footer {
@@ -127,27 +214,16 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   font-size: 18px;
 }
 
-.right-container {
-  width: 100%;
-  max-width: 80%;
-  margin: 20px auto;
-}
-
 .expenses {
   display: flex;
   flex-direction: column;
-}
-
-.expenses-title {
-  font-size: 30px;
-  font-weight: 600;
 }
 
 .expenses-list {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 80%;
+  max-width: 90%;
   margin: 20px auto;
 }
 
@@ -160,10 +236,14 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 }
 
 .expenses-list ul li {
-  font-size: 20px;
   display: flex;
-  font-weight: 600;
   align-items: center;
+  margin: 5px 0;
+}
+
+.expense-name {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .small {
@@ -179,7 +259,8 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   width: 80px;
   height: 30px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .expenses li > .pay-button {
@@ -190,16 +271,25 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   justify-content: center;
   align-items: center;
   border-radius: 5px 0 0 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .edit-expense {
-  margin: 0 10px 0 20px;
+  margin: 0 10px 0 30px;
 }
 
 .edit-expense,
 .delete-expense {
+  color: $dark-color;
+  font-size: 16px;
+}
+
+.edit-expense:hover,
+.delete-expense:hover {
+  cursor: pointer;
   color: white;
-  font-size: 14px;
 }
 
 .add-expense-list,
@@ -212,11 +302,18 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   border-radius: 5px;
   background-color: $dark-color;
   color: white;
+  font-size: 14px;
 }
 
 .add-expense-list::placeholder,
 .input-cost::placeholder {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.add-expense-list:focus::placeholder,
+.input-cost:focus::placeholder {
+  color: transparent;
 }
 
 .add-icon {
@@ -229,7 +326,7 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 }
 
 .input-cost {
-  margin-left: 205px;
+  margin-left: 240px;
   width: 80px;
 }
 
@@ -240,7 +337,13 @@ input::-webkit-inner-spin-button {
 }
 
 .add-ul {
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.add-ul li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .hide {
@@ -251,10 +354,27 @@ input::-webkit-inner-spin-button {
   display: flex !important;
 }
 
-.transparent {
-  color: transparent;
-}
+// .transparent {
+//   color: transparent;
+// }
 
 .border-radius {
   border-radius: 0 5px 5px 0;
+}
+
+// user transactions
+
+.user-transaction {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.transactions.mobile {
+  width: 100%;
+  margin: 40px 0;
+}
+
+.trans.mobile {
+    margin-right: 20px;
 }

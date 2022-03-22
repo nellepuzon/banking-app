@@ -10,17 +10,17 @@ function Transfer({ ACCOUNTNUMBER }) {
   const [emailInput, setEmailInput] = useState("");
 
   const undoBlur = () => {
-    if (isAdmin) {
-      document.querySelector(".admin-dashboard").classList.remove("blur");
-      document.querySelector(".add-account-container").classList.remove("blur");
-      document.querySelector(".table-box").classList.remove("blur");
-    } else if (!isAdmin) {
-      document.querySelector(".dashboard").classList.remove("blur");
-      document.querySelector(".top-bar").classList.remove("blur");
-      document.querySelector(".card-container").classList.remove("blur");
-      document.querySelector(".bottom-nav").classList.remove("blur");
-    }
-    document.querySelector(".transactions").classList.remove("blur");
+    // if (isAdmin) {
+    //   document.querySelector(".admin-dashboard").classList.remove("blur");
+    //   document.querySelector(".add-account-container").classList.remove("blur");
+    //   document.querySelector(".table-box").classList.remove("blur");
+    // } else if (!isAdmin) {
+    //   document.querySelector(".dashboard").classList.remove("blur");
+    //   document.querySelector(".top-bar").classList.remove("blur");
+    //   document.querySelector(".card-container").classList.remove("blur");
+    //   document.querySelector(".bottom-nav").classList.remove("blur");
+    // }
+    // document.querySelector(".transactions").classList.remove("blur");
     document.querySelector(".deposit-page").classList.remove("show-deposit");
     document.querySelector(".withdraw-page").classList.remove("show-withdraw");
     document.querySelector(".transfer-page").classList.remove("show-transfer");
@@ -136,16 +136,16 @@ function Transfer({ ACCOUNTNUMBER }) {
               }
             })}
           </datalist>
-          <div className="send-receipt">Send receipt to:</div>
+          {/* <div className="send-receipt">Send receipt to:</div>
           <input
             className="input-receipt"
             type="email"
             placeholder="name@example.com"
             onChange={(e)=>{setEmailInput(e.target.value)}}
             value={emailInput}
-          ></input>
+          ></input> */}
           <button onClick={transferMoney} className="transfer-button">
-            Send
+            Transfer
           </button>
         </div>
       </div>

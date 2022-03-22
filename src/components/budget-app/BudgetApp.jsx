@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ExpenseItem from "./ExpenseItem";
+import React, { useEffect, useState } from 'react';
+import ExpenseItem from './ExpenseItem';
 
 function BudgetApp({
   balance,
@@ -8,13 +8,13 @@ function BudgetApp({
   setAccounts,
   fullName,
   userExpenses,
-  onAddExpense
+  onAddExpense,
 }) {
   const [beforeBalance, setBeforeBalance] = useState(balance - userExpenses);
   const [expense, setExpense] = useState(user.expense);
   const [totalExpense, setTotalExpense] = useState(userExpenses);
-  const [name, setName] = useState("");
-  const [cost, setCost] = useState("");
+  const [name, setName] = useState('');
+  const [cost, setCost] = useState('');
 
   const handleAddItem = (e) => {
     setName(e.target.value);
@@ -25,21 +25,21 @@ function BudgetApp({
   };
 
   const handleExpense = () => {
-    if (name !== "" && cost !== "") {
+    if (name !== '' && cost !== '') {
       setExpense([...expense, { name: name, cost: cost }]);
       setTotalExpense((prev) => Number(prev) + Number(cost));
       setBeforeBalance((prev) => Number(prev) - Number(cost));
-      setCost("");
-      setName("");
+      setCost('');
+      setName('');
     }
   };
-  
-  useEffect(()=>{
-    onAddExpense(beforeBalance)
-  },[beforeBalance])
+
+  useEffect(() => {
+    onAddExpense(beforeBalance);
+  }, [beforeBalance]);
 
   const handleEnter = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       handleExpense();
     }
   };
@@ -54,7 +54,7 @@ function BudgetApp({
   }, [totalExpense]);
 
   return (
-    <div className="budget-app-container">
+    <div className='budget-app-container'>
       {/* <div className="budget-app-title">Budget App</div>
       <div className="wallet">
         <div className="wallet-amount">
@@ -62,14 +62,14 @@ function BudgetApp({
           {beforeBalance}
         </div>
       </div> */}
-      <div className="expenses">
-        <div className="expenses-title">Expenses</div>
-        <div className="expenses-list">
+      <div className='expenses'>
+        <div className='expenses-title'>Expenses</div>
+        <div className='expenses-list'>
           {user.expense &&
             user.expense.map((expense) => {
               return (
                 <ExpenseItem
-                  key={Math.floor(Number(user.accountNumber) * Math.random()) }
+                  key={Math.floor(Number(user.accountNumber) * Math.random())}
                   name={expense.name}
                   cost={expense.cost}
                   user={user}
@@ -83,25 +83,22 @@ function BudgetApp({
           <ul className='add-ul'>
             <li>
               <input
-                className="add-expense-list"
-                placeholder="Add Item"
+                className='add-expense-list'
+                placeholder='Add Item'
                 value={name}
                 onKeyPress={handleEnter}
                 onChange={handleAddItem}
               />
-            </li>
-            <li>
               <input
-                className="input-cost"
-                type="number"
-                placeholder="Cost"
+                className='input-cost'
+                type='number'
+                placeholder='Cost'
                 value={cost}
                 onKeyPress={handleEnter}
                 onChange={handleAddCost}
               />
+              <i class='fa-solid fa-circle-plus add-icon'></i>
             </li>
-            <li>
-            <i class="fa-solid fa-circle-plus add-icon"></i></li>
           </ul>
         </div>
       </div>
