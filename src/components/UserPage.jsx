@@ -4,6 +4,7 @@ import Transactions from './Transactions';
 import Deposit from './transaction-page/Deposit';
 import Withdraw from './transaction-page/Withdraw';
 import Transfer from './transaction-page/Transfer';
+import TransHistory from './transaction-page/TransHistory';
 import BudgetApp from './budget-app/BudgetApp';
 import { useParams } from 'react-router-dom';
 import BankLogo from './login-page/BankLogo';
@@ -17,6 +18,7 @@ function UserPage() {
   const BALANCE = USER.money;
   const ACCOUNTNUMBER = USER.accountNumber;
   const USEREXPENSES = USER.userExpenses;
+  const TRANSACTIONS = USER.history;
   const NAME = FULLNAME.split(',');
 
   const [mockBalance, setMockBalance] = useState(BALANCE - USEREXPENSES);
@@ -85,9 +87,9 @@ function UserPage() {
             <div className='history-title'>Transaction History</div>
             <div className='transaction-list'>
               <ul>
-                <li>Payment</li>
-                <li>Deposit</li>
-                <li>Withdraw</li>
+                {TRANSACTIONS && TRANSACTIONS.map((item)=>{
+                  return <TransHistory item={item} />
+                })}
               </ul>
             </div>
           </div>
