@@ -1,13 +1,15 @@
-import React, { useContext, useState } from "react";
-import DataContext from "../context/DataContext";
-import Transactions from "./Transactions";
-import Deposit from "./transaction-page/Deposit";
-import Withdraw from "./transaction-page/Withdraw";
-import Transfer from "./transaction-page/Transfer";
-import BudgetApp from "./budget-app/BudgetApp";
-import { useParams } from "react-router-dom";
-import Header from "./login-page/Header";
-import BankLogo from "./login-page/BankLogo";
+import React, { useContext, useState } from 'react';
+import DataContext from '../context/DataContext';
+import Transactions from './Transactions';
+import Deposit from './transaction-page/Deposit';
+import Withdraw from './transaction-page/Withdraw';
+import Transfer from './transaction-page/Transfer';
+import BudgetApp from './budget-app/BudgetApp';
+import { useParams } from 'react-router-dom';
+import Header from './login-page/Header';
+import BankLogo from './login-page/BankLogo';
+import mastercard from './mastercard.png';
+
 function UserPage() {
   const { userInput } = useParams();
   const { userLogin, accounts, setAccounts } = useContext(DataContext);
@@ -54,23 +56,42 @@ function UserPage() {
         </div>
       </div>
 
-      <div className="container">
-        <div className="left-container">
-          <div className="card">
-            <div className="card-balance">{mockBalance}</div>
-            <div className="card-name">{`${NAME[1]}  ${NAME[0]}`}</div>
-            <div className="card-number">{ACCOUNTNUMBER}</div>
+      <div className='container'>
+        <div className='left-container'>
+          <div className='card'>
+            <div className='top-card'>
+              <div className='balance-name'>Balance</div>
+              <img src={mastercard} className='mastercard' />
+            </div>
+            <div className='card-balance'>₱{mockBalance}</div>
+            <div className='bottom-card'>
+              <div className='bottom-left-card'>
+                <div className='card-name'>{`${NAME[1]}  ${NAME[0]}`}</div>
+                <div className='card-number'>{ACCOUNTNUMBER}</div>
+              </div>
+              <div className='bottom-right-card'>
+                <div className='valid-thru'>VALID<br/>THRU</div>
+                <div className='valid-date'>03/24</div>
+              </div>
+            </div>
           </div>
           <div onClick={showBudgetApp} className="manage-expenses">
             Manage Expenses
           </div>
-          <Transactions className="mobile" />
-          <Deposit ACCOUNTNUMBER={ACCOUNTNUMBER} />
-          <Withdraw ACCOUNTNUMBER={ACCOUNTNUMBER} />
-          <Transfer ACCOUNTNUMBER={ACCOUNTNUMBER} />
+          <div className='transaction-history'>
+            <div className='history-title'>Transaction History</div>
+            <div className='transaction-list'>
+            <ul>
+              <li>Payment</li>
+              <li>Deposit</li>
+              <li>Withdraw</li>
+            </ul></div>
+          </div>
         </div>
 
-        <div className="right-container">
+        <div className='right-container'>
+          
+          <div className='user-budget-app'>
           <BudgetApp
             balance={BALANCE}
             user={USER}
@@ -79,14 +100,26 @@ function UserPage() {
             fullName={FULLNAME}
             userExpenses={USEREXPENSES}
             onAddExpense={handleBudgetBalance}
-          />
+          /></div>
+          <div className='user-transaction'>
+            <div className='user-transaction-title'>
+              Transactions
+            </div>
+           
+          <Transactions className='mobile' />
+          <Deposit ACCOUNTNUMBER={ACCOUNTNUMBER} />
+          <Withdraw ACCOUNTNUMBER={ACCOUNTNUMBER} />
+          <Transfer ACCOUNTNUMBER={ACCOUNTNUMBER} />
+          </div>
         </div>
       </div>
-
-      <div className="bottom-nav">
-        <div className="nav-text">Available Balance</div>
-        <div className="balance">PHP {BALANCE}</div>
-      </div>
+      {/* 
+      <footer>
+        <div className='bottom-nav'>
+          <div className='nav-text'>Available Balance</div>
+          <div className='balance'>PHP {BALANCE}</div>
+        </div>
+      </footer> */}
     </div>
   );
 }
