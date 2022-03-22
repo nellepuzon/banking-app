@@ -17,12 +17,15 @@ body {
   height: 100vh;
   background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#5fbfd7), to(#75d5ec));
   background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
+  background-repeat: no-repeat;
+  background-size: cover;
   letter-spacing: 1px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  overflow: hidden;
 }
 
 .desktop-login {
@@ -942,6 +945,7 @@ td a {
 .third-page {
   width: 100%;
   height: 100vh;
+  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -999,7 +1003,7 @@ td a {
   display: flex;
   width: 100%;
   max-width: 80%;
-  margin: 100px auto 0 auto;
+  margin: 20px auto;
   font-size: 30px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1188,10 +1192,11 @@ td a {
 
 .user-footer {
   background-color: #282c34;
-  position: relative;
+  position: absolute;
+  width: 100%;
   bottom: 0;
   height: 100%;
-  max-height: 10%;
+  max-height: 8%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
