@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import Header from './login-page/Header';
 import BankLogo from './login-page/BankLogo';
 function UserPage() {
-  const {userInput} = useParams()
+  const { userInput } = useParams();
   const { userLogin, accounts, setAccounts } = useContext(DataContext);
   const USER = accounts.find((item) => item.userName == userInput);
   const FULLNAME = USER.fullName;
@@ -32,8 +32,10 @@ function UserPage() {
         <div className='user-nav'>
           <BankLogo />
           <i
-            onClick={() => {userLogin(false)}}
-            className="fa-solid fa-arrow-right-from-bracket"
+            onClick={() => {
+              userLogin(false);
+            }}
+            className='fa-solid fa-arrow-right-from-bracket'
           ></i>
         </div>
       </header>
@@ -57,9 +59,9 @@ function UserPage() {
             Manage Expenses
           </div>
           <Transactions className='mobile' />
-          <Deposit accountNumber={ACCOUNTNUMBER} />
-          <Withdraw accountNumber={ACCOUNTNUMBER} />
-          <Transfer accountNumber={ACCOUNTNUMBER} />
+          <Deposit ACCOUNTNUMBER={ACCOUNTNUMBER} />
+          <Withdraw ACCOUNTNUMBER={ACCOUNTNUMBER} />
+          <Transfer ACCOUNTNUMBER={ACCOUNTNUMBER} />
         </div>
 
         <div className='right-container'>
@@ -74,24 +76,12 @@ function UserPage() {
         </div>
       </div>
 
-      <Transactions className="mobile" />
-      <Deposit ACCOUNTNUMBER={ACCOUNTNUMBER} />
-      <Withdraw ACCOUNTNUMBER={ACCOUNTNUMBER} />
-      <Transfer ACCOUNTNUMBER={ACCOUNTNUMBER} />
-
-      <BudgetApp
-        balance={BALANCE}
-        user={USER}
-        accounts={accounts}
-        setAccounts={setAccounts}
-        fullName={FULLNAME}
-        userExpenses={USEREXPENSES}
-      />
-
-      <div className="bottom-nav">
-        <div className="nav-text">Available Balance</div>
-        <div className="balance">PHP {BALANCE}</div>
-      </div>
+      <footer>
+        <div className='bottom-nav'>
+          <div className='nav-text'>Available Balance</div>
+          <div className='balance'>PHP {BALANCE}</div>
+        </div>
+      </footer>
     </div>
   );
 }
