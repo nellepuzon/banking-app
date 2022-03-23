@@ -34,6 +34,10 @@ body {
   overflow: scroll;
 }
 
+.bank-logo.mobile {
+  display: none;
+}
+
 .desktop-login header {
   background-color: #282c34;
   height: 60px;
@@ -131,7 +135,7 @@ body {
 .slogan {
   margin-top: 40px;
   color: #282c34;
-  font-size: 85px;
+  font-size: 75px;
   font-weight: 700;
 }
 
@@ -143,7 +147,7 @@ body {
 }
 
 .slogan-text {
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 30px;
   color: #282c34;
   font-weight: 600;
@@ -173,8 +177,8 @@ body {
 .download-app {
   background-color: #282c34;
   color: white;
-  padding: 20px 30px;
-  font-size: 20px;
+  padding: 15px 25px;
+  font-size: 15px;
   font-weight: 600;
   border-radius: 10px;
   border: 2px solid #282c34;
@@ -212,7 +216,7 @@ body {
   max-width: 40%;
   background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#5fbfd7), to(#75d5ec));
   background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
-  height: 480px;
+  height: 450px;
   margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -675,7 +679,7 @@ td a {
           align-items: center;
   text-align: center;
   width: 100%;
-  max-width: 25%;
+  max-width: 30%;
   margin: 0 150px;
 }
 
@@ -1479,9 +1483,6 @@ input::-webkit-inner-spin-button {
     width: 100%;
     height: 100vh;
     overflow: scroll;
-  }
-  .bank-logo.mobile {
-    display: none;
   }
   .desktop-navbar ul li {
     margin-left: 40px;
