@@ -3,22 +3,6 @@ $light-color: #61dbfb;
 $white: rgba(255, 255, 255, 0.8);
 $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.body {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  max-width: 80%;
-  margin: 0 auto;
-  user-select: none;
-}
-
 .admin-dashboard {
   background-color: $dark-color;
   height: 60px;
@@ -106,7 +90,7 @@ th {
   width: 800px;
   height: 50px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 th {
@@ -144,7 +128,7 @@ td a {
 .manage-account {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center
 }
 
 // transactions
@@ -162,8 +146,8 @@ td a {
   align-items: center;
   text-align: center;
   width: 100%;
-  max-width: 30%;
-  margin: 0 150px;
+  max-width: 40%;
+  margin: 0 auto;
 }
 
 .trans {
@@ -310,7 +294,7 @@ td a {
 .add-account-button {
   border: none;
   background: none;
-  font-size: 14px;
+  font-size: 10px;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
@@ -335,6 +319,7 @@ td a {
 
 .add-account-inputs input::placeholder {
   color: grey;
+  font-size: 14px;
 }
 
 .add-account-inputs input:focus::placeholder {
