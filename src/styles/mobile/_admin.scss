@@ -60,10 +60,9 @@
 
   table {
     width: 100%;
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     height: 100px;
-    font-size: 14px;
   }
 
   .image {
@@ -80,13 +79,14 @@
   th,
   .edit-delete {
     font-weight: 500;
+    font-size: 12px;
   }
 
   // transactions
 
   .transactions {
     width: 100%;
-    max-width: 50%;
+    max-width: 90%;
   }
 
   .trans {
@@ -120,21 +120,25 @@
   // add account
 
   .add-account-container {
-    max-width: 60%;
     margin: 20px auto;
     background-color: white;
     background-image: $gradient;
     box-shadow: 2px 2px 2px $dark-color;
+    max-width: 90%;
   }
 
   .add-account-inputs input {
     height: 35px;
-    font-size: 14px;
+    font-size: 12px;
     box-shadow: 1px 1px 1px $dark-color;
   }
 
+  .add-account-inputs input::placeholder {
+      font-size: 12px;
+  }
+
   .add-account-button {
-    font-size: 9px;
+    font-size: 7px;
   }
 
   .add-account-inputs:last-child {

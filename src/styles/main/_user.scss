@@ -4,12 +4,8 @@ $white: rgba(255, 255, 255, 0.8);
 $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 
 .third-page {
-  width: 100%;
-  height: 100vh;
-  margin-top: 60px;
   display: flex;
   flex-direction: column;
-  user-select: none;
 }
 
 .third-page header {
@@ -43,7 +39,7 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   display: flex;
   width: 100%;
   max-width: 80%;
-  margin: 20px auto;
+  margin: 80px auto 20px auto;
   font-size: 30px;
   justify-content: space-between;
   font-weight: 500;
@@ -196,7 +192,7 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 
 .user-footer {
   background-color: $dark-color;
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   height: 100%;
@@ -328,7 +324,7 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 }
 
 .input-cost {
-  margin-left: 240px;
+  margin-left: 60px;
   width: 80px;
 }
 
@@ -370,11 +366,12 @@ input::-webkit-inner-spin-button {
     display: flex;
     width: 100%;
     flex-direction: column;
+    height: 300px;
 }
 
 .transactions.mobile {
   width: 100%;
-  margin: 40px 0;
+  margin: 40px 0 80px 0;
 }
 
 .trans.mobile {
