@@ -5,7 +5,10 @@
   $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 
   .third-page {
-    overflow: scroll;
+     margin-top: 60px;
+  }
+  .welcome {
+    margin: 10px auto 0 auto;
   }
 
   .container {
@@ -18,19 +21,31 @@
     flex-direction: column;
     width: 100%;
     max-width: 50%;
+    // height: 50px;
   }
 
   .card {
-    height: 250px;
+    height: 200px;
     max-width: 90%;
+  }
+
+  .top-card {
+    margin: 10px auto;
+    height: 30px
+  }
+
+  .bottom-card {
+    margin: 10px auto
   }
 
   .balance-name {
     font-size: 20px;
+    margin: 10px auto
   }
 
   .card-balance {
     font-size: 40px;
+    margin: 10px auto
   }
 
   .card-name,
@@ -126,6 +141,10 @@
     padding: 20px 25px;
     font-size: 14px;
     margin: 0 5px;
+  }
+
+  .transaction-list {
+    height: 20px;
   }
 
   .deposit-page,
