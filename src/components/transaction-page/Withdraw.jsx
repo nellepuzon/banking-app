@@ -1,12 +1,29 @@
-import React, { useState, useContext } from 'react';
-import DataContext from '../../context/DataContext';
+import React, { useState, useContext } from "react";
+import DataContext from "../../context/DataContext";
+import generateId from "../../helpers/generateID";
+import depWithInputCheck from "../../helpers/DepWithInputCheck";
+import ErrorMessage from "../../helpers/ErrorMessage";
 
 function Withdraw({ ACCOUNTNUMBER }) {
-  const {accounts, updateAccounts, isAdmin} = useContext(DataContext)
-  const [withdrawInput, setWithdrawInput] = useState('');
-  const [amountInput, setAmountInput] = useState('');
-  const [emailInput, setEmailInput] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const { accounts, updateAccounts, isAdmin } = useContext(DataContext);
+  const [withdrawInput, setWithdrawInput] = useState("");
+  const [amountInput, setAmountInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const accountMatch = accounts.find(
+    (element) => element.accountNumber === parseInt(withdrawInput)
+  );
+  let errorType = depWithInputCheck(accountMatch, amountInput);
+
+  const resetError = () => {
+    setErrorMessage("");
+    setSubmitted(false);
+  };
+
+  const handleErrorChange = (value) => {
+    setErrorMessage(value);
+  };
 
   const undoBlur = () => {
     // if (isAdmin) {
@@ -20,86 +37,66 @@ function Withdraw({ ACCOUNTNUMBER }) {
     //   document.querySelector('.bottom-nav').classList.remove('blur');
     // }
     // document.querySelector('.transactions').classList.remove('blur');
-    document.querySelector('.deposit-page').classList.remove('show-deposit');
-    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-    document.querySelector('.transfer-page').classList.remove('show-transfer');
+    document.querySelector(".deposit-page").classList.remove("show-deposit");
+    document.querySelector(".withdraw-page").classList.remove("show-withdraw");
+    document.querySelector(".transfer-page").classList.remove("show-transfer");
   };
 
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
+    resetError();
     if (ACCOUNTNUMBER) {
       setWithdrawInput(ACCOUNTNUMBER);
     }
   };
 
+
   const withdrawMoney = () => {
-    const accountMatch = accounts.find(
-      (element) => element.accountNumber === parseInt(withdrawInput)
-    );
-
-    
-  function dec2hex (dec) {
-    return dec.toString(16).padStart(2, "0")
-  }
-
-  function generateId (len) {
-    var arr = new Uint8Array((len || 40) / 2)
-    window.crypto.getRandomValues(arr)
-    return Array.from(arr, dec2hex).join('')
-  }
-
-    if (
-      accountMatch &&
-      parseInt(amountInput) > 0 &&
-      parseInt(accountMatch.money) > parseInt(amountInput)
-    ) {
+    setSubmitted(true);
+    if (errorType === 20) {
+      setSubmitted(false);
       undoBlur();
-      let id = generateId(20)
+      let id = generateId(20);
       let mainCopy = [...accounts];
       let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
       accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput);
-      mainCopy[mainCopy.indexOf(accountMatch)] = { ...accountCopy, history: [...accountCopy.history, {id: id, type: 'Withdraw'}] };
+      mainCopy[mainCopy.indexOf(accountMatch)] = {
+        ...accountCopy,
+        history: [...accountCopy.history, { id: id, type: "Withdraw" }],
+      };
       updateAccounts([...mainCopy]);
-      setEmailInput('');
-      setAmountInput('');
-      setWithdrawInput('');
-    } else if (!accountMatch) {
-      setErrorMessage({
-        placeholder: 'xxxxxxxxx',
-        message: 'account not found',
-      });
-    } else if (parseInt(amountInput) <= 0 || amountInput === '') {
-      setErrorMessage({
-        placeholder: 'Amount',
-        message: 'invalid amount input',
-      });
-    } else if (parseInt(amountInput) > parseInt(accountMatch.money)) {
-      setErrorMessage({ placeholder: 'Amount', message: 'not enough balance' });
+      setEmailInput("");
+      setAmountInput("");
+      setWithdrawInput("");
     }
   };
 
-  function renderError(placeholder) {
-    if (errorMessage.placeholder === placeholder) {
-      return <div className='error-message'>{errorMessage.message}</div>;
-    }
-  }
-
   return (
-    <div className='withdraw-page'>
-      <div className='withdraw-container'>
-        <div onClick={undoBlur} className='close-button'>
-          <i className='fa-solid fa-circle-xmark'></i>
+    <div className="withdraw-page">
+      <div className="withdraw-container">
+        <div onClick={undoBlur} className="close-button">
+          <i className="fa-solid fa-circle-xmark"></i>
         </div>
-        <div className='withdraw-input'>
+        <div className="withdraw-input">
+          {submitted && (
+            <ErrorMessage
+              errorType={errorType}
+              errorMessage={errorMessage}
+              onErrorChange={handleErrorChange}
+            />
+          )}
           <input
-            className='account-number-input'
-            list='accounts'
-            type='number'
-            placeholder='Account Number'
-            onChange={(e) => {setWithdrawInput(e.target.value)}}
+            className="account-number-input"
+            list="accounts"
+            type="number"
+            placeholder="Account Number"
+            onChange={(e) => {
+              setWithdrawInput(e.target.value);
+              resetError();
+            }}
             value={ACCOUNTNUMBER ? ACCOUNTNUMBER : withdrawInput}
           ></input>
-          <datalist id='accounts'>
+          <datalist id="accounts">
             {accounts.map((account) => {
               if (account.accountNumber) {
                 return (
@@ -111,24 +108,25 @@ function Withdraw({ ACCOUNTNUMBER }) {
               }
             })}
           </datalist>
-          {renderError('xxxxxxxxx')}
           <input
-            className='withdraw-amount'
-            type='number'
-            placeholder='Amount'
+            className="withdraw-amount"
+            type="number"
+            placeholder="Amount"
             onChange={handleAmountChange}
             value={amountInput}
           ></input>
-          {renderError('Amount')}
-          <div className='send-receipt'>Send receipt to:</div>
+          <div className="send-receipt">Send receipt to:</div>
           <input
-            className='input-receipt'
-            type='email'
-            placeholder='name@example.com'
-            onChange={(e) => {setEmailInput(e.target.value)}}
+            className="input-receipt"
+            type="email"
+            placeholder="name@example.com"
+            onChange={(e) => {
+              setEmailInput(e.target.value);
+              resetError();
+            }}
             value={emailInput}
           ></input>
-          <button onClick={withdrawMoney} className='withdraw-button'>
+          <button onClick={withdrawMoney} className="withdraw-button">
             Withdraw
           </button>
         </div>

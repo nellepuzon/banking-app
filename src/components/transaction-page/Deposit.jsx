@@ -1,5 +1,8 @@
 import React, { useState, useContext } from "react";
 import DataContext from "../../context/DataContext";
+import generateId from "../../helpers/generateID";
+import depWithInputCheck from "../../helpers/DepWithInputCheck";
+import ErrorMessage from "../../helpers/ErrorMessage";
 
 function Deposit({ ACCOUNTNUMBER }) {
   const { accounts, updateAccounts } = useContext(DataContext);
@@ -7,6 +10,20 @@ function Deposit({ ACCOUNTNUMBER }) {
   const [amountInput, setAmountInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const accountMatch = accounts.find(
+    (element) => element.accountNumber == depositInput
+  );
+  let errorType = depWithInputCheck(accountMatch, amountInput);
+
+  const resetError = () => {
+    setErrorMessage("");
+    setSubmitted(false);
+  };
+
+  const handleErrorChange = (value) => {
+    setErrorMessage(value);
+  };
 
   const undoBlur = () => {
     // if (isAdmin) {
@@ -31,55 +48,32 @@ function Deposit({ ACCOUNTNUMBER }) {
 
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
+    resetError();
     if (ACCOUNTNUMBER) {
       setDepositInput(ACCOUNTNUMBER);
     }
   };
 
-  function dec2hex (dec) {
-    return dec.toString(16).padStart(2, "0")
-  }
-
-  function generateId (len) {
-    var arr = new Uint8Array((len || 40) / 2)
-    window.crypto.getRandomValues(arr)
-    return Array.from(arr, dec2hex).join('')
-  }
-
   const depositMoney = () => {
-    const accountMatch = accounts.find(
-      (element) => element.accountNumber == depositInput
-    );
-    if (accountMatch && parseInt(amountInput) > 0) {
+    setSubmitted(true);
+    if (errorType === 20) {
+      setSubmitted(false);
       undoBlur();
-      let id = generateId(20)
+      let id = generateId(20);
       let mainCopy = [...accounts];
       let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
       accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput);
-      mainCopy[mainCopy.indexOf(accountMatch)] = { ...accountCopy, history: [...accountCopy.history, {id: id, type: 'Deposit'}] };
+      mainCopy[mainCopy.indexOf(accountMatch)] = {
+        ...accountCopy,
+        history: [...accountCopy.history, { id: id, type: "Deposit" }],
+      };
       updateAccounts([...mainCopy]);
       setEmailInput("");
       setAmountInput("");
       setDepositInput("");
       setErrorMessage("");
-    } else if (!accountMatch) {
-      setErrorMessage({
-        placeholder: "xxxxxxxxx",
-        message: "account not found",
-      });
-    } else if (parseInt(amountInput) <= 0 || amountInput === "") {
-      setErrorMessage({
-        placeholder: "Amount",
-        message: "invalid amount input",
-      });
     }
   };
-
-  function renderError(placeholder) {
-    if (errorMessage.placeholder === placeholder) {
-      return <div className="error-message">{errorMessage.message}</div>;
-    }
-  }
 
   return (
     <div className="deposit-page">
@@ -88,12 +82,22 @@ function Deposit({ ACCOUNTNUMBER }) {
           <i className="fa-solid fa-circle-xmark"></i>
         </div>
         <div className="deposit-input">
+          {submitted && (
+            <ErrorMessage
+              errorType={errorType}
+              errorMessage={errorMessage}
+              onErrorChange={handleErrorChange}
+            />
+          )}
           <input
             className="account-number-input"
             type="number"
             list="accounts"
             placeholder="Account Number"
-            onChange={(e) => {setDepositInput(e.target.value)}}
+            onChange={(e) => {
+              setDepositInput(e.target.value);
+              resetError();
+            }}
             value={ACCOUNTNUMBER ? ACCOUNTNUMBER : depositInput}
           ></input>
           <datalist id="accounts">
@@ -105,7 +109,6 @@ function Deposit({ ACCOUNTNUMBER }) {
               }
             })}
           </datalist>
-          {renderError("xxxxxxxxx")}
           <input
             className="deposit-amount"
             type="number"
@@ -113,13 +116,15 @@ function Deposit({ ACCOUNTNUMBER }) {
             onChange={handleAmountChange}
             value={amountInput}
           ></input>
-          {renderError("Amount")}
           <div className="send-receipt">Send receipt to:</div>
           <input
             className="input-receipt"
             type="email"
             placeholder="name@example.com"
-            onChange={(e)=>{setEmailInput(e.target.value)}}
+            onChange={(e) => {
+              setEmailInput(e.target.value);
+              resetError();
+            }}
             value={emailInput}
           ></input>
           <button onClick={depositMoney} className="deposit-button">
