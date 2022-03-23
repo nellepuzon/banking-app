@@ -43,10 +43,6 @@ body {
   z-index: 1;
 }
 
-.bank-logo.mobile {
-  display: none;
-}
-
 .desktop-navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1478,7 +1474,793 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
+@media all and (max-width: 1024px) {
+  .desktop-login {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+  }
+  .bank-logo.mobile {
+    display: none;
+  }
+  .desktop-navbar ul li {
+    margin-left: 40px;
+    font-size: 14px;
+  }
+  .fa-bars {
+    display: none;
+  }
+  .bank-logo {
+    font-size: 20px;
+  }
+  .slogan {
+    margin-top: 0px;
+    font-size: 60px;
+  }
+  .slogan-text {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  .desktop-options {
+    width: 100%;
+    max-width: 70%;
+    margin-top: 20px;
+  }
+  .get-started,
+  .download-app {
+    padding: 15px 25px;
+    font-size: 12px;
+  }
+  .user-page {
+    max-width: 40%;
+    height: 360px;
+    margin-top: 20px;
+  }
+  .login input {
+    height: 40px;
+    width: 200px;
+    font-size: 13px;
+  }
+  .login-button {
+    width: 90px;
+    font-size: 13px;
+  }
+  .login-options {
+    font-size: 12px;
+  }
+  .login-footer {
+    font-size: 10px;
+  }
+  .create-account {
+    margin-top: 5px;
+  }
+  .second-section {
+    font-size: 20px;
+    padding: 0 100px;
+  }
+  .follow {
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+  .social {
+    font-size: 20px;
+  }
+  .about {
+    font-size: 10px;
+    width: 300px;
+  }
+  .error-message {
+    color: #981a1a;
+    font-size: 10px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .nav-bar ul li {
+    margin-right: 50px;
+  }
+  .search-bar {
+    font-size: 30px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .search {
+    width: 500px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .table-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    max-width: 85%;
+    margin: 0 0 0 60px;
+  }
+  table {
+    width: 800px;
+    height: 100px;
+    margin-top: 0px;
+  }
+  td,
+  tr,
+  th {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  th {
+    background-color: #282c34;
+    color: white;
+    font-size: 15px;
+  }
+  .edit-delete {
+    font-size: 14px;
+  }
+  .image {
+    width: 400px;
+  }
+  .manage-account {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .transactions {
+    width: 100%;
+    max-width: 30%;
+    margin: 0;
+  }
+  .trans {
+    padding: 20px 25px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+  .deposit-page,
+  .withdraw-page,
+  .transfer-page {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .deposit-container,
+  .withdraw-container,
+  .transfer-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .add-account-container {
+    max-width: 50%;
+    margin: 0;
+    padding: 10px;
+  }
+  .add-account-inputs input {
+    font-size: 14px;
+  }
+  .add-account-button {
+    font-size: 10px;
+  }
+  .error {
+    font-size: 10px;
+  }
+  .logout-mobile {
+    display: none;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .third-page {
+    overflow: scroll;
+  }
+  .container {
+    margin: 20px auto;
+  }
+  .left-container,
+  .right-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    max-width: 50%;
+  }
+  .card {
+    height: 250px;
+    max-width: 90%;
+  }
+  .balance-name {
+    font-size: 20px;
+  }
+  .card-balance {
+    font-size: 40px;
+  }
+  .card-name,
+  .card-number {
+    font-size: 16px;
+  }
+  .valid-thru {
+    font-size: 7px;
+  }
+  .valid-date {
+    font-size: 14px;
+  }
+  .mastercard {
+    width: 40px;
+  }
+  .manage-expenses {
+    display: none;
+  }
+  .transaction-history {
+    max-width: 90%;
+    margin: 40px 0;
+  }
+  .history-title,
+  .expenses-title,
+  .user-transaction-title {
+    font-size: 16px;
+  }
+  .bottom-nav {
+    font-size: 16px;
+  }
+  .expenses-list ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 5px 0;
+  }
+  .expense-name {
+    font-size: 16px;
+  }
+  .cost {
+    width: 70px;
+    height: 25px;
+    font-size: 14px;
+  }
+  .expenses li > .pay-button {
+    width: 70px;
+    height: 25px;
+    font-size: 14px;
+  }
+  .edit-expense,
+  .delete-expense {
+    font-size: 14px;
+  }
+  .add-expense-list,
+  .input-cost {
+    outline: none;
+    border: none;
+    height: 35px;
+    padding-left: 10px;
+    width: 160px;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: white;
+    font-size: 14px;
+  }
+  .input-cost {
+    margin-left: 20px;
+    width: 70px;
+  }
+  .transactions {
+    width: 100%;
+    max-width: 30%;
+    margin: 0;
+  }
+  .trans {
+    padding: 20px 25px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+  .deposit-page,
+  .withdraw-page,
+  .transfer-page {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .deposit-container,
+  .withdraw-container,
+  .transfer-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .user-logout {
+    display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .desktop-login {
+    overflow: scroll;
+    height: 100vh;
+  }
+  .bank-logo.mobile {
+    display: none;
+  }
+  .desktop-navbar ul {
+    display: none;
+  }
+  .fa-bars {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 20px;
+    color: #61dbfb;
+  }
+  .bank-logo {
+    font-size: 22px;
+  }
+  .main-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .slogan {
+    margin-top: 10px;
+    font-size: 75px;
+  }
+  .slogan-text {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .desktop-options {
+    max-width: 60%;
+    margin: 40px auto 0 auto;
+  }
+  .get-started,
+  .download-app {
+    padding: 15px;
+    font-size: 15px;
+  }
+  .user-page {
+    max-width: 80%;
+    margin-top: 60px;
+    height: 420px;
+  }
+  .login input::-webkit-input-placeholder {
+    color: #282c34;
+  }
+  .login input:-ms-input-placeholder {
+    color: #282c34;
+  }
+  .login input::-ms-input-placeholder {
+    color: #282c34;
+  }
+  .login input::placeholder {
+    color: #282c34;
+  }
+  .login input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .login input:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+  .login input:focus::-ms-input-placeholder {
+    color: transparent;
+  }
+  .login input:focus::placeholder {
+    color: transparent;
+  }
+  .login-options {
+    font-size: 12px;
+  }
+  .login-footer {
+    font-size: 12px;
+  }
+  .second-section {
+    padding: 0 130px;
+  }
+  .logo {
+    display: none;
+  }
+  .follow {
+    font-size: 10px;
+  }
+  .social {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .admin-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    overflow: scroll;
+  }
+  .nav-bar ul {
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav-bar ul li {
+    margin-right: 20px;
+    font-size: 14px;
+  }
+  .search-bar {
+    margin: 80px auto 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 30px;
+  }
+  .search {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: white;
+    color: #282c34;
+    -webkit-box-shadow: 1px 1px 1px #282c34;
+            box-shadow: 1px 1px 1px #282c34;
+  }
+  .search::-webkit-input-placeholder {
+    color: #282c34;
+    font-size: 14px;
+  }
+  .search:-ms-input-placeholder {
+    color: #282c34;
+    font-size: 14px;
+  }
+  .search::-ms-input-placeholder {
+    color: #282c34;
+    font-size: 14px;
+  }
+  .search::placeholder {
+    color: #282c34;
+    font-size: 14px;
+  }
+  .image {
+    display: none;
+  }
+  .table-box {
+    max-width: 80%;
+  }
+  table {
+    margin-top: 30px;
+  }
+  td,
+  tr,
+  th {
+    font-size: 14px;
+  }
+  th {
+    background-color: #282c34;
+    color: white;
+  }
+  .manage-account {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .deposit-page,
+  .withdraw-page,
+  .transfer-page {
+    display: none;
+  }
+  .transactions {
+    max-width: 60%;
+    margin-bottom: 50px;
+  }
+  .trans {
+    padding: 15px 20px;
+    font-size: 12px;
+  }
+  .trans .icon {
+    font-size: 25px;
+  }
+  .show-deposit,
+  .show-withdraw,
+  .show-transfer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .deposit-page,
+  .withdraw-page,
+  .transfer-page {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  .deposit-container,
+  .withdraw-container,
+  .transfer-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .add-account-container {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 10px;
+  }
+  .add-account-inputs input {
+    font-size: 14px;
+  }
+  .add-account-button {
+    font-size: 12px;
+  }
+  .error {
+    font-size: 12px;
+  }
+  .logout-mobile {
+    display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .third-page {
+    margin-top: 60px;
+    overflow: scroll;
+  }
+  .welcome {
+    margin: 20px auto 0 auto;
+  }
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .left-container,
+  .right-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .card {
+    height: 250px;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .balance-name {
+    font-size: 20px;
+  }
+  .card-balance {
+    font-size: 40px;
+  }
+  .card-name,
+  .card-number {
+    font-size: 16px;
+  }
+  .valid-thru {
+    font-size: 7px;
+  }
+  .valid-date {
+    font-size: 16px;
+  }
+  .mastercard {
+    width: 40px;
+  }
+  .transaction-history {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+  .history-title,
+  .expenses-title,
+  .user-transaction-title {
+    font-size: 16px;
+  }
+  .transaction-list ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .transaction-list ul li {
+    border-bottom: 1px solid #282c34;
+    -webkit-box-shadow: 2px 2px 2px #282c34;
+            box-shadow: 2px 2px 2px #282c34;
+    font-size: 20px;
+    margin: 20px 0;
+    padding: 0 0 10px 20px;
+    font-weight: 500;
+  }
+  .user-footer {
+    background-color: #282c34;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+    max-height: 8%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .bottom-nav {
+    font-size: 16px;
+  }
+  .expenses-list ul li {
+    margin: 3px 0;
+  }
+  .expense-name {
+    font-size: 16px;
+  }
+  .cost {
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .expenses li > .pay-button {
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .edit-expense {
+    margin: 0 5px 0 15px;
+  }
+  .edit-expense,
+  .delete-expense {
+    font-size: 14px;
+  }
+  .add-expense-list,
+  .input-cost {
+    font-size: 14px;
+  }
+  .add-expense-list::-webkit-input-placeholder,
+  .input-cost::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+  }
+  .add-expense-list:-ms-input-placeholder,
+  .input-cost:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+  }
+  .add-expense-list::-ms-input-placeholder,
+  .input-cost::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+  }
+  .add-expense-list::placeholder,
+  .input-cost::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+  }
+  .add-expense-list:focus::-webkit-input-placeholder,
+  .input-cost:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  .add-expense-list:focus:-ms-input-placeholder,
+  .input-cost:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+  .add-expense-list:focus::-ms-input-placeholder,
+  .input-cost:focus::-ms-input-placeholder {
+    color: transparent;
+  }
+  .add-expense-list:focus::placeholder,
+  .input-cost:focus::placeholder {
+    color: transparent;
+  }
+  .add-icon {
+    color: #282c34;
+  }
+  .add-icon:hover {
+    color: white;
+    cursor: pointer;
+  }
+  .input-cost {
+    margin-left: 240px;
+    width: 70px;
+  }
+  .user-transaction {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .transactions.mobile {
+    width: 100%;
+    margin: 40px 0;
+  }
+  .trans.mobile {
+    margin-right: 10px;
+    margin-top: 0;
+    margin: 0 10px 50px 10px;
+  }
+  .user-logout {
+    display: none;
+  }
+}
+
 @media all and (max-width: 480px) {
+  .bank-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1995,787 +2777,6 @@ input::-webkit-inner-spin-button {
             align-items: center;
     height: 30px;
     margin-left: 10px;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .desktop-login {
-    overflow: scroll;
-    height: 100vh;
-  }
-  .bank-logo.mobile {
-    display: none;
-  }
-  .desktop-navbar ul {
-    display: none;
-  }
-  .fa-bars {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    font-size: 20px;
-    color: #61dbfb;
-  }
-  .bank-logo {
-    font-size: 22px;
-  }
-  .main-page {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    text-align: center;
-  }
-  .slogan {
-    margin-top: 10px;
-    font-size: 75px;
-  }
-  .slogan-text {
-    font-size: 20px;
-    margin-top: 20px;
-  }
-  .desktop-options {
-    max-width: 60%;
-    margin: 40px auto 0 auto;
-  }
-  .get-started,
-  .download-app {
-    padding: 15px;
-    font-size: 15px;
-  }
-  .user-page {
-    max-width: 80%;
-    margin-top: 60px;
-    height: 420px;
-  }
-  .login input::-webkit-input-placeholder {
-    color: #282c34;
-  }
-  .login input:-ms-input-placeholder {
-    color: #282c34;
-  }
-  .login input::-ms-input-placeholder {
-    color: #282c34;
-  }
-  .login input::placeholder {
-    color: #282c34;
-  }
-  .login input:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
-  .login input:focus:-ms-input-placeholder {
-    color: transparent;
-  }
-  .login input:focus::-ms-input-placeholder {
-    color: transparent;
-  }
-  .login input:focus::placeholder {
-    color: transparent;
-  }
-  .login-options {
-    font-size: 12px;
-  }
-  .login-footer {
-    font-size: 12px;
-  }
-  .second-section {
-    padding: 0 130px;
-  }
-  .logo {
-    display: none;
-  }
-  .follow {
-    font-size: 10px;
-  }
-  .social {
-    font-size: 20px;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .admin-page {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100vh;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    overflow: scroll;
-  }
-  .nav-bar ul {
-    list-style-type: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .nav-bar ul li {
-    margin-right: 20px;
-    font-size: 14px;
-  }
-  .search-bar {
-    margin: 80px auto 0 auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    font-size: 30px;
-  }
-  .search {
-    width: 100%;
-    height: 40px;
-    font-size: 16px;
-    margin-top: 20px;
-    background-color: white;
-    color: #282c34;
-    -webkit-box-shadow: 1px 1px 1px #282c34;
-            box-shadow: 1px 1px 1px #282c34;
-  }
-  .search::-webkit-input-placeholder {
-    color: #282c34;
-    font-size: 14px;
-  }
-  .search:-ms-input-placeholder {
-    color: #282c34;
-    font-size: 14px;
-  }
-  .search::-ms-input-placeholder {
-    color: #282c34;
-    font-size: 14px;
-  }
-  .search::placeholder {
-    color: #282c34;
-    font-size: 14px;
-  }
-  .image {
-    display: none;
-  }
-  .table-box {
-    max-width: 80%;
-  }
-  table {
-    margin-top: 30px;
-  }
-  td,
-  tr,
-  th {
-    font-size: 14px;
-  }
-  th {
-    background-color: #282c34;
-    color: white;
-  }
-  .manage-account {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-  .deposit-page,
-  .withdraw-page,
-  .transfer-page {
-    display: none;
-  }
-  .transactions {
-    max-width: 60%;
-    margin-bottom: 50px;
-  }
-  .trans {
-    padding: 15px 20px;
-    font-size: 12px;
-  }
-  .trans .icon {
-    font-size: 25px;
-  }
-  .show-deposit,
-  .show-withdraw,
-  .show-transfer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .deposit-page,
-  .withdraw-page,
-  .transfer-page {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
-    max-width: 100%;
-  }
-  .deposit-container,
-  .withdraw-container,
-  .transfer-container {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .add-account-container {
-    max-width: 80%;
-    margin: 50px auto;
-    padding: 10px;
-  }
-  .add-account-inputs input {
-    font-size: 14px;
-  }
-  .add-account-button {
-    font-size: 12px;
-  }
-  .error {
-    font-size: 12px;
-  }
-  .logout-mobile {
-    display: none;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .third-page {
-    margin-top: 60px;
-    overflow: scroll;
-  }
-  .welcome {
-    margin: 20px auto 0 auto;
-  }
-  .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .left-container,
-  .right-container {
-    width: 100%;
-    max-width: 100%;
-  }
-  .card {
-    height: 250px;
-    max-width: 70%;
-    margin: 0 auto;
-  }
-  .balance-name {
-    font-size: 20px;
-  }
-  .card-balance {
-    font-size: 40px;
-  }
-  .card-name,
-  .card-number {
-    font-size: 16px;
-  }
-  .valid-thru {
-    font-size: 7px;
-  }
-  .valid-date {
-    font-size: 16px;
-  }
-  .mastercard {
-    width: 40px;
-  }
-  .transaction-history {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-  .history-title,
-  .expenses-title,
-  .user-transaction-title {
-    font-size: 16px;
-  }
-  .transaction-list ul {
-    list-style-type: none;
-    width: 100%;
-    margin: 20px 0;
-  }
-  .transaction-list ul li {
-    border-bottom: 1px solid #282c34;
-    -webkit-box-shadow: 2px 2px 2px #282c34;
-            box-shadow: 2px 2px 2px #282c34;
-    font-size: 20px;
-    margin: 20px 0;
-    padding: 0 0 10px 20px;
-    font-weight: 500;
-  }
-  .user-footer {
-    background-color: #282c34;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    height: 100%;
-    max-height: 8%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .bottom-nav {
-    font-size: 16px;
-  }
-  .expenses-list ul li {
-    margin: 3px 0;
-  }
-  .expense-name {
-    font-size: 16px;
-  }
-  .cost {
-    width: 70px;
-    height: 30px;
-    font-size: 14px;
-  }
-  .expenses li > .pay-button {
-    width: 70px;
-    height: 30px;
-    font-size: 14px;
-  }
-  .edit-expense {
-    margin: 0 5px 0 15px;
-  }
-  .edit-expense,
-  .delete-expense {
-    font-size: 14px;
-  }
-  .add-expense-list,
-  .input-cost {
-    font-size: 14px;
-  }
-  .add-expense-list::-webkit-input-placeholder,
-  .input-cost::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-  }
-  .add-expense-list:-ms-input-placeholder,
-  .input-cost:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-  }
-  .add-expense-list::-ms-input-placeholder,
-  .input-cost::-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-  }
-  .add-expense-list::placeholder,
-  .input-cost::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-  }
-  .add-expense-list:focus::-webkit-input-placeholder,
-  .input-cost:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
-  .add-expense-list:focus:-ms-input-placeholder,
-  .input-cost:focus:-ms-input-placeholder {
-    color: transparent;
-  }
-  .add-expense-list:focus::-ms-input-placeholder,
-  .input-cost:focus::-ms-input-placeholder {
-    color: transparent;
-  }
-  .add-expense-list:focus::placeholder,
-  .input-cost:focus::placeholder {
-    color: transparent;
-  }
-  .add-icon {
-    color: #282c34;
-  }
-  .add-icon:hover {
-    color: white;
-    cursor: pointer;
-  }
-  .input-cost {
-    margin-left: 240px;
-    width: 70px;
-  }
-  .user-transaction {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-bottom: 40px;
-  }
-  .transactions.mobile {
-    width: 100%;
-    margin: 40px 0;
-  }
-  .trans.mobile {
-    margin-right: 10px;
-    margin-top: 0;
-    margin: 0 10px 50px 10px;
-  }
-  .user-logout {
-    display: none;
-  }
-}
-
-@media all and (max-width: 1024px) {
-  .desktop-login {
-    width: 100%;
-    height: 100vh;
-    overflow: scroll;
-  }
-  .bank-logo.mobile {
-    display: none;
-  }
-  .desktop-navbar ul li {
-    margin-left: 40px;
-    font-size: 14px;
-  }
-  .fa-bars {
-    display: none;
-  }
-  .bank-logo {
-    font-size: 20px;
-  }
-  .slogan {
-    margin-top: 0px;
-    font-size: 60px;
-  }
-  .slogan-text {
-    font-size: 15px;
-    margin-top: 20px;
-  }
-  .desktop-options {
-    width: 100%;
-    max-width: 70%;
-    margin-top: 20px;
-  }
-  .get-started,
-  .download-app {
-    padding: 15px 25px;
-    font-size: 12px;
-  }
-  .user-page {
-    max-width: 40%;
-    height: 360px;
-    margin-top: 20px;
-  }
-  .login input {
-    height: 40px;
-    width: 200px;
-    font-size: 13px;
-  }
-  .login-button {
-    width: 90px;
-    font-size: 13px;
-  }
-  .login-options {
-    font-size: 12px;
-  }
-  .login-footer {
-    font-size: 10px;
-  }
-  .create-account {
-    margin-top: 5px;
-  }
-  .second-section {
-    font-size: 20px;
-    padding: 0 100px;
-  }
-  .follow {
-    font-size: 10px;
-    text-transform: uppercase;
-  }
-  .social {
-    font-size: 20px;
-  }
-  .about {
-    font-size: 10px;
-    width: 300px;
-  }
-  .error-message {
-    color: #981a1a;
-    font-size: 10px;
-  }
-}
-
-@media all and (max-width: 1024px) {
-  * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .nav-bar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  .nav-bar ul li {
-    margin-right: 50px;
-  }
-  .search-bar {
-    font-size: 30px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .search {
-    width: 500px;
-    height: 40px;
-    font-size: 14px;
-  }
-  .table-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    max-width: 85%;
-    margin: 0 0 0 60px;
-  }
-  table {
-    width: 800px;
-    height: 100px;
-    margin-top: 0px;
-  }
-  td,
-  tr,
-  th {
-    font-weight: 500;
-    font-size: 14px;
-    padding: 0 10px;
-  }
-  th {
-    background-color: #282c34;
-    color: white;
-    font-size: 15px;
-  }
-  .edit-delete {
-    font-size: 14px;
-  }
-  .image {
-    width: 400px;
-  }
-  .manage-account {
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .transactions {
-    width: 100%;
-    max-width: 30%;
-    margin: 0;
-  }
-  .trans {
-    padding: 20px 25px;
-    font-size: 14px;
-    margin: 0 5px;
-  }
-  .deposit-page,
-  .withdraw-page,
-  .transfer-page {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
-    max-width: 100%;
-  }
-  .deposit-container,
-  .withdraw-container,
-  .transfer-container {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .add-account-container {
-    max-width: 50%;
-    margin: 0;
-    padding: 10px;
-  }
-  .add-account-inputs input {
-    font-size: 14px;
-  }
-  .add-account-button {
-    font-size: 10px;
-  }
-  .error {
-    font-size: 10px;
-  }
-  .logout-mobile {
-    display: none;
-  }
-}
-
-@media all and (max-width: 1024px) {
-  .third-page {
-    overflow: scroll;
-  }
-  .container {
-    margin: 20px auto;
-  }
-  .left-container,
-  .right-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    max-width: 50%;
-  }
-  .card {
-    height: 250px;
-    max-width: 90%;
-  }
-  .balance-name {
-    font-size: 20px;
-  }
-  .card-balance {
-    font-size: 40px;
-  }
-  .card-name,
-  .card-number {
-    font-size: 16px;
-  }
-  .valid-thru {
-    font-size: 7px;
-  }
-  .valid-date {
-    font-size: 14px;
-  }
-  .mastercard {
-    width: 40px;
-  }
-  .manage-expenses {
-    display: none;
-  }
-  .transaction-history {
-    max-width: 90%;
-    margin: 40px 0;
-  }
-  .history-title,
-  .expenses-title,
-  .user-transaction-title {
-    font-size: 16px;
-  }
-  .bottom-nav {
-    font-size: 16px;
-  }
-  .expenses-list ul li {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 5px 0;
-  }
-  .expense-name {
-    font-size: 16px;
-  }
-  .cost {
-    width: 70px;
-    height: 25px;
-    font-size: 14px;
-  }
-  .expenses li > .pay-button {
-    width: 70px;
-    height: 25px;
-    font-size: 14px;
-  }
-  .edit-expense,
-  .delete-expense {
-    font-size: 14px;
-  }
-  .add-expense-list,
-  .input-cost {
-    outline: none;
-    border: none;
-    height: 35px;
-    padding-left: 10px;
-    width: 160px;
-    border-radius: 5px;
-    background-color: #282c34;
-    color: white;
-    font-size: 14px;
-  }
-  .input-cost {
-    margin-left: 20px;
-    width: 70px;
-  }
-  .transactions {
-    width: 100%;
-    max-width: 30%;
-    margin: 0;
-  }
-  .trans {
-    padding: 20px 25px;
-    font-size: 14px;
-    margin: 0 5px;
-  }
-  .deposit-page,
-  .withdraw-page,
-  .transfer-page {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
-    max-width: 100%;
-  }
-  .deposit-container,
-  .withdraw-container,
-  .transfer-container {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .user-logout {
-    display: none;
   }
 }
 /*# sourceMappingURL=output.css.map */
