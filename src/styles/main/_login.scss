@@ -31,6 +31,10 @@ body {
   overflow: scroll;
 }
 
+.bank-logo.mobile {
+  display: none;
+}
+
 .desktop-login header {
   background-color: $dark-color;
   height: 60px;
@@ -111,7 +115,7 @@ body {
 .slogan {
   margin-top: 40px;
   color: $dark-color;
-  font-size: 85px;
+  font-size: 75px;
   font-weight: 700;
 }
 
@@ -123,7 +127,7 @@ body {
 }
 
 .slogan-text {
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 30px;
   color: $dark-color;
   font-weight: 600;
@@ -147,8 +151,8 @@ body {
 .download-app {
   background-color: $dark-color;
   color: white;
-  padding: 20px 30px;
-  font-size: 20px;
+  padding: 15px 25px;
+  font-size: 15px;
   font-weight: 600;
   border-radius: 10px;
   border: 2px solid $dark-color;
@@ -189,7 +193,7 @@ body {
   //     rgba(97, 219, 251, 1) 58%
   //   );
   background-image: $gradient;
-  height: 480px;
+  height: 450px;
   margin-top: 50px;
   display: flex;
   justify-content: center;
