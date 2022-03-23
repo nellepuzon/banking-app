@@ -1,19 +1,12 @@
-// @import 'first-page/base';
-// @import 'first-page/bank-logo';
-// // @import 'first-page/dropdown';
-// @import 'first-page/login';
-// @import 'admin-page/navbar';
-// @import 'admin-page/table';
-// @import 'admin-page/add-account';
-// @import 'admin-page/transactions';
-// @import 'transaction-page/deposit';
-// @import 'transaction-page/withdraw';
-// @import 'transaction-page/transfer';
-// @import 'media-queries/desktop';
-// @import 'media-queries/tablet';
-// @import 'media-queries/mobile';
-// // @import 'user-page/userpage';
-
+@import 'main/login';
+@import 'main/admin';
+@import 'main/user';
+@import 'mobile/login';
+@import 'mobile/admin';
+@import 'mobile/user';
+@import 'tablet/login';
+@import 'tablet/admin';
+@import 'tablet/user';
 @import 'desktop/login';
 @import 'desktop/admin';
-@import 'desktop/user'
+@import 'desktop/user';

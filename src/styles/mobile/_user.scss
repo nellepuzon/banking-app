@@ -1,0 +1,233 @@
+@media all and (max-width: 480px) {
+  $dark-color: #282c34;
+  $light-color: #61dbfb;
+  $white: rgba(255, 255, 255, 0.8);
+  $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
+
+  .third-page {
+    margin-top: 10px;
+    overflow: scroll;
+  }
+
+  .third-page header {
+    display: none;
+  }
+
+  .user-nav {
+    display: flex;
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+
+  .welcome {
+    display: flex;
+    width: 100%;
+    max-width: 80%;
+    margin: 20px auto 0 auto;
+    font-size: 30px;
+    justify-content: space-between;
+    font-weight: 500;
+  }
+
+  .greeting span {
+    font-weight: 700;
+  }
+
+  .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-color;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 80%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-container,
+  .right-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card {
+    height: 250px;
+    max-width: 100%;
+    display: flex;
+  }
+
+  .top-card,
+  .card-balance,
+  .bottom-card {
+    margin: auto;
+  }
+
+  .balance-name {
+    font-size: 20px;
+  }
+
+  .card-balance {
+    font-size: 40px;
+  }
+
+  .card-name,
+  .card-number {
+    font-size: 16px;
+  }
+
+  .valid-thru {
+    font-size: 7px;
+  }
+
+  .valid-date {
+    font-size: 16px;
+  }
+
+  .mastercard {
+    width: 40px;
+  }
+
+  .transaction-history {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .history-title,
+  .expenses-title,
+  .user-transaction-title {
+    font-size: 16px;
+  }
+
+  .transaction-list ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .transaction-list ul li {
+    border-bottom: 1px solid $dark-color;
+    box-shadow: 2px 2px 2px $dark-color;
+    font-size: 20px;
+    margin: 20px 0;
+    padding: 0 0 10px 20px;
+    font-weight: 500;
+  }
+
+  .user-footer {
+    background-color: $dark-color;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+    max-height: 8%;
+    display: flex;
+    align-items: center;
+  }
+
+  .bottom-nav {
+    font-size: 16px;
+  }
+
+  .expenses-list ul li {
+    margin: 3px 0;
+  }
+
+  .expense-name {
+    font-size: 16px;
+  }
+
+  .cost {
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .expenses li > .pay-button {
+    width: 70px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .edit-expense {
+    margin: 0 5px 0 15px;
+  }
+
+  .edit-expense,
+  .delete-expense {
+    font-size: 14px;
+  }
+
+  .add-expense-list,
+  .input-cost {
+    font-size: 14px;
+  }
+
+  .add-expense-list::placeholder,
+  .input-cost::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+  }
+
+  .add-expense-list:focus::placeholder,
+  .input-cost:focus::placeholder {
+    color: transparent;
+  }
+
+  .add-icon {
+    color: $dark-color;
+  }
+
+  .add-icon:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  .input-cost {
+    margin-left: 20px;
+    width: 70px;
+  }
+
+  // user transactions
+
+  .user-transaction {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .transactions.mobile {
+    width: 100%;
+    margin: 40px 0;
+  }
+
+  .trans.mobile {
+    margin-right: 10px;
+    margin-top: 0;
+    margin: 0 10px 50px 10px;
+  }
+
+  .user-logout {
+    display: flex;
+    font-size: 22px;
+    color: $dark-color;
+    align-items: center;
+    height: 30px;
+    margin-left: 10px;
+  }
+}
