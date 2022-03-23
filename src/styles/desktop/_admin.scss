@@ -10,6 +10,10 @@
     box-sizing: border-box;
   }
 
+  body {
+    height: auto;
+  }
+
   .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -26,6 +30,7 @@
   .search-bar {
     font-size: 30px;
     align-items: center;
+    margin: 65px auto 0 auto
   }
 
   .search {
@@ -68,7 +73,7 @@
   }
 
   .image {
-    width: 400px;
+    height: 290px;
   }
 
   .manage-account {
@@ -76,6 +81,7 @@
     max-width: 80%;
     margin: 0 auto;
     align-items: center;
+    margin-bottom: 5px;
   }
 
   // transactions

@@ -7,10 +7,12 @@
   .desktop-login {
     width: 100%;
     height: 100vh;
-    overflow: scroll;
+    // overflow: scroll;
   }
 
- 
+  .main-page {
+    max-width: 85%;
+  }
 
   .desktop-navbar ul li {
     margin-left: 40px;
