@@ -1,0 +1,95 @@
+@media all and (max-width: 768px) {
+  $dark-color: #282c34;
+  $light-color: #61dbfb;
+  $white: rgba(255, 255, 255, 0.8);
+  $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
+
+  .desktop-login {
+    overflow: scroll;
+    height: 100vh;
+  }
+
+  .bank-logo.mobile {
+    display: none;
+  }
+
+  .desktop-navbar ul {
+    display: none;
+  }
+
+  .fa-bars {
+    display: flex;
+    font-size: 20px;
+    color: $light-color;
+  }
+
+  .bank-logo {
+    font-size: 22px;
+  }
+
+  .main-page {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slogan {
+    margin-top: 10px;
+    font-size: 75px;
+  }
+
+  .slogan-text {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .desktop-options {
+    max-width: 60%;
+    margin: 40px auto 0 auto;
+  }
+
+  .get-started,
+  .download-app {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  .user-page {
+    max-width: 80%;
+    margin-top: 60px;
+    height: 420px;
+  }
+
+  .login input::placeholder {
+    color: $dark-color;
+  }
+
+  .login input:focus::placeholder {
+    color: transparent;
+  }
+
+  .login-options {
+    font-size: 12px;
+  }
+
+  .login-footer {
+    font-size: 12px;
+  }
+
+  // second section
+
+  .second-section {
+    padding: 0 130px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .follow {
+    font-size: 10px;
+  }
+
+  .social {
+    font-size: 20px;
+  }
+}

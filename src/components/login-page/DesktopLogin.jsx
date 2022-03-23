@@ -61,11 +61,12 @@ function DesktopLogin() {
               <i className='fa-brands fa-twitter-square'></i>
             </div>
           </div>
+          <div className='logo'>
           <i className='fa-brands fa-cc-apple-pay'></i>
           <i className='fa-brands fa-google-pay'></i>
           <i className='fa-brands fa-cc-visa'></i>
           <i className='fa-brands fa-cc-mastercard'></i>
-          <i className='fa-brands fa-cc-paypal'></i>
+          <i className='fa-brands fa-cc-paypal'></i></div>
         </footer>
       </div>
     </div>

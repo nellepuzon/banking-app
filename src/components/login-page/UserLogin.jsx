@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../../context/DataContext";
+import BankLogo from "./BankLogo";
 
 function UserLogin() {
   const {
@@ -54,6 +55,7 @@ function UserLogin() {
 
   return (
     <div className="user-page">
+      <BankLogo className='mobile'/>
       <div className="login">
         <input
           type="text"

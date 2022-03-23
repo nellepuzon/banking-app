@@ -1,0 +1,386 @@
+$dark-color: #282c34;
+$light-color: #61dbfb;
+$white: rgba(255, 255, 255, 0.8);
+$gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
+
+.third-page {
+  width: 100%;
+  height: 100vh;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.third-page header {
+  background-color: $dark-color;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+}
+
+.user-nav {
+  display: flex;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.user-logout:hover {
+  cursor: pointer;
+  color: $light-color;
+  transition: all 0.4s;
+}
+
+.welcome {
+  display: flex;
+  width: 100%;
+  max-width: 80%;
+  margin: 20px auto;
+  font-size: 30px;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.greeting span {
+  font-weight: 700;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-color;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 80%;
+  margin: 30px auto;
+  display: flex;
+}
+
+.left-container,
+.right-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 50%;
+}
+
+.card {
+  background-image: linear-gradient(
+    to top left,
+    #0a5b6f,
+    #308ea5,
+    #56b9d2,
+    #4ec2df
+  );
+  height: 300px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 20px;
+  box-shadow: 3px 3px 3px $dark-color;
+}
+
+.top-card,
+.card-balance,
+.bottom-card {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: 20px auto;
+  align-items: center;
+}
+
+.bottom-right-card {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.balance-name {
+  font-size: 30px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px black;
+}
+
+.card-balance {
+  font-size: 50px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.card-name,
+.card-number {
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px black;
+}
+
+.valid-thru {
+  font-size: 9px;
+  margin-right: 5px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.valid-date {
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px black;
+}
+
+.mastercard {
+  width: 50px;
+}
+
+.manage-expenses {
+  display: none;
+}
+
+.transaction-history {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 70%;
+  margin: 50px 0;
+}
+
+.history-title,
+.expenses-title,
+.user-transaction-title {
+  background-color: $dark-color;
+  color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.transaction-list ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.transaction-list ul li {
+  border-bottom: 1px solid $dark-color;
+  box-shadow: 2px 2px 2px $dark-color;
+  font-size: 20px;
+  margin: 20px 0;
+  padding: 0 0 10px 20px;
+  font-weight: 500;
+}
+
+.user-footer {
+  background-color: $dark-color;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 100%;
+  max-height: 8%;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  color: white;
+  font-size: 18px;
+}
+
+.expenses {
+  display: flex;
+  flex-direction: column;
+}
+
+.expenses-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+.expenses-list ul {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expenses-list ul li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.expense-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.small {
+  font-size: 16px;
+}
+
+.cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-color;
+  color: white;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.expenses li > .pay-button {
+  background-color: white;
+  width: 80px;
+  height: 30px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.edit-expense {
+  margin: 0 10px 0 30px;
+}
+
+.edit-expense,
+.delete-expense {
+  color: $dark-color;
+  font-size: 16px;
+}
+
+.edit-expense:hover,
+.delete-expense:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.add-expense-list,
+.input-cost {
+  outline: none;
+  border: none;
+  height: 35px;
+  padding-left: 10px;
+  width: 160px;
+  border-radius: 5px;
+  background-color: $dark-color;
+  color: white;
+  font-size: 14px;
+}
+
+.add-expense-list::placeholder,
+.input-cost::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.add-expense-list:focus::placeholder,
+.input-cost:focus::placeholder {
+  color: transparent;
+}
+
+.add-icon {
+  color: $dark-color;
+}
+
+.add-icon:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.input-cost {
+  margin-left: 240px;
+  width: 80px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add-ul {
+  margin-top: 10px;
+}
+
+.add-ul li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex !important;
+}
+
+// .transparent {
+//   color: transparent;
+// }
+
+.border-radius {
+  border-radius: 0 5px 5px 0;
+}
+
+// user transactions
+
+.user-transaction {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.transactions.mobile {
+  width: 100%;
+  margin: 40px 0;
+}
+
+.trans.mobile {
+    margin-right: 20px;
+}
+
+.user-logout {
+  display: none;
+}

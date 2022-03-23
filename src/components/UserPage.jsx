@@ -55,6 +55,12 @@ function UserPage() {
         <div className='avatar'>
           <i className='fa-solid fa-user-tie'></i>
         </div>
+        <i
+            onClick={() => {
+              userLogin(false);
+            }}
+            className='fa-solid fa-arrow-right-from-bracket user-logout'
+          ></i>
       </div>
 
       <div className='container'>
