@@ -94,7 +94,12 @@ function BudgetApp({
       account.fullName === fullName ? { ...userCopy } : account
     );
     setAccounts(newUsers);
-  }, [totalExpense]);
+  }, [totalExpense])
+  ;
+
+  useEffect(() => {
+    setBeforeBalance(balance - userExpenses)
+  }, [balance]);
 
   return (
     <div className="budget-app-container">
