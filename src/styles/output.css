@@ -1521,6 +1521,31 @@ input::-webkit-inner-spin-button {
   padding-right: 20px;
 }
 
+.deposit-page,
+.withdraw-page,
+.transfer-page {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.deposit-container,
+.withdraw-container,
+.transfer-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media all and (max-width: 1024px) {
   .desktop-login {
     width: 100%;
