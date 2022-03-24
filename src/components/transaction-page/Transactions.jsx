@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import DataContext from '../context/DataContext';
+import DataContext from '../../context/DataContext';
 
 function Transactions({ className = '' }) {
   const isAdmin = useContext(DataContext)

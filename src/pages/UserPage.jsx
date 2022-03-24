@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
 import DataContext from '../context/DataContext';
-import Transactions from './Transactions';
-import Deposit from './transaction-page/Deposit';
-import Withdraw from './transaction-page/Withdraw';
-import Transfer from './transaction-page/Transfer';
-import TransHistory from './transaction-page/TransHistory';
-import BudgetApp from './budget-app/BudgetApp';
+import Transactions from '../components/transaction-page/Transactions';
+import Deposit from '../components/transaction-page/Deposit';
+import Withdraw from '../components/transaction-page/Withdraw';
+import Transfer from '../components/transaction-page/Transfer';
+import TransHistory from '../components/transaction-page/TransHistory';
+import BudgetApp from '../components/budget-app/BudgetApp';
 import { useParams } from 'react-router-dom';
-import BankLogo from './login-page/BankLogo';
-import mastercard from '../images/mastercard.png';
+import BankLogo from '../components/login-page/BankLogo';
+import mastercard from '../assets/images/mastercard.png';
 
 function UserPage() {
   const { userInput } = useParams();
