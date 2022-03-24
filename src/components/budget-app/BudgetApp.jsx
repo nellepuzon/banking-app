@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import ExpenseItem from './ExpenseItem';
+import React, { useEffect, useState } from "react";
+import ExpenseItem from "./ExpenseItem";
 
 function BudgetApp({
   balance,
@@ -13,9 +13,11 @@ function BudgetApp({
   const [beforeBalance, setBeforeBalance] = useState(balance - userExpenses);
   const [expense, setExpense] = useState(user.expense);
   const [totalExpense, setTotalExpense] = useState(userExpenses);
-  const [name, setName] = useState('');
-  const [cost, setCost] = useState('');
+  const [name, setName] = useState("");
+  const [cost, setCost] = useState("");
+  const [editingID, setEditingID] = useState(0);
   const [isEditing, setIsEditing] = useState(false);
+  const [expenseID, setExpenseID] = useState(0);
 
   const handleAddItem = (e) => {
     setName(e.target.value);
@@ -26,30 +28,33 @@ function BudgetApp({
   };
 
   const handleExpense = () => {
-    if (isEditing === true) {
-      editExpense(expense);
+    if (isEditing) {
+      editExpense(editingID);
       setIsEditing(false);
       return;
     }
 
-    if (name !== '' && cost !== '') {
-      setExpense([...expense, { name: name, cost: cost }]);
+    if (name !== "" && cost !== "") {
+      setExpense([...expense, { name: name, cost: cost, id: expenseID }]);
+      setExpenseID((prev) => prev + 1);
       setTotalExpense((prev) => Number(prev) + Number(cost));
       setBeforeBalance((prev) => Number(prev) - Number(cost));
-      setCost('');
-      setName('');
-      setIsEditing(false);
+      setCost("");
+      setName("");
     }
   };
 
   const editExpense = (expenseItem) => {
     const selectedExpense = user.expense.find(
-      (expense) => expense === expenseItem
+      (expense) => expense.id === expenseItem
     );
     selectedExpense.name = name;
     selectedExpense.cost = cost;
+    setBeforeBalance(balance - userExpenses);
+    setBeforeBalance((prev) => Number(prev) - Number(cost));
+    setTotalExpense((prev) => Number(prev) + Number(cost));
     const updatedList = user.expense.map((expense) =>
-      expense === expenseItem ? { ...selectedExpense } : expense
+      expense.id === expenseItem ? { ...selectedExpense } : expense
     );
     user.expense = updatedList;
     const userCopy = { ...user };
@@ -57,6 +62,8 @@ function BudgetApp({
       account.fullName === fullName ? { ...userCopy } : account
     );
     setAccounts(newUsers);
+    setCost("");
+    setName("");
   };
 
   const handleEdit = (expenseItem) => {
@@ -65,9 +72,9 @@ function BudgetApp({
     );
     setName(selectedExpense.name);
     setCost(selectedExpense.cost);
+    setEditingID(selectedExpense.id);
+    setTotalExpense((prev) => Number(prev) - Number(selectedExpense.cost));
     setIsEditing(true);
-    console.log(name)
-    console.log(cost)
   };
 
   useEffect(() => {
@@ -75,7 +82,7 @@ function BudgetApp({
   }, [beforeBalance]);
 
   const handleEnter = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleExpense();
     }
   };
@@ -90,7 +97,7 @@ function BudgetApp({
   }, [totalExpense]);
 
   return (
-    <div className='budget-app-container'>
+    <div className="budget-app-container">
       {/* <div className="budget-app-title">Budget App</div>
       <div className="wallet">
         <div className="wallet-amount">
@@ -98,9 +105,9 @@ function BudgetApp({
           {beforeBalance}
         </div>
       </div> */}
-      <div className='expenses'>
-        <div className='expenses-title'>Expenses</div>
-        <div className='expenses-list'>
+      <div className="expenses">
+        <div className="expenses-title">Expenses</div>
+        <div className="expenses-list">
           {user.expense &&
             user.expense.map((expense) => {
               return (
@@ -121,24 +128,24 @@ function BudgetApp({
                 />
               );
             })}
-          <ul className='add-ul'>
+          <ul className="add-ul">
             <li>
               <input
-                className='add-expense-list'
-                placeholder='Add Item'
+                className="add-expense-list"
+                placeholder="Add Item"
                 value={name}
                 onKeyPress={handleEnter}
                 onChange={handleAddItem}
               />
               <input
-                className='input-cost'
-                type='number'
-                placeholder='Cost'
+                className="input-cost"
+                type="number"
+                placeholder="Cost"
                 value={cost}
                 onKeyPress={handleEnter}
                 onChange={handleAddCost}
               />
-              <i class='fa-solid fa-circle-plus add-icon'></i>
+              <i class="fa-solid fa-circle-plus add-icon"></i>
             </li>
           </ul>
         </div>
