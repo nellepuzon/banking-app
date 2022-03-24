@@ -15,7 +15,7 @@ function BudgetApp({
   const [totalExpense, setTotalExpense] = useState(userExpenses);
   const [name, setName] = useState('');
   const [cost, setCost] = useState('');
-  // const [expenseID, setExpenseID] = useState(0);
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleAddItem = (e) => {
     setName(e.target.value);
@@ -26,16 +26,49 @@ function BudgetApp({
   };
 
   const handleExpense = () => {
+    if (isEditing === true) {
+      editExpense(expense);
+      setIsEditing(false);
+      return;
+    }
+
     if (name !== '' && cost !== '') {
       setExpense([...expense, { name: name, cost: cost }]);
       setTotalExpense((prev) => Number(prev) + Number(cost));
       setBeforeBalance((prev) => Number(prev) - Number(cost));
       setCost('');
       setName('');
+      setIsEditing(false);
     }
   };
 
- 
+  const editExpense = (expenseItem) => {
+    const selectedExpense = user.expense.find(
+      (expense) => expense === expenseItem
+    );
+    selectedExpense.name = name;
+    selectedExpense.cost = cost;
+    const updatedList = user.expense.map((expense) =>
+      expense === expenseItem ? { ...selectedExpense } : expense
+    );
+    user.expense = updatedList;
+    const userCopy = { ...user };
+    const newUsers = accounts.map((account) =>
+      account.fullName === fullName ? { ...userCopy } : account
+    );
+    setAccounts(newUsers);
+  };
+
+  const handleEdit = (expenseItem) => {
+    const selectedExpense = user.expense.find(
+      (expense) => expense === expenseItem
+    );
+    setName(selectedExpense.name);
+    setCost(selectedExpense.cost);
+    setIsEditing(true);
+    console.log(name)
+    console.log(cost)
+  };
 
   useEffect(() => {
     onAddExpense(beforeBalance);
@@ -84,6 +117,7 @@ function BudgetApp({
                   setExpense={setExpense}
                   setBeforeBalance={setBeforeBalance}
                   setTotalExpense={setTotalExpense}
+                  onEdit={handleEdit}
                 />
               );
             })}
