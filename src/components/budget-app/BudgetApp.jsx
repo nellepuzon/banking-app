@@ -15,7 +15,7 @@ function BudgetApp({
   const [totalExpense, setTotalExpense] = useState(userExpenses);
   const [name, setName] = useState('');
   const [cost, setCost] = useState('');
-  const [expenseID, setExpenseID] = useState(0);
+  // const [expenseID, setExpenseID] = useState(0);
 
   const handleAddItem = (e) => {
     setName(e.target.value);
@@ -27,8 +27,7 @@ function BudgetApp({
 
   const handleExpense = () => {
     if (name !== '' && cost !== '') {
-      setExpense([...expense, { name: name, cost: cost, id: expenseID }]);
-      setExpenseID(prev => prev + 1);
+      setExpense([...expense, { name: name, cost: cost }]);
       setTotalExpense((prev) => Number(prev) + Number(cost));
       setBeforeBalance((prev) => Number(prev) - Number(cost));
       setCost('');
@@ -76,7 +75,6 @@ function BudgetApp({
                   key={Math.floor(Number(user.accountNumber) * Math.random())}
                   name={expense.name}
                   cost={expense.cost}
-                  id={expense.id}
                   user={user}
                   accounts={accounts}
                   setAccounts={setAccounts}
@@ -84,6 +82,8 @@ function BudgetApp({
                   userExpenses={userExpenses}
                   expense={expense}
                   setExpense={setExpense}
+                  setBeforeBalance={setBeforeBalance}
+                  setTotalExpense={setTotalExpense}
                 />
               );
             })}
