@@ -50,6 +50,12 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 }
 
 .avatar {
+  width: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.fa-user-tie {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,12 +94,14 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   height: 300px;
   border-radius: 20px;
   width: 100%;
-  max-width: 70%;
+  max-width: 90%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   color: white;
   font-size: 20px;
   box-shadow: 3px 3px 3px $dark-color;
+  padding: 10px 0;
 }
 
 .top-card,
@@ -157,7 +165,7 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 70%;
+  max-width: 90%;
   margin: 50px 0;
 }
 
@@ -175,10 +183,16 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   letter-spacing: 2px;
 }
 
+.transaction-list {
+  height: 200px;
+  overflow-y: scroll;
+}
+
 .transaction-list ul {
   list-style-type: none;
   width: 100%;
-  margin: 20px 0;
+  color: white;
+  text-shadow: 1px 1px 1px $dark-color;
 }
 
 .transaction-list ul li {
@@ -188,6 +202,9 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   margin: 20px 0;
   padding: 0 0 10px 20px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .user-footer {
@@ -223,6 +240,11 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   width: 100%;
   max-width: 90%;
   margin: 20px auto;
+  color: white;
+  text-shadow: 1px 1px 1px $dark-color;
+  text-transform: capitalize;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 .expenses-list ul {
@@ -263,6 +285,8 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 
 .expenses li > .pay-button {
   background-color: white;
+  color: $dark-color;
+  text-shadow: none;
   width: 80px;
   height: 30px;
   display: none;
@@ -278,9 +302,12 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   margin: 0 10px 0 30px;
 }
 
+.delete-expense {
+  margin-right: 15px;
+}
+
 .edit-expense,
 .delete-expense {
-  color: $dark-color;
   font-size: 16px;
 }
 
@@ -316,6 +343,8 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 
 .add-icon {
   color: $dark-color;
+  text-shadow: none;
+  margin-right: 15px;
 }
 
 .add-icon:hover {
@@ -363,21 +392,29 @@ input::-webkit-inner-spin-button {
 // user transactions
 
 .user-transaction {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    height: 300px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 300px;
+}
+
+.transactions {
+  margin-top: 30px;
 }
 
 .transactions.mobile {
   width: 100%;
-  margin: 40px 0 80px 0;
 }
 
 .trans.mobile {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .user-logout {
   display: none;
+}
+
+.transaction-code {
+  font-size: 12px;
+  padding-right: 20px;
 }
