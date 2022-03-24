@@ -75,6 +75,12 @@ function Deposit({ ACCOUNTNUMBER }) {
     }
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      depositMoney();
+    }
+  };
+
   return (
     <div className="deposit-page">
       <div className="deposit-container">
@@ -94,6 +100,7 @@ function Deposit({ ACCOUNTNUMBER }) {
             type="number"
             list="accounts"
             placeholder="Account Number"
+            onKeyPress={handleKeyPress}
             onChange={(e) => {
               setDepositInput(e.target.value);
               resetError();
@@ -113,6 +120,7 @@ function Deposit({ ACCOUNTNUMBER }) {
             className="deposit-amount"
             type="number"
             placeholder="Amount"
+            onKeyPress={handleKeyPress}
             onChange={handleAmountChange}
             value={amountInput}
           ></input>
@@ -121,6 +129,7 @@ function Deposit({ ACCOUNTNUMBER }) {
             className="input-receipt"
             type="email"
             placeholder="name@example.com"
+            onKeyPress={handleKeyPress}
             onChange={(e) => {
               setEmailInput(e.target.value);
               resetError();

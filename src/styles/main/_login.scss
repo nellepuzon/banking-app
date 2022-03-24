@@ -26,14 +26,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  background-color: $dark-color;
+  background-color: transparent;
   border-radius: 10px;
   width: 10px;
 
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: $gradient;
+  background-color: $dark-color;
   border-radius: 10px;
   height: 2px;
 }
