@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
-import DataContext from "../../context/DataContext";
-import AdminContext from "../../context/AdminDataContext";
-import adminInputCheck from "../../helpers/adminInputCheck";
-import ErrorMessage from "../../helpers/ErrorMessage";
+import React, { useState, useContext } from 'react';
+import DataContext from '../../context/DataContext';
+import AdminContext from '../../context/AdminDataContext';
+import adminInputCheck from '../../helpers/adminInputCheck';
+import ErrorMessage from '../../helpers/ErrorMessage';
 
 function AddAccount() {
   const { accounts, updateAccounts } = useContext(DataContext);
@@ -20,7 +20,7 @@ function AddAccount() {
     changeEditState,
     resetInputs,
   } = useContext(AdminContext);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const userNameMatch = accounts.find(
     (element) => element.userName === userName
@@ -35,13 +35,13 @@ function AddAccount() {
     userName,
     password,
     balance
-    );
-    
+  );
+
   let id = Math.floor(Math.random() * (100000000 - 10000000)) + 10000000;
   const newAccount = {
     userName: userName,
     password: password,
-    type: "user",
+    type: 'user',
     fullName: fullName,
     money: balance,
     accountNumber: id,
@@ -55,7 +55,7 @@ function AddAccount() {
   };
 
   const resetError = () => {
-    setErrorMessage("");
+    setErrorMessage('');
     setSubmitted(false);
   };
 
@@ -73,7 +73,7 @@ function AddAccount() {
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       handleAddAccount();
     }
   };
@@ -94,8 +94,8 @@ function AddAccount() {
   };
 
   return (
-    <div className="add-account-container">
-      <div className="error">
+    <div className='add-account-container'>
+      <div className='error'>
         {submitted && (
           <ErrorMessage
             errorType={errorType}
@@ -104,12 +104,12 @@ function AddAccount() {
           />
         )}
       </div>
-      <div className="inputs">
-        <div className="add-account-inputs">
+      <div className='inputs'>
+        <div className='add-account-inputs'>
           <input
-            className="input-username"
-            type="text"
-            placeholder="Username"
+            className='input-username'
+            type='text'
+            placeholder='Username'
             value={userName}
             onChange={(e) => {
               changeUserNameInput(e.target.value);
@@ -118,9 +118,9 @@ function AddAccount() {
             onKeyPress={handleKeyPress}
           ></input>
           <input
-            className="input-password"
-            type="password"
-            placeholder="Password"
+            className='input-password'
+            type='password'
+            placeholder='Password'
             value={password}
             onChange={(e) => {
               changePasswordInput(e.target.value);
@@ -129,12 +129,12 @@ function AddAccount() {
             onKeyPress={handleKeyPress}
           ></input>
         </div>
-        <div className="add-account-inputs">
+        <div className='add-account-inputs'>
           <input
-            className="input-fullname"
-            type="text"
-            placeholder="Full Name"
-            spellCheck="false"
+            className='input-fullname'
+            type='text'
+            placeholder='Full Name'
+            spellCheck='false'
             value={fullName}
             onChange={(e) => {
               changeFullNameInput(e.target.value);
@@ -143,9 +143,9 @@ function AddAccount() {
             onKeyPress={handleKeyPress}
           ></input>
           <input
-            className="input-balance"
-            type="number"
-            placeholder="Initial Balance"
+            className='input-balance'
+            type='number'
+            placeholder='Initial Balance'
             value={balance}
             onChange={(e) => {
               changeBalanceInput(e.target.value);
@@ -154,9 +154,9 @@ function AddAccount() {
             onKeyPress={handleKeyPress}
           ></input>
         </div>
-        <div className="add-account-inputs">
-          <button onClick={handleAddAccount} className="add-account-button">
-            {isEditing ? "Update" : "Add"} Account
+        <div className='add-account-inputs'>
+          <button onClick={handleAddAccount} className='add-account-button'>
+            {isEditing ? 'Update' : 'Add'} Account
           </button>
         </div>
       </div>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ExpenseItem from "./ExpenseItem";
+import React, { useEffect, useState } from 'react';
+import ExpenseItem from './ExpenseItem';
 
 function BudgetApp({
   balance,
@@ -13,8 +13,8 @@ function BudgetApp({
   const [beforeBalance, setBeforeBalance] = useState(balance - userExpenses);
   const [expense, setExpense] = useState(user.expense);
   const [totalExpense, setTotalExpense] = useState(userExpenses);
-  const [name, setName] = useState("");
-  const [cost, setCost] = useState("");
+  const [name, setName] = useState('');
+  const [cost, setCost] = useState('');
   const [editingID, setEditingID] = useState(0);
   const [isEditing, setIsEditing] = useState(false);
   const [expenseID, setExpenseID] = useState(0);
@@ -34,13 +34,13 @@ function BudgetApp({
       return;
     }
 
-    if (name !== "" && cost !== "") {
+    if (name !== '' && cost !== '') {
       setExpense([...expense, { name: name, cost: cost, id: expenseID }]);
       setExpenseID((prev) => prev + 1);
       setTotalExpense((prev) => Number(prev) + Number(cost));
       setBeforeBalance((prev) => Number(prev) - Number(cost));
-      setCost("");
-      setName("");
+      setCost('');
+      setName('');
     }
   };
 
@@ -62,8 +62,8 @@ function BudgetApp({
       account.fullName === fullName ? { ...userCopy } : account
     );
     setAccounts(newUsers);
-    setCost("");
-    setName("");
+    setCost('');
+    setName('');
   };
 
   const handleEdit = (expenseItem) => {
@@ -82,7 +82,7 @@ function BudgetApp({
   }, [beforeBalance]);
 
   const handleEnter = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       handleExpense();
     }
   };
@@ -94,25 +94,17 @@ function BudgetApp({
       account.fullName === fullName ? { ...userCopy } : account
     );
     setAccounts(newUsers);
-  }, [totalExpense])
-  ;
+  }, [totalExpense]);
 
   useEffect(() => {
-    setBeforeBalance(balance - userExpenses)
+    setBeforeBalance(balance - userExpenses);
   }, [balance]);
 
   return (
-    <div className="budget-app-container">
-      {/* <div className="budget-app-title">Budget App</div>
-      <div className="wallet">
-        <div className="wallet-amount">
-          <i className="fa-solid fa-peso-sign big"/>
-          {beforeBalance}
-        </div>
-      </div> */}
-      <div className="expenses">
-        <div className="expenses-title">Expenses</div>
-        <div className="expenses-list">
+    <div className='budget-app-container'>
+      <div className='expenses'>
+        <div className='expenses-title'>Expenses</div>
+        <div className='expenses-list'>
           {user.expense &&
             user.expense.map((expense) => {
               return (
@@ -133,24 +125,27 @@ function BudgetApp({
                 />
               );
             })}
-          <ul className="add-ul">
+          <ul className='add-ul'>
             <li>
               <input
-                className="add-expense-list"
-                placeholder="Add Item"
+                className='add-expense-list'
+                placeholder='Add Item'
                 value={name}
                 onKeyPress={handleEnter}
                 onChange={handleAddItem}
               />
               <input
-                className="input-cost"
-                type="number"
-                placeholder="Cost"
+                className='input-cost'
+                type='number'
+                placeholder='Cost'
                 value={cost}
                 onKeyPress={handleEnter}
                 onChange={handleAddCost}
               />
-              <i onClick={handleExpense} className="fa-solid fa-circle-plus add-icon"></i>
+              <i
+                onClick={handleExpense}
+                className='fa-solid fa-circle-plus add-icon'
+              ></i>
             </li>
           </ul>
         </div>

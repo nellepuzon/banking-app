@@ -1,15 +1,15 @@
-import React, { useState, useContext } from "react";
-import DataContext from "../../context/DataContext";
-import generateId from "../../helpers/generateID";
-import depWithInputCheck from "../../helpers/DepWithInputCheck";
-import ErrorMessage from "../../helpers/ErrorMessage";
+import React, { useState, useContext } from 'react';
+import DataContext from '../../context/DataContext';
+import generateId from '../../helpers/generateID';
+import depWithInputCheck from '../../helpers/DepWithInputCheck';
+import ErrorMessage from '../../helpers/ErrorMessage';
 
 function Deposit({ ACCOUNTNUMBER }) {
   const { accounts, updateAccounts } = useContext(DataContext);
-  const [depositInput, setDepositInput] = useState("");
-  const [amountInput, setAmountInput] = useState("");
-  const [emailInput, setEmailInput] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [depositInput, setDepositInput] = useState('');
+  const [amountInput, setAmountInput] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const accountMatch = accounts.find(
     (element) => element.accountNumber == depositInput
@@ -17,7 +17,7 @@ function Deposit({ ACCOUNTNUMBER }) {
   let errorType = depWithInputCheck(accountMatch, amountInput);
 
   const resetError = () => {
-    setErrorMessage("");
+    setErrorMessage('');
     setSubmitted(false);
   };
 
@@ -26,24 +26,13 @@ function Deposit({ ACCOUNTNUMBER }) {
   };
 
   const undoBlur = () => {
-    // if (isAdmin) {
-    //   document.querySelector(".admin-dashboard").classList.remove("blur");
-    //   document.querySelector(".add-account-container").classList.remove("blur");
-    //   document.querySelector(".table-box").classList.remove("blur");
-    // } else if (!isAdmin) {
-    //   document.querySelector(".dashboard").classList.remove("blur");
-    //   document.querySelector(".top-bar").classList.remove("blur");
-    //   document.querySelector(".card-container").classList.remove("blur");
-    //   document.querySelector(".bottom-nav").classList.remove("blur");
-    // }
-    // document.querySelector(".transactions").classList.remove("blur");
-    document.querySelector(".deposit-page").classList.remove("show-deposit");
-    document.querySelector(".withdraw-page").classList.remove("show-withdraw");
-    document.querySelector(".transfer-page").classList.remove("show-transfer");
-    setErrorMessage("");
-    setEmailInput("");
-    setAmountInput("");
-    setDepositInput("");
+    document.querySelector('.deposit-page').classList.remove('show-deposit');
+    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+    document.querySelector('.transfer-page').classList.remove('show-transfer');
+    setErrorMessage('');
+    setEmailInput('');
+    setAmountInput('');
+    setDepositInput('');
   };
 
   const handleAmountChange = (e) => {
@@ -65,29 +54,29 @@ function Deposit({ ACCOUNTNUMBER }) {
       accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput);
       mainCopy[mainCopy.indexOf(accountMatch)] = {
         ...accountCopy,
-        history: [...accountCopy.history, { id: id, type: "Deposit" }],
+        history: [...accountCopy.history, { id: id, type: 'Deposit' }],
       };
       updateAccounts([...mainCopy]);
-      setEmailInput("");
-      setAmountInput("");
-      setDepositInput("");
-      setErrorMessage("");
+      setEmailInput('');
+      setAmountInput('');
+      setDepositInput('');
+      setErrorMessage('');
     }
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       depositMoney();
     }
   };
 
   return (
-    <div className="deposit-page">
-      <div className="deposit-container">
-        <div onClick={undoBlur} className="close-button">
-          <i className="fa-solid fa-circle-xmark"></i>
+    <div className='deposit-page'>
+      <div className='deposit-container'>
+        <div onClick={undoBlur} className='close-button'>
+          <i className='fa-solid fa-circle-xmark'></i>
         </div>
-        <div className="deposit-input">
+        <div className='deposit-input'>
           {submitted && (
             <ErrorMessage
               errorType={errorType}
@@ -96,10 +85,10 @@ function Deposit({ ACCOUNTNUMBER }) {
             />
           )}
           <input
-            className="account-number-input"
-            type="number"
-            list="accounts"
-            placeholder="Account Number"
+            className='account-number-input'
+            type='number'
+            list='accounts'
+            placeholder='Account Number'
             onKeyPress={handleKeyPress}
             onChange={(e) => {
               setDepositInput(e.target.value);
@@ -107,7 +96,7 @@ function Deposit({ ACCOUNTNUMBER }) {
             }}
             value={ACCOUNTNUMBER ? ACCOUNTNUMBER : depositInput}
           ></input>
-          <datalist id="accounts">
+          <datalist id='accounts'>
             {accounts.map((item) => {
               if (item.accountNumber) {
                 return (
@@ -117,18 +106,18 @@ function Deposit({ ACCOUNTNUMBER }) {
             })}
           </datalist>
           <input
-            className="deposit-amount"
-            type="number"
-            placeholder="Amount"
+            className='deposit-amount'
+            type='number'
+            placeholder='Amount'
             onKeyPress={handleKeyPress}
             onChange={handleAmountChange}
             value={amountInput}
           ></input>
-          <div className="send-receipt">Send receipt to:</div>
+          <div className='send-receipt'>Send receipt to:</div>
           <input
-            className="input-receipt"
-            type="email"
-            placeholder="name@example.com"
+            className='input-receipt'
+            type='email'
+            placeholder='name@example.com'
             onKeyPress={handleKeyPress}
             onChange={(e) => {
               setEmailInput(e.target.value);
@@ -136,7 +125,7 @@ function Deposit({ ACCOUNTNUMBER }) {
             }}
             value={emailInput}
           ></input>
-          <button onClick={depositMoney} className="deposit-button">
+          <button onClick={depositMoney} className='deposit-button'>
             Deposit
           </button>
         </div>

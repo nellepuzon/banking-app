@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import AdminContext from '../../context/AdminDataContext';
 import DataContext from '../../context/DataContext';
 import BankLogo from '../login-page/BankLogo';
 

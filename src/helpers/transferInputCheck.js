@@ -1,9 +1,9 @@
 const transferInputCheck = (senderMatch, recipientMatch, amountInput) => {
-  if (!senderMatch || !recipientMatch || amountInput === "") {
+  if (!senderMatch || !recipientMatch || amountInput === '') {
     return 1;
-  } else if (!senderMatch && recipientMatch && amountInput !== "") {
+  } else if (!senderMatch && recipientMatch && amountInput !== '') {
     return 10;
-  } else if (!recipientMatch && senderMatch && amountInput !== "") {
+  } else if (!recipientMatch && senderMatch && amountInput !== '') {
     return 11;
   } else if (parseInt(amountInput) <= 0) {
     return 8;

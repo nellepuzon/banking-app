@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BankLogo({className = ''}) {
+function BankLogo({ className = '' }) {
   return (
     <div className={`bank-logo ${className}`}>
       <div className='bank-icon'>
