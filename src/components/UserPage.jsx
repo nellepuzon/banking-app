@@ -99,7 +99,7 @@ function UserPage() {
               <ul>
                 {TRANSACTIONS &&
                   TRANSACTIONS.map((item) => {
-                    return <TransHistory item={item} />;
+                    return <TransHistory key={Math.floor(Number(ACCOUNTNUMBER) * Math.random())} item={item} />;
                   })}
               </ul>
             </div>
