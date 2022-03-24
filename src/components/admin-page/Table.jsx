@@ -17,7 +17,7 @@ function Table() {
             <th>Name</th>
             <th>Balance</th>
             <th>
-              Manage
+              Actions
             </th>
           </tr>
         </thead>
