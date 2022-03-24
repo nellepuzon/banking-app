@@ -36,7 +36,7 @@ function ExpenseItem({
     : account
     );
     setAccounts(newUsers);
-    setBeforeBalance(user.money)
+    setBeforeBalance(user.money - user.userExpenses)
   };
   
   const handleDelete = (expense) => {
