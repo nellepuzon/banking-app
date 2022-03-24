@@ -1,13 +1,13 @@
 import React from 'react';
-import NavBar from './admin-page/NavBar';
-import Table from './admin-page/Table';
-import AddAccount from './admin-page/AddAccount';
-import Transactions from './Transactions';
-import Transfer from './transaction-page/Transfer';
-import Deposit from './transaction-page/Deposit';
-import Withdraw from './transaction-page/Withdraw';
+import NavBar from '../components/admin-page/NavBar';
+import Table from '../components/admin-page/Table';
+import AddAccount from '../components/admin-page/AddAccount';
+import Transactions from '../components/transaction-page/Transactions';
+import Transfer from '../components/transaction-page/Transfer';
+import Deposit from '../components/transaction-page/Deposit';
+import Withdraw from '../components/transaction-page/Withdraw';
 import { AdminDataProvider } from '../context/AdminDataContext';
-import Search from './admin-page/Search';
+import Search from '../components/admin-page/Search';
 
 function AdminPage() {
   return (

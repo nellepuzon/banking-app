@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import TableRow from './TableRow';
 import DataContext from '../../context/DataContext';
-import image from '../../images/bank-img';
+import image from '../../assets/images/bank-img';
 import AdminContext from '../../context/AdminDataContext';
 
 function Table() {

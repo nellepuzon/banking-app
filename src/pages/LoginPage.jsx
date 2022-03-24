@@ -1,5 +1,5 @@
 import React from 'react';
-import DesktopLogin from './login-page/DesktopLogin';
+import DesktopLogin from '../components/login-page/DesktopLogin';
 
 function LoginPage() {
   return (
