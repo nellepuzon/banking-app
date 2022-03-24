@@ -12,7 +12,8 @@ function ExpenseItem({
   expense,
   setExpense,
   setBeforeBalance,
-  setTotalExpense
+  setTotalExpense,
+  onEdit
 }) {
   const [isToggle, setToggle] = useState(false);
   const [isTogglePay, setTogglePay] = useState(false);
@@ -70,7 +71,7 @@ function ExpenseItem({
         >
           ₱{cost}
         </li>
-        <i
+        <i onClick={() => onEdit(expense)}
           className={`fa-solid fa-pen-to-square edit-expense ${
             isToggle ? "" : "transparent"
           }`}
