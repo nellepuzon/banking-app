@@ -50,7 +50,7 @@ function ExpenseItem({
     account.fullName === fullName ? { ...userCopy } : account
     );
     setAccounts(newUsers);
-    setBeforeBalance(user.money)
+    // setBeforeBalance(user.money)
   };
 
   return (
