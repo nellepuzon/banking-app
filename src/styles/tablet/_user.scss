@@ -5,7 +5,7 @@
   $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   
   .third-page {
-    height: 100vh;
+    margin-top: 0;
   }
   
   .welcome {
@@ -26,7 +26,7 @@
   .card {
     height: 250px;
     max-width: 70%;
-    margin: 0 auto;
+    margin: 20px auto;
   }
 
   .balance-name {
@@ -68,7 +68,6 @@
   .transaction-list ul {
     list-style-type: none;
     width: 100%;
-    margin: 20px 0;
   }
 
   .transaction-list ul li {

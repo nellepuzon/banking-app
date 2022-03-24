@@ -4,8 +4,6 @@
   $white: rgba(255, 255, 255, 0.8);
   $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 
- 
-
   .third-page {
     margin-top: 10px;
     overflow: scroll;
@@ -39,17 +37,11 @@
     font-weight: 700;
   }
 
-  .avatar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $dark-color;
+  .fa-user-tie {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     font-size: 15px;
-    color: white;
-    cursor: pointer;
   }
 
   .container {
@@ -119,7 +111,6 @@
   .transaction-list ul {
     list-style-type: none;
     width: 100%;
-    margin: 20px 0;
   }
 
   .transaction-list ul li {
@@ -133,7 +124,6 @@
 
   .user-footer {
     background-color: $dark-color;
-    position: absolute;
     width: 100%;
     bottom: 0;
     height: 100%;
@@ -158,6 +148,10 @@
     width: 70px;
     height: 30px;
     font-size: 14px;
+  }
+
+  .expenses {
+    margin: 50px 0;
   }
 
   .expenses li > .pay-button {
@@ -231,5 +225,9 @@
     align-items: center;
     height: 30px;
     margin-left: 10px;
+  }
+
+  .transaction-name {
+    font-size: 16px;
   }
 }

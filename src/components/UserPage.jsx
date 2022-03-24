@@ -53,14 +53,18 @@ function UserPage() {
           Welcome back, <span>{NAME[1]}</span>!
         </div>
         <div className='avatar'>
-          <i className='fa-solid fa-user-tie'></i>
+          <div>
+            <i className='fa-solid fa-user-tie'></i>
+          </div>
+          <div>
+            <i
+              onClick={() => {
+                userLogin(false);
+              }}
+              className='fa-solid fa-arrow-right-from-bracket user-logout'
+            ></i>
+          </div>
         </div>
-        <i
-            onClick={() => {
-              userLogin(false);
-            }}
-            className='fa-solid fa-arrow-right-from-bracket user-logout'
-          ></i>
       </div>
 
       <div className='container'>
@@ -93,9 +97,10 @@ function UserPage() {
             <div className='history-title'>Transaction History</div>
             <div className='transaction-list'>
               <ul>
-                {TRANSACTIONS && TRANSACTIONS.map((item)=>{
-                  return <TransHistory item={item} />
-                })}
+                {TRANSACTIONS &&
+                  TRANSACTIONS.map((item) => {
+                    return <TransHistory item={item} />;
+                  })}
               </ul>
             </div>
           </div>

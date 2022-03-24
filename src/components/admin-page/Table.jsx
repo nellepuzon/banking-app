@@ -10,6 +10,7 @@ function Table() {
   return (
     <div className='table-box'>
       <img src={image} className='image'/>
+      <div className='table-container'>
       <table>
         <thead>
           <tr>
@@ -42,7 +43,7 @@ function Table() {
               }
             })}
         </tbody>
-      </table>
+      </table></div>
     </div>
   );
 }

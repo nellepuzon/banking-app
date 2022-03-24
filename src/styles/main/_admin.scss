@@ -72,16 +72,26 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 
 .table-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+  align-items: flex-start;
+  max-width: 90%;
   margin: 0 auto;
+  
+}
+
+.table-container {
+  height: 400px;
+  overflow-y: scroll;
+  margin: 50px 0 0 0;
 }
 
 table {
-  width: 800px;
   height: 100px;
-  margin-top: 100px;
-}
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  }
 
 td,
 tr,
@@ -121,6 +131,7 @@ td a {
 }
 
 .image {
+  display: none;
   width: 500px;
   filter: saturate(0.5);
 }
@@ -128,7 +139,10 @@ td a {
 .manage-account {
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+  width: 100%;
+  max-width: 90%;
+  margin-top: 50px;
 }
 
 // transactions
@@ -142,7 +156,7 @@ td a {
 .transactions {
   display: flex;
   font-size: 20px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
   width: 100%;
@@ -156,6 +170,7 @@ td a {
   border-radius: 10px;
   font-size: 14px;
   color: white;
+  margin: 0 10px;
 }
 
 .trans:hover {

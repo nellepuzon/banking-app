@@ -6,10 +6,8 @@
 
   .admin-page {
     display: flex;
-    height: 100vh;
     flex-direction: column;
     width: 100%;
-    overflow: scroll;
   }
 
   .nav-bar ul {
@@ -48,12 +46,13 @@
     display: none;
   }
 
-  .table-box {
-    max-width: 80%;
+  .table-container {
+    margin: 30px auto 20px auto;
   }
 
-  table {
-    margin-top: 30px;
+  .table {
+    width: 100%;
+    max-width: 100%;
   }
 
   td,
@@ -68,6 +67,7 @@
   }
 
   .manage-account {
+    margin: 10px auto;
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
