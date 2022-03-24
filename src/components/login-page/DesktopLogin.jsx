@@ -6,7 +6,7 @@ function DesktopLogin() {
   return (
     <div>
       <div className='desktop-login'>
-        <Header/>
+        <Header />
         <div className='main-page'>
           <div className='main-page-container'>
             <div className='slogan'>
@@ -35,7 +35,6 @@ function DesktopLogin() {
         </div>
         <footer className='second-section'>
           <div className='about'>
-            {/* <div className='about-title'>ABOUT REACTBANK</div> */}
             <div className='about-us'>
               <ul>
                 <li>Who We Are</li>
@@ -62,11 +61,12 @@ function DesktopLogin() {
             </div>
           </div>
           <div className='logo'>
-          <i className='fa-brands fa-cc-apple-pay'></i>
-          <i className='fa-brands fa-google-pay'></i>
-          <i className='fa-brands fa-cc-visa'></i>
-          <i className='fa-brands fa-cc-mastercard'></i>
-          <i className='fa-brands fa-cc-paypal'></i></div>
+            <i className='fa-brands fa-cc-apple-pay'></i>
+            <i className='fa-brands fa-google-pay'></i>
+            <i className='fa-brands fa-cc-visa'></i>
+            <i className='fa-brands fa-cc-mastercard'></i>
+            <i className='fa-brands fa-cc-paypal'></i>
+          </div>
         </footer>
       </div>
     </div>

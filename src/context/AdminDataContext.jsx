@@ -1,13 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
 
 const AdminContext = createContext({});
 
 export const AdminDataProvider = ({ children }) => {
-  const [fullName, setFullName] = useState("");
-  const [balance, setBalance] = useState("");
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [searchInput, setSearchInput] = useState("");
+  const [fullName, setFullName] = useState('');
+  const [balance, setBalance] = useState('');
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [searchInput, setSearchInput] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [editingID, setEditingID] = useState(0);
 
@@ -28,10 +28,10 @@ export const AdminDataProvider = ({ children }) => {
   };
 
   const handleResetInputs = () => {
-    setFullName("");
-    setUserName("");
-    setPassword("");
-    setBalance("");
+    setFullName('');
+    setUserName('');
+    setPassword('');
+    setBalance('');
   };
 
   const handleIsEditChange = (value) => {

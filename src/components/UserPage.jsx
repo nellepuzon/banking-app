@@ -8,7 +8,7 @@ import TransHistory from './transaction-page/TransHistory';
 import BudgetApp from './budget-app/BudgetApp';
 import { useParams } from 'react-router-dom';
 import BankLogo from './login-page/BankLogo';
-import mastercard from './mastercard.png';
+import mastercard from '../images/mastercard.png';
 
 function UserPage() {
   const { userInput } = useParams();
