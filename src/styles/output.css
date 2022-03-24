@@ -29,6 +29,19 @@ body {
   overflow: scroll;
 }
 
+::-webkit-scrollbar {
+  background-color: #282c34;
+  border-radius: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#5fbfd7), to(#75d5ec));
+  background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
+  border-radius: 10px;
+  height: 2px;
+}
+
 .bank-logo.mobile {
   display: none;
 }

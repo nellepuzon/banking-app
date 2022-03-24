@@ -145,7 +145,7 @@ function BudgetApp({
                 onKeyPress={handleEnter}
                 onChange={handleAddCost}
               />
-              <i class="fa-solid fa-circle-plus add-icon"></i>
+              <i onClick={handleExpense} className="fa-solid fa-circle-plus add-icon"></i>
             </li>
           </ul>
         </div>
