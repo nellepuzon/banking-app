@@ -85,6 +85,8 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   flex-direction: column;
   width: 100%;
   max-width: 50%;
+  height: 100%;
+  max-height: 80%;
 }
 
 .card {
@@ -95,7 +97,7 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
     #56b9d2,
     #4ec2df
   );
-  height: 320px;
+  // height: 320px;
   border-radius: 20px;
   width: 100%;
   max-width: 80%;
