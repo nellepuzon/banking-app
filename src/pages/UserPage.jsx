@@ -123,7 +123,7 @@ function UserPage() {
           <div className='user-transaction'>
             <div className='user-transaction-title'>Transactions</div>
 
-            <Transactions className='mobile' />
+            <Transactions className='mobile' ACCOUNTNUMBER={ACCOUNTNUMBER}/>
           </div>
         </div>
       </div>
