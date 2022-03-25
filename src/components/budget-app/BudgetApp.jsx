@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import useDataContext from '../../hooks/useDataContext';
 import ExpenseItem from './ExpenseItem';
 
 function BudgetApp({
   balance,
   user,
-  accounts,
-  setAccounts,
   fullName,
   userExpenses,
   onAddExpense,
 }) {
+  const {accounts, updateAccounts} = useDataContext()
   const [beforeBalance, setBeforeBalance] = useState(balance - userExpenses);
   const [expense, setExpense] = useState(user.expense);
   const [totalExpense, setTotalExpense] = useState(userExpenses);
@@ -61,7 +61,7 @@ function BudgetApp({
     const newUsers = accounts.map((account) =>
       account.fullName === fullName ? { ...userCopy } : account
     );
-    setAccounts(newUsers);
+    updateAccounts(newUsers);
     setCost('');
     setName('');
   };
@@ -93,7 +93,7 @@ function BudgetApp({
     const newUsers = accounts.map((account) =>
       account.fullName === fullName ? { ...userCopy } : account
     );
-    setAccounts(newUsers);
+    updateAccounts(newUsers);
   }, [totalExpense]);
 
   useEffect(() => {
@@ -114,7 +114,7 @@ function BudgetApp({
                   cost={expense.cost}
                   user={user}
                   accounts={accounts}
-                  setAccounts={setAccounts}
+                  updateAccounts={updateAccounts}
                   fullName={fullName}
                   userExpenses={userExpenses}
                   expense={expense}
