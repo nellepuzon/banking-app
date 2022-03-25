@@ -6,7 +6,7 @@ const depWithInputCheck = (accountMatch, amountInput) => {
   } else if (parseInt(amountInput) > parseInt(accountMatch.money)) {
     return 9;
   } else {
-    return 20;
+    return null;
   }
 };
 

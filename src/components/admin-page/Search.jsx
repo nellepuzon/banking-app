@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import AdminContext from '../../context/AdminDataContext';
-import DataContext from '../../context/DataContext';
+import React from 'react';
+import useAdminContext from '../../hooks/useAdminContext';
+import useDataContext from '../../hooks/useDataContext';
 
 function Search() {
-  const { adminLogin } = useContext(DataContext);
-  const { onSearch } = useContext(AdminContext);
+  const { adminLogin } = useDataContext()
+  const { onSearch } = useAdminContext()
 
   return (
     <div className='search-bar'>

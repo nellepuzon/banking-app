@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
-import DataContext from '../../context/DataContext';
-import AdminContext from '../../context/AdminDataContext';
+import React, { useState } from 'react';
 import adminInputCheck from '../../helpers/adminInputCheck';
 import ErrorMessage from '../../helpers/ErrorMessage';
+import useAdminContext from '../../hooks/useAdminContext';
+import useDataContext from '../../hooks/useDataContext';
 
 function AddAccount() {
-  const { accounts, updateAccounts } = useContext(DataContext);
+  const { accounts, updateAccounts } = useDataContext()
   const {
     fullName,
     balance,
@@ -19,7 +19,7 @@ function AddAccount() {
     changePasswordInput,
     changeEditState,
     resetInputs,
-  } = useContext(AdminContext);
+  } = useAdminContext()
   const [errorMessage, setErrorMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const userNameMatch = accounts.find(
@@ -86,7 +86,7 @@ function AddAccount() {
       changeEditState(false);
       resetError();
       return;
-    } else if (errorType === 20) {
+    } else if (errorType === null) {
       updateAccounts([...accounts, newAccount]);
       resetInputs();
       resetError();

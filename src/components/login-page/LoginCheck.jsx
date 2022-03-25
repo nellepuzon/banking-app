@@ -1,9 +1,8 @@
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
-import { useContext } from 'react';
-import DataContext from '../../context/DataContext';
+import useDataContext from '../../hooks/useDataContext';
 
 const LoginCheck = () => {
-  const { isAdmin, loggedIn } = useContext(DataContext);
+  const { isAdmin, loggedIn } = useDataContext()
   const location = useLocation();
   if ((isAdmin && loggedIn) || (!isAdmin && loggedIn)) {
     return <Outlet />;

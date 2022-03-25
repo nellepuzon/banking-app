@@ -1,8 +1,6 @@
-import React, {useContext} from 'react';
-import DataContext from '../../context/DataContext';
+import React from 'react';
 
 function Transactions({ className = '' }) {
-  const isAdmin = useContext(DataContext)
 
   const clickDeposit = () => {
     document.querySelector('.deposit-page').classList.add('show-deposit');
@@ -32,8 +30,7 @@ function Transactions({ className = '' }) {
       </div>
       <div onClick={clickTransfer} className={`transfer trans ${className}`}>
         <div className={`transfer-icon icon ${className}`}>
-          {' '}
-          <i className='fa-solid fa-paper-plane' />{' '}
+          <i className='fa-solid fa-paper-plane' />
         </div>
         <div className={`transfer-text text ${className}`}>Transfer</div>
       </div>

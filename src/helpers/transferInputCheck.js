@@ -15,7 +15,7 @@ const transferInputCheck = (senderMatch, recipientMatch, amountInput) => {
   } else if (senderMatch === recipientMatch) {
     return 12;
   } else {
-    return 20;
+    return null;
   }
 };
 

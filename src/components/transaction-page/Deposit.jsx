@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
-import DataContext from '../../context/DataContext';
-import generateId from '../../helpers/generateID';
+import React, { useState } from 'react';
 import depWithInputCheck from '../../helpers/DepWithInputCheck';
 import ErrorMessage from '../../helpers/ErrorMessage';
+import onMoneyChange from '../../helpers/onMoneyChange';
+import useDataContext from '../../hooks/useDataContext';
 
 function Deposit({ ACCOUNTNUMBER }) {
-  const { accounts, updateAccounts } = useContext(DataContext);
+  const { accounts, updateAccounts } = useDataContext()
   const [depositInput, setDepositInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
@@ -25,14 +25,18 @@ function Deposit({ ACCOUNTNUMBER }) {
     setErrorMessage(value);
   };
 
-  const undoBlur = () => {
-    document.querySelector('.deposit-page').classList.remove('show-deposit');
-    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-    document.querySelector('.transfer-page').classList.remove('show-transfer');
+  const resetInput = () => {
     setErrorMessage('');
     setEmailInput('');
     setAmountInput('');
     setDepositInput('');
+  }
+
+  const undoBlur = () => {
+    document.querySelector('.deposit-page').classList.remove('show-deposit');
+    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
+    document.querySelector('.transfer-page').classList.remove('show-transfer');
+    resetInput()
   };
 
   const handleAmountChange = (e) => {
@@ -45,22 +49,18 @@ function Deposit({ ACCOUNTNUMBER }) {
 
   const depositMoney = () => {
     setSubmitted(true);
-    if (errorType === 20) {
+    if (errorType === null) {
       setSubmitted(false);
       undoBlur();
-      let id = generateId(20);
-      let mainCopy = [...accounts];
-      let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
-      accountCopy.money = parseInt(accountCopy.money) + parseInt(amountInput);
-      mainCopy[mainCopy.indexOf(accountMatch)] = {
-        ...accountCopy,
-        history: [...accountCopy.history, { id: id, type: 'Deposit' }],
-      };
-      updateAccounts([...mainCopy]);
-      setEmailInput('');
-      setAmountInput('');
-      setDepositInput('');
-      setErrorMessage('');
+      onMoneyChange(
+        accountMatch,
+        null,
+        amountInput,
+        accounts,
+        updateAccounts,
+        "deposit"
+      );
+      resetInput()
     }
   };
 
