@@ -49,7 +49,6 @@ function Transfer({ ACCOUNTNUMBER, className, setShowTransfer }) {
     setSubmitted(true);
     if (errorType === null) {
       setSubmitted(false);
-      undoBlur();
       onMoneyChange(
         senderMatch,
         recipientMatch,

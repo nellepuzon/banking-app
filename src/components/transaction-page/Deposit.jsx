@@ -1,6 +1,4 @@
-import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import depWithInputCheck from '../../helpers/DepWithInputCheck';
 import ErrorMessage from '../../helpers/ErrorMessage';
 import onMoneyChange from '../../helpers/onMoneyChange';
@@ -13,8 +11,6 @@ function Deposit({ ACCOUNTNUMBER, className, setShowDeposit }) {
   const [emailInput, setEmailInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [closeTransaction, setCloseTransaction] = useState(false);
-  const navigate = useNavigate();
   const accountMatch = accounts.find(
     (element) => element.accountNumber == depositInput
   );
@@ -48,7 +44,6 @@ function Deposit({ ACCOUNTNUMBER, className, setShowDeposit }) {
     setSubmitted(true);
     if (errorType === null) {
       setSubmitted(false);
-      undoBlur();
       onMoneyChange(
         accountMatch,
         null,

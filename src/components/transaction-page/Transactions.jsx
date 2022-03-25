@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Deposit from './Deposit';
 import Transfer from './Transfer';
 import Withdraw from './Withdraw';
 
-function Transactions({ className = '' }) {
+function Transactions({ className = '', ACCOUNTNUMBER }) {
   const [showDeposit, setShowDeposit] = useState(false);
   const [showWithdraw, setShowWithdraw] = useState(false);
   const [showTransfer, setShowTransfer] = useState(false);
@@ -49,14 +49,17 @@ function Transactions({ className = '' }) {
       <Deposit
         className={`deposit-page ${showDeposit ? 'show-deposit' : ''}`}
         setShowDeposit={setShowDeposit}
+        ACCOUNTNUMBER={ACCOUNTNUMBER}
       />
       <Withdraw
         className={`withdraw-page ${showWithdraw ? 'show-withdraw' : ''}`}
         setShowWithdraw={setShowWithdraw}
+        ACCOUNTNUMBER={ACCOUNTNUMBER}
       />
       <Transfer
         className={`transfer-page ${showTransfer ? 'show-transfer' : ''}`}
         setShowTransfer={setShowTransfer}
+        ACCOUNTNUMBER={ACCOUNTNUMBER}
       />
     </div>
   );
