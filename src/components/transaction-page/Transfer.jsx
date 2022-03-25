@@ -4,7 +4,7 @@ import ErrorMessage from '../../helpers/ErrorMessage';
 import onMoneyChange from '../../helpers/onMoneyChange';
 import useDataContext from '../../hooks/useDataContext';
 
-function Transfer({ ACCOUNTNUMBER, className, setShowTransfer }) {
+function Transfer({ accountNumber, className, setShowTransfer }) {
   const { accounts, updateAccounts } = useDataContext();
   const [senderInput, setSenderInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
@@ -32,8 +32,8 @@ function Transfer({ ACCOUNTNUMBER, className, setShowTransfer }) {
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
     resetError();
-    if (ACCOUNTNUMBER) {
-      setSenderInput(ACCOUNTNUMBER);
+    if (accountNumber) {
+      setSenderInput(accountNumber);
     }
   };
 
@@ -95,7 +95,7 @@ function Transfer({ ACCOUNTNUMBER, className, setShowTransfer }) {
             onChange={(e) => {
               setSenderInput(e.target.value);
             }}
-            value={ACCOUNTNUMBER ? ACCOUNTNUMBER : senderInput}
+            value={accountNumber ? accountNumber : senderInput}
           ></input>
           <datalist id='accounts'>
             {accounts.map((account) => {

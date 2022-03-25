@@ -10,15 +10,15 @@ import mastercard from '../assets/images/mastercard.png';
 function UserPage() {
   const { userInput } = useParams();
   const { userLogin, accounts, setAccounts } = useContext(DataContext);
-  const USER = accounts.find((item) => item.userName == userInput);
-  const FULLNAME = USER.fullName;
-  const BALANCE = USER.money;
-  const ACCOUNTNUMBER = USER.accountNumber;
-  const USEREXPENSES = USER.userExpenses;
-  const TRANSACTIONS = USER.history;
-  const NAME = FULLNAME.split(',');
+  const user = accounts.find((item) => item.userName == userInput);
+  const fullName = user.fullName;
+  const balance = user.money;
+  const accountNumber = user.accountNumber;
+  const userExpenses = user.userExpenses;
+  const transactions = user.history;
+  const name = fullName.split(',');
 
-  const [mockBalance, setMockBalance] = useState(BALANCE - USEREXPENSES);
+  const [mockBalance, setMockBalance] = useState(balance - userExpenses);
 
   const handleBudgetBalance = (value) => {
     setMockBalance(value);
@@ -47,7 +47,7 @@ function UserPage() {
       </header>
       <div className='welcome'>
         <div className='greeting'>
-          Welcome back, <span>{NAME[1]}</span>!
+          Welcome back, <span>{name[1]}</span>!
         </div>
         <div className='avatar'>
           <div>
@@ -74,8 +74,8 @@ function UserPage() {
             <div className='card-balance'>₱{mockBalance}</div>
             <div className='bottom-card'>
               <div className='bottom-left-card'>
-                <div className='card-name'>{`${NAME[1]}  ${NAME[0]}`}</div>
-                <div className='card-number'>{ACCOUNTNUMBER}</div>
+                <div className='card-name'>{`${name[1]}  ${name[0]}`}</div>
+                <div className='card-number'>{accountNumber}</div>
               </div>
               <div className='bottom-right-card'>
                 <div className='valid-thru'>
@@ -94,11 +94,11 @@ function UserPage() {
             <div className='history-title'>Transaction History</div>
             <div className='transaction-list'>
               <ul>
-                {TRANSACTIONS &&
-                  TRANSACTIONS.map((item) => {
+                {transactions &&
+                  transactions.map((item) => {
                     return (
                       <TransHistory
-                        key={Math.floor(Number(ACCOUNTNUMBER) * Math.random())}
+                        key={Math.floor(Number(accountNumber) * Math.random())}
                         item={item}
                       />
                     );
@@ -111,19 +111,19 @@ function UserPage() {
         <div className='right-container'>
           <div className='user-budget-app'>
             <BudgetApp
-              balance={BALANCE}
-              user={USER}
+              balance={balance}
+              user={user}
               accounts={accounts}
               setAccounts={setAccounts}
-              fullName={FULLNAME}
-              userExpenses={USEREXPENSES}
+              fullName={fullName}
+              userExpenses={userExpenses}
               onAddExpense={handleBudgetBalance}
             />
           </div>
           <div className='user-transaction'>
             <div className='user-transaction-title'>Transactions</div>
 
-            <Transactions className='mobile' ACCOUNTNUMBER={ACCOUNTNUMBER}/>
+            <Transactions className='mobile' accountNumber={accountNumber}/>
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@ function UserPage() {
       <div className='user-footer'>
         <div className='bottom-nav'>
           <div className='nav-text'>Available Balance</div>
-          <div className='balance'>PHP {BALANCE}</div>
+          <div className='balance'>PHP {balance}</div>
         </div>
       </div>
     </div>

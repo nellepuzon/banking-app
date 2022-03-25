@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import generateId from '../../helpers/generateID';
+import useDataContext from '../../hooks/useDataContext';
 
 function ExpenseItem({
   name,
   cost,
   user,
-  accounts,
-  setAccounts,
   fullName,
   expense,
   setExpense,
@@ -14,6 +13,7 @@ function ExpenseItem({
   setTotalExpense,
   onEdit,
 }) {
+  const {accounts, updateAccounts} = useDataContext()
   const [isToggle, setToggle] = useState(false);
   const [isTogglePay, setTogglePay] = useState(false);
 
@@ -33,7 +33,7 @@ function ExpenseItem({
         ? { ...user, history: [...user.history, { id: id, type: 'Payment' }] }
         : account
     );
-    setAccounts(newUsers);
+    updateAccounts(newUsers);
     setBeforeBalance(user.money - user.userExpenses);
   };
 
@@ -47,7 +47,7 @@ function ExpenseItem({
     const newUsers = accounts.map((account) =>
       account.fullName === fullName ? { ...userCopy } : account
     );
-    setAccounts(newUsers);
+    updateAccounts(newUsers);
   };
 
   return (

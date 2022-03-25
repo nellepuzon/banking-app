@@ -3,7 +3,7 @@ import Deposit from './Deposit';
 import Transfer from './Transfer';
 import Withdraw from './Withdraw';
 
-function Transactions({ className = '', ACCOUNTNUMBER }) {
+function Transactions({ className = '', accountNumber }) {
   const [showDeposit, setShowDeposit] = useState(false);
   const [showWithdraw, setShowWithdraw] = useState(false);
   const [showTransfer, setShowTransfer] = useState(false);
@@ -49,17 +49,17 @@ function Transactions({ className = '', ACCOUNTNUMBER }) {
       <Deposit
         className={`deposit-page ${showDeposit ? 'show-deposit' : ''}`}
         setShowDeposit={setShowDeposit}
-        ACCOUNTNUMBER={ACCOUNTNUMBER}
+        accountNumber={accountNumber}
       />
       <Withdraw
         className={`withdraw-page ${showWithdraw ? 'show-withdraw' : ''}`}
         setShowWithdraw={setShowWithdraw}
-        ACCOUNTNUMBER={ACCOUNTNUMBER}
+        accountNumber={accountNumber}
       />
       <Transfer
         className={`transfer-page ${showTransfer ? 'show-transfer' : ''}`}
         setShowTransfer={setShowTransfer}
-        ACCOUNTNUMBER={ACCOUNTNUMBER}
+        accountNumber={accountNumber}
       />
     </div>
   );

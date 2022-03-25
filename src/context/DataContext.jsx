@@ -41,7 +41,6 @@ export const DataProvider = ({ children }) => {
         accounts,
         isAdmin,
         loggedIn,
-        setAccounts,
         userLogin: handleUserLogin,
         adminLogin: handleAdminLogIn,
         updateAccounts: handleAccountsChange,

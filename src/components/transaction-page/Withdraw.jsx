@@ -4,7 +4,7 @@ import ErrorMessage from '../../helpers/ErrorMessage';
 import onMoneyChange from '../../helpers/onMoneyChange';
 import useDataContext from '../../hooks/useDataContext';
 
-function Withdraw({ ACCOUNTNUMBER, className, setShowWithdraw }) {
+function Withdraw({ accountNumber, className, setShowWithdraw }) {
   const { accounts, updateAccounts } = useDataContext();
   const [withdrawInput, setWithdrawInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
@@ -28,8 +28,8 @@ function Withdraw({ ACCOUNTNUMBER, className, setShowWithdraw }) {
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
     resetError();
-    if (ACCOUNTNUMBER) {
-      setWithdrawInput(ACCOUNTNUMBER);
+    if (accountNumber) {
+      setWithdrawInput(accountNumber);
     }
   };
 
@@ -91,7 +91,7 @@ function Withdraw({ ACCOUNTNUMBER, className, setShowWithdraw }) {
               setWithdrawInput(e.target.value);
               resetError();
             }}
-            value={ACCOUNTNUMBER ? ACCOUNTNUMBER : withdrawInput}
+            value={accountNumber ? accountNumber : withdrawInput}
           ></input>
           <datalist id='accounts'>
             {accounts.map((account) => {

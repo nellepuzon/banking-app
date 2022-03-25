@@ -4,7 +4,7 @@ import ErrorMessage from '../../helpers/ErrorMessage';
 import onMoneyChange from '../../helpers/onMoneyChange';
 import useDataContext from '../../hooks/useDataContext';
 
-function Deposit({ ACCOUNTNUMBER, className, setShowDeposit }) {
+function Deposit({ accountNumber, className, setShowDeposit }) {
   const { accounts, updateAccounts } = useDataContext();
   const [depositInput, setDepositInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
@@ -35,8 +35,8 @@ function Deposit({ ACCOUNTNUMBER, className, setShowDeposit }) {
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
     resetError();
-    if (ACCOUNTNUMBER) {
-      setDepositInput(ACCOUNTNUMBER);
+    if (accountNumber) {
+      setDepositInput(accountNumber);
     }
   };
 
@@ -92,7 +92,7 @@ function Deposit({ ACCOUNTNUMBER, className, setShowDeposit }) {
               setDepositInput(e.target.value);
               resetError();
             }}
-            value={ACCOUNTNUMBER ? ACCOUNTNUMBER : depositInput}
+            value={accountNumber ? accountNumber : depositInput}
           ></input>
           <datalist id='accounts'>
             {accounts.map((item) => {
