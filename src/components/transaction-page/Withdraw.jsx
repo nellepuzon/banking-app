@@ -1,15 +1,15 @@
-import React, { useState, useContext } from 'react';
-import DataContext from '../../context/DataContext';
-import generateId from '../../helpers/generateID';
-import depWithInputCheck from '../../helpers/DepWithInputCheck';
-import ErrorMessage from '../../helpers/ErrorMessage';
+import React, { useState } from "react";
+import depWithInputCheck from "../../helpers/DepWithInputCheck";
+import ErrorMessage from "../../helpers/ErrorMessage";
+import onMoneyChange from "../../helpers/onMoneyChange";
+import useDataContext from "../../hooks/useDataContext";
 
 function Withdraw({ ACCOUNTNUMBER }) {
-  const { accounts, updateAccounts } = useContext(DataContext);
-  const [withdrawInput, setWithdrawInput] = useState('');
-  const [amountInput, setAmountInput] = useState('');
-  const [emailInput, setEmailInput] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const { accounts, updateAccounts } = useDataContext();
+  const [withdrawInput, setWithdrawInput] = useState("");
+  const [amountInput, setAmountInput] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const accountMatch = accounts.find(
     (element) => element.accountNumber === parseInt(withdrawInput)
@@ -17,7 +17,7 @@ function Withdraw({ ACCOUNTNUMBER }) {
   let errorType = depWithInputCheck(accountMatch, amountInput);
 
   const resetError = () => {
-    setErrorMessage('');
+    setErrorMessage("");
     setSubmitted(false);
   };
 
@@ -26,9 +26,9 @@ function Withdraw({ ACCOUNTNUMBER }) {
   };
 
   const undoBlur = () => {
-    document.querySelector('.deposit-page').classList.remove('show-deposit');
-    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-    document.querySelector('.transfer-page').classList.remove('show-transfer');
+    document.querySelector(".deposit-page").classList.remove("show-deposit");
+    document.querySelector(".withdraw-page").classList.remove("show-withdraw");
+    document.querySelector(".transfer-page").classList.remove("show-transfer");
   };
 
   const handleAmountChange = (e) => {
@@ -39,39 +39,42 @@ function Withdraw({ ACCOUNTNUMBER }) {
     }
   };
 
+  const resetInput = () => {
+    setEmailInput("");
+    setAmountInput("");
+    setWithdrawInput("");
+  };
+
   const withdrawMoney = () => {
     setSubmitted(true);
-    if (errorType === 20) {
+    if (errorType === null) {
       setSubmitted(false);
       undoBlur();
-      let id = generateId(20);
-      let mainCopy = [...accounts];
-      let accountCopy = { ...mainCopy[mainCopy.indexOf(accountMatch)] };
-      accountCopy.money = parseInt(accountCopy.money) - parseInt(amountInput);
-      mainCopy[mainCopy.indexOf(accountMatch)] = {
-        ...accountCopy,
-        history: [...accountCopy.history, { id: id, type: 'Withdraw' }],
-      };
-      updateAccounts([...mainCopy]);
-      setEmailInput('');
-      setAmountInput('');
-      setWithdrawInput('');
+      onMoneyChange(
+        accountMatch,
+        null,
+        amountInput,
+        accounts,
+        updateAccounts,
+        "withdraw"
+      );
+      resetInput();
     }
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       withdrawMoney();
     }
   };
 
   return (
-    <div className='withdraw-page'>
-      <div className='withdraw-container'>
-        <div onClick={undoBlur} className='close-button'>
-          <i className='fa-solid fa-circle-xmark'></i>
+    <div className="withdraw-page">
+      <div className="withdraw-container">
+        <div onClick={undoBlur} className="close-button">
+          <i className="fa-solid fa-circle-xmark"></i>
         </div>
-        <div className='withdraw-input'>
+        <div className="withdraw-input">
           {submitted && (
             <ErrorMessage
               errorType={errorType}
@@ -80,10 +83,10 @@ function Withdraw({ ACCOUNTNUMBER }) {
             />
           )}
           <input
-            className='account-number-input'
-            list='accounts'
-            type='number'
-            placeholder='Account Number'
+            className="account-number-input"
+            list="accounts"
+            type="number"
+            placeholder="Account Number"
             onKeyPress={handleKeyPress}
             onChange={(e) => {
               setWithdrawInput(e.target.value);
@@ -91,7 +94,7 @@ function Withdraw({ ACCOUNTNUMBER }) {
             }}
             value={ACCOUNTNUMBER ? ACCOUNTNUMBER : withdrawInput}
           ></input>
-          <datalist id='accounts'>
+          <datalist id="accounts">
             {accounts.map((account) => {
               if (account.accountNumber) {
                 return (
@@ -104,25 +107,25 @@ function Withdraw({ ACCOUNTNUMBER }) {
             })}
           </datalist>
           <input
-            className='withdraw-amount'
-            type='number'
-            placeholder='Amount'
+            className="withdraw-amount"
+            type="number"
+            placeholder="Amount"
             onKeyPress={handleKeyPress}
             onChange={handleAmountChange}
             value={amountInput}
           ></input>
-          <div className='send-receipt'>Send receipt to:</div>
+          <div className="send-receipt">Send receipt to:</div>
           <input
-            className='input-receipt'
-            type='email'
-            placeholder='name@example.com'
+            className="input-receipt"
+            type="email"
+            placeholder="name@example.com"
             onChange={(e) => {
               setEmailInput(e.target.value);
               resetError();
             }}
             value={emailInput}
           ></input>
-          <button onClick={withdrawMoney} className='withdraw-button'>
+          <button onClick={withdrawMoney} className="withdraw-button">
             Withdraw
           </button>
         </div>

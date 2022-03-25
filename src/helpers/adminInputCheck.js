@@ -36,7 +36,7 @@ const adminInputCheck = (
   ) {
     return 4;
   } else {
-    return 20;
+    return null;
   }
 };
 

@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import DataContext from '../../context/DataContext';
+import React from 'react';
+import useDataContext from '../../hooks/useDataContext';
 import BankLogo from '../login-page/BankLogo';
 
 function NavBar() {
-  const { adminLogin } = useContext(DataContext);
+  const { adminLogin } = useDataContext()
 
   return (
     <div className='admin-dashboard'>

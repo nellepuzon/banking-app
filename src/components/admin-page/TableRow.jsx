@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import AdminContext from '../../context/AdminDataContext';
-import DataContext from '../../context/DataContext';
+import React from 'react';
+import useAdminContext from '../../hooks/useAdminContext';
+import useDataContext from '../../hooks/useDataContext';
 
 function TableRow({ account }) {
-  const { accounts, updateAccounts } = useContext(DataContext);
-  const { onEdit } = useContext(AdminContext);
+  const { accounts, updateAccounts } = useDataContext()
+  const { onEdit } = useAdminContext()
   const handleDelete = (id) => {
     const newUsers = accounts.filter((user) => user.accountNumber !== id);
     updateAccounts(newUsers);

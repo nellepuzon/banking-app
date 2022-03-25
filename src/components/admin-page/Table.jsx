@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import TableRow from './TableRow';
-import DataContext from '../../context/DataContext';
 import image from '../../assets/images/bank-img';
-import AdminContext from '../../context/AdminDataContext';
+import useDataContext from '../../hooks/useDataContext';
+import useAdminContext from '../../hooks/useAdminContext';
 
 function Table() {
-  const { accounts } = useContext(DataContext);
-  const { searchInput } = useContext(AdminContext);
+  const { accounts } = useDataContext()
+  const { searchInput } = useAdminContext()
   return (
     <div className='table-box'>
       <img src={image} className='image' />

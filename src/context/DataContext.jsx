@@ -8,8 +8,6 @@ export const DataProvider = ({ children }) => {
   ]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userInput, setUserInput] = useState('');
-  const [passInput, setPassInput] = useState('');
 
   useEffect(() => {
     if (localStorage.getItem('accounts') === null) {
@@ -18,7 +16,7 @@ export const DataProvider = ({ children }) => {
       const accounts = JSON.parse(localStorage.getItem('accounts'));
       setAccounts(accounts);
     }
-  }, []);
+  },[]);
 
   useEffect(() => {
     localStorage.setItem('accounts', JSON.stringify(accounts));
@@ -33,19 +31,6 @@ export const DataProvider = ({ children }) => {
     setLoggedIn(value);
   };
 
-  const resetLoginInputs = () => {
-    setUserInput('');
-    setPassInput('');
-  };
-
-  const handleUsernameChange = (value) => {
-    setUserInput(value);
-  };
-
-  const handlePasswordChange = (value) => {
-    setPassInput(value);
-  };
-
   const handleAccountsChange = (values) => {
     setAccounts(values);
   };
@@ -56,14 +41,9 @@ export const DataProvider = ({ children }) => {
         accounts,
         isAdmin,
         loggedIn,
-        userInput,
-        passInput,
         setAccounts,
         userLogin: handleUserLogin,
         adminLogin: handleAdminLogIn,
-        resetLogin: resetLoginInputs,
-        onPassInput: handlePasswordChange,
-        onUserInput: handleUsernameChange,
         updateAccounts: handleAccountsChange,
       }}
     >
