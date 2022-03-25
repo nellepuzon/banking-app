@@ -81,7 +81,7 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
 }
 
 .table-container {
-  height: 400px;
+  height: 350px;
   overflow-y: scroll;
   margin: 50px 0 0 0;
 }
@@ -198,9 +198,13 @@ td a {
   top: 25%;
   left: 6%;
   background-image: $gradient;
+<<<<<<< Updated upstream:src/styles/main/_admin.scss
   box-shadow: 2px 2px 2px $dark-color;
   border-radius: 10px;
   height: 400px;
+=======
+  height: auto;
+>>>>>>> Stashed changes:src/assets/styles/main/_admin.scss
   width: 100%;
   max-width: 30%;
 }

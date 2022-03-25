@@ -567,7 +567,7 @@ body {
 }
 
 .table-container {
-  height: 400px;
+  height: 350px;
   overflow-y: scroll;
   margin: 50px 0 0 0;
 }
@@ -705,10 +705,14 @@ td a {
   left: 6%;
   background-image: -webkit-gradient(linear, right bottom, left top, from(#0a5b6f), color-stop(#2f8ea5), color-stop(#5fbfd7), to(#75d5ec));
   background-image: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
+<<<<<<< Updated upstream:src/styles/output.css
   -webkit-box-shadow: 2px 2px 2px #282c34;
           box-shadow: 2px 2px 2px #282c34;
   border-radius: 10px;
   height: 400px;
+=======
+  height: auto;
+>>>>>>> Stashed changes:src/assets/styles/output.css
   width: 100%;
   max-width: 30%;
 }
@@ -1065,6 +1069,8 @@ td a {
           flex-direction: column;
   width: 100%;
   max-width: 50%;
+  height: 100%;
+  max-height: 80%;
 }
 
 .card {
@@ -1486,7 +1492,6 @@ input::-webkit-inner-spin-button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 300px;
 }
 
 .transactions {
@@ -1947,6 +1952,7 @@ input::-webkit-inner-spin-button {
   }
   .second-section {
     padding: 0 130px;
+    position: relative;
   }
   .logo {
     display: none;
@@ -2071,22 +2077,6 @@ input::-webkit-inner-spin-button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-  }
-  .deposit-page,
-  .withdraw-page,
-  .transfer-page {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 100%;
-    max-width: 100%;
   }
   .deposit-container,
   .withdraw-container,
@@ -2283,7 +2273,6 @@ input::-webkit-inner-spin-button {
   }
   .transactions.mobile {
     width: 100%;
-    margin: 40px 0;
   }
   .trans.mobile {
     margin-right: 10px;
@@ -2402,7 +2391,7 @@ input::-webkit-inner-spin-button {
             flex-direction: column;
     font-size: 30px;
     max-width: 90%;
-    margin-top: 200px;
+    margin-top: 40px;
   }
   .accounts-title {
     display: -webkit-box;

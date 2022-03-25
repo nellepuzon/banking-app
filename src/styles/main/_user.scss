@@ -81,6 +81,8 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   flex-direction: column;
   width: 100%;
   max-width: 50%;
+  height: 100%;
+  max-height: 80%;
 }
 
 .card {
@@ -395,7 +397,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   width: 100%;
   flex-direction: column;
-  height: 300px;
+  // height: 300px;
 }
 
 .transactions {

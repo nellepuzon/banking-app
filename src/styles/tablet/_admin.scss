@@ -101,18 +101,6 @@
     display: flex;
   }
 
-  .deposit-page,
-  .withdraw-page,
-  .transfer-page {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
-  }
 
   .deposit-container,
   .withdraw-container,
