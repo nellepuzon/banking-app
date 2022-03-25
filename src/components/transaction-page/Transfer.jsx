@@ -49,6 +49,7 @@ function Transfer({ ACCOUNTNUMBER, className, setShowTransfer }) {
     setSubmitted(true);
     if (errorType === null) {
       setSubmitted(false);
+      handleCloseTransfer();
       onMoneyChange(
         senderMatch,
         recipientMatch,

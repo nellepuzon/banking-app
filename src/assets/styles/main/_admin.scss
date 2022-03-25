@@ -195,14 +195,11 @@ td a {
 .withdraw-page,
 .transfer-page {
   position: absolute;
-  top: 25%;
-  left: 6%;
   background-image: $gradient;
-  box-shadow: 2px 2px 2px $dark-color;
+  // box-shadow: 2px 2px 2px $dark-color;
   border-radius: 10px;
-  height: 400px;
+  height: 100%;
   width: 100%;
-  max-width: 30%;
 }
 
 .deposit-container,
@@ -211,10 +208,17 @@ td a {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 80%;
+  max-width: 60%;
   height: 100%;
   max-height: 80%;
   margin: auto;
+}
+
+.send-receipt {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .deposit-input,

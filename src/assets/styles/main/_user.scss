@@ -35,6 +35,10 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
   transition: all 0.4s;
 }
 
+.fa-arrow-right-from-bracket {
+  cursor: pointer;
+}
+
 .welcome {
   display: flex;
   width: 100%;
@@ -91,10 +95,10 @@ $gradient: linear-gradient(to top left, #0a5b6f, #2f8ea5, #5fbfd7, #75d5ec);
     #56b9d2,
     #4ec2df
   );
-  height: 300px;
+  height: 320px;
   border-radius: 20px;
   width: 100%;
-  max-width: 90%;
+  max-width: 80%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;

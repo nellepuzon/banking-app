@@ -43,6 +43,7 @@ function Withdraw({ ACCOUNTNUMBER, className, setShowWithdraw }) {
     setSubmitted(true);
     if (errorType === null) {
       setSubmitted(false);
+      handleCloseWithdraw();
       onMoneyChange(
         accountMatch,
         null,

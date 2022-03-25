@@ -44,6 +44,7 @@ function Deposit({ ACCOUNTNUMBER, className, setShowDeposit }) {
     setSubmitted(true);
     if (errorType === null) {
       setSubmitted(false);
+      handleCloseDeposit();
       onMoneyChange(
         accountMatch,
         null,
