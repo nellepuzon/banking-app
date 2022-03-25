@@ -3,9 +3,6 @@ import NavBar from '../components/admin-page/NavBar';
 import Table from '../components/admin-page/Table';
 import AddAccount from '../components/admin-page/AddAccount';
 import Transactions from '../components/transaction-page/Transactions';
-import Transfer from '../components/transaction-page/Transfer';
-import Deposit from '../components/transaction-page/Deposit';
-import Withdraw from '../components/transaction-page/Withdraw';
 import { AdminDataProvider } from '../context/AdminDataContext';
 import Search from '../components/admin-page/Search';
 
@@ -18,9 +15,6 @@ function AdminPage() {
         <Table />
         <div className='manage-account'>
           <Transactions />
-          <Deposit />
-          <Withdraw />
-          <Transfer />
           <AddAccount />
         </div>
       </div>

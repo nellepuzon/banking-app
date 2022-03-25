@@ -1757,6 +1757,10 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
+.hide-transaction {
+  display: none;
+}
+
 @media all and (max-width: 1024px) {
   .third-page {
     margin-top: 60px;

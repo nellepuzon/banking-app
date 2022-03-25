@@ -1,9 +1,6 @@
 import React, { useContext, useState } from 'react';
 import DataContext from '../context/DataContext';
 import Transactions from '../components/transaction-page/Transactions';
-import Deposit from '../components/transaction-page/Deposit';
-import Withdraw from '../components/transaction-page/Withdraw';
-import Transfer from '../components/transaction-page/Transfer';
 import TransHistory from '../components/transaction-page/TransHistory';
 import BudgetApp from '../components/budget-app/BudgetApp';
 import { useParams } from 'react-router-dom';
@@ -99,7 +96,12 @@ function UserPage() {
               <ul>
                 {TRANSACTIONS &&
                   TRANSACTIONS.map((item) => {
-                    return <TransHistory key={Math.floor(Number(ACCOUNTNUMBER) * Math.random())} item={item} />;
+                    return (
+                      <TransHistory
+                        key={Math.floor(Number(ACCOUNTNUMBER) * Math.random())}
+                        item={item}
+                      />
+                    );
                   })}
               </ul>
             </div>
@@ -122,9 +124,6 @@ function UserPage() {
             <div className='user-transaction-title'>Transactions</div>
 
             <Transactions className='mobile' />
-            <Deposit ACCOUNTNUMBER={ACCOUNTNUMBER} />
-            <Withdraw ACCOUNTNUMBER={ACCOUNTNUMBER} />
-            <Transfer ACCOUNTNUMBER={ACCOUNTNUMBER} />
           </div>
         </div>
       </div>

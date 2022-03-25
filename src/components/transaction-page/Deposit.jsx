@@ -1,16 +1,20 @@
+import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import depWithInputCheck from '../../helpers/DepWithInputCheck';
 import ErrorMessage from '../../helpers/ErrorMessage';
 import onMoneyChange from '../../helpers/onMoneyChange';
 import useDataContext from '../../hooks/useDataContext';
 
-function Deposit({ ACCOUNTNUMBER }) {
-  const { accounts, updateAccounts } = useDataContext()
+function Deposit({ ACCOUNTNUMBER, className, setShowDeposit }) {
+  const { accounts, updateAccounts } = useDataContext();
   const [depositInput, setDepositInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [closeTransaction, setCloseTransaction] = useState(false);
+  const navigate = useNavigate();
   const accountMatch = accounts.find(
     (element) => element.accountNumber == depositInput
   );
@@ -30,13 +34,6 @@ function Deposit({ ACCOUNTNUMBER }) {
     setEmailInput('');
     setAmountInput('');
     setDepositInput('');
-  }
-
-  const undoBlur = () => {
-    document.querySelector('.deposit-page').classList.remove('show-deposit');
-    document.querySelector('.withdraw-page').classList.remove('show-withdraw');
-    document.querySelector('.transfer-page').classList.remove('show-transfer');
-    resetInput()
   };
 
   const handleAmountChange = (e) => {
@@ -58,9 +55,9 @@ function Deposit({ ACCOUNTNUMBER }) {
         amountInput,
         accounts,
         updateAccounts,
-        "deposit"
+        'deposit'
       );
-      resetInput()
+      resetInput();
     }
   };
 
@@ -70,10 +67,15 @@ function Deposit({ ACCOUNTNUMBER }) {
     }
   };
 
+  const handleCloseDeposit = () => {
+    setShowDeposit(false);
+    resetInput();
+  };
+
   return (
-    <div className='deposit-page'>
+    <div className={`deposit-page ${className}`}>
       <div className='deposit-container'>
-        <div onClick={undoBlur} className='close-button'>
+        <div onClick={handleCloseDeposit} className='close-button'>
           <i className='fa-solid fa-circle-xmark'></i>
         </div>
         <div className='deposit-input'>
