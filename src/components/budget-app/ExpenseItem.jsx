@@ -38,8 +38,8 @@ function ExpenseItem({
   };
 
   const handleDelete = (expense) => {
-    const test = user.expense.filter((item) => item !== expense);
-    user.expense = test;
+    const newExpenseList = user.expense.filter((item) => item !== expense);
+    user.expense = newExpenseList;
     setExpense(user.expense);
     setTotalExpense((prev) => Number(prev) - Number(cost));
     setBeforeBalance((prev) => Number(prev) + Number(cost));
