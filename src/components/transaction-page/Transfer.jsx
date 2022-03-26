@@ -4,7 +4,7 @@ import ErrorMessage from '../../helpers/ErrorMessage';
 import onMoneyChange from '../../helpers/onMoneyChange';
 import useDataContext from '../../hooks/useDataContext';
 
-function Transfer({ accountNumber, className, setShowTransfer }) {
+function Transfer({ accountNumber, className, setShowTransfer, setShowMessage }) {
   const { accounts, updateAccounts } = useDataContext();
   const [senderInput, setSenderInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
@@ -12,6 +12,7 @@ function Transfer({ accountNumber, className, setShowTransfer }) {
   const [errorMessage, setErrorMessage] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
   const senderMatch = accounts.find(
     (element) => element.accountNumber == senderInput
   );
@@ -59,6 +60,7 @@ function Transfer({ accountNumber, className, setShowTransfer }) {
         'transfer'
       );
       resetInput();
+      setShowMessage(true)
     }
   };
 

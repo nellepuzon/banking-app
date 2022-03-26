@@ -150,7 +150,7 @@ td a {
 .deposit-page,
 .withdraw-page,
 .transfer-page {
-  display: none;
+  display: flex;
 }
 
 .transactions {
@@ -365,4 +365,3 @@ td a {
 .logout-mobile {
   display: none;
 }
-

@@ -12,6 +12,7 @@ function ExpenseItem({
   setBeforeBalance,
   setTotalExpense,
   onEdit,
+  setShowMessage
 }) {
   const {accounts, updateAccounts} = useDataContext()
   const [isToggle, setToggle] = useState(false);
@@ -35,6 +36,7 @@ function ExpenseItem({
     );
     updateAccounts(newUsers);
     setBeforeBalance(user.money - user.userExpenses);
+    setShowMessage(true);
   };
 
   const handleDelete = (expense) => {
@@ -59,6 +61,7 @@ function ExpenseItem({
         <li
           onClick={handlePay}
           className={`pay-button ${isTogglePay ? 'show' : ''}`}
+          setShowMessage={setShowMessage}
         >
           Pay
         </li>
