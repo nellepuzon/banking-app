@@ -4,13 +4,14 @@ import ErrorMessage from '../../helpers/ErrorMessage';
 import onMoneyChange from '../../helpers/onMoneyChange';
 import useDataContext from '../../hooks/useDataContext';
 
-function Withdraw({ accountNumber, className, setShowWithdraw }) {
+function Withdraw({ accountNumber, className, setShowWithdraw, setShowMessage }) {
   const { accounts, updateAccounts } = useDataContext();
   const [withdrawInput, setWithdrawInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
   const accountMatch = accounts.find(
     (element) => element.accountNumber === parseInt(withdrawInput)
   );
@@ -53,6 +54,7 @@ function Withdraw({ accountNumber, className, setShowWithdraw }) {
         'withdraw'
       );
       resetInput();
+      setShowMessage(true)
     }
   };
 

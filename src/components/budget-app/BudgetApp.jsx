@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useDataContext from "../../hooks/useDataContext";
 import ExpenseItem from "./ExpenseItem";
 
-function BudgetApp({ balance, user, fullName, userExpenses, onAddExpense }) {
+function BudgetApp({ balance, user, fullName, userExpenses, onAddExpense, setShowMessage }) {
   const { accounts, updateAccounts } = useDataContext();
   const [beforeBalance, setBeforeBalance] = useState(balance - userExpenses);
   const [expense, setExpense] = useState(user.expense);
@@ -118,6 +118,7 @@ function BudgetApp({ balance, user, fullName, userExpenses, onAddExpense }) {
                   setBeforeBalance={setBeforeBalance}
                   setTotalExpense={setTotalExpense}
                   onEdit={handleEdit}
+                  setShowMessage={setShowMessage}
                 />
               );
             })}

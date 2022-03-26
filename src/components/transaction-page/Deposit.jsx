@@ -3,14 +3,17 @@ import depWithInputCheck from '../../helpers/DepWithInputCheck';
 import ErrorMessage from '../../helpers/ErrorMessage';
 import onMoneyChange from '../../helpers/onMoneyChange';
 import useDataContext from '../../hooks/useDataContext';
+import Modal from './Modal';
+import TransactionMessage from './TransactionMessage';
 
-function Deposit({ accountNumber, className, setShowDeposit }) {
+function Deposit({ ACCOUNTNUMBER, className, setShowDeposit, setShowMessage }) {
   const { accounts, updateAccounts } = useDataContext();
   const [depositInput, setDepositInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
   const accountMatch = accounts.find(
     (element) => element.accountNumber == depositInput
   );
@@ -35,8 +38,8 @@ function Deposit({ accountNumber, className, setShowDeposit }) {
   const handleAmountChange = (e) => {
     setAmountInput(e.target.value);
     resetError();
-    if (accountNumber) {
-      setDepositInput(accountNumber);
+    if (ACCOUNTNUMBER) {
+      setDepositInput(ACCOUNTNUMBER);
     }
   };
 
@@ -54,6 +57,7 @@ function Deposit({ accountNumber, className, setShowDeposit }) {
         'deposit'
       );
       resetInput();
+      setShowMessage(true)
     }
   };
 
@@ -92,7 +96,7 @@ function Deposit({ accountNumber, className, setShowDeposit }) {
               setDepositInput(e.target.value);
               resetError();
             }}
-            value={accountNumber ? accountNumber : depositInput}
+            value={ACCOUNTNUMBER ? ACCOUNTNUMBER : depositInput}
           ></input>
           <datalist id='accounts'>
             {accounts.map((item) => {
@@ -128,6 +132,7 @@ function Deposit({ accountNumber, className, setShowDeposit }) {
           </button>
         </div>
       </div>
+      
     </div>
   );
 }

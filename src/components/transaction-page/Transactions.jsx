@@ -1,35 +1,29 @@
-import React, { useState } from 'react';
+import React, { Children, useState } from 'react';
 import Deposit from './Deposit';
 import Transfer from './Transfer';
 import Withdraw from './Withdraw';
+import Modal from './Modal';
+import TransactionMessage from './TransactionMessage';
 
 function Transactions({ className = '', accountNumber }) {
   const [showDeposit, setShowDeposit] = useState(false);
   const [showWithdraw, setShowWithdraw] = useState(false);
   const [showTransfer, setShowTransfer] = useState(false);
-
-  const handleShowDeposit = () => {
-    setShowDeposit(true);
-  };
-
-  const handleShowWithdraw = () => {
-    setShowWithdraw(true);
-  };
-
-  const handleShowTransfer = () => {
-    setShowTransfer(true);
-  };
+  const [showMessage, setShowMessage] = useState(false);
 
   return (
     <div className={`transactions ${className}`}>
-      <div onClick={handleShowDeposit} className={`deposit trans ${className}`}>
+      <div
+        onClick={() => setShowDeposit(true)}
+        className={`deposit trans ${className}`}
+      >
         <div className={`deposit-icon icon ${className}`}>
           <i className='fa-solid fa-money-bill-1-wave'></i>
         </div>
         <div className={`deposit-text text ${className}`}>Deposit</div>
       </div>
       <div
-        onClick={handleShowWithdraw}
+        onClick={() => setShowWithdraw(true)}
         className={`withdraw trans ${className}`}
       >
         <div className={`withdraw-icon icon ${className}`}>
@@ -38,7 +32,7 @@ function Transactions({ className = '', accountNumber }) {
         <div className={`withdraw-text text ${className}`}>Withdraw</div>
       </div>
       <div
-        onClick={handleShowTransfer}
+        onClick={() => setShowTransfer(true)}
         className={`transfer trans ${className}`}
       >
         <div className={`transfer-icon icon ${className}`}>
@@ -46,21 +40,30 @@ function Transactions({ className = '', accountNumber }) {
         </div>
         <div className={`transfer-text text ${className}`}>Transfer</div>
       </div>
-      <Deposit
-        className={`deposit-page ${showDeposit ? 'show-deposit' : ''}`}
-        setShowDeposit={setShowDeposit}
-        accountNumber={accountNumber}
-      />
-      <Withdraw
-        className={`withdraw-page ${showWithdraw ? 'show-withdraw' : ''}`}
-        setShowWithdraw={setShowWithdraw}
-        accountNumber={accountNumber}
-      />
-      <Transfer
-        className={`transfer-page ${showTransfer ? 'show-transfer' : ''}`}
-        setShowTransfer={setShowTransfer}
-        accountNumber={accountNumber}
-      />
+      <Modal open={showDeposit} setIsOpen={setShowDeposit}>
+        <Deposit
+          setShowDeposit={setShowDeposit}
+          setShowMessage={setShowMessage}
+          accountNumber={accountNumber}
+        />
+      </Modal>
+      <Modal open={showWithdraw} setIsOpen={setShowWithdraw}>
+        <Withdraw
+          setShowWithdraw={setShowWithdraw}
+          setShowMessage={setShowMessage}
+          accountNumber={accountNumber}
+        />
+      </Modal>
+      <Modal open={showTransfer} setIsOpen={setShowTransfer}>
+        <Transfer
+          setShowTransfer={setShowTransfer}
+          setShowMessage={setShowMessage}
+          accountNumber={accountNumber}
+        />
+      </Modal>
+      <Modal open={showMessage} setIsOpen={setShowMessage}>
+        <TransactionMessage setShowMessage={setShowMessage} />
+      </Modal>
     </div>
   );
 }
